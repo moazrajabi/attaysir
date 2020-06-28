@@ -83,10 +83,150 @@ namespace attaysir
         {
 
         }
+        byte[] amountOfMonthlyRentPDF, amountOfMonthlyElectricBillPDF, amountOfTwoMonthlyWaterBillPDF,
+            amountOfYearlyArnonaPDF, totalSchoolsFeesPDF, totalUniversitiesFeesPDF, studentMonthlyTranportaionPDF,
+            expensesPDF1, expensesPDF2, expensesPDF3, expensesPDF4, expensesPDF5;
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                totalSchoolsFeesPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                totalUniversitiesFeesPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                studentMonthlyTranportaionPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                expensesPDF1 = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                expensesPDF2 = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                expensesPDF3 = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                expensesPDF4 = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                expensesPDF5 = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                amountOfYearlyArnonaPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                amountOfTwoMonthlyWaterBillPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                amountOfMonthlyElectricBillPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                String path = openFile.FileName;
+                amountOfMonthlyRentPDF = System.IO.File.ReadAllBytes(path);
+            }
+        }
+
+        int n = 0, m = 58, locationx = 620, locationy = 157, count = 0, error = 0;
+        private void button9_Click(object sender, EventArgs e)
+        {
+            locationy = locationy + m;
+            panel1.Location = new Point(locationx, locationy);
+            n++; if (n == 4) { m = 59; }
+            if (n >= 5) { m = 0; }
+            if (count != 5) { count++; }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,63 +237,87 @@ namespace attaysir
             if (textBox30.Text == "") { textBox30.Text = "0"; }
             if (textBox43.Text == "") { textBox43.Text = "0"; }
 
-            string AmountOfMonthlyRent ;         if (textBox14.Text == "") { textBox14.Text = "0"; } AmountOfMonthlyRent = textBox14.Text;
-            string AmountOfMonthlyElectricBill ; if (textBox15.Text == "") { textBox15.Text = "0"; } AmountOfMonthlyElectricBill = textBox15.Text;
-            string AmountOfTwoMonthlyWaterBill ; if (textBox16.Text == "") { textBox16.Text = "0"; } AmountOfTwoMonthlyWaterBill = textBox16.Text;
-            string AmountOfYearlyArnona;         if (textBox17.Text == "") { textBox17.Text = "0"; } AmountOfYearlyArnona = textBox17.Text;
-            string TotalSchoolsFees;             if (textBox18.Text == "") { textBox18.Text = "0"; } TotalSchoolsFees = textBox18.Text;
-            string TotalUniversitiesFees ;       if (textBox19.Text == "") { textBox19.Text = "0"; } TotalUniversitiesFees = textBox19.Text;
-            string StudentMonthlyTranportaion ;  if (textBox20.Text == "") { textBox20.Text = "0"; } StudentMonthlyTranportaion = textBox20.Text;
 
-            string husbandFirstName = textBox10.Text;            string WifeFirstName = textBox9.Text;
-            string husbandPhoneNUMber = textBox8.Text;           string WifePhonrNumber = textBox7.Text;
-            string husbandIdentityNumber = textBox6.Text;        string WifeIdentityNumber = textBox5.Text;
-            string FamilyNumOfMember = textBox4.Text;            string LivingLocation = textBox3.Text;
-            string Adress = textBox2.Text;                       string husbandSalary = textBox1.Text;
-            string WifeSalary = textBox11.Text;                  string TotalChildrenInsurance = textBox12.Text;
-            string FamilyKind=""; string HusbandOrWife="";       string EmployeesNote = richTextBox1.Text;
-            string NumChiltackInsurance = textBox13.Text;        string WifeLastName = textBox39.Text;                string HusbandLastName = textBox38.Text;
+            string AmountOfMonthlyRent ;         if (amountOfMonthlyRentTxtBx.Text == "") { amountOfMonthlyRentTxtBx.Text = "0"; } AmountOfMonthlyRent = amountOfMonthlyRentTxtBx.Text;
+            string AmountOfMonthlyElectricBill ; if (amountOfMonthlyElectricBillTxtBx.Text == "") { amountOfMonthlyElectricBillTxtBx.Text = "0"; } AmountOfMonthlyElectricBill = amountOfMonthlyElectricBillTxtBx.Text;
+            string AmountOfTwoMonthlyWaterBill ; if (amountOfTwoMonthlyWaterBillTxtBx.Text == "") { amountOfTwoMonthlyWaterBillTxtBx.Text = "0"; } AmountOfTwoMonthlyWaterBill = amountOfTwoMonthlyWaterBillTxtBx.Text;
+            string AmountOfYearlyArnona;         if (amountOfYearlyArnonaTxtBx.Text == "") { amountOfYearlyArnonaTxtBx.Text = "0"; } AmountOfYearlyArnona = amountOfYearlyArnonaTxtBx.Text;
+            string TotalSchoolsFees;             if (totalSchoolsFeesTxtBx.Text == "") { totalSchoolsFeesTxtBx.Text = "0"; } TotalSchoolsFees = totalSchoolsFeesTxtBx.Text;
+            string TotalUniversitiesFees ;       if (totalUniversitiesFeesTxtBx.Text == "") { totalUniversitiesFeesTxtBx.Text = "0"; } TotalUniversitiesFees = totalUniversitiesFeesTxtBx.Text;
+            string StudentMonthlyTranportaion ;  if (studentMonthlyTranportaionTxtBx.Text == "") { studentMonthlyTranportaionTxtBx.Text = "0"; } StudentMonthlyTranportaion = studentMonthlyTranportaionTxtBx.Text;
+
+            string husbandFirstName = hLastNameTxtBx.Text;            string WifeFirstName = wLastNameTxtBx.Text;
+            string husbandPhoneNUMber = hPohneNumberTxtBx.Text;           string WifePhoneNumber = wPhoneNumberTxtBx.Text;
+            string husbandIdentityNumber = hIdentityNumberTxtBx.Text;        string WifeIdentityNumber = wIdentityNumberTxtBx.Text;
+            string FamilyNumOfMember = familyNumberTxtBx.Text;            string LivingLocation = adressTxtBx.Text;
+            string Adress = adressDetailsTxtBx.Text;                       string husbandSalary = hSalaryTxtBx.Text;
+            string WifeSalary = wSalaryTxtBx.Text;                  string TotalChildrenInsurance = totalChildrenInsuranceTxtBx.Text;
+            string FamilyKind=""; string HusbandOrWife="";       string EmployeesNote = employeesNoteTxtBx.Text;
+            string NumChildtackInsurance = numChildtackInsuranceTxtBx.Text;             string WifeLastName = wFirstNameTxtBx.Text;                string HusbandLastName = hFirstNameTxtBx.Text;
             
             if (checkBox1.Checked == true) { FamilyKind = "عائلة ايتام"; }
             else if (checkBox2.Checked == true) { FamilyKind = "عائلة متعففة"; }
             if (checkBox4.Checked == true) { HusbandOrWife = "الزوج"; }
             else if (checkBox3.Checked == true) { HusbandOrWife = "الزوجة"; }
 
-            if (textBox38.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوج اولا"; textBox38.Focus(); }
-            else if (textBox10.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوج اولا"; textBox10.Focus(); }
-            else if (textBox9.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوجة اولا"; textBox9.Focus(); }
-            else if (textBox39.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوجة اولا"; textBox39.Focus(); }
-            else if (textBox8.Text == "") { richTextBox2.Text = "ادخل رقم هاتف الزوج اولا"; textBox8.Focus(); }
-            else if (textBox7.Text == "") { richTextBox2.Text = "ادخل رقم هاتف الزوجة اولا"; textBox7.Focus(); }
-            else if (textBox6.Text == "") { richTextBox2.Text = "ادخل رقم هوية الزوج اولا"; textBox6.Focus(); }
-            else if (textBox5.Text == "") { richTextBox2.Text = "ادخل رقم هوية الزوجة اولا"; textBox5.Focus(); }
-            else if (textBox4.Text == "") { richTextBox2.Text = "ادخل عدد افراد العائلة اولا"; textBox4.Focus(); }
-            else if (textBox3.Text == "") { richTextBox2.Text = "ادخل مكان السكن اولا"; textBox3.Focus(); }
-            else if (textBox2.Text == "") { richTextBox2.Text = "ادخل العنوان المفصل اولا"; textBox2.Focus(); }
-            else if (textBox1.Text == "") { richTextBox2.Text = "ادخل مقدار راتب الزوج اولا"; textBox1.Focus(); }
-            else if (textBox11.Text == "") { richTextBox2.Text = "ادخل مقدار راتب الزوجة اولا"; textBox11.Focus(); }
-            else if (textBox12.Text == "") { richTextBox2.Text = "ادخل مقدار مخصصات الاولاد اولا"; textBox12.Focus(); }
-            else if (textBox13.Text == "") { richTextBox2.Text = "ادخل عدد الاولاد الحاصلين على مخصصات اولا"; textBox13.Focus(); }
-
-            else if (Employee2.IfTheFamilyThere(husbandFirstName, WifeFirstName) == true)
-            { richTextBox2.Text = ""; MessageBox.Show("this family is there"); }
-            else if (Employee2.IfTheFamilyThere(husbandFirstName, WifeFirstName) == false)
+            try
             {
-                richTextBox2.Text = "";
-                Employee2.AddFamily(id, husbandFirstName, WifeFirstName, husbandPhoneNUMber, HusbandLastName,
-                    WifeLastName, WifePhonrNumber, husbandIdentityNumber, WifeIdentityNumber, int.Parse(
-                        FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
-                    int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChiltackInsurance), HusbandOrWife);
-                Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
-                    , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
+                
+                int numofChildTackInsurance = int.Parse(NumChildtackInsurance);
+                int totalChildrenInsurance = int.Parse(TotalChildrenInsurance);
+                int TotalOfExpenses = int.Parse(AmountOfMonthlyRent) + int.Parse(AmountOfMonthlyElectricBill) +
+                    int.Parse(AmountOfTwoMonthlyWaterBill) + int.Parse(AmountOfYearlyArnona) + int.Parse(TotalSchoolsFees) +
+                    int.Parse(TotalUniversitiesFees) + int.Parse(StudentMonthlyTranportaion) + int.Parse(textBox22.Text) +
+                    int.Parse(textBox24.Text) + int.Parse(textBox27.Text) + int.Parse(textBox30.Text) +
+                    int.Parse(textBox43.Text);
+                int MonthlyAverageSalaryOfPerson = TotalOfExpenses;
             }
-            //اخر اشي اشتغلت هون
-            int TotalOfExpenses=int.Parse(AmountOfMonthlyRent)+ int.Parse(AmountOfMonthlyElectricBill)+
-                int.Parse(AmountOfTwoMonthlyWaterBill)+int.Parse(AmountOfYearlyArnona)+int.Parse(TotalSchoolsFees)+
-                int.Parse(TotalUniversitiesFees)+int.Parse(StudentMonthlyTranportaion)+int.Parse(textBox22.Text)+
-                int.Parse(textBox24.Text)+int.Parse(textBox27.Text)+int.Parse(textBox30.Text)+
-                int.Parse(textBox43.Text);
-            int MonthlyAverageSalaryOfPerson=TotalOfExpenses;
+            catch (Exception)
+            {
+                MessageBox.Show("حدث خطأ ما، الرجاء التأكد من القيم المدخلة", "خطأ");
+                error = 1;
+            }
+
+            try
+            {
+               
+                if (error != 1)
+                {
+                    if (hFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوج اولا"; hFirstNameTxtBx.Focus(); }
+                    else if (hLastNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوج اولا"; hLastNameTxtBx.Focus(); }
+                    else if (wLastNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوجة اولا"; wLastNameTxtBx.Focus(); }
+                    else if (wFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوجة اولا"; wFirstNameTxtBx.Focus(); }
+                    else if (hPohneNumberTxtBx.Text == "") { richTextBox2.Text = "ادخل رقم هاتف الزوج اولا"; hPohneNumberTxtBx.Focus(); }
+                    else if (wPhoneNumberTxtBx.Text == "") { richTextBox2.Text = "ادخل رقم هاتف الزوجة اولا"; wPhoneNumberTxtBx.Focus(); }
+                    else if (hIdentityNumberTxtBx.Text == "") { richTextBox2.Text = "ادخل رقم هوية الزوج اولا"; hIdentityNumberTxtBx.Focus(); }
+                    else if (wIdentityNumberTxtBx.Text == "") { richTextBox2.Text = "ادخل رقم هوية الزوجة اولا"; wIdentityNumberTxtBx.Focus(); }
+                    else if (familyNumberTxtBx.Text == "") { richTextBox2.Text = "ادخل عدد افراد العائلة اولا"; familyNumberTxtBx.Focus(); }
+                    else if (adressTxtBx.Text == "") { richTextBox2.Text = "ادخل مكان السكن اولا"; adressTxtBx.Focus(); }
+                    else if (adressDetailsTxtBx.Text == "") { richTextBox2.Text = "ادخل العنوان المفصل اولا"; adressDetailsTxtBx.Focus(); }
+                    else if (hSalaryTxtBx.Text == "") { richTextBox2.Text = "ادخل مقدار راتب الزوج اولا"; hSalaryTxtBx.Focus(); }
+                    else if (wSalaryTxtBx.Text == "") { richTextBox2.Text = "ادخل مقدار راتب الزوجة اولا"; wSalaryTxtBx.Focus(); }
+                    else if (totalChildrenInsuranceTxtBx.Text == "") { richTextBox2.Text = "ادخل مقدار مخصصات الاولاد اولا"; totalChildrenInsuranceTxtBx.Focus(); }
+                    else if (numChildtackInsuranceTxtBx.Text == "") { richTextBox2.Text = "ادخل عدد الاولاد الحاصلين على مخصصات اولا"; numChildtackInsuranceTxtBx.Focus(); }
+
+                    else if (Employee2.IfTheFamilyThere(husbandFirstName, WifeFirstName) == true)
+                    { richTextBox2.Text = ""; MessageBox.Show("this family is there"); }
+                    else if (Employee2.IfTheFamilyThere(husbandFirstName, WifeFirstName) == false)
+                    {
+                        richTextBox2.Text = "";
+                        Employee2.AddFamily(id, husbandFirstName, WifeFirstName, husbandPhoneNUMber, HusbandLastName,
+                            WifeLastName, WifePhoneNumber, husbandIdentityNumber, WifeIdentityNumber, int.Parse(
+                                FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
+                            int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife);
+                        Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
+                            , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("حدث خطأ ما، الرجاء التأكد من القيم المدخلة", "خطأ");
+            }
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
@@ -180,13 +344,6 @@ namespace attaysir
             if (checkBox1.Checked == false) { checkBox2.Checked = true; }
         }
 
-        int n = 0, m = 58, locationx = 620, locationy = 157;
-        private void button9_Click(object sender, EventArgs e)
-        {
-            locationy = locationy + m;
-            panel1.Location = new Point(locationx, locationy );
-            n++; if (n==4) { m = 59; }
-            if (n==5) { m = 0; }
-        }
+       
     }
 }

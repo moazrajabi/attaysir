@@ -46,34 +46,34 @@
             this.label15 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.hSalaryTxtBx = new System.Windows.Forms.TextBox();
+            this.adressDetailsTxtBx = new System.Windows.Forms.TextBox();
+            this.adressTxtBx = new System.Windows.Forms.TextBox();
+            this.familyNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.wIdentityNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.hIdentityNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.wPhoneNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.hPohneNumberTxtBx = new System.Windows.Forms.TextBox();
+            this.wLastNameTxtBx = new System.Windows.Forms.TextBox();
+            this.hLastNameTxtBx = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.wSalaryTxtBx = new System.Windows.Forms.TextBox();
+            this.totalChildrenInsuranceTxtBx = new System.Windows.Forms.TextBox();
+            this.numChildtackInsuranceTxtBx = new System.Windows.Forms.TextBox();
+            this.amountOfMonthlyRentTxtBx = new System.Windows.Forms.TextBox();
+            this.amountOfMonthlyElectricBillTxtBx = new System.Windows.Forms.TextBox();
+            this.amountOfTwoMonthlyWaterBillTxtBx = new System.Windows.Forms.TextBox();
+            this.amountOfYearlyArnonaTxtBx = new System.Windows.Forms.TextBox();
+            this.totalSchoolsFeesTxtBx = new System.Windows.Forms.TextBox();
+            this.totalUniversitiesFeesTxtBx = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.studentMonthlyTranportaionTxtBx = new System.Windows.Forms.TextBox();
+            this.employeesNoteTxtBx = new System.Windows.Forms.RichTextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -97,8 +97,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.hFirstNameTxtBx = new System.Windows.Forms.TextBox();
+            this.wFirstNameTxtBx = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -142,135 +142,150 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 23);
+            this.label1.Location = new System.Drawing.Point(16, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم الزوج";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 64);
+            this.label2.Location = new System.Drawing.Point(16, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "اسم الزوجة";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 105);
+            this.label3.Location = new System.Drawing.Point(16, 85);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "رقم هاتف الزوج";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 146);
+            this.label4.Location = new System.Drawing.Point(16, 119);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "رقم هاتف الزوجة";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 187);
+            this.label5.Location = new System.Drawing.Point(16, 152);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "رقم هوية الزوج";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 228);
+            this.label6.Location = new System.Drawing.Point(16, 185);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 17);
+            this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "رقم هوية الزوجة";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 269);
+            this.label7.Location = new System.Drawing.Point(16, 219);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 17);
+            this.label7.Size = new System.Drawing.Size(80, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "عدد افراد العائلة";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 310);
+            this.label8.Location = new System.Drawing.Point(16, 252);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 17);
+            this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "مكان السكن";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 351);
+            this.label9.Location = new System.Drawing.Point(16, 285);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 17);
+            this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "العنوان المفصل";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 392);
+            this.label10.Location = new System.Drawing.Point(16, 318);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 17);
+            this.label10.Size = new System.Drawing.Size(123, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "مقدار راتب الزوج الشهري ";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 433);
+            this.label11.Location = new System.Drawing.Point(16, 352);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 17);
+            this.label11.Size = new System.Drawing.Size(124, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "مقدار راتب الزوجة الشهري";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(326, 23);
+            this.label12.Location = new System.Drawing.Point(244, 19);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(147, 17);
+            this.label12.Size = new System.Drawing.Size(133, 13);
             this.label12.TabIndex = 11;
             this.label12.Text = "مقدار مخصصات الاولاد الكلي";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(326, 64);
+            this.label13.Location = new System.Drawing.Point(244, 52);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(183, 17);
+            this.label13.Size = new System.Drawing.Size(164, 13);
             this.label13.TabIndex = 12;
             this.label13.Text = "عدد الاولاد الحاصلين على مخصصات";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(326, 146);
+            this.label14.Location = new System.Drawing.Point(244, 119);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 17);
+            this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 13;
             this.label14.Text = "مصروفات :-";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(35, 497);
+            this.button1.Location = new System.Drawing.Point(26, 404);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 38);
+            this.button1.Size = new System.Drawing.Size(82, 31);
             this.button1.TabIndex = 14;
             this.button1.Text = "انشاء";
             this.button1.UseVisualStyleBackColor = true;
@@ -279,18 +294,20 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(326, 105);
+            this.label15.Location = new System.Drawing.Point(244, 85);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 17);
+            this.label15.Size = new System.Drawing.Size(61, 13);
             this.label15.TabIndex = 15;
             this.label15.Text = "نوع العائلة:-";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(430, 104);
+            this.checkBox1.Location = new System.Drawing.Point(322, 84);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 21);
+            this.checkBox1.Size = new System.Drawing.Size(72, 17);
             this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "عائلة ايتام";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -299,263 +316,296 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(527, 104);
+            this.checkBox2.Location = new System.Drawing.Point(395, 84);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(82, 21);
+            this.checkBox2.Size = new System.Drawing.Size(82, 17);
             this.checkBox2.TabIndex = 17;
             this.checkBox2.Text = "عائلة متعففة";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // textBox1
+            // hSalaryTxtBx
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 389);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 18;
+            this.hSalaryTxtBx.Location = new System.Drawing.Point(151, 316);
+            this.hSalaryTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hSalaryTxtBx.Name = "hSalaryTxtBx";
+            this.hSalaryTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.hSalaryTxtBx.TabIndex = 18;
             // 
-            // textBox2
+            // adressDetailsTxtBx
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 348);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 19;
+            this.adressDetailsTxtBx.Location = new System.Drawing.Point(151, 283);
+            this.adressDetailsTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.adressDetailsTxtBx.Name = "adressDetailsTxtBx";
+            this.adressDetailsTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.adressDetailsTxtBx.TabIndex = 19;
             // 
-            // textBox3
+            // adressTxtBx
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 20;
+            this.adressTxtBx.Location = new System.Drawing.Point(151, 249);
+            this.adressTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.adressTxtBx.Name = "adressTxtBx";
+            this.adressTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.adressTxtBx.TabIndex = 20;
             // 
-            // textBox4
+            // familyNumberTxtBx
             // 
-            this.textBox4.Location = new System.Drawing.Point(201, 266);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 21;
+            this.familyNumberTxtBx.Location = new System.Drawing.Point(151, 216);
+            this.familyNumberTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.familyNumberTxtBx.Name = "familyNumberTxtBx";
+            this.familyNumberTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.familyNumberTxtBx.TabIndex = 21;
             // 
-            // textBox5
+            // wIdentityNumberTxtBx
             // 
-            this.textBox5.Location = new System.Drawing.Point(201, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 22;
+            this.wIdentityNumberTxtBx.Location = new System.Drawing.Point(151, 183);
+            this.wIdentityNumberTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.wIdentityNumberTxtBx.Name = "wIdentityNumberTxtBx";
+            this.wIdentityNumberTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.wIdentityNumberTxtBx.TabIndex = 22;
             // 
-            // textBox6
+            // hIdentityNumberTxtBx
             // 
-            this.textBox6.Location = new System.Drawing.Point(201, 184);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 23;
+            this.hIdentityNumberTxtBx.Location = new System.Drawing.Point(151, 150);
+            this.hIdentityNumberTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hIdentityNumberTxtBx.Name = "hIdentityNumberTxtBx";
+            this.hIdentityNumberTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.hIdentityNumberTxtBx.TabIndex = 23;
             // 
-            // textBox7
+            // wPhoneNumberTxtBx
             // 
-            this.textBox7.Location = new System.Drawing.Point(201, 143);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 24;
+            this.wPhoneNumberTxtBx.Location = new System.Drawing.Point(151, 116);
+            this.wPhoneNumberTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.wPhoneNumberTxtBx.Name = "wPhoneNumberTxtBx";
+            this.wPhoneNumberTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.wPhoneNumberTxtBx.TabIndex = 24;
             // 
-            // textBox8
+            // hPohneNumberTxtBx
             // 
-            this.textBox8.Location = new System.Drawing.Point(201, 102);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 25;
+            this.hPohneNumberTxtBx.Location = new System.Drawing.Point(151, 83);
+            this.hPohneNumberTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hPohneNumberTxtBx.Name = "hPohneNumberTxtBx";
+            this.hPohneNumberTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.hPohneNumberTxtBx.TabIndex = 25;
             // 
-            // textBox9
+            // wLastNameTxtBx
             // 
-            this.textBox9.Location = new System.Drawing.Point(201, 61);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 26;
+            this.wLastNameTxtBx.Location = new System.Drawing.Point(151, 50);
+            this.wLastNameTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.wLastNameTxtBx.Name = "wLastNameTxtBx";
+            this.wLastNameTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.wLastNameTxtBx.TabIndex = 26;
             // 
-            // textBox10
+            // hLastNameTxtBx
             // 
-            this.textBox10.Location = new System.Drawing.Point(201, 20);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 27;
+            this.hLastNameTxtBx.Location = new System.Drawing.Point(151, 16);
+            this.hLastNameTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hLastNameTxtBx.Name = "hLastNameTxtBx";
+            this.hLastNameTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.hLastNameTxtBx.TabIndex = 27;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(326, 187);
+            this.label16.Location = new System.Drawing.Point(244, 152);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 17);
+            this.label16.Size = new System.Drawing.Size(82, 13);
             this.label16.TabIndex = 28;
             this.label16.Text = "بدل ايجار شهري";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(326, 228);
+            this.label17.Location = new System.Drawing.Point(244, 185);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(106, 17);
+            this.label17.Size = new System.Drawing.Size(112, 13);
             this.label17.TabIndex = 29;
             this.label17.Text = "فاتورة كهربائية شهرية";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(326, 269);
+            this.label18.Location = new System.Drawing.Point(244, 219);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(116, 17);
+            this.label18.Size = new System.Drawing.Size(111, 13);
             this.label18.TabIndex = 30;
             this.label18.Text = "فاتورة ماء (كل 2 شهر)";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(326, 310);
+            this.label19.Location = new System.Drawing.Point(244, 252);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 17);
+            this.label19.Size = new System.Drawing.Size(98, 13);
             this.label19.TabIndex = 31;
             this.label19.Text = "فاتورة ارنونا سنوية";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(326, 351);
+            this.label20.Location = new System.Drawing.Point(244, 285);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 17);
+            this.label20.Size = new System.Drawing.Size(97, 13);
             this.label20.TabIndex = 32;
             this.label20.Text = "اقساط مدارس سنوية";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(326, 392);
+            this.label21.Location = new System.Drawing.Point(244, 318);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(67, 17);
+            this.label21.Size = new System.Drawing.Size(70, 13);
             this.label21.TabIndex = 33;
             this.label21.Text = "اقساط جامعية";
             // 
-            // textBox11
+            // wSalaryTxtBx
             // 
-            this.textBox11.Location = new System.Drawing.Point(201, 430);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 34;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.wSalaryTxtBx.Location = new System.Drawing.Point(151, 349);
+            this.wSalaryTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.wSalaryTxtBx.Name = "wSalaryTxtBx";
+            this.wSalaryTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.wSalaryTxtBx.TabIndex = 34;
+            this.wSalaryTxtBx.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // textBox12
+            // totalChildrenInsuranceTxtBx
             // 
-            this.textBox12.Location = new System.Drawing.Point(552, 20);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(132, 22);
-            this.textBox12.TabIndex = 35;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.totalChildrenInsuranceTxtBx.Location = new System.Drawing.Point(414, 16);
+            this.totalChildrenInsuranceTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.totalChildrenInsuranceTxtBx.Name = "totalChildrenInsuranceTxtBx";
+            this.totalChildrenInsuranceTxtBx.Size = new System.Drawing.Size(100, 20);
+            this.totalChildrenInsuranceTxtBx.TabIndex = 35;
+            this.totalChildrenInsuranceTxtBx.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
-            // textBox13
+            // numChildtackInsuranceTxtBx
             // 
-            this.textBox13.Location = new System.Drawing.Point(552, 61);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(132, 22);
-            this.textBox13.TabIndex = 36;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            this.numChildtackInsuranceTxtBx.Location = new System.Drawing.Point(414, 50);
+            this.numChildtackInsuranceTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.numChildtackInsuranceTxtBx.Name = "numChildtackInsuranceTxtBx";
+            this.numChildtackInsuranceTxtBx.Size = new System.Drawing.Size(100, 20);
+            this.numChildtackInsuranceTxtBx.TabIndex = 36;
+            this.numChildtackInsuranceTxtBx.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
-            // textBox14
+            // amountOfMonthlyRentTxtBx
             // 
-            this.textBox14.Location = new System.Drawing.Point(478, 184);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
-            this.textBox14.TabIndex = 37;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.amountOfMonthlyRentTxtBx.Location = new System.Drawing.Point(358, 150);
+            this.amountOfMonthlyRentTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.amountOfMonthlyRentTxtBx.Name = "amountOfMonthlyRentTxtBx";
+            this.amountOfMonthlyRentTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.amountOfMonthlyRentTxtBx.TabIndex = 37;
+            this.amountOfMonthlyRentTxtBx.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
-            // textBox15
+            // amountOfMonthlyElectricBillTxtBx
             // 
-            this.textBox15.Location = new System.Drawing.Point(478, 225);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 22);
-            this.textBox15.TabIndex = 38;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.amountOfMonthlyElectricBillTxtBx.Location = new System.Drawing.Point(358, 183);
+            this.amountOfMonthlyElectricBillTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.amountOfMonthlyElectricBillTxtBx.Name = "amountOfMonthlyElectricBillTxtBx";
+            this.amountOfMonthlyElectricBillTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.amountOfMonthlyElectricBillTxtBx.TabIndex = 38;
+            this.amountOfMonthlyElectricBillTxtBx.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
-            // textBox16
+            // amountOfTwoMonthlyWaterBillTxtBx
             // 
-            this.textBox16.Location = new System.Drawing.Point(478, 266);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 22);
-            this.textBox16.TabIndex = 39;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            this.amountOfTwoMonthlyWaterBillTxtBx.Location = new System.Drawing.Point(358, 216);
+            this.amountOfTwoMonthlyWaterBillTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.amountOfTwoMonthlyWaterBillTxtBx.Name = "amountOfTwoMonthlyWaterBillTxtBx";
+            this.amountOfTwoMonthlyWaterBillTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.amountOfTwoMonthlyWaterBillTxtBx.TabIndex = 39;
+            this.amountOfTwoMonthlyWaterBillTxtBx.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
-            // textBox17
+            // amountOfYearlyArnonaTxtBx
             // 
-            this.textBox17.Location = new System.Drawing.Point(478, 307);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 22);
-            this.textBox17.TabIndex = 40;
-            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            this.amountOfYearlyArnonaTxtBx.Location = new System.Drawing.Point(358, 249);
+            this.amountOfYearlyArnonaTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.amountOfYearlyArnonaTxtBx.Name = "amountOfYearlyArnonaTxtBx";
+            this.amountOfYearlyArnonaTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.amountOfYearlyArnonaTxtBx.TabIndex = 40;
+            this.amountOfYearlyArnonaTxtBx.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
-            // textBox18
+            // totalSchoolsFeesTxtBx
             // 
-            this.textBox18.Location = new System.Drawing.Point(478, 348);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 22);
-            this.textBox18.TabIndex = 41;
-            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.totalSchoolsFeesTxtBx.Location = new System.Drawing.Point(358, 283);
+            this.totalSchoolsFeesTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.totalSchoolsFeesTxtBx.Name = "totalSchoolsFeesTxtBx";
+            this.totalSchoolsFeesTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.totalSchoolsFeesTxtBx.TabIndex = 41;
+            this.totalSchoolsFeesTxtBx.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
-            // textBox19
+            // totalUniversitiesFeesTxtBx
             // 
-            this.textBox19.Location = new System.Drawing.Point(478, 389);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 22);
-            this.textBox19.TabIndex = 42;
-            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            this.totalUniversitiesFeesTxtBx.Location = new System.Drawing.Point(358, 316);
+            this.totalUniversitiesFeesTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.totalUniversitiesFeesTxtBx.Name = "totalUniversitiesFeesTxtBx";
+            this.totalUniversitiesFeesTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.totalUniversitiesFeesTxtBx.TabIndex = 42;
+            this.totalUniversitiesFeesTxtBx.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(326, 433);
+            this.label22.Location = new System.Drawing.Point(244, 352);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(126, 17);
+            this.label22.Size = new System.Drawing.Size(114, 13);
             this.label22.TabIndex = 43;
             this.label22.Text = "مواصلات الطلاب الشهرية";
             // 
-            // textBox20
+            // studentMonthlyTranportaionTxtBx
             // 
-            this.textBox20.Location = new System.Drawing.Point(478, 430);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 22);
-            this.textBox20.TabIndex = 44;
-            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            this.studentMonthlyTranportaionTxtBx.Location = new System.Drawing.Point(358, 349);
+            this.studentMonthlyTranportaionTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.studentMonthlyTranportaionTxtBx.Name = "studentMonthlyTranportaionTxtBx";
+            this.studentMonthlyTranportaionTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.studentMonthlyTranportaionTxtBx.TabIndex = 44;
+            this.studentMonthlyTranportaionTxtBx.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
-            // richTextBox1
+            // employeesNoteTxtBx
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(826, 29);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 117);
-            this.richTextBox1.TabIndex = 45;
-            this.richTextBox1.Text = "";
+            this.employeesNoteTxtBx.Location = new System.Drawing.Point(620, 24);
+            this.employeesNoteTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.employeesNoteTxtBx.Name = "employeesNoteTxtBx";
+            this.employeesNoteTxtBx.Size = new System.Drawing.Size(235, 96);
+            this.employeesNoteTxtBx.TabIndex = 45;
+            this.employeesNoteTxtBx.Text = "";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(823, 9);
+            this.label23.Location = new System.Drawing.Point(617, 7);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(90, 17);
+            this.label23.Size = new System.Drawing.Size(81, 13);
             this.label23.TabIndex = 46;
             this.label23.Text = "ملاحظات الموظف";
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(826, 208);
+            this.textBox21.Location = new System.Drawing.Point(620, 169);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
             this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 22);
+            this.textBox21.Size = new System.Drawing.Size(76, 20);
             this.textBox21.TabIndex = 47;
             // 
             // textBox22
             // 
-            this.textBox22.Location = new System.Drawing.Point(932, 208);
+            this.textBox22.Location = new System.Drawing.Point(699, 169);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(2);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(100, 22);
+            this.textBox22.Size = new System.Drawing.Size(76, 20);
             this.textBox22.TabIndex = 48;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(693, 184);
+            this.button2.Location = new System.Drawing.Point(520, 150);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 23);
+            this.button2.Size = new System.Drawing.Size(78, 19);
             this.button2.TabIndex = 50;
             this.button2.Text = "اضافة وثيقة";
             this.button2.UseVisualStyleBackColor = true;
@@ -563,63 +613,76 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(693, 225);
+            this.button3.Location = new System.Drawing.Point(520, 183);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 23);
+            this.button3.Size = new System.Drawing.Size(78, 19);
             this.button3.TabIndex = 51;
             this.button3.Text = "اضافة وثيقة";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(693, 266);
+            this.button4.Location = new System.Drawing.Point(520, 216);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 23);
+            this.button4.Size = new System.Drawing.Size(78, 19);
             this.button4.TabIndex = 52;
             this.button4.Text = "اضافة وثبقة";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(693, 307);
+            this.button5.Location = new System.Drawing.Point(520, 249);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 23);
+            this.button5.Size = new System.Drawing.Size(78, 19);
             this.button5.TabIndex = 53;
             this.button5.Text = "اضافة وثيقة";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(693, 348);
+            this.button6.Location = new System.Drawing.Point(520, 283);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 23);
+            this.button6.Size = new System.Drawing.Size(78, 19);
             this.button6.TabIndex = 54;
             this.button6.Text = "اضافة وثيقة";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(693, 389);
+            this.button7.Location = new System.Drawing.Point(520, 316);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 23);
+            this.button7.Size = new System.Drawing.Size(78, 19);
             this.button7.TabIndex = 55;
             this.button7.Text = "اضافة وثيقة";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(693, 429);
+            this.button8.Location = new System.Drawing.Point(520, 349);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(104, 23);
+            this.button8.Size = new System.Drawing.Size(78, 19);
             this.button8.TabIndex = 56;
             this.button8.Text = "اضافة وثيقة";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(862, 152);
+            this.button9.Location = new System.Drawing.Point(646, 124);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(226, 27);
+            this.button9.Size = new System.Drawing.Size(170, 22);
             this.button9.TabIndex = 58;
             this.button9.Text = "اضافة مصروف";
             this.button9.UseVisualStyleBackColor = true;
@@ -627,100 +690,112 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(1038, 238);
+            this.button10.Location = new System.Drawing.Point(778, 193);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 23);
+            this.button10.Size = new System.Drawing.Size(75, 19);
             this.button10.TabIndex = 59;
             this.button10.Text = "اضافة";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // textBox31
             // 
             this.textBox31.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox31.Location = new System.Drawing.Point(584, 430);
+            this.textBox31.Location = new System.Drawing.Point(438, 349);
+            this.textBox31.Margin = new System.Windows.Forms.Padding(2);
             this.textBox31.Name = "textBox31";
             this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(100, 22);
+            this.textBox31.Size = new System.Drawing.Size(76, 20);
             this.textBox31.TabIndex = 83;
             // 
             // textBox32
             // 
             this.textBox32.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox32.Location = new System.Drawing.Point(584, 389);
+            this.textBox32.Location = new System.Drawing.Point(438, 316);
+            this.textBox32.Margin = new System.Windows.Forms.Padding(2);
             this.textBox32.Name = "textBox32";
             this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(100, 22);
+            this.textBox32.Size = new System.Drawing.Size(76, 20);
             this.textBox32.TabIndex = 82;
             // 
             // textBox33
             // 
             this.textBox33.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox33.Location = new System.Drawing.Point(584, 348);
+            this.textBox33.Location = new System.Drawing.Point(438, 283);
+            this.textBox33.Margin = new System.Windows.Forms.Padding(2);
             this.textBox33.Name = "textBox33";
             this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(100, 22);
+            this.textBox33.Size = new System.Drawing.Size(76, 20);
             this.textBox33.TabIndex = 81;
             // 
             // textBox34
             // 
             this.textBox34.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox34.Location = new System.Drawing.Point(584, 307);
+            this.textBox34.Location = new System.Drawing.Point(438, 249);
+            this.textBox34.Margin = new System.Windows.Forms.Padding(2);
             this.textBox34.Name = "textBox34";
             this.textBox34.ReadOnly = true;
-            this.textBox34.Size = new System.Drawing.Size(100, 22);
+            this.textBox34.Size = new System.Drawing.Size(76, 20);
             this.textBox34.TabIndex = 80;
             // 
             // textBox35
             // 
             this.textBox35.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox35.Location = new System.Drawing.Point(584, 266);
+            this.textBox35.Location = new System.Drawing.Point(438, 216);
+            this.textBox35.Margin = new System.Windows.Forms.Padding(2);
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(100, 22);
+            this.textBox35.Size = new System.Drawing.Size(76, 20);
             this.textBox35.TabIndex = 79;
             // 
             // textBox36
             // 
             this.textBox36.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox36.Location = new System.Drawing.Point(584, 225);
+            this.textBox36.Location = new System.Drawing.Point(438, 183);
+            this.textBox36.Margin = new System.Windows.Forms.Padding(2);
             this.textBox36.Name = "textBox36";
             this.textBox36.ReadOnly = true;
-            this.textBox36.Size = new System.Drawing.Size(100, 22);
+            this.textBox36.Size = new System.Drawing.Size(76, 20);
             this.textBox36.TabIndex = 78;
             // 
             // textBox37
             // 
             this.textBox37.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox37.Location = new System.Drawing.Point(584, 184);
+            this.textBox37.Location = new System.Drawing.Point(438, 150);
+            this.textBox37.Margin = new System.Windows.Forms.Padding(2);
             this.textBox37.Name = "textBox37";
             this.textBox37.ReadOnly = true;
-            this.textBox37.Size = new System.Drawing.Size(100, 22);
+            this.textBox37.Size = new System.Drawing.Size(76, 20);
             this.textBox37.TabIndex = 77;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(475, 164);
+            this.label24.Location = new System.Drawing.Point(356, 133);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(47, 17);
+            this.label24.Size = new System.Drawing.Size(42, 13);
             this.label24.TabIndex = 84;
             this.label24.Text = "المقدار;-";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(326, 474);
+            this.label25.Location = new System.Drawing.Point(244, 385);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(55, 17);
+            this.label25.Size = new System.Drawing.Size(52, 13);
             this.label25.TabIndex = 85;
             this.label25.Text = "اسم الزوج";
             // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(575, 473);
+            this.checkBox3.Location = new System.Drawing.Point(431, 384);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(62, 21);
+            this.checkBox3.Size = new System.Drawing.Size(55, 17);
             this.checkBox3.TabIndex = 87;
             this.checkBox3.Text = "الزوجة";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -729,61 +804,68 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(478, 473);
+            this.checkBox4.Location = new System.Drawing.Point(358, 384);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(57, 21);
+            this.checkBox4.Size = new System.Drawing.Size(51, 17);
             this.checkBox4.TabIndex = 86;
             this.checkBox4.Text = "الزوج";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
-            // textBox38
+            // hFirstNameTxtBx
             // 
-            this.textBox38.Location = new System.Drawing.Point(100, 20);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(100, 22);
-            this.textBox38.TabIndex = 88;
+            this.hFirstNameTxtBx.Location = new System.Drawing.Point(75, 16);
+            this.hFirstNameTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.hFirstNameTxtBx.Name = "hFirstNameTxtBx";
+            this.hFirstNameTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.hFirstNameTxtBx.TabIndex = 88;
             // 
-            // textBox39
+            // wFirstNameTxtBx
             // 
-            this.textBox39.Location = new System.Drawing.Point(100, 61);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(100, 22);
-            this.textBox39.TabIndex = 89;
+            this.wFirstNameTxtBx.Location = new System.Drawing.Point(75, 50);
+            this.wFirstNameTxtBx.Margin = new System.Windows.Forms.Padding(2);
+            this.wFirstNameTxtBx.Name = "wFirstNameTxtBx";
+            this.wFirstNameTxtBx.Size = new System.Drawing.Size(76, 20);
+            this.wFirstNameTxtBx.TabIndex = 89;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(96, 4);
+            this.label26.Location = new System.Drawing.Point(72, 3);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(69, 17);
+            this.label26.Size = new System.Drawing.Size(61, 13);
             this.label26.TabIndex = 90;
             this.label26.Text = "الاسم الاول:-";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(198, 4);
+            this.label27.Location = new System.Drawing.Point(148, 3);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(74, 17);
+            this.label27.Size = new System.Drawing.Size(64, 13);
             this.label27.TabIndex = 91;
             this.label27.Text = "الاسم الاخير:-";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(198, 46);
+            this.label28.Location = new System.Drawing.Point(148, 37);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(74, 17);
+            this.label28.Size = new System.Drawing.Size(64, 13);
             this.label28.TabIndex = 93;
             this.label28.Text = "الاسم الاخير:-";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(96, 46);
+            this.label29.Location = new System.Drawing.Point(72, 37);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(69, 17);
+            this.label29.Size = new System.Drawing.Size(61, 13);
             this.label29.TabIndex = 92;
             this.label29.Text = "الاسم الاول:-";
             // 
@@ -793,286 +875,324 @@
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.richTextBox2.ForeColor = System.Drawing.Color.Red;
-            this.richTextBox2.Location = new System.Drawing.Point(215, 509);
+            this.richTextBox2.Location = new System.Drawing.Point(161, 414);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(578, 38);
+            this.richTextBox2.Size = new System.Drawing.Size(434, 31);
             this.richTextBox2.TabIndex = 94;
             this.richTextBox2.Text = "";
             // 
             // textBox40
             // 
-            this.textBox40.Location = new System.Drawing.Point(1038, 208);
+            this.textBox40.Location = new System.Drawing.Point(778, 169);
+            this.textBox40.Margin = new System.Windows.Forms.Padding(2);
             this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(100, 22);
+            this.textBox40.Size = new System.Drawing.Size(76, 20);
             this.textBox40.TabIndex = 95;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(929, 192);
+            this.label30.Location = new System.Drawing.Point(697, 156);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(47, 17);
+            this.label30.Size = new System.Drawing.Size(42, 13);
             this.label30.TabIndex = 100;
             this.label30.Text = "المقدار;-";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(823, 192);
+            this.label31.Location = new System.Drawing.Point(617, 156);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(95, 17);
+            this.label31.Size = new System.Drawing.Size(83, 13);
             this.label31.TabIndex = 101;
             this.label31.Text = "عنوان للمصروف;-";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(1035, 192);
+            this.label32.Location = new System.Drawing.Point(776, 156);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(44, 17);
+            this.label32.Size = new System.Drawing.Size(43, 13);
             this.label32.TabIndex = 102;
             this.label32.Text = "الوثيقة;-";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(1035, 264);
+            this.label33.Location = new System.Drawing.Point(776, 214);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(44, 17);
+            this.label33.Size = new System.Drawing.Size(43, 13);
             this.label33.TabIndex = 109;
             this.label33.Text = "الوثيقة;-";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(823, 264);
+            this.label34.Location = new System.Drawing.Point(617, 214);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(95, 17);
+            this.label34.Size = new System.Drawing.Size(83, 13);
             this.label34.TabIndex = 108;
             this.label34.Text = "عنوان للمصروف;-";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(929, 264);
+            this.label35.Location = new System.Drawing.Point(697, 214);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(47, 17);
+            this.label35.Size = new System.Drawing.Size(42, 13);
             this.label35.TabIndex = 107;
             this.label35.Text = "المقدار;-";
             // 
             // textBox23
             // 
-            this.textBox23.Location = new System.Drawing.Point(1038, 280);
+            this.textBox23.Location = new System.Drawing.Point(778, 228);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(2);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(100, 22);
+            this.textBox23.Size = new System.Drawing.Size(76, 20);
             this.textBox23.TabIndex = 106;
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(1038, 310);
+            this.button11.Location = new System.Drawing.Point(778, 252);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 23);
+            this.button11.Size = new System.Drawing.Size(75, 19);
             this.button11.TabIndex = 105;
             this.button11.Text = "اضافة";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(932, 280);
+            this.textBox24.Location = new System.Drawing.Point(699, 228);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(2);
             this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(100, 22);
+            this.textBox24.Size = new System.Drawing.Size(76, 20);
             this.textBox24.TabIndex = 104;
             // 
             // textBox25
             // 
-            this.textBox25.Location = new System.Drawing.Point(826, 280);
+            this.textBox25.Location = new System.Drawing.Point(620, 228);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(2);
             this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(100, 22);
+            this.textBox25.Size = new System.Drawing.Size(76, 20);
             this.textBox25.TabIndex = 103;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(1035, 337);
+            this.label36.Location = new System.Drawing.Point(776, 274);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(44, 17);
+            this.label36.Size = new System.Drawing.Size(43, 13);
             this.label36.TabIndex = 116;
             this.label36.Text = "الوثيقة;-";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(823, 337);
+            this.label37.Location = new System.Drawing.Point(617, 274);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(95, 17);
+            this.label37.Size = new System.Drawing.Size(83, 13);
             this.label37.TabIndex = 115;
             this.label37.Text = "عنوان للمصروف;-";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(929, 337);
+            this.label38.Location = new System.Drawing.Point(697, 274);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(47, 17);
+            this.label38.Size = new System.Drawing.Size(42, 13);
             this.label38.TabIndex = 114;
             this.label38.Text = "المقدار;-";
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(1038, 353);
+            this.textBox26.Location = new System.Drawing.Point(778, 287);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(2);
             this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 22);
+            this.textBox26.Size = new System.Drawing.Size(76, 20);
             this.textBox26.TabIndex = 113;
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(1038, 383);
+            this.button12.Location = new System.Drawing.Point(778, 311);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 23);
+            this.button12.Size = new System.Drawing.Size(75, 19);
             this.button12.TabIndex = 112;
             this.button12.Text = "اضافة";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(932, 353);
+            this.textBox27.Location = new System.Drawing.Point(699, 287);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(2);
             this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 22);
+            this.textBox27.Size = new System.Drawing.Size(76, 20);
             this.textBox27.TabIndex = 111;
             // 
             // textBox28
             // 
-            this.textBox28.Location = new System.Drawing.Point(826, 353);
+            this.textBox28.Location = new System.Drawing.Point(620, 287);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(2);
             this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(100, 22);
+            this.textBox28.Size = new System.Drawing.Size(76, 20);
             this.textBox28.TabIndex = 110;
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(1035, 409);
+            this.label39.Location = new System.Drawing.Point(776, 332);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(44, 17);
+            this.label39.Size = new System.Drawing.Size(43, 13);
             this.label39.TabIndex = 123;
             this.label39.Text = "الوثيقة;-";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(823, 409);
+            this.label40.Location = new System.Drawing.Point(617, 332);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(95, 17);
+            this.label40.Size = new System.Drawing.Size(83, 13);
             this.label40.TabIndex = 122;
             this.label40.Text = "عنوان للمصروف;-";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(929, 409);
+            this.label41.Location = new System.Drawing.Point(697, 332);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(47, 17);
+            this.label41.Size = new System.Drawing.Size(42, 13);
             this.label41.TabIndex = 121;
             this.label41.Text = "المقدار;-";
             // 
             // textBox29
             // 
-            this.textBox29.Location = new System.Drawing.Point(1038, 426);
+            this.textBox29.Location = new System.Drawing.Point(778, 346);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(2);
             this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(100, 22);
+            this.textBox29.Size = new System.Drawing.Size(76, 20);
             this.textBox29.TabIndex = 120;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(1038, 456);
+            this.button13.Location = new System.Drawing.Point(778, 370);
+            this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(100, 23);
+            this.button13.Size = new System.Drawing.Size(75, 19);
             this.button13.TabIndex = 119;
             this.button13.Text = "اضافة";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox30
             // 
-            this.textBox30.Location = new System.Drawing.Point(932, 426);
+            this.textBox30.Location = new System.Drawing.Point(699, 346);
+            this.textBox30.Margin = new System.Windows.Forms.Padding(2);
             this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 22);
+            this.textBox30.Size = new System.Drawing.Size(76, 20);
             this.textBox30.TabIndex = 118;
             // 
             // textBox41
             // 
-            this.textBox41.Location = new System.Drawing.Point(826, 426);
+            this.textBox41.Location = new System.Drawing.Point(620, 346);
+            this.textBox41.Margin = new System.Windows.Forms.Padding(2);
             this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(100, 22);
+            this.textBox41.Size = new System.Drawing.Size(76, 20);
             this.textBox41.TabIndex = 117;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(1035, 483);
+            this.label42.Location = new System.Drawing.Point(776, 392);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(44, 17);
+            this.label42.Size = new System.Drawing.Size(43, 13);
             this.label42.TabIndex = 130;
             this.label42.Text = "الوثيقة;-";
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(823, 483);
+            this.label43.Location = new System.Drawing.Point(617, 392);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(95, 17);
+            this.label43.Size = new System.Drawing.Size(83, 13);
             this.label43.TabIndex = 129;
             this.label43.Text = "عنوان للمصروف;-";
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(929, 483);
+            this.label44.Location = new System.Drawing.Point(697, 392);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(47, 17);
+            this.label44.Size = new System.Drawing.Size(42, 13);
             this.label44.TabIndex = 128;
             this.label44.Text = "المقدار;-";
             // 
             // textBox42
             // 
-            this.textBox42.Location = new System.Drawing.Point(1038, 499);
+            this.textBox42.Location = new System.Drawing.Point(778, 405);
+            this.textBox42.Margin = new System.Windows.Forms.Padding(2);
             this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(100, 22);
+            this.textBox42.Size = new System.Drawing.Size(76, 20);
             this.textBox42.TabIndex = 127;
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(1038, 529);
+            this.button14.Location = new System.Drawing.Point(778, 430);
+            this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(100, 23);
+            this.button14.Size = new System.Drawing.Size(75, 19);
             this.button14.TabIndex = 126;
             this.button14.Text = "اضافة";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // textBox43
             // 
-            this.textBox43.Location = new System.Drawing.Point(932, 499);
+            this.textBox43.Location = new System.Drawing.Point(699, 405);
+            this.textBox43.Margin = new System.Windows.Forms.Padding(2);
             this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(100, 22);
+            this.textBox43.Size = new System.Drawing.Size(76, 20);
             this.textBox43.TabIndex = 125;
             // 
             // textBox44
             // 
-            this.textBox44.Location = new System.Drawing.Point(826, 499);
+            this.textBox44.Location = new System.Drawing.Point(620, 405);
+            this.textBox44.Margin = new System.Windows.Forms.Padding(2);
             this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(100, 22);
+            this.textBox44.Size = new System.Drawing.Size(76, 20);
             this.textBox44.TabIndex = 124;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(828, 558);
+            this.panel1.Location = new System.Drawing.Point(621, 453);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 389);
+            this.panel1.Size = new System.Drawing.Size(249, 316);
             this.panel1.TabIndex = 131;
             // 
             // adding
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 568);
+            this.ClientSize = new System.Drawing.Size(879, 462);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label43);
@@ -1111,8 +1231,8 @@
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.textBox39);
-            this.Controls.Add(this.textBox38);
+            this.Controls.Add(this.wFirstNameTxtBx);
+            this.Controls.Add(this.hFirstNameTxtBx);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.label25);
@@ -1136,34 +1256,34 @@
             this.Controls.Add(this.textBox22);
             this.Controls.Add(this.textBox21);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.employeesNoteTxtBx);
+            this.Controls.Add(this.studentMonthlyTranportaionTxtBx);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.totalUniversitiesFeesTxtBx);
+            this.Controls.Add(this.totalSchoolsFeesTxtBx);
+            this.Controls.Add(this.amountOfYearlyArnonaTxtBx);
+            this.Controls.Add(this.amountOfTwoMonthlyWaterBillTxtBx);
+            this.Controls.Add(this.amountOfMonthlyElectricBillTxtBx);
+            this.Controls.Add(this.amountOfMonthlyRentTxtBx);
+            this.Controls.Add(this.numChildtackInsuranceTxtBx);
+            this.Controls.Add(this.totalChildrenInsuranceTxtBx);
+            this.Controls.Add(this.wSalaryTxtBx);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.hLastNameTxtBx);
+            this.Controls.Add(this.wLastNameTxtBx);
+            this.Controls.Add(this.hPohneNumberTxtBx);
+            this.Controls.Add(this.wPhoneNumberTxtBx);
+            this.Controls.Add(this.hIdentityNumberTxtBx);
+            this.Controls.Add(this.wIdentityNumberTxtBx);
+            this.Controls.Add(this.familyNumberTxtBx);
+            this.Controls.Add(this.adressTxtBx);
+            this.Controls.Add(this.adressDetailsTxtBx);
+            this.Controls.Add(this.hSalaryTxtBx);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label15);
@@ -1182,6 +1302,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "adding";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -1212,34 +1333,34 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox hSalaryTxtBx;
+        private System.Windows.Forms.TextBox adressDetailsTxtBx;
+        private System.Windows.Forms.TextBox adressTxtBx;
+        private System.Windows.Forms.TextBox familyNumberTxtBx;
+        private System.Windows.Forms.TextBox wIdentityNumberTxtBx;
+        private System.Windows.Forms.TextBox hIdentityNumberTxtBx;
+        private System.Windows.Forms.TextBox wPhoneNumberTxtBx;
+        private System.Windows.Forms.TextBox hPohneNumberTxtBx;
+        private System.Windows.Forms.TextBox wLastNameTxtBx;
+        private System.Windows.Forms.TextBox hLastNameTxtBx;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox wSalaryTxtBx;
+        private System.Windows.Forms.TextBox totalChildrenInsuranceTxtBx;
+        private System.Windows.Forms.TextBox numChildtackInsuranceTxtBx;
+        private System.Windows.Forms.TextBox amountOfMonthlyRentTxtBx;
+        private System.Windows.Forms.TextBox amountOfMonthlyElectricBillTxtBx;
+        private System.Windows.Forms.TextBox amountOfTwoMonthlyWaterBillTxtBx;
+        private System.Windows.Forms.TextBox amountOfYearlyArnonaTxtBx;
+        private System.Windows.Forms.TextBox totalSchoolsFeesTxtBx;
+        private System.Windows.Forms.TextBox totalUniversitiesFeesTxtBx;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox studentMonthlyTranportaionTxtBx;
+        private System.Windows.Forms.RichTextBox employeesNoteTxtBx;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
@@ -1263,8 +1384,8 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox hFirstNameTxtBx;
+        private System.Windows.Forms.TextBox wFirstNameTxtBx;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
