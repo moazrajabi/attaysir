@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using attaysir.models;
 
 namespace attaysir
 {
@@ -26,15 +27,16 @@ namespace attaysir
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string f = textBox5.Text;
-            if (f != "") {
-                
-                //
-                /*
-                comboBox2.Items.Add( "string" );
-                */
-                //
-            }
+            if (LivingLocationCmbbx.SelectedIndex == 1) { }
+           /* if (f != "") {
+                //comboBox2.Items.Add( "string" );
+            }*/
+        }
+
+        private void officermain_Load(object sender, EventArgs e)
+        {
+            string f = Employee2.NameById(id);
+            richTextBox1.Text = f;
         }
     }
 }

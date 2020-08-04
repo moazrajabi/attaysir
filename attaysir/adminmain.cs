@@ -22,7 +22,23 @@ namespace attaysir
 
         private void adminmain_Load(object sender, EventArgs e)
         {
-            label1.Text = Employee2.SalariesById(1).ToString();
+            string f = Employee2.NameByIdAdmin(id);
+            richTextBox1.Text = f;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            adding n = new adding(id,true); n.Show();//this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            AddingEmployee n = new AddingEmployee();n.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            TheEmployeesList n = new TheEmployeesList();n.Show();
         }
     }
 }

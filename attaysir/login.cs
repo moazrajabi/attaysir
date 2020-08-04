@@ -48,9 +48,9 @@ namespace attaysir
 
                 }
             }
-            catch(Exception)
+            catch(Exception ev)
             {
-                MessageBox.Show("حدث خطأ ما، الرجاء المحاولة لاجقا");
+                MessageBox.Show(ev.Message/*"حدث خطأ ما، الرجاء المحاولة لاجقا"*/);
             }
         }
 

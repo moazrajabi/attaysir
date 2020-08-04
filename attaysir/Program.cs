@@ -16,11 +16,12 @@ namespace attaysir
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
-            //Application.Run(new officermain(0));
-            Application.Run(new adding(0));
+            //Application.Run(new login());
+            //Application.Run(new officermain(1));
+            Application.Run(new adding(1));
+/*forAdmns*///Application.Run(new adding(1,true));
             //Application.Run(new adminmain(1));
-
+            //Application.Run(new TheListView());
         }
     }
 }
