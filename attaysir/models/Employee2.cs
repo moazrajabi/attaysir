@@ -88,7 +88,29 @@ namespace attaysir.models
                 , HusbandOrWife, HusbandLastName, WifeLastName, MonthlyAverageSalaryOfPerson,thedatetime);
             return dataAccess.executenonquery(query);
         }
+        
+        public static int AddUnivStud(string HusbandIdNu,string WifeIdNu, string firstname, string FatherName, string MotherName,
+            string lastname, string IdentityNu, string univname, string KolejName, string department,
+            string whichyear, string PhoneNu, string SecondPhoneNu, string Email)
+        {
+            string query = string.Format("INSERT INTO Attaysir1.dbo.UnivStud(Familyid,FirstName,Father"+
+                "Name,MotherName,LastName,IdentityNu,UnivName,KolejName,DepartmentName,whichyear,Phone"+
+                "Nu,SecondPhoneNu,Email) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}',"+
+                "'{9}','{10}','{11}','{12}')", 
+                int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)),firstname,FatherName,MotherName,
+                lastname,IdentityNu,univname,KolejName,department,whichyear,PhoneNu,SecondPhoneNu,Email);
+            return dataAccess.executenonquery(query);
+        }
 
+        public static int AddSchoolStud(string HusbandIdNu,string WifeIdNu, string FirstName,string FatherName,string MotherName,string IDNum,string SchoolName,string WhichClass)
+        {
+            string query = string.Format("INSERT INTO Attaysir1.dbo.SchoolStud(Familyid,FirstName,FatherName,MotherName,IDNum,SchoolName,WhichClass) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+                int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)), FirstName, FatherName, MotherName, IDNum, SchoolName, WhichClass);
+            return dataAccess.executenonquery(query);
+        }
+        
+        //Familyid,FirstName,FatherName,MotherName,IDNum,SchoolName,WhichClass
+        
         public static bool IfTheFamilyThere(string HusbandFirstName, string WifeFirstName)
         {
             string query = string.Format("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE HusbandFirstName = '{0}' AND WifeFirstName = '{1}'", HusbandFirstName, WifeFirstName);
@@ -226,25 +248,6 @@ namespace attaysir.models
                 ) { e.Handled = true; }
         }
 
-        public static int khara(byte[] ggg)
-        {
-            string query ="insert into attaysir1.dbo.moaz(moazz)values("+"@img"+")";//CONVERT(VARBINARY(max), '{0}', 1)
-            
-            ///
-            SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
-            sqlConnection.Open();
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            ///
-            sqlCommand.Parameters.Add(new SqlParameter("@img",ggg));
-            ///
-            int x = sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            return x;
-            ///
-
-            //return dataAccess.executenonquery(query);
-        }
-
         public static int AddEmployeesNote(string HusbandIdentificationNumber,
             string WifeIdentificationNumber,string EmployeesNote,
             string employyesfirstname,string employeeslastname,string TheDateTime)
@@ -255,19 +258,5 @@ namespace attaysir.models
                 EmployeesNote,employyesfirstname,employeeslastname,TheDateTime,int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdentificationNumber, WifeIdentificationNumber)));
             return dataAccess.executenonquery(query);
         }
-        /////
-        public static int inarabic(string inarabic)
-        {
-            string query = string.Format("INSERT INTO "+
-                "Attaysir1.dbo.inarabic(inarabic) VALUES('{0}')",inarabic);
-            return dataAccess.executenonquery(query);
-        }
-
-        public static string inarabicreed()
-        {
-            string query ="SELECT * FROM Attaysir1.dbo.inarabic";
-            return dataAccess.reader(query, "inarabic");
-        }
-
     }
 }

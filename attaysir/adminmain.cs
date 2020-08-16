@@ -24,21 +24,43 @@ namespace attaysir
         {
             string f = Employee2.NameByIdAdmin(id);
             richTextBox1.Text = f;
+            timer1.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            adding n = new adding(id,true); n.Show();//this.Close();
+            adding n = new adding(id, true); n.Show();//this.Close();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AddingEmployee n = new AddingEmployee();n.Show();
+            AddingEmployee n = new AddingEmployee(); n.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            TheEmployeesList n = new TheEmployeesList();n.Show();
+            TheEmployeesList n = new TheEmployeesList(); n.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            TheEmployeeList2 n = new TheEmployeeList2(); n.Show();
+        }
+
+        bool bo = true;
+        bool f = true;
+        void sabit_mi_degisken_mi(bool bo)
+        {
+            if (bo == true) {
+                if (this.f == true) { button13.ForeColor = Color.Red; panel2.BackColor = Color.Red; this.f = false; }
+                if (this.f == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; this.f = true; }
+            }
+            if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            sabit_mi_degisken_mi(this.bo);
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LivingLocationCmbbx = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -70,7 +71,10 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // LivingLocationCmbbx
@@ -81,9 +85,9 @@
             this.LivingLocationCmbbx.Items.AddRange(new object[] {
             "داخل البلدة القديمة",
             "خارج البلدة القديمة"});
-            this.LivingLocationCmbbx.Location = new System.Drawing.Point(636, 366);
+            this.LivingLocationCmbbx.Location = new System.Drawing.Point(696, 366);
             this.LivingLocationCmbbx.Name = "LivingLocationCmbbx";
-            this.LivingLocationCmbbx.Size = new System.Drawing.Size(121, 24);
+            this.LivingLocationCmbbx.Size = new System.Drawing.Size(141, 24);
             this.LivingLocationCmbbx.TabIndex = 58;
             // 
             // button7
@@ -91,7 +95,7 @@
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(514, 77);
+            this.button7.Location = new System.Drawing.Point(574, 77);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(115, 105);
             this.button7.TabIndex = 57;
@@ -101,7 +105,7 @@
             // richTextBox2
             // 
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(636, 77);
+            this.richTextBox2.Location = new System.Drawing.Point(696, 77);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(435, 105);
             this.richTextBox2.TabIndex = 56;
@@ -112,7 +116,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F);
-            this.richTextBox1.Location = new System.Drawing.Point(255, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(315, 12);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(816, 59);
             this.richTextBox1.TabIndex = 55;
@@ -130,8 +134,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(695, 250);
+            this.label11.Location = new System.Drawing.Point(759, 250);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 17);
             this.label11.TabIndex = 53;
@@ -140,7 +145,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox1.Location = new System.Drawing.Point(636, 268);
+            this.textBox1.Location = new System.Drawing.Point(717, 268);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 24);
             this.textBox1.TabIndex = 52;
@@ -148,17 +153,17 @@
             // MaxSalarytxtbx
             // 
             this.MaxSalarytxtbx.Font = new System.Drawing.Font("Verdana", 8F);
-            this.MaxSalarytxtbx.Location = new System.Drawing.Point(255, 365);
+            this.MaxSalarytxtbx.Location = new System.Drawing.Point(255, 366);
             this.MaxSalarytxtbx.Name = "MaxSalarytxtbx";
-            this.MaxSalarytxtbx.Size = new System.Drawing.Size(121, 24);
+            this.MaxSalarytxtbx.Size = new System.Drawing.Size(141, 24);
             this.MaxSalarytxtbx.TabIndex = 51;
             // 
             // MinSalarytxtbx
             // 
             this.MinSalarytxtbx.Font = new System.Drawing.Font("Verdana", 8F);
-            this.MinSalarytxtbx.Location = new System.Drawing.Point(382, 365);
+            this.MinSalarytxtbx.Location = new System.Drawing.Point(402, 366);
             this.MinSalarytxtbx.Name = "MinSalarytxtbx";
-            this.MinSalarytxtbx.Size = new System.Drawing.Size(121, 24);
+            this.MinSalarytxtbx.Size = new System.Drawing.Size(141, 24);
             this.MinSalarytxtbx.TabIndex = 50;
             // 
             // KindOfFamilyCmbbx
@@ -168,16 +173,17 @@
             this.KindOfFamilyCmbbx.Items.AddRange(new object[] {
             "عائلة متعففة",
             "عائلة ايتام"});
-            this.KindOfFamilyCmbbx.Location = new System.Drawing.Point(509, 366);
+            this.KindOfFamilyCmbbx.Location = new System.Drawing.Point(549, 366);
             this.KindOfFamilyCmbbx.Name = "KindOfFamilyCmbbx";
-            this.KindOfFamilyCmbbx.Size = new System.Drawing.Size(121, 24);
+            this.KindOfFamilyCmbbx.Size = new System.Drawing.Size(141, 24);
             this.KindOfFamilyCmbbx.TabIndex = 49;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(262, 347);
+            this.label10.Location = new System.Drawing.Point(258, 348);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 17);
             this.label10.TabIndex = 48;
@@ -186,8 +192,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(397, 347);
+            this.label9.Location = new System.Drawing.Point(413, 348);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 17);
             this.label9.TabIndex = 47;
@@ -196,9 +203,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(567, 347);
+            this.label8.Location = new System.Drawing.Point(609, 347);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 17);
             this.label8.TabIndex = 46;
@@ -207,8 +214,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(697, 348);
+            this.label7.Location = new System.Drawing.Point(756, 348);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 17);
             this.label7.TabIndex = 45;
@@ -219,9 +227,9 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(555, 268);
+            this.button6.Location = new System.Drawing.Point(636, 266);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 24);
+            this.button6.Size = new System.Drawing.Size(75, 28);
             this.button6.TabIndex = 44;
             this.button6.Text = "بحث";
             this.button6.UseVisualStyleBackColor = true;
@@ -230,9 +238,9 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(168, 366);
+            this.button5.Location = new System.Drawing.Point(168, 364);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 24);
+            this.button5.Size = new System.Drawing.Size(75, 28);
             this.button5.TabIndex = 43;
             this.button5.Text = "إظهار";
             this.button5.UseVisualStyleBackColor = true;
@@ -241,9 +249,9 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(682, 611);
+            this.button4.Location = new System.Drawing.Point(765, 609);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 42;
             this.button4.Text = "إظهار";
             this.button4.UseVisualStyleBackColor = true;
@@ -252,9 +260,9 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(682, 562);
+            this.button3.Location = new System.Drawing.Point(765, 560);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 28);
             this.button3.TabIndex = 41;
             this.button3.Text = "إظهار";
             this.button3.UseVisualStyleBackColor = true;
@@ -263,9 +271,9 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(682, 513);
+            this.button2.Location = new System.Drawing.Point(765, 511);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 28);
             this.button2.TabIndex = 40;
             this.button2.Text = "إظهار";
             this.button2.UseVisualStyleBackColor = true;
@@ -275,9 +283,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(682, 317);
+            this.button1.Location = new System.Drawing.Point(765, 315);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 38;
             this.button1.Text = "إضافة";
             this.button1.UseVisualStyleBackColor = true;
@@ -288,7 +296,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(987, 606);
+            this.label6.Location = new System.Drawing.Point(1072, 606);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 37;
@@ -299,7 +307,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(898, 557);
+            this.label5.Location = new System.Drawing.Point(989, 557);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 25);
             this.label5.TabIndex = 36;
@@ -310,7 +318,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(894, 508);
+            this.label4.Location = new System.Drawing.Point(981, 508);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 25);
             this.label4.TabIndex = 35;
@@ -321,7 +329,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(779, 361);
+            this.label3.Location = new System.Drawing.Point(878, 361);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(277, 25);
             this.label3.TabIndex = 34;
@@ -332,7 +340,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(959, 312);
+            this.label2.Location = new System.Drawing.Point(1044, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 33;
@@ -343,7 +351,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(933, 263);
+            this.label1.Location = new System.Drawing.Point(1018, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 25);
             this.label1.TabIndex = 32;
@@ -353,9 +361,9 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(168, 415);
+            this.button8.Location = new System.Drawing.Point(168, 413);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 24);
+            this.button8.Size = new System.Drawing.Size(75, 28);
             this.button8.TabIndex = 60;
             this.button8.Text = "إظهار";
             this.button8.UseVisualStyleBackColor = true;
@@ -365,7 +373,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 12F);
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(798, 410);
+            this.label17.Location = new System.Drawing.Point(897, 410);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(258, 25);
             this.label17.TabIndex = 59;
@@ -379,25 +387,25 @@
             this.comboBox3.Items.AddRange(new object[] {
             "داخل البلدة القديمة",
             "خارج البلدة القديمة"});
-            this.comboBox3.Location = new System.Drawing.Point(636, 464);
+            this.comboBox3.Location = new System.Drawing.Point(696, 464);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
+            this.comboBox3.Size = new System.Drawing.Size(141, 24);
             this.comboBox3.TabIndex = 78;
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox4.Location = new System.Drawing.Point(255, 463);
+            this.textBox4.Location = new System.Drawing.Point(255, 464);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 24);
+            this.textBox4.Size = new System.Drawing.Size(141, 24);
             this.textBox4.TabIndex = 77;
             // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox5.Location = new System.Drawing.Point(382, 463);
+            this.textBox5.Location = new System.Drawing.Point(402, 464);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 24);
+            this.textBox5.Size = new System.Drawing.Size(141, 24);
             this.textBox5.TabIndex = 76;
             // 
             // comboBox4
@@ -407,16 +415,17 @@
             this.comboBox4.Items.AddRange(new object[] {
             "عائلة متعففة",
             "عائلة ايتام"});
-            this.comboBox4.Location = new System.Drawing.Point(509, 464);
+            this.comboBox4.Location = new System.Drawing.Point(549, 464);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
+            this.comboBox4.Size = new System.Drawing.Size(141, 24);
             this.comboBox4.TabIndex = 75;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label18.Location = new System.Drawing.Point(262, 445);
+            this.label18.Location = new System.Drawing.Point(258, 446);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(114, 17);
             this.label18.TabIndex = 74;
@@ -425,8 +434,9 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label19.Location = new System.Drawing.Point(397, 445);
+            this.label19.Location = new System.Drawing.Point(413, 446);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(106, 17);
             this.label19.TabIndex = 73;
@@ -435,9 +445,9 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label20.Location = new System.Drawing.Point(567, 445);
+            this.label20.Location = new System.Drawing.Point(609, 445);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 17);
             this.label20.TabIndex = 72;
@@ -446,8 +456,9 @@
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(697, 446);
+            this.label21.Location = new System.Drawing.Point(756, 446);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 17);
             this.label21.TabIndex = 71;
@@ -457,9 +468,9 @@
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(168, 464);
+            this.button9.Location = new System.Drawing.Point(168, 462);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 24);
+            this.button9.Size = new System.Drawing.Size(75, 28);
             this.button9.TabIndex = 70;
             this.button9.Text = "إظهار";
             this.button9.UseVisualStyleBackColor = true;
@@ -469,7 +480,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Verdana", 12F);
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label22.Location = new System.Drawing.Point(814, 459);
+            this.label22.Location = new System.Drawing.Point(906, 459);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(242, 25);
             this.label22.TabIndex = 69;
@@ -506,6 +517,7 @@
             this.button12.TabIndex = 81;
             this.button12.Text = "أخذ صلاحيات";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // panel1
             // 
@@ -515,23 +527,38 @@
             this.panel1.Size = new System.Drawing.Size(4, 300);
             this.panel1.TabIndex = 82;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.button13);
+            this.panel2.Location = new System.Drawing.Point(964, 192);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(167, 66);
+            this.panel2.TabIndex = 84;
+            // 
             // button13
             // 
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button13.ForeColor = System.Drawing.Color.Red;
             this.button13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button13.Location = new System.Drawing.Point(933, 212);
+            this.button13.Location = new System.Drawing.Point(5, 4);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(118, 30);
-            this.button13.TabIndex = 83;
+            this.button13.Size = new System.Drawing.Size(157, 59);
+            this.button13.TabIndex = 84;
             this.button13.Text = "ملفات تحتاج الى تدقيق";
             this.button13.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // adminmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 659);
-            this.Controls.Add(this.button13);
+            this.ClientSize = new System.Drawing.Size(1157, 659);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -578,6 +605,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "adminmain";
             this.Load += new System.EventHandler(this.adminmain_Load);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,6 +655,8 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Timer timer1;
     }
 }

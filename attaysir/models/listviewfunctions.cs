@@ -28,7 +28,7 @@ namespace attaysir.models
             listView1.Items[0].Focused = true;
             listView1.Items[0].Selected = true;
         }
-
+        
         public static void viewerEmployee(ListView listView1, string commend)
         {
             ArrayList array = dataAccess.viewerEmployee(commend);
@@ -38,9 +38,31 @@ namespace attaysir.models
                 ListViewItem item = (ListViewItem)array[i];
                 listView1.Items.Add(item);
             }
-            listView1.FullRowSelect = true;
-            listView1.Items[0].Focused = true;
-            listView1.Items[0].Selected = true;
+            string ifthereemployeesornot =dataAccess.reader1("select * from attaysir1.dbo.employee","id");
+            if (ifthereemployeesornot != "")
+            {
+                listView1.FullRowSelect = true;
+                listView1.Items[0].Focused = true;
+                listView1.Items[0].Selected = true;
+            }
+        }
+
+        public static void viewerAdmin(ListView listView1, string commend)
+        {
+            ArrayList array = dataAccess.viewerAdmin(commend);
+            listView1.Items.Clear();
+            for (int i = 0; i < array.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)array[i];
+                listView1.Items.Add(item);
+            }
+            string ifthereadminsornot = dataAccess.reader1("select * from attaysir1.dbo.admin", "id");
+            if (ifthereadminsornot != "")
+            {
+                listView1.FullRowSelect = true;
+                listView1.Items[0].Focused = true;
+                listView1.Items[0].Selected = true;
+            }
         }
     }
 }

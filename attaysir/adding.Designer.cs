@@ -187,6 +187,7 @@
             this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -493,7 +494,6 @@
             this.wSalaryTxtBx.Name = "wSalaryTxtBx";
             this.wSalaryTxtBx.Size = new System.Drawing.Size(118, 22);
             this.wSalaryTxtBx.TabIndex = 34;
-            this.wSalaryTxtBx.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // totalChildrenInsuranceTxtBx
             // 
@@ -502,7 +502,6 @@
             this.totalChildrenInsuranceTxtBx.Name = "totalChildrenInsuranceTxtBx";
             this.totalChildrenInsuranceTxtBx.Size = new System.Drawing.Size(132, 22);
             this.totalChildrenInsuranceTxtBx.TabIndex = 35;
-            this.totalChildrenInsuranceTxtBx.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // numChildtackInsuranceTxtBx
             // 
@@ -511,7 +510,6 @@
             this.numChildtackInsuranceTxtBx.Name = "numChildtackInsuranceTxtBx";
             this.numChildtackInsuranceTxtBx.Size = new System.Drawing.Size(132, 22);
             this.numChildtackInsuranceTxtBx.TabIndex = 36;
-            this.numChildtackInsuranceTxtBx.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // amountOfMonthlyRentTxtBx
             // 
@@ -520,7 +518,6 @@
             this.amountOfMonthlyRentTxtBx.Name = "amountOfMonthlyRentTxtBx";
             this.amountOfMonthlyRentTxtBx.Size = new System.Drawing.Size(100, 22);
             this.amountOfMonthlyRentTxtBx.TabIndex = 37;
-            this.amountOfMonthlyRentTxtBx.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // amountOfMonthlyElectricBillTxtBx
             // 
@@ -529,7 +526,6 @@
             this.amountOfMonthlyElectricBillTxtBx.Name = "amountOfMonthlyElectricBillTxtBx";
             this.amountOfMonthlyElectricBillTxtBx.Size = new System.Drawing.Size(100, 22);
             this.amountOfMonthlyElectricBillTxtBx.TabIndex = 38;
-            this.amountOfMonthlyElectricBillTxtBx.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // amountOfTwoMonthlyWaterBillTxtBx
             // 
@@ -538,7 +534,6 @@
             this.amountOfTwoMonthlyWaterBillTxtBx.Name = "amountOfTwoMonthlyWaterBillTxtBx";
             this.amountOfTwoMonthlyWaterBillTxtBx.Size = new System.Drawing.Size(100, 22);
             this.amountOfTwoMonthlyWaterBillTxtBx.TabIndex = 39;
-            this.amountOfTwoMonthlyWaterBillTxtBx.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // amountOfYearlyArnonaTxtBx
             // 
@@ -547,7 +542,6 @@
             this.amountOfYearlyArnonaTxtBx.Name = "amountOfYearlyArnonaTxtBx";
             this.amountOfYearlyArnonaTxtBx.Size = new System.Drawing.Size(100, 22);
             this.amountOfYearlyArnonaTxtBx.TabIndex = 40;
-            this.amountOfYearlyArnonaTxtBx.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
             // totalSchoolsFeesTxtBx
             // 
@@ -556,7 +550,6 @@
             this.totalSchoolsFeesTxtBx.Name = "totalSchoolsFeesTxtBx";
             this.totalSchoolsFeesTxtBx.Size = new System.Drawing.Size(100, 22);
             this.totalSchoolsFeesTxtBx.TabIndex = 41;
-            this.totalSchoolsFeesTxtBx.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // totalUniversitiesFeesTxtBx
             // 
@@ -565,7 +558,6 @@
             this.totalUniversitiesFeesTxtBx.Name = "totalUniversitiesFeesTxtBx";
             this.totalUniversitiesFeesTxtBx.Size = new System.Drawing.Size(100, 22);
             this.totalUniversitiesFeesTxtBx.TabIndex = 42;
-            this.totalUniversitiesFeesTxtBx.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
             // 
             // label22
             // 
@@ -583,7 +575,6 @@
             this.studentMonthlyTranportaionTxtBx.Name = "studentMonthlyTranportaionTxtBx";
             this.studentMonthlyTranportaionTxtBx.Size = new System.Drawing.Size(100, 22);
             this.studentMonthlyTranportaionTxtBx.TabIndex = 44;
-            this.studentMonthlyTranportaionTxtBx.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
             // 
             // employeesNoteTxtBx
             // 
@@ -629,7 +620,6 @@
             this.button2.TabIndex = 50;
             this.button2.Text = "اختر وثيقة";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -651,7 +641,6 @@
             this.button4.TabIndex = 52;
             this.button4.Text = "اختر وثيقة";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -662,7 +651,6 @@
             this.button5.TabIndex = 53;
             this.button5.Text = "اختر وثيقة";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -673,7 +661,6 @@
             this.button6.TabIndex = 54;
             this.button6.Text = "اختر وثيقة";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -684,7 +671,6 @@
             this.button7.TabIndex = 55;
             this.button7.Text = "اختر وثيقة";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -695,7 +681,6 @@
             this.button8.TabIndex = 56;
             this.button8.Text = "اختر وثيقة";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -717,7 +702,6 @@
             this.button10.TabIndex = 59;
             this.button10.Text = "اختر وثيقة";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // textBox31
             // 
@@ -978,7 +962,6 @@
             this.button11.TabIndex = 105;
             this.button11.Text = "اختر وثيقة";
             this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBox24
             // 
@@ -1041,7 +1024,6 @@
             this.button12.TabIndex = 112;
             this.button12.Text = "اختر وثيقة";
             this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // textBox27
             // 
@@ -1104,7 +1086,6 @@
             this.button13.TabIndex = 119;
             this.button13.Text = "اختر وثيقة";
             this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox30
             // 
@@ -1167,7 +1148,6 @@
             this.button14.TabIndex = 126;
             this.button14.Text = "اختر وثيقة";
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // textBox43
             // 
@@ -1230,7 +1210,6 @@
             this.button15.TabIndex = 134;
             this.button15.Text = "اختر وثيقة";
             this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // textBox2
             // 
@@ -1682,18 +1661,30 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(633, 124);
+            this.button21.Location = new System.Drawing.Point(721, 20);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(132, 41);
+            this.button21.Size = new System.Drawing.Size(104, 61);
             this.button21.TabIndex = 181;
-            this.button21.Text = "اضافة طالب";
+            this.button21.Text = "اضافة طالب جامعي";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(721, 87);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(104, 61);
+            this.button22.TabIndex = 182;
+            this.button22.Text = "اضافة طالب مدرسي";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1523, 569);
+            this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.comboBox11);
             this.Controls.Add(this.panel2);
@@ -2022,5 +2013,6 @@
         private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
     }
 }

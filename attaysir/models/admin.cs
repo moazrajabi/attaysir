@@ -62,5 +62,11 @@ namespace attaysir.models
             string query = string.Format("delete from attaysir1.dbo.employee where identityno = '{0}'",id);
             dataAccess.executenonquery(query);
         }
+
+        public static void DeleteAdmin(string id)
+        {
+            string query = string.Format("delete from attaysir1.dbo.Admin where identityno = '{0}'", id);
+            dataAccess.executenonquery(query);
+        }
     }
 }

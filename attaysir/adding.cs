@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ using attaysir.models;
 namespace attaysir
 {
     public partial class adding : Form
-    {
+    {   
         public adding(int id)
         {
             InitializeComponent();
@@ -92,160 +93,8 @@ namespace attaysir
             comboBox11.SelectedIndex = 0;
         }
 
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox19_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox18_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox20_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           // totalSchoolsFeesPDF = selectFile();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            // expensesPDF1 = selectFile();
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-           // expensesPDF2 = selectFile();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-         //   expensesPDF3 = selectFile();
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-           // expensesPDF4 = selectFile();
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-           // expensesPDF5 = selectFile();
-        }
-
-        int n2 = 0, m2 = 58, locationx2 = 872, locationy2 = 157, count2 = 0;
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            Employee2.inarabic("بالعربي");
-            textBox3.Text = Employee2.inarabicreed();
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            locationy2 = locationy2 + m2;
-            panel2.Location = new Point(locationx2, locationy2);
-            n2++; if (n2 == 4) { m2 = 59; }
-            if (n2 >= 5) { m2 = 0; }
-            if (count2 != 5) { count2++; }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //amountOfYearlyArnonaPDF = selectFile();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-           // amountOfTwoMonthlyWaterBillPDF = selectFile();
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            amountOfMonthlyElectricBillPDF = selectFile();
-            textBox36.Text = path;
-            Employee2.khara(amountOfMonthlyElectricBillPDF);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        int n = 0, m = 58, locationx = 620, locationy = 157, count = 0;
-        
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            locationy = locationy + m;
-            panel1.Location = new Point(locationx, locationy);
-            n++; if (n == 4) { m = 59; }
-            if (n >= 5) { m = 0; }
-            if (count != 5) { count++; }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox22.Text == "") { textBox22.Text = "0"; }
-            if (textBox24.Text == "") { textBox24.Text = "0"; }
-            if (textBox27.Text == "") { textBox27.Text = "0"; }
-            if (textBox30.Text == "") { textBox30.Text = "0"; }
-            if (textBox43.Text == "") { textBox43.Text = "0"; }
-            /////////////////////////
-            if (textBox2.Text == "") { textBox2.Text = "0"; }
-            if (textBox5.Text == "") { textBox5.Text = "0"; }
-            if (textBox8.Text == "") { textBox8.Text = "0"; }
-            if (textBox11.Text == "") { textBox11.Text = "0"; }
-            if (textBox14.Text == "") { textBox14.Text = "0"; }
-
             if (hFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوج اولا"; hFirstNameTxtBx.Focus(); }
             else if (hLastNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوج اولا"; hLastNameTxtBx.Focus(); }
             else if (wFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوجة اولا"; wFirstNameTxtBx.Focus(); }
@@ -273,6 +122,18 @@ namespace attaysir
             else if (checker(textBox13, textBox14, textBox15, comboBox10) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox13.Focus(); }
             else
             {
+                if (textBox22.Text == "") { textBox22.Text = "0"; }
+                if (textBox24.Text == "") { textBox24.Text = "0"; }
+                if (textBox27.Text == "") { textBox27.Text = "0"; }
+                if (textBox30.Text == "") { textBox30.Text = "0"; }
+                if (textBox43.Text == "") { textBox43.Text = "0"; }
+                /////////////////////////
+                if (textBox2.Text == "") { textBox2.Text = "0"; }
+                if (textBox5.Text == "") { textBox5.Text = "0"; }
+                if (textBox8.Text == "") { textBox8.Text = "0"; }
+                if (textBox11.Text == "") { textBox11.Text = "0"; }
+                if (textBox14.Text == "") { textBox14.Text = "0"; }
+
                 richTextBox2.Text = "";
 
                 string lvngLctnCmbBx = ""; if (comboBox11.SelectedIndex == 1) { lvngLctnCmbBx = "داخل البلدة القديمة"; }
@@ -340,8 +201,11 @@ namespace attaysir
                             MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
                         Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
-                        if (employeesNoteTxtBx.Text != ""){Employee2.AddEmployeesNote(husbandIdentityNumber,
-                            WifeIdentityNumber, employeesNoteTxtBx.Text, firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);}
+                        if (employeesNoteTxtBx.Text != "")
+                        {
+                            Employee2.AddEmployeesNote(husbandIdentityNumber,WifeIdentityNumber, employeesNoteTxtBx.Text,
+                                firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
+                        }
                         if (checker(textBox21, textBox22, textBox40, comboBox1) == false)
                         { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox21.Text, int.Parse(textBox22.Text), comboBox1.Text); }
                         if (checker(textBox25, textBox24, textBox23, comboBox2) == false)
@@ -362,6 +226,17 @@ namespace attaysir
                         { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox10.Text, int.Parse(textBox11.Text), comboBox9.Text); }
                         if (checker(textBox13, textBox14, textBox15, comboBox10) == false)
                         { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox13.Text, int.Parse(textBox14.Text), comboBox10.Text); }
+                        for (int i = 1; i <= this.f; i++)
+                        {
+                            Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
+                                k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
+                                k[i].KolejName, k[i].department, k[i].whichyear, k[i].PhoneNu, k[i].SecondPhoneNu,
+                                k[i].Email);
+                        }
+                        for (int i = 1; i <= this.e; i++)
+                        {
+                            Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text,w[i].firstname,hFirstNameTxtBx.Text,wFirstNameTxtBx.Text,w[i].IdentityNu,w[i].SchoolName,w[i].whichyear);
+                        }
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                     }
                 }
@@ -371,6 +246,32 @@ namespace attaysir
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        int n2 = 0, m2 = 58, locationx2 = 872, locationy2 = 157, count2 = 0;
+        private void button20_Click(object sender, EventArgs e)
+        {
+            locationy2 = locationy2 + m2;
+            panel2.Location = new Point(locationx2, locationy2);
+            n2++; if (n2 == 4) { m2 = 59; }
+            if (n2 >= 5) { m2 = 0; }
+            if (count2 != 5) { count2++; }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            amountOfMonthlyElectricBillPDF = selectFile();
+            textBox36.Text = path;
+        }
+
+        int n = 0, m = 58, locationx = 620, locationy = 157, count = 0;
+        private void button9_Click(object sender, EventArgs e)
+        {
+            locationy = locationy + m;
+            panel1.Location = new Point(locationx, locationy);
+            n++; if (n == 4) { m = 59; }
+            if (n >= 5) { m = 0; }
+            if (count != 5) { count++; }
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
@@ -411,6 +312,7 @@ namespace attaysir
             else if (comboBox1.SelectedIndex != 0 && (textBox1.Text == "" || textBox2.Text == "" || textBox2.Text == "0" || textBox3.Text == "")) { return true; }
             else { return false; }
         }
+        
 
         byte[] amountOfMonthlyRentPDF, amountOfMonthlyElectricBillPDF, amountOfTwoMonthlyWaterBillPDF,
             amountOfYearlyArnonaPDF, totalSchoolsFeesPDF, totalUniversitiesFeesPDF, studentMonthlyTranportaionPDF,
@@ -418,15 +320,6 @@ namespace attaysir
 
         private byte[] selectFile1()
         {
-            /*
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                String path = openFile.FileName;
-                expensesPDF2 = System.IO.File.ReadAllBytes(path);
-            }
-             */
             byte[] variable = null;
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "pdf files (*.pdf) |*.pdf;";
@@ -438,10 +331,6 @@ namespace attaysir
                 int length1 = (int)length;
                 variable = new byte[length1];
                 fStream.Read(variable, 0, length1);
-                //fStream.Close();
-                //variable = System.IO.File.ReadAllBytes(path);
-                ////Encoding.ASCII.GetBytes("string")//this for converting from string to byte array
-                //  variable = getFileBytes(path);
                 this.path = path.Substring(path.LastIndexOf("\\") + 1);
             }
             return variable;
@@ -456,8 +345,7 @@ namespace attaysir
             {
                 string path = openFile.FileName;
                 FileStream fStream = File.OpenRead(path);
-                long length = fStream.Length;
-                int length1 = (int)length;
+                int length1 = (int)fStream.Length;
                 variable = new byte[length1];
                 fStream.Read(variable, 0, length1);
                 this.path = path.Substring(path.LastIndexOf("\\") + 1);
@@ -469,20 +357,15 @@ namespace attaysir
         private byte[] getFileBytes(String path)
         {
             byte[] ba1;
-
             FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
             long FileSize = fs.Length;
-
             BinaryReader br = new BinaryReader(fs);
             ba1 = br.ReadBytes((Int32)FileSize);
-            
             br.Close();
             fs.Close();
             Console.WriteLine(ba1);
-
             return (ba1);
         }
-
 
         protected void btnSavePdf_Click(object sender, EventArgs e)
         {
@@ -492,21 +375,68 @@ namespace attaysir
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 string path = openFile.FileName;
-                /*
-            SqlConnection cn = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
-            cn.Open();
-            //Convert pdf in Binary formate
-            int lenght = FileUpload1.PostedFile.ContentLength;
-            byte[] data = new byte[lenght];
-            FileUpload1.PostedFile.InputStream.Read(data, 0, lenght);
-            SqlCommand cmd = new SqlCommand("insert into tblPdfData " + "(PdfData) values(@data)", cn);
-            cmd.Parameters.Add("@data", data);
-            cmd.ExecuteNonQuery();
-            Response.Write("Pdf File Save in Dab");
-            */
                 this.path = path.Substring(path.LastIndexOf("\\") + 1);
             }
         }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (this.f >= 10) { MessageBox.Show("انت اضفت عشرة طلاب بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }
+            else
+            {
+                this.Enabled = false;
+                this.ControlBox = false;
+                AddUnivStud n = new AddUnivStud(this); n.Show();
+            }
+        }
+
+        public struct univstud
+        {
+            public string firstname;
+            public string FatherName;
+            public string MotherName;
+            public string lastname;
+            public string IdentityNu;
+            public string univname;
+            public string KolejName;
+            public string department;
+            public string whichyear;
+            public string PhoneNu;
+            public string SecondPhoneNu;
+            public string Email;
+        };
+
+        univstud[] k = new univstud[10];public int f = 0;
+        public void arrayfilling(string firstname,string FatherName,string MotherName,string lastname,string IdentityNu,string univname,string KolejName,string department,string whichyear,string PhoneNu,string SecondPhoneNu,string Email) {
+            k[f] = new univstud() { firstname=firstname, FatherName=FatherName, MotherName=MotherName, lastname=lastname, IdentityNu=IdentityNu, univname=univname, KolejName=KolejName, department=department, whichyear=whichyear, PhoneNu=PhoneNu, SecondPhoneNu= SecondPhoneNu, Email= Email };
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (this.e >= 10) { MessageBox.Show("انت اضفت عشرة طلاب مدرسة بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }
+            else
+            {
+                this.Enabled = false;
+                this.ControlBox = false;
+                AddSchoolStud n = new AddSchoolStud(this); n.Show();
+            }
+        }
+
+        public struct schoolstud
+        {
+            public string firstname;
+            public string IdentityNu;
+            public string whichyear;
+            public string SchoolName;
+        };
+
+        schoolstud[] w = new schoolstud[10]; public int e = 0;
+        public void schoolarrayfilling(string firstname, string IdentityNu, string SchoolName, string whichyear)
+        {
+            w[e] = new schoolstud() { firstname = firstname, IdentityNu = IdentityNu, SchoolName=SchoolName, whichyear = whichyear };
+        }
     }
 }
-/*FamilyNumber,RegisteretionDateTime,MonthlyAverageSalaryOfPerson,ExpiryDateOfFile*/
+/*
+FamilyNumber,ExpiryDateOfFile
+*/

@@ -17,42 +17,77 @@ namespace attaysir
         {
             InitializeComponent();
             listView1.Size = new Size(this.Width - 23, this.Height - 75);
-            button1.Size = new Size(((this.Width - 15) / 2), 25);
+            butto.Size = new Size(((this.Width - 15) / 2), 25);
             button2.Size = new Size(((this.Width - 15) / 2) - 13, 25);
-            button1.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
+            butto.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
             button2.Location = new Point((this.Width / 2), (int.Parse(this.Height.ToString()) - 67));
         }
 
         private void TheEmployeesList_Load(object sender, EventArgs e)
         {
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            listviewfunctions.viewerEmployee(listView1, "select firstName,lastName,"+
-                "email,birthday,image,identityNo,MobileNum1,MobileNum2 from Attaysi"+
+            listviewfunctions.viewerEmployee(listView1, "select firstName,lastName," +
+                "email,birthday,image,identityNo,MobileNum1,MobileNum2 from Attaysi" +
                 "r1.dbo.Employee");
         }
 
         private void TheEmployeesList_Resize(object sender, EventArgs e)
         {
             listView1.Size = new Size(this.Width - 23, this.Height - 75);
-            button1.Size = new Size(((this.Width - 15) / 2), 25);
-            button2.Size = new Size(((this.Width -15) / 2)-13, 25);
-            button1.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
-            button2.Location = new Point((this.Width/2), (int.Parse(this.Height.ToString()) - 67));
-        }
-
-        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            String husbandName = listView1.SelectedItems[0].SubItems[2].Text;
-            MessageBox.Show(husbandName);
+            butto.Size = new Size(((this.Width - 15) / 2), 25);
+            button2.Size = new Size(((this.Width - 15) / 2) - 13, 25);
+            butto.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
+            button2.Location = new Point((this.Width / 2), (int.Parse(this.Height.ToString()) - 67));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String IdentificetionNumber = listView1.SelectedItems[0].SubItems[6].Text;
-            admin.DeleteEmployee(IdentificetionNumber);
-            listviewfunctions.viewerEmployee(listView1, "select firstName,lastName," +
-                "email,birthday,image,identityNo,MobileNum1,MobileNum2 from Attaysi" +
-                "r1.dbo.Employee");
+            string ifthereemployeeornot = dataAccess.reader1("select * from attaysir1.dbo.employee","id");
+            if (ifthereemployeeornot != ""){
+                if (ifthereemployeeornot != null)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show("هل انت متاكد انك تريد حذف هذا الموظف", "صندوق التاكيد", buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        String IdentificetionNumber = listView1.SelectedItems[0].SubItems[6].Text;
+                        admin.DeleteEmployee(IdentificetionNumber);
+                        listviewfunctions.viewerEmployee(listView1, "select firstName,lastName," +
+                            "email,birthday,image,identityNo,MobileNum1,MobileNum2 from Attaysi" +
+                            "r1.dbo.Employee");                
+                    }
+                }
+            }            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string ifthereemployeeornot = dataAccess.reader1("select * from attaysir1.dbo.employee", "id");
+            if (ifthereemployeeornot != "")
+            {
+                if (ifthereemployeeornot != null)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show("هل انت متاكد انك تريد ترقية هذا الموظف الى ادمن", "صندوق التاكيد", buttons);
+                    if (result == DialogResult.Yes)
+                    {
+                        String IdentificetionNumber = listView1.SelectedItems[0].SubItems[6].Text;
+                        void TransferEmployeeToAdmin()
+                        {
+                            string query = string.Format("INSERT INTO Attaysir1.dbo.Admin(Admin"+
+                                "FirstName,AdminLastName,email,password,birthday,image,identity"+
+                                "No,MobileNum1,MobileNum2) SELECT firstName, lastName, email, p"+
+                                "assword, birthday, image, identityNo, MobileNum1, MobileNum2 F"+
+                                "ROM Attaysir1.dbo.Employee where identityNo = '{0}'", IdentificetionNumber);
+                            dataAccess.executenonquery(query);
+                        }TransferEmployeeToAdmin();
+                        admin.DeleteEmployee(IdentificetionNumber);
+                        listviewfunctions.viewerEmployee(listView1, "select firstName,lastName," +
+                            "email,birthday,image,identityNo,MobileNum1,MobileNum2 from Attaysi" +
+                            "r1.dbo.Employee");
+                    }
+                }
+            }
         }
     }
 }

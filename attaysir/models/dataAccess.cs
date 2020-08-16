@@ -145,6 +145,42 @@ namespace attaysir.models
             con.Close();
             return array;
         }
+
+        public static ArrayList viewerAdmin(string commend)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(commend, con);
+            SqlDataReader read = cmd.ExecuteReader();
+            ArrayList array = new ArrayList();
+            while (read.Read())
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(read["AdminFirstName"].ToString());
+                item.SubItems.Add(read["AdminLastName"].ToString());
+                item.SubItems.Add(read["email"].ToString());
+                item.SubItems.Add(read["birthday"].ToString());
+                item.SubItems.Add(read["image"].ToString());
+                item.SubItems.Add(read["identityNo"].ToString());
+                item.SubItems.Add(read["MobileNum1"].ToString());
+                item.SubItems.Add(read["MobileNum2"].ToString());
+                array.Add(item);
+            }
+            con.Close();
+            return array;
+        }
+
+        public static int SavePDFsAndimage(byte[] ByteArray, string TableName, string ColumnName,int id)
+        {
+            string query = "update attaysir1.dbo."+TableName+" set "+ColumnName+"=@img where id = "+id+"";
+            SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add(new SqlParameter("@img", ByteArray));
+            int x = sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return x;
+        }
     }
 }
 
