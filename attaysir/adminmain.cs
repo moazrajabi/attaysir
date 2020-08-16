@@ -47,20 +47,22 @@ namespace attaysir
             TheEmployeeList2 n = new TheEmployeeList2(); n.Show();
         }
 
-        bool bo = true;
-        bool f = true;
-        void sabit_mi_degisken_mi(bool bo)
-        {
-            if (bo == true) {
-                if (this.f == true) { button13.ForeColor = Color.Red; panel2.BackColor = Color.Red; this.f = false; }
-                if (this.f == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; this.f = true; }
-            }
-            if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
-        }
-
+        bool bo = false;//this bool for control the ligting of button13(the if there a files needs togiving time) 
+                        //if it false its mean no lighting and if it true means lighting
         private void timer1_Tick(object sender, EventArgs e)
         {
             sabit_mi_degisken_mi(this.bo);
+        }
+
+        bool f = true;
+        void sabit_mi_degisken_mi(bool bo)
+        {
+            if (bo == true)
+            {
+                if (f == true) { button13.ForeColor = Color.Red; panel2.BackColor = Color.Red; f = false; }
+                else if (f == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; f = true; }
+            }
+            if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
         }
     }
 }
