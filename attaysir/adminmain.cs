@@ -25,6 +25,7 @@ namespace attaysir
             string f = Employee2.NameByIdAdmin(id);
             richTextBox1.Text = f;
             timer1.Start();
+            this.k();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,8 +48,14 @@ namespace attaysir
             TheEmployeeList2 n = new TheEmployeeList2(); n.Show();
         }
 
-        bool bo = false;//this bool for control the ligting of button13(the if there a files needs togiving time) 
+        bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
                         //if it false its mean no lighting and if it true means lighting
+        public void k()
+        {
+            if (admin.checkedornot() == true) { this.bo = true; }
+            else if (admin.checkedornot() == false) { this.bo = false; }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             sabit_mi_degisken_mi(this.bo);
@@ -63,6 +70,14 @@ namespace attaysir
                 else if (f == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; f = true; }
             }
             if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (bo==true)
+            {
+                didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();
+            }
         }
     }
 }

@@ -258,5 +258,11 @@ namespace attaysir.models
                 EmployeesNote,employyesfirstname,employeeslastname,TheDateTime,int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdentificationNumber, WifeIdentificationNumber)));
             return dataAccess.executenonquery(query);
         }
+
+        public static int didntchecked(string HIdNu,string WIdNu)
+        {
+            string query = string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'",int.Parse(SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu)));
+            return dataAccess.executenonquery(query);
+        }
     }
 }

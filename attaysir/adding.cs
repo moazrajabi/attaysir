@@ -199,6 +199,7 @@ namespace attaysir
                                 FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
                             int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
                             MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
+                        Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
                         Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
                         if (employeesNoteTxtBx.Text != "")
@@ -369,7 +370,6 @@ namespace attaysir
 
         protected void btnSavePdf_Click(object sender, EventArgs e)
         {
-            char[] variable = null;
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "pdf files (*.pdf) |*.pdf;";
             if (openFile.ShowDialog() == DialogResult.OK)

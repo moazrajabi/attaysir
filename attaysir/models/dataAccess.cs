@@ -181,6 +181,26 @@ namespace attaysir.models
             sqlConnection.Close();
             return x;
         }
+
+        public static ArrayList viewer(string commend,string[] array1)
+        {
+            SqlConnection con = new SqlConnection(conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(commend, con);
+            SqlDataReader read = cmd.ExecuteReader();
+            ArrayList array = new ArrayList();
+            while (read.Read())
+            {
+                ListViewItem item = new ListViewItem();
+                for (int i=0; i < array1.LongLength; i++)
+                {
+                    item.SubItems.Add(read[array1[i]].ToString());
+                }
+                array.Add(item);
+            }
+            con.Close();
+            return array;
+        }
     }
 }
 

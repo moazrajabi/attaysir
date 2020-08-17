@@ -547,10 +547,12 @@
             this.button13.TabIndex = 84;
             this.button13.Text = "ملفات تحتاج الى تدقيق";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Interval = 400;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // adminmain

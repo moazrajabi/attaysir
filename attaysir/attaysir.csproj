@@ -84,6 +84,12 @@
     <Compile Include="deneme2.Designer.cs">
       <DependentUpon>deneme2.cs</DependentUpon>
     </Compile>
+    <Compile Include="didntcheckedtimefamily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="didntcheckedtimefamily.Designer.cs">
+      <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>
+    </Compile>
     <Compile Include="hal turid damj alikhwacs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     <Compile Include="models\admin.cs" />
     <Compile Include="models\Employee2.cs" />
     <Compile Include="models\faydalananlar.cs" />
+    <Compile Include="models\GivingExpiryDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="models\GivingExpiryDate.Designer.cs">
+      <DependentUpon>GivingExpiryDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\listviewfunctions.cs" />
     <Compile Include="officermain.cs">
       <SubType>Form</SubType>
@@ -139,12 +151,6 @@
     <Compile Include="TheEmployeesList.Designer.cs">
       <DependentUpon>TheEmployeesList.cs</DependentUpon>
     </Compile>
-    <Compile Include="TheListView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TheListView.Designer.cs">
-      <DependentUpon>TheListView.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddingEmployee.resx">
       <DependentUpon>AddingEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="deneme2.resx">
       <DependentUpon>deneme2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="didntcheckedtimefamily.resx">
+      <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="models\GivingExpiryDate.resx">
+      <DependentUpon>GivingExpiryDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="officermain.resx">
       <DependentUpon>officermain.cs</DependentUpon>
@@ -190,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TheEmployeesList.resx">
       <DependentUpon>TheEmployeesList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TheListView.resx">
-      <DependentUpon>TheListView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -68,13 +68,12 @@ namespace attaysir.models
             string query = string.Format("delete from attaysir1.dbo.Admin where identityno = '{0}'", id);
             dataAccess.executenonquery(query);
         }
-
-        /*
-        public static bool checkedornot(string email, string password)
+        
+        public static bool checkedornot()
         {
-            string query = string.Format("SELECT * FROM Attaysir1.dbo.Admin WHERE Email = '{0}' AND Password='{1}'", email, password);
+            string query = "SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE CheckedOrNot = 'false'";
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
-        }*/
+        }
     }
 }
