@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using attaysir.models;
+//////////////
+using System.Data.SqlClient;
 
 namespace attaysir
 {

@@ -29,7 +29,6 @@ namespace attaysir.models
             if (form.bigorsmall == false) { form.small();}
             else if (form.bigorsmall == true) { form.big();}
             this.Close();
-
         }
     }
 }

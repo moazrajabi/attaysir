@@ -201,8 +201,28 @@ namespace attaysir.models
             con.Close();
             return array;
         }
+
+        public static void IsTheTimePassed()
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            con.Open();
+            SqlConnection con2 = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Attaysir1.dbo.faydalananaile WHERE CheckedOrNot= 'true'", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            SqlCommand cmd2; string query;
+            DateTime dtNow = DateTime.ParseExact(DateTime.Now.ToString("dd-MM-yyyy"), "dd-MM-yyyy", null);
+            while (read.Read())
+            {
+                DateTime dtT = DateTime.ParseExact(read["ExpiryDateOfFile"].ToString(), "dd-MM-yyyy", null);
+                if (dtT < dtNow)
+                {
+                    query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot='false' where id='{0}'", read["id"].ToString());
+                    cmd2 = new SqlCommand(query, con2); con2.Open(); cmd2.ExecuteNonQuery(); con2.Close();
+                }
+            }
+            con.Close();
+        }
     }
 }
 
-/*string f = string.Format("insert into dbo.Employee(firstName,lastName,email,password," +
-    "identityNo) values('{0}','{1}','{2}','{3}','{4}')", a, b, c, d, e);*/

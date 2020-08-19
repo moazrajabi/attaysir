@@ -28,7 +28,7 @@ namespace attaysir
                 bool resultAdmin = admin.login(username, password);
                 bool resultEmployee = Employee2.login(username, password);
 
-                if (textBox1.Text == "") {  richTextBox1.Text = "الرجاء ادخال اسم المستخدم"; }
+                if (textBox1.Text == "") { richTextBox1.Text = "الرجاء ادخال اسم المستخدم"; }
                 else if (textBox2.Text == "") { richTextBox1.Text = "الرجاء ادخال  كلمة المرور"; }
                 else if (resultAdmin == true)
                 {
@@ -48,15 +48,15 @@ namespace attaysir
 
                 }
             }
-            catch(Exception ev)
+            catch (Exception ev)
             {
                 MessageBox.Show(ev.Message/*"حدث خطأ ما، الرجاء المحاولة لاجقا"*/);
             }
         }
 
-        private void login_Load(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+            dataAccess.IsTheTimePassed();
         }
     }
 }
