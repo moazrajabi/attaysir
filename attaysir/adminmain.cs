@@ -81,5 +81,89 @@ namespace attaysir
                 didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int[] TheIdsList; int h=0;
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read()) { h++; } TheIdsList = new int[h]; int g = 0;
+            while (read.Read()) { TheIdsList[g] = int.Parse(read["id"].ToString()); g++; }
+            con.Close();
+            /////////////
+            if (LivingLocationCmbbx.SelectedIndex == 0 || LivingLocationCmbbx.SelectedIndex == 1)
+            { TheIdsList = LivingLocationFilter(TheIdsList); }
+            if (KindOfFamilyCmbbx.SelectedIndex == 0 || KindOfFamilyCmbbx.SelectedIndex == 1)
+            { TheIdsList = kindOfFamilyFilter(TheIdsList); }
+            if (MinSalarytxtbx.Text != "")
+            { TheIdsList = MinSalaryFilter(TheIdsList); }
+            if (MaxSalarytxtbx.Text != "")
+            { TheIdsList = MaxSalaryFilter(TheIdsList); }
+            FamilyListView k = new FamilyListView(TheIdsList); k.Show();
+        }
+
+        int[] LivingLocationFilter(int[] n)
+        {
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open(); SqlCommand cmd;
+            if (LivingLocationCmbbx.SelectedIndex == 0)
+            {
+                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='داخل البلدة القديمة' ", con);
+            }
+            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='خارج البلدة القديمة' ", con); }
+            SqlDataReader read = cmd.ExecuteReader(); int h = 0;
+            while (read.Read()) { h++; }
+            n = new int[h]; int g = 0;
+            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            con.Close();
+            return n;
+        }
+
+        int[] kindOfFamilyFilter(int[] n)
+        {
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open(); SqlCommand cmd;
+            if (LivingLocationCmbbx.SelectedIndex == 0)
+            {
+                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='داخل البلدة القديمة' ", con);
+            }
+            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='خارج البلدة القديمة' ", con); }
+            SqlDataReader read = cmd.ExecuteReader(); int h = 0;
+            while (read.Read()) { h++; }
+            n = new int[h]; int g = 0;
+            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            con.Close();
+            return n;
+        }
+
+        int[] MinSalaryFilter(int[] n)
+        {  
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open(); SqlCommand cmd;
+            string quary = string.Format("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE MonthlyAverageSalaryOfPerson > {0}",MinSalarytxtbx.Text);
+            cmd = new SqlCommand(quary, con);
+            SqlDataReader read = cmd.ExecuteReader(); int h = 0;
+            while (read.Read()) { h++; }
+            n = new int[h]; int g = 0;
+            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            con.Close();
+            return n;
+        }
+
+        int[] MaxSalaryFilter(int[] n)
+        { 
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open(); SqlCommand cmd;
+            string quary = string.Format("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE MonthlyAverageSalaryOfPerson < {0}", MinSalarytxtbx.Text);
+            cmd = new SqlCommand(quary, con);
+            SqlDataReader read = cmd.ExecuteReader(); int h = 0;
+            while (read.Read()) { h++; }
+            n = new int[h]; int g = 0;
+            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            con.Close();
+            return n;
+        }
     }
 }

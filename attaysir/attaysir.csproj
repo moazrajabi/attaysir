@@ -72,35 +72,23 @@
     <Compile Include="adminmain.Designer.cs">
       <DependentUpon>adminmain.cs</DependentUpon>
     </Compile>
-    <Compile Include="deneme1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="deneme1.Designer.cs">
-      <DependentUpon>deneme1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="deneme2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="deneme2.Designer.cs">
-      <DependentUpon>deneme2.cs</DependentUpon>
-    </Compile>
     <Compile Include="didntcheckedtimefamily.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="didntcheckedtimefamily.Designer.cs">
       <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>
     </Compile>
+    <Compile Include="FamilyListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilyListView.Designer.cs">
+      <DependentUpon>FamilyListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="hal turid damj alikhwacs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="hal turid damj alikhwacs.Designer.cs">
       <DependentUpon>hal turid damj alikhwacs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="idafet tullab madares.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="idafet tullab madares.Designer.cs">
-      <DependentUpon>idafet tullab madares.cs</DependentUpon>
     </Compile>
     <Compile Include="models\admin.cs" />
     <Compile Include="models\Employee2.cs" />
@@ -131,12 +119,6 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="models\dataAccess.cs" />
-    <Compile Include="ogrenmek.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ogrenmek.Designer.cs">
-      <DependentUpon>ogrenmek.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TheEmployeeList2.cs">
@@ -163,14 +145,11 @@
     <EmbeddedResource Include="adminmain.resx">
       <DependentUpon>adminmain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="deneme1.resx">
-      <DependentUpon>deneme1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="deneme2.resx">
-      <DependentUpon>deneme2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="didntcheckedtimefamily.resx">
       <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilyListView.resx">
+      <DependentUpon>FamilyListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="models\GivingExpiryDate.resx">
       <DependentUpon>GivingExpiryDate.cs</DependentUpon>
@@ -183,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ogrenmek.resx">
-      <DependentUpon>ogrenmek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

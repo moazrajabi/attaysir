@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace attaysir
 {
-    public partial class idafet_tullab_madares : Form
+    public partial class FamilyListView : Form
     {
-        public idafet_tullab_madares()
+        public FamilyListView(int[] n)
         {
             InitializeComponent();
+            this.n = n;
+        }
+        int[] n;
+        private void FamilyListView_Load(object sender, EventArgs e)
+        {
+            for(int i=0; i < n.Length; i++) { richTextBox1.Text +=(n[i]+"\n"); }
         }
     }
 }

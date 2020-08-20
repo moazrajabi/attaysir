@@ -135,7 +135,7 @@ namespace attaysir
                 if (textBox14.Text == "") { textBox14.Text = "0"; }
 
                 richTextBox2.Text = "";
-
+                
                 string lvngLctnCmbBx = ""; if (comboBox11.SelectedIndex == 1) { lvngLctnCmbBx = "داخل البلدة القديمة"; }
                 if (comboBox11.SelectedIndex == 2) { lvngLctnCmbBx = "خارج البلدة القديمة"; }
 

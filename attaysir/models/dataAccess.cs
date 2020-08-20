@@ -12,8 +12,8 @@ namespace attaysir.models
 {
     public class dataAccess
     {
-        static String conString = "Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True";
-        
+        public static string conString = "Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True";
+
         public static int executenonquery(string query)
         {
             SqlConnection sqlConnection = new SqlConnection(conString);
@@ -204,9 +204,9 @@ namespace attaysir.models
 
         public static void IsTheTimePassed()
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            SqlConnection con = new SqlConnection(conString);
             con.Open();
-            SqlConnection con2 = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            SqlConnection con2 = new SqlConnection(conString);
             
             SqlCommand cmd = new SqlCommand("SELECT * FROM Attaysir1.dbo.faydalananaile WHERE CheckedOrNot= 'true'", con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -225,4 +225,3 @@ namespace attaysir.models
         }
     }
 }
-
