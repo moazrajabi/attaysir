@@ -51,7 +51,7 @@ namespace attaysir
         }
 
         bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
-                        //if it false its mean no lighting and if it true means lighting
+                //if it false its mean no lighting and if it true means lighting
         public void k()
         {
             if (admin.checkedornot() == true) { this.bo = true; }
@@ -76,7 +76,7 @@ namespace attaysir
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (bo==true)
+            if (bo == true)
             {
                 didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();
             }
@@ -84,15 +84,20 @@ namespace attaysir
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int[] TheIdsList; int h=0;
+            int[] TheIdsList; int h = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
             SqlDataReader read = cmd.ExecuteReader();
-            while (read.Read()) { h++; } TheIdsList = new int[h]; int g = 0;
-            while (read.Read()) { TheIdsList[g] = int.Parse(read["id"].ToString()); g++; }
+
+            while (read.Read()) { h++; }
+            read.Close();
+            SqlDataReader read1 = cmd.ExecuteReader();
+            TheIdsList = new int[h]; int g = 0;
+            while (read1.Read()) { TheIdsList[g] = int.Parse(read1["id"].ToString());
+                g++; }
             con.Close();
-            /////////////
+
             if (LivingLocationCmbbx.SelectedIndex == 0 || LivingLocationCmbbx.SelectedIndex == 1)
             { TheIdsList = LivingLocationFilter(TheIdsList); }
             if (KindOfFamilyCmbbx.SelectedIndex == 0 || KindOfFamilyCmbbx.SelectedIndex == 1)
@@ -104,7 +109,7 @@ namespace attaysir
             FamilyListView k = new FamilyListView(TheIdsList); k.Show();
         }
 
-        int[] LivingLocationFilter(int[] n)
+        int[] LivingLocationFilter(int[] TheIdsList)
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open(); SqlCommand cmd;
@@ -113,32 +118,65 @@ namespace attaysir
                 cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='داخل البلدة القديمة' ", con);
             }
             else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='خارج البلدة القديمة' ", con); }
-            SqlDataReader read = cmd.ExecuteReader(); int h = 0;
+            SqlDataReader read = cmd.ExecuteReader();
+            int h = 0;
             while (read.Read()) { h++; }
-            n = new int[h]; int g = 0;
-            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            read.Close(); SqlDataReader read1 = cmd.ExecuteReader(); int[] n = new int[h]; int g = 0;
+            while (read1.Read()) { n[g] = int.Parse(read1["id"].ToString()); g++; }
+
+            int k = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int p = 0; p < TheIdsList.Length; p++)
+                {
+                    if (n[t] == TheIdsList[p]) { k++; }
+                }
+            } int[] son = new int[k]; int y = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int o = 0; o < TheIdsList.Length; o++)
+                {
+                    if (n[t] == TheIdsList[o]) { son[y] = n[t]; y++; }
+                }
+            }
             con.Close();
-            return n;
+            return son;
         }
 
-        int[] kindOfFamilyFilter(int[] n)
+        int[] kindOfFamilyFilter(int[] TheIdsList)
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open(); SqlCommand cmd;
-            if (LivingLocationCmbbx.SelectedIndex == 0)
+            if (KindOfFamilyCmbbx.SelectedIndex == 0)
             {
-                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='داخل البلدة القديمة' ", con);
+                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where KindOfFamily = 'عائلة متعففة' ", con);
             }
-            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='خارج البلدة القديمة' ", con); }
+            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where KindOfFamily = 'عائلة ايتام' ", con); ; }
             SqlDataReader read = cmd.ExecuteReader(); int h = 0;
             while (read.Read()) { h++; }
-            n = new int[h]; int g = 0;
-            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            read.Close(); SqlDataReader read1 = cmd.ExecuteReader(); int[] n = new int[h]; int g = 0;
+            while (read1.Read()) { n[g] = int.Parse(read1["id"].ToString()); g++; }
+            int k = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int p = 0; p < TheIdsList.Length; p++)
+                {
+                    if (n[t] == TheIdsList[p]) { k++; }
+                }
+            }
+            int[] son = new int[k]; int y = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int o = 0; o < TheIdsList.Length; o++)
+                {
+                    if (n[t] == TheIdsList[o]) { son[y] = n[t]; y++; }
+                }
+            }
             con.Close();
-            return n;
+            return son;
         }
 
-        int[] MinSalaryFilter(int[] n)
+        int[] MinSalaryFilter(int[] TheIdsList)
         {  
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open(); SqlCommand cmd;
@@ -146,24 +184,56 @@ namespace attaysir
             cmd = new SqlCommand(quary, con);
             SqlDataReader read = cmd.ExecuteReader(); int h = 0;
             while (read.Read()) { h++; }
-            n = new int[h]; int g = 0;
-            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            read.Close(); SqlDataReader read1 = cmd.ExecuteReader(); int[] n = new int[h]; int g = 0;
+            while (read1.Read()) { n[g] = int.Parse(read1["id"].ToString()); g++; }
+            int k = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int p = 0; p < TheIdsList.Length; p++)
+                {
+                    if (n[t] == TheIdsList[p]) { k++; }
+                }
+            }
+            int[] son = new int[k]; int y = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int o = 0; o < TheIdsList.Length; o++)
+                {
+                    if (n[t] == TheIdsList[o]) { son[y] = n[t]; y++; }
+                }
+            }
             con.Close();
-            return n;
+            return son;
         }
 
-        int[] MaxSalaryFilter(int[] n)
+        int[] MaxSalaryFilter(int[] TheIdsList)
         { 
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open(); SqlCommand cmd;
-            string quary = string.Format("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE MonthlyAverageSalaryOfPerson < {0}", MinSalarytxtbx.Text);
+            string quary = string.Format("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE MonthlyAverageSalaryOfPerson < {0}", MaxSalarytxtbx.Text);
             cmd = new SqlCommand(quary, con);
             SqlDataReader read = cmd.ExecuteReader(); int h = 0;
             while (read.Read()) { h++; }
-            n = new int[h]; int g = 0;
-            while (read.Read()) { n[g] = int.Parse(read["id"].ToString()); g++; }
+            read.Close(); SqlDataReader read1 = cmd.ExecuteReader();int[] n = new int[h]; int g = 0;
+            while (read1.Read()) { n[g] = int.Parse(read1["id"].ToString()); g++; }
+            int k = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int p = 0; p < TheIdsList.Length; p++)
+                {
+                    if (n[t] == TheIdsList[p]) { k++; }
+                }
+            }
+            int[] son = new int[k]; int y = 0;
+            for (int t = 0; t < n.Length; t++)
+            {
+                for (int o = 0; o < TheIdsList.Length; o++)
+                {
+                    if (n[t] == TheIdsList[o]) { son[y] = n[t]; y++; }
+                }
+            }
             con.Close();
-            return n;
+            return son;
         }
     }
 }
