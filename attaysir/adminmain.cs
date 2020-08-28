@@ -106,7 +106,7 @@ namespace attaysir
             { TheIdsList = MinSalaryFilter(TheIdsList); }
             if (MaxSalarytxtbx.Text != "")
             { TheIdsList = MaxSalaryFilter(TheIdsList); }
-            FamilyListView k = new FamilyListView(TheIdsList); k.Show();
+            the_lists k = new the_lists(TheIdsList);k.Show();
         }
 
         int[] LivingLocationFilter(int[] TheIdsList)
