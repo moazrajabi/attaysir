@@ -74,6 +74,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button14 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,11 +285,11 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(765, 315);
+            this.button1.Location = new System.Drawing.Point(739, 315);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
+            this.button1.Size = new System.Drawing.Size(101, 28);
             this.button1.TabIndex = 38;
-            this.button1.Text = "إضافة";
+            this.button1.Text = "اضافة عائلة";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -556,11 +557,25 @@
             this.timer1.Interval = 400;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button14
+            // 
+            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button14.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button14.Location = new System.Drawing.Point(574, 315);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(159, 28);
+            this.button14.TabIndex = 85;
+            this.button14.Text = "إضافة طالب جامعي";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
             // adminmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 659);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button12);
@@ -661,5 +676,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button14;
     }
 }

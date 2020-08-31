@@ -24,10 +24,20 @@ namespace attaysir
             InitializeComponent();
         }
 
+        public AddUnivStud(bool yalnizcami)
+        {
+            InitializeComponent();
+            this.yalnizcami = yalnizcami;
+        }
+        bool yalnizcami = false;
+
         private void AddUnivStud_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.d.Enabled = true;
-            this.d.ControlBox = true;
+            if (yalnizcami == false)
+            {
+                this.d.Enabled = true;
+                this.d.ControlBox = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,14 +54,24 @@ namespace attaysir
             else if (PhoneNotxtbx.Text == "") { richTextBox1.Text = "ادخل رقم الهاتف اولا"; }
             else if (SecondPhoneNotxtbx.Text == "") { richTextBox1.Text = "ادخل رقم الهاتف الاحطياطي اولا"; }
             else if (Emailtxtbx.Text == "") { richTextBox1.Text = "ادخل البريد الالكتروني اولا"; }
+            else if (YearlyFeestxtbx.Text == "") { richTextBox1.Text = "ادخل القسط السنوي اولا"; }
             else
             {
-                this.d.f += 1;
-                this.d.arrayfilling(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
-                this.d.Enabled = true;
-                this.d.ControlBox = true;
-                this.Close();
-                MessageBox.Show("تمت اضافة الطالب الجامعي لملف العائلة بنجاح","تمت الاضافة");
+                if (yalnizcami == false)
+                {
+                    this.d.f += 1;
+                    this.d.arrayfilling(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), YearlyFeestxtbx.Text, PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
+                    this.d.Enabled = true;
+                    this.d.ControlBox = true;
+                    this.Close();
+                    MessageBox.Show("تمت اضافة الطالب الجامعي لملف العائلة بنجاح", "تمت الاضافة");
+                }
+                if (yalnizcami==true)
+                {
+                    Employee2.AddUnivStudWithOutFamily(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), YearlyFeestxtbx.Text, PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
+                    this.Close();
+                    MessageBox.Show("تمت اضافة الطالب الجامعي بنجاح", "تمت الاضافة");
+                }
             }
         }
 
@@ -66,6 +86,7 @@ namespace attaysir
             IdentityNotxtbx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             PhoneNotxtbx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             SecondPhoneNotxtbx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
+            YearlyFeestxtbx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
         }
     }
 }

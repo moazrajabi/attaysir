@@ -57,6 +57,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.whichyearcmbbx = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.YearlyFeestxtbx = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FirstNametxtbx
@@ -338,11 +340,31 @@
             this.richTextBox1.TabIndex = 28;
             this.richTextBox1.Text = "";
             // 
+            // YearlyFeestxtbx
+            // 
+            this.YearlyFeestxtbx.Font = new System.Drawing.Font("Verdana", 8F);
+            this.YearlyFeestxtbx.Location = new System.Drawing.Point(637, 188);
+            this.YearlyFeestxtbx.Name = "YearlyFeestxtbx";
+            this.YearlyFeestxtbx.Size = new System.Drawing.Size(119, 24);
+            this.YearlyFeestxtbx.TabIndex = 30;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label16.Location = new System.Drawing.Point(487, 187);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 20);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "القسط السنوي";
+            // 
             // AddUnivStud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 289);
+            this.Controls.Add(this.YearlyFeestxtbx);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.whichyearcmbbx);
             this.Controls.Add(this.label15);
@@ -414,5 +436,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox whichyearcmbbx;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox YearlyFeestxtbx;
+        private System.Windows.Forms.Label label16;
     }
 }

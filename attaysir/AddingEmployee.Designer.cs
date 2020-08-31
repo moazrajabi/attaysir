@@ -195,9 +195,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(374, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 17);
+            this.label9.Size = new System.Drawing.Size(75, 17);
             this.label9.TabIndex = 17;
-            this.label9.Text = "صورة شخصية:-";
+            this.label9.Text = "صورة الهوية:-";
             // 
             // button1
             // 

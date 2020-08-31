@@ -91,14 +91,27 @@ namespace attaysir.models
         
         public static int AddUnivStud(string HusbandIdNu,string WifeIdNu, string firstname, string FatherName, string MotherName,
             string lastname, string IdentityNu, string univname, string KolejName, string department,
-            string whichyear, string PhoneNu, string SecondPhoneNu, string Email)
+            string whichyear,string YearlyFees, string PhoneNu, string SecondPhoneNu, string Email)
         {
             string query = string.Format("INSERT INTO Attaysir1.dbo.UnivStud(Familyid,FirstName,Father"+
                 "Name,MotherName,LastName,IdentityNu,UnivName,KolejName,DepartmentName,whichyear,Phone"+
-                "Nu,SecondPhoneNu,Email) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}',"+
-                "'{9}','{10}','{11}','{12}')", 
+                "Nu,SecondPhoneNu,Email,YearlyFees) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}'," +
+                "'{9}','{10}','{11}','{12}','{13}')", 
                 int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)),firstname,FatherName,MotherName,
-                lastname,IdentityNu,univname,KolejName,department,whichyear,PhoneNu,SecondPhoneNu,Email);
+                lastname,IdentityNu,univname,KolejName,department,whichyear,PhoneNu,SecondPhoneNu,Email, YearlyFees);
+            return dataAccess.executenonquery(query);
+        }
+
+        public static int AddUnivStudWithOutFamily(string firstname, string FatherName, string MotherName,
+            string lastname, string IdentityNu, string univname, string KolejName, string department,
+            string whichyear, string YearlyFees, string PhoneNu, string SecondPhoneNu, string Email)
+        {
+            string query = string.Format("INSERT INTO Attaysir1.dbo.UnivStud(FirstName,Father" +
+                "Name,MotherName,LastName,IdentityNu,UnivName,KolejName,DepartmentName,whichyear,Phone" +
+                "Nu,SecondPhoneNu,Email,YearlyFees) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}'," +
+                "'{9}','{10}','{11}','{12}')",
+                firstname, FatherName, MotherName, lastname, IdentityNu, univname, KolejName, 
+                department, whichyear, PhoneNu, SecondPhoneNu, Email, YearlyFees);
             return dataAccess.executenonquery(query);
         }
 
@@ -108,8 +121,6 @@ namespace attaysir.models
                 int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)), FirstName, FatherName, MotherName, IDNum, SchoolName, WhichClass);
             return dataAccess.executenonquery(query);
         }
-        
-        //Familyid,FirstName,FatherName,MotherName,IDNum,SchoolName,WhichClass
         
         public static bool IfTheFamilyThere(string HusbandFirstName, string WifeFirstName)
         {
@@ -263,6 +274,22 @@ namespace attaysir.models
         {
             string query = string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false',ExpiryDateOfFile='12-12-2000' WHERE id = '{0}'", int.Parse(SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu)));
             return dataAccess.executenonquery(query);
+        }
+
+        public static int CreatGroup(string HusbandIdNu, string WifeIdNu)
+        {
+            string query = 
+                string.Format("INSERT INTO Attaysir1.dbo.Groups(FamilyId) VALUES('{0}')",
+                int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)));
+            return dataAccess.executenonquery(query);
+        }
+
+        public static int addunivstudtogroup(string HIdNu,string WIdNu, string univstudidnu,string kacinci)
+        {
+            string query1 = string.Format("select GroupId from attaysir1.dbo.groups where familyid = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
+            string query2 = string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'",univstudidnu);
+            string query3 = string.Format("UPDATE Attaysir1.dbo.groups SET univstudid{0} = '{1}' WHERE GroupId = '{2}'",kacinci , dataAccess.reader(query2, "id"), dataAccess.reader(query1, "GroupId"));
+            return dataAccess.executenonquery(query3);
         }
     }
 }

@@ -235,5 +235,10 @@ namespace attaysir
             con.Close();
             return son;
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            AddUnivStud k = new AddUnivStud(true);k.Show();
+        }
     }
 }

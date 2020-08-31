@@ -179,9 +179,9 @@ namespace attaysir
                     int.Parse(textBox5.Text) + int.Parse(textBox8.Text) + int.Parse(textBox11.Text) + int.Parse(textBox14.Text);
 
                 int MonthlyAverageSalaryOfPerson = ((TotalOfSalaries - TotalOfExpenses) / int.Parse(FamilyNumOfMember));
-
+                /*
                 try
-                {
+                {*/
                     richTextBox2.Text = "";
                     if (Employee2.ifthefamilythere1(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
                     {
@@ -199,6 +199,7 @@ namespace attaysir
                                 FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
                             int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
                             MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
+                        Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
                         Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
                         Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
@@ -231,8 +232,9 @@ namespace attaysir
                         {
                             Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
                                 k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
-                                k[i].KolejName, k[i].department, k[i].whichyear, k[i].PhoneNu, k[i].SecondPhoneNu,
+                                k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
                                 k[i].Email);
+                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu,i.ToString());
                         }
                         for (int i = 1; i <= this.e; i++)
                         {
@@ -240,12 +242,12 @@ namespace attaysir
                         }
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                     }
-                }
+               /* }
                 catch (Exception ex)
                 {
 
                     MessageBox.Show(ex.Message);
-                }
+                }*/
             }
         }
 
@@ -401,14 +403,15 @@ namespace attaysir
             public string KolejName;
             public string department;
             public string whichyear;
+            public string yearlifees;
             public string PhoneNu;
             public string SecondPhoneNu;
             public string Email;
         };
 
         univstud[] k = new univstud[10];public int f = 0;
-        public void arrayfilling(string firstname,string FatherName,string MotherName,string lastname,string IdentityNu,string univname,string KolejName,string department,string whichyear,string PhoneNu,string SecondPhoneNu,string Email) {
-            k[f] = new univstud() { firstname=firstname, FatherName=FatherName, MotherName=MotherName, lastname=lastname, IdentityNu=IdentityNu, univname=univname, KolejName=KolejName, department=department, whichyear=whichyear, PhoneNu=PhoneNu, SecondPhoneNu= SecondPhoneNu, Email= Email };
+        public void arrayfilling(string firstname,string FatherName,string MotherName,string lastname,string IdentityNu,string univname,string KolejName,string department,string whichyear,string yearlyfees,string PhoneNu,string SecondPhoneNu,string Email) {
+            k[f] = new univstud() { firstname=firstname, FatherName=FatherName, MotherName=MotherName, lastname=lastname, IdentityNu=IdentityNu, univname=univname, KolejName=KolejName, department=department, whichyear=whichyear, yearlifees=yearlyfees, PhoneNu=PhoneNu, SecondPhoneNu= SecondPhoneNu, Email= Email };
         }
 
         private void button22_Click(object sender, EventArgs e)
