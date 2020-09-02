@@ -12,9 +12,23 @@ namespace attaysir
 {
     public partial class hal_turid_damj_alikhwacs : Form
     {
-        public hal_turid_damj_alikhwacs()
+        private AddUnivStud form = null;
+        public hal_turid_damj_alikhwacs(Form form)
         {
             InitializeComponent();
+            this.form = form as AddUnivStud;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form.k();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            form.l();
         }
     }
 }
