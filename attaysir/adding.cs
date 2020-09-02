@@ -179,9 +179,9 @@ namespace attaysir
                     int.Parse(textBox5.Text) + int.Parse(textBox8.Text) + int.Parse(textBox11.Text) + int.Parse(textBox14.Text);
 
                 int MonthlyAverageSalaryOfPerson = ((TotalOfSalaries - TotalOfExpenses) / int.Parse(FamilyNumOfMember));
-                /*
+                
                 try
-                {*/
+                {
                     richTextBox2.Text = "";
                     if (Employee2.ifthefamilythere1(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
                     {
@@ -242,12 +242,12 @@ namespace attaysir
                         }
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                     }
-               /* }
+                }
                 catch (Exception ex)
                 {
 
                     MessageBox.Show(ex.Message);
-                }*/
+                }
             }
         }
 
@@ -357,7 +357,7 @@ namespace attaysir
         }
 
 
-        private byte[] getFileBytes(String path)
+        private byte[] getFileBytes(string path)
         {
             byte[] ba1;
             FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);

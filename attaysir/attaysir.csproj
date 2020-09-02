@@ -156,6 +156,9 @@
     <EmbeddedResource Include="FamilyListView.resx">
       <DependentUpon>FamilyListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="hal turid damj alikhwacs.resx">
+      <DependentUpon>hal turid damj alikhwacs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="models\GivingExpiryDate.resx">
       <DependentUpon>GivingExpiryDate.cs</DependentUpon>
     </EmbeddedResource>

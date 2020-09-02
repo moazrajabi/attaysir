@@ -85,7 +85,8 @@
             this.LivingLocationCmbbx.FormattingEnabled = true;
             this.LivingLocationCmbbx.Items.AddRange(new object[] {
             "داخل البلدة القديمة",
-            "خارج البلدة القديمة"});
+            "خارج البلدة القديمة",
+            " "});
             this.LivingLocationCmbbx.Location = new System.Drawing.Point(696, 366);
             this.LivingLocationCmbbx.Name = "LivingLocationCmbbx";
             this.LivingLocationCmbbx.Size = new System.Drawing.Size(141, 24);
@@ -173,7 +174,8 @@
             this.KindOfFamilyCmbbx.FormattingEnabled = true;
             this.KindOfFamilyCmbbx.Items.AddRange(new object[] {
             "عائلة متعففة",
-            "عائلة ايتام"});
+            "عائلة ايتام",
+            " "});
             this.KindOfFamilyCmbbx.Location = new System.Drawing.Point(549, 366);
             this.KindOfFamilyCmbbx.Name = "KindOfFamilyCmbbx";
             this.KindOfFamilyCmbbx.Size = new System.Drawing.Size(141, 24);
@@ -388,7 +390,8 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "داخل البلدة القديمة",
-            "خارج البلدة القديمة"});
+            "خارج البلدة القديمة",
+            " "});
             this.comboBox3.Location = new System.Drawing.Point(696, 464);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(141, 24);
@@ -416,7 +419,8 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "عائلة متعففة",
-            "عائلة ايتام"});
+            "عائلة ايتام",
+            " "});
             this.comboBox4.Location = new System.Drawing.Point(549, 464);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(141, 24);
