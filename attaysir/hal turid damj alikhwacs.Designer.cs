@@ -75,6 +75,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "هل تريد ادراج الاخوة في ملف واحد";
+            this.Load += new System.EventHandler(this.hal_turid_damj_alikhwacs_Load);
             this.ResumeLayout(false);
 
         }

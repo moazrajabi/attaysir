@@ -24,14 +24,8 @@ namespace attaysir
             this.d = d as adding;
             InitializeComponent();
         }
-        /*
-        public AddUnivStud(bool yalnizcami)
-        {
-            InitializeComponent();
-            this.yalnizcami = yalnizcami;
-        }*/
+
         bool yalnizcami = false;
-        string themessage = "";
 
         private void AddUnivStud_Load(object sender, EventArgs e)
         {
@@ -144,6 +138,15 @@ namespace attaysir
             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, idofnewone));
             MessageBox.Show("تمت اضافة الطالب الجامعي بنجاح", "تمت الاضافة");
             this.Close();
+        }
+
+        void j()
+        {
+            string themessage1 = "هاذا الشخص يتشابه مع ";
+            string themessage2 = "";
+            string themessage3 = "في اسماء الام و الاب و العائلة هل تريد ضبطهما كاخوة ؟";
+            themessage2 = string.Format("{0} {1} {2} اسم الام {3}", FirstNametxtbx.Text, FatherNametxtbx.Text, LastNametxtbx.Text, MotherNametxtbx.Text);
+            string themessage = themessage1 + themessage2 + themessage3;
         }
     }
 }

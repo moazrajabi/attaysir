@@ -30,5 +30,15 @@ namespace attaysir
             this.Close();
             form.l();
         }
+
+        void f()
+        {
+            richTextBox1.Text = form.themessage;
+        }
+
+        private void hal_turid_damj_alikhwacs_Load(object sender, EventArgs e)
+        {
+            f();
+        }
     }
 }
