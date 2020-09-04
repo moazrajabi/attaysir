@@ -238,7 +238,7 @@ namespace attaysir
 
         private void button14_Click(object sender, EventArgs e)
         {
-            AddUnivStud k = new AddUnivStud(true);k.Show();
+            AddUnivStud k = new AddUnivStud();k.Show();
         }
     }
 }

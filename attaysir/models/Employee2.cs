@@ -280,7 +280,7 @@ namespace attaysir.models
         {
             string query = 
                 string.Format("INSERT INTO Attaysir1.dbo.Groups(FamilyId) VALUES('{0}')",
-                int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu)));
+                SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu));
             return dataAccess.executenonquery(query);
         }
 

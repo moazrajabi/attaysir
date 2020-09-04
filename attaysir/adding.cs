@@ -199,7 +199,13 @@ namespace attaysir
                                 FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
                             int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
                             MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET FamilyNumber = '{0}' WHERE id = '{1}'"
+                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber),Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
                         Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'", dataAccess.reader(string.
+                            Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'"
+                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber))
+                            , "groupid"), Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
                         Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
                         Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
@@ -234,6 +240,9 @@ namespace attaysir
                                 k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
                                 k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
                                 k[i].Email);
+                            string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)),"groupid");
+                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu),"id");
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'",groupid,id));
                             Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu,i.ToString());
                         }
                         for (int i = 1; i <= this.e; i++)
