@@ -140,13 +140,25 @@ namespace attaysir
             this.Close();
         }
 
-        void j()
+        public string j()
         {
+            string fathername0 = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.univstud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
+            string mothername0 = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.univstud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
+            string lastname0 = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.univstud where LastName = '{0}'", LastNametxtbx.Text), "LastName");
+            string groupid0 = dataAccess.reader(string.Format("Select GroupId from attaysir1.dbo.univstud where fathername='{0}' and mothername='{1}' and lastname ='{2}'", fathername0, mothername0, lastname0), "GroupId");
+            string id = dataAccess.reader(string.Format("select univstudid1 from attaysir1.dbo.groups where GroupId ='{0}'", groupid0), "univstudid1");
+
+            string firstname = dataAccess.reader(string.Format("select firstname from attaysir1.dbo.UnivStud where id = '{0}'", id),"firstname");
+            string fathername = dataAccess.reader(string.Format("select FatherName from attaysir1.dbo.UnivStud where id = '{0}'", id),"fathername");
+            string mothername = dataAccess.reader(string.Format("select MotherName from attaysir1.dbo.UnivStud where id = '{0}'", id),"mothername");
+            string lastname = dataAccess.reader(string.Format("select LastName from attaysir1.dbo.UnivStud where id = '{0}'", id),"lastname");
             string themessage1 = "هاذا الشخص يتشابه مع ";
-            string themessage2 = "";
-            string themessage3 = "في اسماء الام و الاب و العائلة هل تريد ضبطهما كاخوة ؟";
-            themessage2 = string.Format("{0} {1} {2} اسم الام {3}", FirstNametxtbx.Text, FatherNametxtbx.Text, LastNametxtbx.Text, MotherNametxtbx.Text);
-            string themessage = themessage1 + themessage2 + themessage3;
+            string themessage2 = string.Format("{0} {1} {2} ",firstname,fathername,lastname);
+            string themessage3 = "اسم الام";
+            string themessage4 = string.Format(" {0} ",mothername);
+            string themessage5 = "في اسماء الام و الاب و العائلة هل تريد ضبطهما كاخوة ؟";
+            string themessage = themessage1 + themessage2 + themessage3 + themessage4 + themessage5;
+            return themessage;
         }
     }
 }

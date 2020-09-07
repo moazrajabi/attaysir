@@ -21,24 +21,28 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
             form.k();
+            this.Close();
+            form.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
             form.l();
+            this.Close();
+            form.Close();
         }
 
         void f()
         {
-            richTextBox1.Text = form.themessage;
+            richTextBox1.Text = form.j();
         }
 
         private void hal_turid_damj_alikhwacs_Load(object sender, EventArgs e)
         {
             f();
+            form.Enabled = false;
+            form.ControlBox = false;
         }
     }
 }
