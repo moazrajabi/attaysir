@@ -61,6 +61,7 @@ namespace attaysir
         private void timer1_Tick(object sender, EventArgs e)
         {
             sabit_mi_degisken_mi(this.bo);
+            k();
         }
 
         bool f = true;

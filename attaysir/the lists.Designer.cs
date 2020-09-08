@@ -39,11 +39,11 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(104, 82);
+            this.listView1.Location = new System.Drawing.Point(101, 83);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.Size = new System.Drawing.Size(640, 237);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(101, 38);
+            this.label1.Location = new System.Drawing.Point(319, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 1;
@@ -59,14 +59,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(255, 33);
+            this.textBox1.Location = new System.Drawing.Point(481, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(255, 82);
+            this.button1.Location = new System.Drawing.Point(461, 381);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 3;

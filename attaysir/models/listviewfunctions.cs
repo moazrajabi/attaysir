@@ -38,6 +38,7 @@ namespace attaysir.models
             {
                 ListViewItem item = (ListViewItem)array[i];
                 listView1.Items.Add(item);
+                listView1.CheckBoxes = true;
             }
             string ifthereemployeesornot =dataAccess.reader1("select * from attaysir1.dbo.employee","id");
             if (ifthereemployeesornot != "")
