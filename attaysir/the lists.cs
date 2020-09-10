@@ -174,16 +174,14 @@ namespace attaysir
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.UnivStud", con);
             SqlDataReader read = cmd.ExecuteReader();
-            while (read.Read())
-            {
-                count++;
-            }
+            while (read.Read()) { count++; }
+
             int[] univides = new int[count];
             int UnivIdesCounter = 0;
-
+            
             for (int i = 1; i <= 8; i++)
             {
-                for (int l = 8; l <= i; l--)
+                for (int l = 8; l >= i; l--)
                 {
                     SqlConnection con1 = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
                     con1.Open();
@@ -198,8 +196,7 @@ namespace attaysir
                         }
                         if (l == 7 && read1[string.Format("univstudid{0}", l)].ToString() != "" 
                             && read1[string.Format("univstudid{0}", (l+1))].ToString() == "")
-                        {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
+                        {univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
                         if (l == 6 && read1[string.Format("univstudid{0}", l)].ToString() != "" 
