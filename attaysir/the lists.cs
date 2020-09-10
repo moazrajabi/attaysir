@@ -46,10 +46,10 @@ namespace attaysir
             label1.Location = new Point(this.Width / 2, 11);
             textBox1.Location = new Point(this.Width / 2+90, 8);
             button1.Location = new Point(this.Width - 120, this.Height-65);
-            small(intarr);
+            //small(intarr);
+            big(intarr);
             listView1.CheckBoxes = true;
             //listView1.CheckedItems
-            tecrube(SortUniv());
         }
 
         private void the_lists_Resize(object sender, EventArgs e)
@@ -87,6 +87,95 @@ namespace attaysir
             }
         }
         
+        public void big(int[] intarr)
+        {
+            listView1.Columns.Clear();
+            string[] k1 = { "رقم العائلة", "الاسم الاول للزوج", "الاسم الاخير للزوج",
+                "الاسم الاول للزوجة", "الاسم الاخير للزوجة", "مكان السكن", "العنوان المفصل",
+                "رقم هوية الزوج", "رقم هوية الزوجة", "رقم هاتف الزوج", "رقم هاتف الزوجة",
+                "عدد افراد الاسرة", "معاش الزوج", "معاش الزوجة", "مقدار مخصصات الاولاد",
+                "عدد الاولاد الحاصلين على مخصصات", "الاسم الاول للموظف المسجل",
+                "الاسم الاخير للموظف المسجل", "تاريخ و وقت التسجيل", "معدل الدخل الفردي للعائلة",
+                "نوع العائلة", "تاريخ انتهاء فعالية الملف", "التواصل مع الزوج ام الزوجة",
+                "تمت معاينة الملف ام لا" };
+            string[] k = { "FamilyNumber", "HusbandFirstName", "HusbandLastName", "WifeFirstName",
+                "WifeLastName", "LivingLocation", "Adress", "HusbandIdentificationNumber",
+                "WifeIdentificationNumber", "HusbandPhoneNumber", "WifePhoneNumber",
+                "NumberOfFamilyMembers", "HusbandSalary", "WifeSalary", "TotalChildrenInsurance",
+                "NumberOfChildrenTackingInsurance", "RegisterEmployeesFirstName", "RegisterEmployeesLastName",
+                "RegisteretionDateTime", "MonthlyAverageSalaryOfPerson", "KindOfFamily", "ExpiryDateOfFile",
+                "HusbandOrWife", "CheckedOrNot" };
+            listView1.Columns.Add("");
+            for (int i = 0; i < k1.LongLength; i++)
+            {
+                listView1.Columns.Add(k1[i]);
+            }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            for(int i = 0; i < intarr.LongLength; i++)
+            {
+                string g = "faydalananaile";
+                g += string.Format(" where id = '{0}'", intarr[i].ToString());
+                ViewerForTheLists(listView1, g, k);
+            }
+        }
+
+        public void smalluniv(int[] intarr)//daha hazirlanmamis
+        {
+            listView1.Columns.Clear();
+            string[] k1 = { "رقم العائلة", "الاسم الاول للزوج", "الاسم الاخير للزوج",
+                "الاسم الاول للزوجة", "الاسم الاخير للزوجة", "رقم هوية الزوج",
+                "رقم هوية الزوجة", "رقم هاتف الزوج", "رقم هاتف الزوجة",
+                "معدل الدخل الفردي للعائلة" };
+            string[] k = { "FamilyNumber", "HusbandFirstName", "HusbandLastName",
+                "WifeFirstName", "WifeLastName", "HusbandIdentificationNumber",
+                "WifeIdentificationNumber", "HusbandPhoneNumber", "WifePhoneNumber",
+                "MonthlyAverageSalaryOfPerson" };
+            listView1.Columns.Add("");
+            for (int i = 0; i < k1.LongLength; i++)
+            {
+                listView1.Columns.Add(k1[i]);
+            }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            for (int i = 0; i < intarr.LongLength; i++)
+            {
+                string g = "faydalananaile";
+                g += string.Format(" where id = '{0}'", intarr[i].ToString());
+                ViewerForTheLists(listView1, g, k);
+            }
+        }
+
+        public void biguniv(int[] intarr)//dahahazirlanmamis
+        {
+            listView1.Columns.Clear();
+            string[] k1 = { "رقم العائلة", "الاسم الاول للزوج", "الاسم الاخير للزوج",
+                "الاسم الاول للزوجة", "الاسم الاخير للزوجة", "مكان السكن", "العنوان المفصل",
+                "رقم هوية الزوج", "رقم هوية الزوجة", "رقم هاتف الزوج", "رقم هاتف الزوجة",
+                "عدد افراد الاسرة", "معاش الزوج", "معاش الزوجة", "مقدار مخصصات الاولاد",
+                "عدد الاولاد الحاصلين على مخصصات", "الاسم الاول للموظف المسجل",
+                "الاسم الاخير للموظف المسجل", "تاريخ و وقت التسجيل", "معدل الدخل الفردي للعائلة",
+                "نوع العائلة", "تاريخ انتهاء فعالية الملف", "التواصل مع الزوج ام الزوجة",
+                "تمت معاينة الملف ام لا" };
+            string[] k = { "FamilyNumber", "HusbandFirstName", "HusbandLastName", "WifeFirstName",
+                "WifeLastName", "LivingLocation", "Adress", "HusbandIdentificationNumber",
+                "WifeIdentificationNumber", "HusbandPhoneNumber", "WifePhoneNumber",
+                "NumberOfFamilyMembers", "HusbandSalary", "WifeSalary", "TotalChildrenInsurance",
+                "NumberOfChildrenTackingInsurance", "RegisterEmployeesFirstName", "RegisterEmployeesLastName",
+                "RegisteretionDateTime", "MonthlyAverageSalaryOfPerson", "KindOfFamily", "ExpiryDateOfFile",
+                "HusbandOrWife", "CheckedOrNot" };
+            listView1.Columns.Add("");
+            for (int i = 0; i < k1.LongLength; i++)
+            {
+                listView1.Columns.Add(k1[i]);
+            }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            for (int i = 0; i < intarr.LongLength; i++)
+            {
+                string g = "faydalananaile";
+                g += string.Format(" where id = '{0}'", intarr[i].ToString());
+                ViewerForTheLists(listView1, g, k);
+            }
+        }
+
         public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
         {
             string g = string.Format("select * from attaysir1.dbo.{0}", TableName);
@@ -291,12 +380,5 @@ namespace attaysir
                 TextBox1.Text = price.ToString();
             }
         }*/
-
-        void tecrube(int[] sortuniv)
-        {
-            string l = "";
-            for (int i=0;i<sortuniv.LongLength;i++) { l += sortuniv[i].ToString();l += " "; }
-            MessageBox.Show(l);
-        }
     }
 }
