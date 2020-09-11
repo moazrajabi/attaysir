@@ -31,7 +31,7 @@ namespace attaysir
         string TheDateTime;
         bool AdminOrNot = false;
         int id;
-        String path;
+        string path;
         private void Form2_Load(object sender, EventArgs e)
         {
             timer1.Start();

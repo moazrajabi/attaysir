@@ -110,6 +110,11 @@ namespace attaysir
             the_lists k = new the_lists(TheIdsList);k.Show();
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            the_lists k = new the_lists(true);k.Show();
+        }
+
         int[] LivingLocationFilter(int[] TheIdsList)
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
