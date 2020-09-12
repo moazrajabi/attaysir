@@ -24,7 +24,7 @@ namespace attaysir
             //Application.Run(new TheListView());
             //Application.Run(new AreYouSure());
             //Application.Run(new deneme2());
-            //Application.Run(new the_lists());
+            Application.Run(new AddProjects());
           
 
             Application.Run(new TheEmployeesList());
