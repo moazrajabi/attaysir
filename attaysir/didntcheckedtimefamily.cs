@@ -93,7 +93,6 @@ namespace attaysir
         {
             if (bigorsmall == true) { small(); bigorsmall = false; button1.Text = "اظهار تفاصيل اكثر"; }
             else if (bigorsmall==false) { big();bigorsmall = true;button1.Text = "اظهار تفاصيل اقل"; }
-
         }
 
         public string IdentificetionNumber1 = "";
@@ -116,6 +115,12 @@ namespace attaysir
         private void didntcheckedtimefamily_FormClosed(object sender, FormClosedEventArgs e)
         {
             form.k();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (admin.checkedornot() == true) {button2.Enabled = true;}
+            else if (admin.checkedornot() == false) {button2.Enabled = false;}
         }
     }
 }

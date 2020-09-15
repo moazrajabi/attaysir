@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using attaysir.models;
 //////////////
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace attaysir
 {
@@ -24,10 +25,15 @@ namespace attaysir
 
         private void adminmain_Load(object sender, EventArgs e)
         {
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            listView1.FullRowSelect = true;
+          /*  listView1.Items[0].Focused = true;
+            listView1.Items[0].Selected = true;*/
             string f = Employee2.NameByIdAdmin(id);
             richTextBox1.Text = f;
             timer1.Start();
             this.k();
+            getMessages();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -245,6 +251,81 @@ namespace attaysir
         private void button14_Click(object sender, EventArgs e)
         {
             AddUnivStud k = new AddUnivStud();k.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string message = richTextBox2.Text;
+            if (message!="") {
+                SelectReciever k = new SelectReciever(message, id, "admin"); k.Show();
+            }
+        }
+
+        private void getMessages()
+        {
+
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                ListViewItem item = new ListViewItem();
+                int id = int.Parse(read["senderid"].ToString());
+                if (read["recieveradminoremployee"].ToString() == "employee")
+                {
+                    String nameQuery = "select * from dbo.employee where id = " + id;
+                    string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
+                    item.SubItems.Add(name);
+                    item.SubItems.Add(read["dateofsendding"].ToString());
+                    if (read["seen"].ToString() == "false")
+                    {
+                        item.SubItems.Add("غير مقروئة");
+                    }
+                    else
+                    {
+                        item.SubItems.Add("مقروئة");
+                    }
+                }
+                else
+                {
+                    String nameQuery = "select * from dbo.admin where id = " + id;
+                    string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
+                    item.SubItems.Add(name);
+                    item.SubItems.Add(read["dateofsendding"].ToString());
+                    if (read["seen"].ToString() == "false")
+                    {
+                        item.SubItems.Add("غير مقروئة");
+                    }
+                    else
+                    {
+                        item.SubItems.Add("مقروئة");
+                    }
+                }
+
+                listView1.Items.Add(item);
+            }
+            con.Close();
+
+        }
+
+
+        public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
+        {
+            string g = string.Format("select * from attaysir1.dbo.{0}", TableName);
+            ArrayList array = dataAccess.viewer(g, array1);
+            for (int i = 0; i < array.Count; i++)
+            {
+                ListViewItem item = (ListViewItem)array[i];
+                listView1.Items.Add(item);
+            }
+            string IfThereItemsOrNot = dataAccess.reader1(g, "id");
+            if (IfThereItemsOrNot != "")
+            {
+                listView1.FullRowSelect = true;
+                listView1.Items[0].Focused = true;
+                listView1.Items[0].Selected = true;
+            }
         }
     }
 }

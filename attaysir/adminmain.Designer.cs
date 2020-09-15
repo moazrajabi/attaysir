@@ -51,7 +51,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,7 +74,15 @@
             this.button13 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button14 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // LivingLocationCmbbx
@@ -103,6 +110,7 @@
             this.button7.TabIndex = 57;
             this.button7.Text = "ارسال الرسالة";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // richTextBox2
             // 
@@ -118,9 +126,9 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F);
-            this.richTextBox1.Location = new System.Drawing.Point(315, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(574, 12);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(816, 59);
+            this.richTextBox1.Size = new System.Drawing.Size(557, 59);
             this.richTextBox1.TabIndex = 55;
             this.richTextBox1.Text = "";
             // 
@@ -253,7 +261,7 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(765, 609);
+            this.button4.Location = new System.Drawing.Point(766, 553);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 42;
@@ -264,7 +272,7 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(765, 560);
+            this.button3.Location = new System.Drawing.Point(766, 504);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 28);
             this.button3.TabIndex = 41;
@@ -275,11 +283,11 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(765, 511);
+            this.button2.Location = new System.Drawing.Point(739, 204);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
+            this.button2.Size = new System.Drawing.Size(190, 43);
             this.button2.TabIndex = 40;
-            this.button2.Text = "إظهار";
+            this.button2.Text = "ملفات تحتاج الى تحديث";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -300,7 +308,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(1072, 606);
+            this.label6.Location = new System.Drawing.Point(1073, 550);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 37;
@@ -311,22 +319,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(989, 557);
+            this.label5.Location = new System.Drawing.Point(990, 501);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 25);
             this.label5.TabIndex = 36;
             this.label5.Text = "ملفات منتهية الصلاحية";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 12F);
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(981, 508);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 25);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "ملفات تحتاج الى تحديث";
             // 
             // label3
             // 
@@ -575,11 +572,66 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.listView1);
+            this.panel3.Location = new System.Drawing.Point(7, 77);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(560, 260);
+            this.panel3.TabIndex = 86;
+            // 
+            // listView1
+            // 
+            this.listView1.BackColor = System.Drawing.SystemColors.Control;
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Name = "listView1";
+            this.listView1.RightToLeftLayout = true;
+            this.listView1.Size = new System.Drawing.Size(554, 254);
+            this.listView1.TabIndex = 87;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(447, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 20);
+            this.label4.TabIndex = 87;
+            this.label4.Text = "صندوق الرسائل :-";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "المرسل                          ";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "التاريخ                            ";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "حالة الرسالة ";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "";
+            // 
             // adminmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 659);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -620,15 +672,17 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1175, 706);
+            this.MinimumSize = new System.Drawing.Size(1175, 706);
             this.Name = "adminmain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "adminmain";
             this.Load += new System.EventHandler(this.adminmain_Load);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,7 +712,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -682,5 +735,12 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
