@@ -8,10 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using attaysir.models;
-//////////////
 using System.Data.SqlClient;
 using System.Collections;
-using System.Xml;
 
 namespace attaysir
 {
@@ -28,8 +26,6 @@ namespace attaysir
         {
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listView1.FullRowSelect = true;
-          /*  listView1.Items[0].Focused = true;
-            listView1.Items[0].Selected = true;*/
             string f = Employee2.NameByIdAdmin(id);
             richTextBox1.Text = f;
             timer1.Start();
@@ -39,7 +35,7 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            adding n = new adding(id, true); n.Show();//this.Close();
+            adding n = new adding(id, true); n.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -57,18 +53,34 @@ namespace attaysir
             TheEmployeeList2 n = new TheEmployeeList2(); n.Show();
         }
 
+        bool bo1;//this bool for control the ligting of button13(the if there a files needs togiving time) 
+                //if it false its mean no lighting and if it true means lighting
+        public void k1()
+        {
+            if (admin.checkedornot() == true) { this.bo1 = true; }
+            else if (admin.checkedornot() == false) { this.bo1 = false; }
+        }
+
+        bool f1 = true;
+        void sabit_mi_degisken_mi1(bool bo)
+        {
+            if (bo == true)
+            {
+                if (f1 == true) { button.ForeColor = Color.Red; panel.BackColor = Color.Red; f1 = false; }
+                else if (f1 == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; f1 = true; }
+            }
+            if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
+        }
+
+        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show(); } }
+
+
         bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
                 //if it false its mean no lighting and if it true means lighting
         public void k()
         {
             if (admin.checkedornot() == true) { this.bo = true; }
             else if (admin.checkedornot() == false) { this.bo = false; }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            sabit_mi_degisken_mi(this.bo);
-            k();
         }
 
         bool f = true;
@@ -82,12 +94,14 @@ namespace attaysir
             if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e){if (bo == true){didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();}}
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if (bo == true)
-            {
-                didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();
-            }
+            sabit_mi_degisken_mi(this.bo);
+            k();
+            sabit_mi_degisken_mi1(this.bo1);
+            k1();
         }
 
         private void button5_Click(object sender, EventArgs e)

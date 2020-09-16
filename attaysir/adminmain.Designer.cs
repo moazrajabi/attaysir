@@ -47,7 +47,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,8 +80,17 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.panel = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // LivingLocationCmbbx
@@ -94,7 +102,7 @@
             "داخل البلدة القديمة",
             "خارج البلدة القديمة",
             " "});
-            this.LivingLocationCmbbx.Location = new System.Drawing.Point(696, 366);
+            this.LivingLocationCmbbx.Location = new System.Drawing.Point(696, 381);
             this.LivingLocationCmbbx.Name = "LivingLocationCmbbx";
             this.LivingLocationCmbbx.Size = new System.Drawing.Size(141, 24);
             this.LivingLocationCmbbx.TabIndex = 58;
@@ -146,7 +154,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(759, 250);
+            this.label11.Location = new System.Drawing.Point(759, 265);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 17);
             this.label11.TabIndex = 53;
@@ -155,7 +163,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox1.Location = new System.Drawing.Point(717, 268);
+            this.textBox1.Location = new System.Drawing.Point(717, 283);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 24);
             this.textBox1.TabIndex = 52;
@@ -163,7 +171,7 @@
             // MaxSalarytxtbx
             // 
             this.MaxSalarytxtbx.Font = new System.Drawing.Font("Verdana", 8F);
-            this.MaxSalarytxtbx.Location = new System.Drawing.Point(255, 366);
+            this.MaxSalarytxtbx.Location = new System.Drawing.Point(255, 381);
             this.MaxSalarytxtbx.Name = "MaxSalarytxtbx";
             this.MaxSalarytxtbx.Size = new System.Drawing.Size(141, 24);
             this.MaxSalarytxtbx.TabIndex = 51;
@@ -171,7 +179,7 @@
             // MinSalarytxtbx
             // 
             this.MinSalarytxtbx.Font = new System.Drawing.Font("Verdana", 8F);
-            this.MinSalarytxtbx.Location = new System.Drawing.Point(402, 366);
+            this.MinSalarytxtbx.Location = new System.Drawing.Point(402, 381);
             this.MinSalarytxtbx.Name = "MinSalarytxtbx";
             this.MinSalarytxtbx.Size = new System.Drawing.Size(141, 24);
             this.MinSalarytxtbx.TabIndex = 50;
@@ -184,7 +192,7 @@
             "عائلة متعففة",
             "عائلة ايتام",
             " "});
-            this.KindOfFamilyCmbbx.Location = new System.Drawing.Point(549, 366);
+            this.KindOfFamilyCmbbx.Location = new System.Drawing.Point(549, 381);
             this.KindOfFamilyCmbbx.Name = "KindOfFamilyCmbbx";
             this.KindOfFamilyCmbbx.Size = new System.Drawing.Size(141, 24);
             this.KindOfFamilyCmbbx.TabIndex = 49;
@@ -194,7 +202,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(258, 348);
+            this.label10.Location = new System.Drawing.Point(258, 363);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 17);
             this.label10.TabIndex = 48;
@@ -205,7 +213,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(413, 348);
+            this.label9.Location = new System.Drawing.Point(413, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 17);
             this.label9.TabIndex = 47;
@@ -216,7 +224,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(609, 347);
+            this.label8.Location = new System.Drawing.Point(609, 362);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 17);
             this.label8.TabIndex = 46;
@@ -227,7 +235,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(756, 348);
+            this.label7.Location = new System.Drawing.Point(756, 363);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 17);
             this.label7.TabIndex = 45;
@@ -238,7 +246,7 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(636, 266);
+            this.button6.Location = new System.Drawing.Point(636, 281);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 28);
             this.button6.TabIndex = 44;
@@ -249,7 +257,7 @@
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button5.Location = new System.Drawing.Point(168, 364);
+            this.button5.Location = new System.Drawing.Point(168, 379);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 28);
             this.button5.TabIndex = 43;
@@ -261,7 +269,7 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(766, 553);
+            this.button4.Location = new System.Drawing.Point(766, 568);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 42;
@@ -272,30 +280,19 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(766, 504);
+            this.button3.Location = new System.Drawing.Point(766, 519);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 28);
             this.button3.TabIndex = 41;
             this.button3.Text = "إظهار";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(739, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 43);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "ملفات تحتاج الى تحديث";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(739, 315);
+            this.button1.Location = new System.Drawing.Point(739, 330);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 28);
             this.button1.TabIndex = 38;
@@ -308,7 +305,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(1073, 550);
+            this.label6.Location = new System.Drawing.Point(1073, 565);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 37;
@@ -319,7 +316,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(990, 501);
+            this.label5.Location = new System.Drawing.Point(990, 516);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(158, 25);
             this.label5.TabIndex = 36;
@@ -330,7 +327,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(878, 361);
+            this.label3.Location = new System.Drawing.Point(878, 376);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(277, 25);
             this.label3.TabIndex = 34;
@@ -341,7 +338,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(1044, 312);
+            this.label2.Location = new System.Drawing.Point(1044, 327);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 33;
@@ -352,7 +349,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(1018, 263);
+            this.label1.Location = new System.Drawing.Point(1018, 278);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 25);
             this.label1.TabIndex = 32;
@@ -362,7 +359,7 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(168, 413);
+            this.button8.Location = new System.Drawing.Point(168, 428);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 28);
             this.button8.TabIndex = 60;
@@ -375,7 +372,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Verdana", 12F);
             this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label17.Location = new System.Drawing.Point(897, 410);
+            this.label17.Location = new System.Drawing.Point(897, 425);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(258, 25);
             this.label17.TabIndex = 59;
@@ -390,7 +387,7 @@
             "داخل البلدة القديمة",
             "خارج البلدة القديمة",
             " "});
-            this.comboBox3.Location = new System.Drawing.Point(696, 464);
+            this.comboBox3.Location = new System.Drawing.Point(696, 479);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(141, 24);
             this.comboBox3.TabIndex = 78;
@@ -398,7 +395,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox4.Location = new System.Drawing.Point(255, 464);
+            this.textBox4.Location = new System.Drawing.Point(255, 479);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(141, 24);
             this.textBox4.TabIndex = 77;
@@ -406,7 +403,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox5.Location = new System.Drawing.Point(402, 464);
+            this.textBox5.Location = new System.Drawing.Point(402, 479);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(141, 24);
             this.textBox5.TabIndex = 76;
@@ -419,7 +416,7 @@
             "عائلة متعففة",
             "عائلة ايتام",
             " "});
-            this.comboBox4.Location = new System.Drawing.Point(549, 464);
+            this.comboBox4.Location = new System.Drawing.Point(549, 479);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(141, 24);
             this.comboBox4.TabIndex = 75;
@@ -429,7 +426,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label18.Location = new System.Drawing.Point(258, 446);
+            this.label18.Location = new System.Drawing.Point(258, 461);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(114, 17);
             this.label18.TabIndex = 74;
@@ -440,7 +437,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label19.Location = new System.Drawing.Point(413, 446);
+            this.label19.Location = new System.Drawing.Point(413, 461);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(106, 17);
             this.label19.TabIndex = 73;
@@ -451,7 +448,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label20.Location = new System.Drawing.Point(609, 445);
+            this.label20.Location = new System.Drawing.Point(609, 460);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 17);
             this.label20.TabIndex = 72;
@@ -462,7 +459,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(756, 446);
+            this.label21.Location = new System.Drawing.Point(756, 461);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(60, 17);
             this.label21.TabIndex = 71;
@@ -472,7 +469,7 @@
             // 
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(168, 462);
+            this.button9.Location = new System.Drawing.Point(168, 477);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 28);
             this.button9.TabIndex = 70;
@@ -484,7 +481,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Verdana", 12F);
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label22.Location = new System.Drawing.Point(906, 459);
+            this.label22.Location = new System.Drawing.Point(906, 474);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(242, 25);
             this.label22.TabIndex = 69;
@@ -493,7 +490,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Verdana", 11F);
-            this.button10.Location = new System.Drawing.Point(16, 382);
+            this.button10.Location = new System.Drawing.Point(16, 379);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(110, 69);
             this.button10.TabIndex = 79;
@@ -504,7 +501,7 @@
             // button11
             // 
             this.button11.Font = new System.Drawing.Font("Verdana", 11F);
-            this.button11.Location = new System.Drawing.Point(16, 457);
+            this.button11.Location = new System.Drawing.Point(16, 454);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(110, 69);
             this.button11.TabIndex = 80;
@@ -515,7 +512,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Verdana", 11F);
-            this.button12.Location = new System.Drawing.Point(16, 532);
+            this.button12.Location = new System.Drawing.Point(16, 529);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(110, 69);
             this.button12.TabIndex = 81;
@@ -526,14 +523,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(143, 342);
+            this.panel1.Location = new System.Drawing.Point(143, 365);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(4, 300);
+            this.panel1.Size = new System.Drawing.Size(4, 250);
             this.panel1.TabIndex = 82;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.button13);
             this.panel2.Location = new System.Drawing.Point(964, 192);
             this.panel2.Name = "panel2";
@@ -564,7 +562,7 @@
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button14.Location = new System.Drawing.Point(574, 315);
+            this.button14.Location = new System.Drawing.Point(574, 330);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(159, 28);
             this.button14.TabIndex = 85;
@@ -578,7 +576,7 @@
             this.panel3.Controls.Add(this.listView1);
             this.panel3.Location = new System.Drawing.Point(7, 77);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(560, 260);
+            this.panel3.Size = new System.Drawing.Size(560, 281);
             this.panel3.TabIndex = 86;
             // 
             // listView1
@@ -594,7 +592,7 @@
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
             this.listView1.RightToLeftLayout = true;
-            this.listView1.Size = new System.Drawing.Size(554, 254);
+            this.listView1.Size = new System.Drawing.Size(554, 276);
             this.listView1.TabIndex = 87;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -626,11 +624,77 @@
             this.label4.TabIndex = 87;
             this.label4.Text = "صندوق الرسائل :-";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.Controls.Add(this.button15);
+            this.panel4.Location = new System.Drawing.Point(-170, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(167, 66);
+            this.panel4.TabIndex = 85;
+            // 
+            // button15
+            // 
+            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button15.ForeColor = System.Drawing.Color.Red;
+            this.button15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button15.Location = new System.Drawing.Point(5, 4);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(157, 59);
+            this.button15.TabIndex = 84;
+            this.button15.Text = "ملفات تحتاج الى تدقيق";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // panel
+            // 
+            this.panel.BackColor = System.Drawing.Color.Red;
+            this.panel.Controls.Add(this.panel6);
+            this.panel.Controls.Add(this.button);
+            this.panel.Location = new System.Drawing.Point(785, 192);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(167, 66);
+            this.panel.TabIndex = 86;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Red;
+            this.panel6.Controls.Add(this.button16);
+            this.panel6.Location = new System.Drawing.Point(-170, 1);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(167, 66);
+            this.panel6.TabIndex = 85;
+            // 
+            // button16
+            // 
+            this.button16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button16.ForeColor = System.Drawing.Color.Red;
+            this.button16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button16.Location = new System.Drawing.Point(5, 4);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(157, 59);
+            this.button16.TabIndex = 84;
+            this.button16.Text = "ملفات تحتاج الى تدقيق";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button
+            // 
+            this.button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button.ForeColor = System.Drawing.Color.Red;
+            this.button.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button.Location = new System.Drawing.Point(5, 4);
+            this.button.Name = "button";
+            this.button.Size = new System.Drawing.Size(157, 59);
+            this.button.TabIndex = 84;
+            this.button.Text = "ملفات تحتاج الى تحديث";
+            this.button.UseVisualStyleBackColor = true;
+            this.button.Click += new System.EventHandler(this.button_Click);
+            // 
             // adminmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 659);
+            this.ClientSize = new System.Drawing.Size(1157, 621);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button14);
@@ -669,21 +733,23 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(1175, 706);
-            this.MinimumSize = new System.Drawing.Size(1175, 706);
+            this.MaximumSize = new System.Drawing.Size(1175, 668);
+            this.MinimumSize = new System.Drawing.Size(1175, 668);
             this.Name = "adminmain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "adminmain";
             this.Load += new System.EventHandler(this.adminmain_Load);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,7 +775,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -743,5 +808,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button;
     }
 }
