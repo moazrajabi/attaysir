@@ -361,7 +361,7 @@
             this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button8.Location = new System.Drawing.Point(168, 428);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 28);
+            this.button8.Size = new System.Drawing.Size(669, 28);
             this.button8.TabIndex = 60;
             this.button8.Text = "إظهار";
             this.button8.UseVisualStyleBackColor = true;

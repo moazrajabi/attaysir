@@ -40,13 +40,34 @@ namespace attaysir
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.employee", con);
             SqlDataReader read = cmd.ExecuteReader();
-            while (read.Read()) {
-                string employeename = "";
-                employeename = read["firstName"].ToString();
-            employeename += " " + read["lastName"].ToString();
-                comboBox1.Items.Add(employeename);
+            while (read.Read())
+            {
+                if (gg(read["id"].ToString(),"employee"))
+                {
+                    string employeename = "";
+                    employeename = read["firstName"].ToString();
+                    employeename += " " + read["lastName"].ToString();
+                    comboBox1.Items.Add(employeename);
+                }
             }
             con.Close();
+        }
+        bool gg(string id, string EmployeeOrAdmin)
+        {
+            bool kk = false;
+
+            if (accType == "admin")
+            {
+                if (EmployeeOrAdmin == "employee") { kk = true; }
+                if (EmployeeOrAdmin == "admin" && id != this.id.ToString()) { kk = true; }
+            }
+            else if (accType == "employee")
+            {
+                if (EmployeeOrAdmin == "employee" && id != this.id.ToString()) { kk = true; }
+                if (EmployeeOrAdmin == "admin") { kk = true; }
+            }
+
+            return kk;
         }
 
         private void getManagersLists()
@@ -58,10 +79,13 @@ namespace attaysir
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
-                string adminname = "";
-                adminname = read["adminfirstName"].ToString();
-                adminname += " " + read["adminlastName"].ToString();
-                comboBox2.Items.Add(adminname);
+                if (gg(read["id"].ToString(),"admin"))
+                {
+                    string adminname = "";
+                    adminname = read["adminfirstName"].ToString();
+                    adminname += " " + read["adminlastName"].ToString();
+                    comboBox2.Items.Add(adminname);
+                }
             }
             con.Close();
         }
