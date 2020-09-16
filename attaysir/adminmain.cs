@@ -262,7 +262,43 @@ namespace attaysir
             }
         }
 
-        private void getMessages()
+        public void getMessages()
+        {
+            listView1.Items.Clear();
+            getMessages1();
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                if (read["seen"].ToString() == "true")
+                {
+                    ListViewItem item = new ListViewItem();
+                    int id = int.Parse(read["senderid"].ToString());
+                    if (read["recieveradminoremployee"].ToString() == "employee")
+                    {
+                        String nameQuery = "select * from dbo.employee where id = " + id;
+                        string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
+                        item.SubItems.Add(name);
+                        item.SubItems.Add(read["dateofsendding"].ToString());
+                        item.SubItems.Add("مقروئة");
+                    }
+                    else
+                    {
+                        String nameQuery = "select * from dbo.admin where id = " + id;
+                        string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
+                        item.SubItems.Add(name);
+                        item.SubItems.Add(read["dateofsendding"].ToString());
+                        item.SubItems.Add("مقروئة");
+                    }
+                    listView1.Items.Add(item);
+                }
+            }
+            con.Close();
+        }
+
+        public void getMessages1()
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
             con.Open();
@@ -270,69 +306,69 @@ namespace attaysir
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
-                ListViewItem item = new ListViewItem();
-                int id = int.Parse(read["senderid"].ToString());
-                if (read["recieveradminoremployee"].ToString() == "employee")
+                if (read["seen"].ToString() == "false")
                 {
-                    String nameQuery = "select * from dbo.employee where id = " + id;
-                    string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
-                    item.SubItems.Add(name);
-                    item.SubItems.Add(read["dateofsendding"].ToString());
-                    if (read["seen"].ToString() == "false")
+                    ListViewItem item = new ListViewItem();
+                    int id = int.Parse(read["senderid"].ToString());
+                    if (read["recieveradminoremployee"].ToString() == "employee")
                     {
+                        String nameQuery = "select * from dbo.employee where id = " + id;
+                        string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
+                        item.SubItems.Add(name);
+                        item.SubItems.Add(read["dateofsendding"].ToString());
                         item.SubItems.Add("غير مقروئة");
                     }
                     else
                     {
-                        item.SubItems.Add("مقروئة");
-                    }
-                }
-                else
-                {
-                    String nameQuery = "select * from dbo.admin where id = " + id;
-                    string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
-                    item.SubItems.Add(name);
-                    item.SubItems.Add(read["dateofsendding"].ToString());
-                    if (read["seen"].ToString() == "false")
-                    {
+                        String nameQuery = "select * from dbo.admin where id = " + id;
+                        string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
+                        item.SubItems.Add(name);
+                        item.SubItems.Add(read["dateofsendding"].ToString());
                         item.SubItems.Add("غير مقروئة");
                     }
-                    else
-                    {
-                        item.SubItems.Add("مقروئة");
-                    }
+                    listView1.Items.Add(item);
                 }
-                listView1.Items.Add(item);
             }
             con.Close();
         }
 
-        ////
-        ////هادا الفنكشن انا عملتو حسب الريسيفر و انا لازم اعملوا حسب السندر لازم اعدلو 
-        ////
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             string name = listView1.SelectedItems[0].SubItems[1].Text;
             string time = listView1.SelectedItems[0].SubItems[2].Text;
-            string readedornot=""; if( listView1.SelectedItems[0].SubItems[3].Text == "غير مقروئة") { readedornot = "false"; }
+            string readedornot = ""; if (listView1.SelectedItems[0].SubItems[3].Text == "غير مقروئة") { readedornot = "false"; }
             if (listView1.SelectedItems[0].SubItems[3].Text == "مقروئة") { readedornot = "true"; }
-
-            string firstname="", lastname="";  name.ToCharArray();bool firstorlast = false;
+            string idofsender = "";
+            string firstname = "", lastname = ""; name.ToCharArray(); bool firstorlast = false;
+            string senderadminoremloyee = "";
             for (int i = 0; i < name.Length; i++)
             {
-                if (name[i].ToString() != " "&&firstorlast==false) { firstname += name[i].ToString(); }
-                if (name[i].ToString() != " "&&firstorlast==true) { lastname += name[i].ToString(); }
+                if (name[i].ToString() != " " && firstorlast == false) { firstname += name[i].ToString(); }
+                if (name[i].ToString() != " " && firstorlast == true) { lastname += name[i].ToString(); }
                 if (name[i].ToString() == " ") { firstorlast = true; }
             }
-            string id = dataAccess.reader(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'",firstname,lastname),"id");
 
-            string message = dataAccess.reader(string.Format("select message from attaysir1.dbo.messages where recieverid ='{0}'" +
-                " and recieveradminoremployee = '{1}' and dateofsendding = '{2}' and seen = '{3}'",id,"admin",time,readedornot),"message");
+            bool resultAdmin;
+            DataTable dt = dataAccess.Executequery(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'", firstname, lastname));
+            if (dt.Rows.Count > 0) { resultAdmin = true; } else { resultAdmin = false; }
 
-            int messageid = int.Parse(dataAccess.reader(string.Format("select id from attaysir1.dbo.messages where recieverid ='{0}'" +
-                " and recieveradminoremployee = '{1}' and dateofsendding = '{2}' and seen = '{3}'", id, "admin", time, readedornot), "id"));
+            bool resultEmployee;
+            DataTable dt1 = dataAccess.Executequery(string.Format("Select id from attaysir1.dbo.employee where firstname = '{0}' and lastname = '{1}'", firstname, lastname));
+            if (dt1.Rows.Count > 0) { resultEmployee = true; } else { resultEmployee = false; }
 
-            TheMessage k = new TheMessage(message,messageid);k.Show();
+            if (resultAdmin == true) { senderadminoremloyee = "admin"; idofsender = dataAccess.reader(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'", firstname, lastname), "id"); }
+            if (resultEmployee == true) { senderadminoremloyee = "employee"; idofsender = dataAccess.reader(string.Format("Select id from attaysir1.dbo.employee where firstname = '{0}' and lastname = '{1}'", firstname, lastname), "id"); }
+            if ((resultAdmin == true && resultEmployee == true) || idofsender == "") { MessageBox.Show("اسم المستخدم المدخل يتشابه مع اسم ادمن و اسم موظف في نفس الوقت او غير موجود"); }
+            else
+            {
+                string message = dataAccess.reader(string.Format("select message from attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'" +
+                    " and recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "message");
+
+                int messageid = int.Parse(dataAccess.reader(string.Format("select id from attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'" +
+                    " and recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "id"));
+
+                TheMessage k = new TheMessage(message, messageid,this); k.Show();
+            }
         }
     }
 }
