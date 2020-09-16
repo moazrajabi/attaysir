@@ -11,6 +11,7 @@ using attaysir.models;
 //////////////
 using System.Data.SqlClient;
 using System.Collections;
+using System.Xml;
 
 namespace attaysir
 {
@@ -263,7 +264,6 @@ namespace attaysir
 
         private void getMessages()
         {
-
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
@@ -302,30 +302,37 @@ namespace attaysir
                         item.SubItems.Add("مقروئة");
                     }
                 }
-
                 listView1.Items.Add(item);
             }
             con.Close();
-
         }
 
-
-        public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
+        ////
+        ////هادا الفنكشن انا عملتو حسب الريسيفر و انا لازم اعملوا حسب السندر لازم اعدلو 
+        ////
+        private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            string g = string.Format("select * from attaysir1.dbo.{0}", TableName);
-            ArrayList array = dataAccess.viewer(g, array1);
-            for (int i = 0; i < array.Count; i++)
+            string name = listView1.SelectedItems[0].SubItems[1].Text;
+            string time = listView1.SelectedItems[0].SubItems[2].Text;
+            string readedornot=""; if( listView1.SelectedItems[0].SubItems[3].Text == "غير مقروئة") { readedornot = "false"; }
+            if (listView1.SelectedItems[0].SubItems[3].Text == "مقروئة") { readedornot = "true"; }
+
+            string firstname="", lastname="";  name.ToCharArray();bool firstorlast = false;
+            for (int i = 0; i < name.Length; i++)
             {
-                ListViewItem item = (ListViewItem)array[i];
-                listView1.Items.Add(item);
+                if (name[i].ToString() != " "&&firstorlast==false) { firstname += name[i].ToString(); }
+                if (name[i].ToString() != " "&&firstorlast==true) { lastname += name[i].ToString(); }
+                if (name[i].ToString() == " ") { firstorlast = true; }
             }
-            string IfThereItemsOrNot = dataAccess.reader1(g, "id");
-            if (IfThereItemsOrNot != "")
-            {
-                listView1.FullRowSelect = true;
-                listView1.Items[0].Focused = true;
-                listView1.Items[0].Selected = true;
-            }
+            string id = dataAccess.reader(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'",firstname,lastname),"id");
+
+            string message = dataAccess.reader(string.Format("select message from attaysir1.dbo.messages where recieverid ='{0}'" +
+                " and recieveradminoremployee = '{1}' and dateofsendding = '{2}' and seen = '{3}'",id,"admin",time,readedornot),"message");
+
+            int messageid = int.Parse(dataAccess.reader(string.Format("select id from attaysir1.dbo.messages where recieverid ='{0}'" +
+                " and recieveradminoremployee = '{1}' and dateofsendding = '{2}' and seen = '{3}'", id, "admin", time, readedornot), "id"));
+
+            TheMessage k = new TheMessage(message,messageid);k.Show();
         }
     }
 }
