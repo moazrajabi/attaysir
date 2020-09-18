@@ -302,7 +302,7 @@ namespace attaysir
                 {
                     ListViewItem item = new ListViewItem();
                     int id = int.Parse(read["senderid"].ToString());
-                    if (read["recieveradminoremployee"].ToString() == "employee")
+                    if (read["senderadminoremployee"].ToString() == "employee")
                     {
                         String nameQuery = "select * from dbo.employee where id = " + id;
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
@@ -336,9 +336,9 @@ namespace attaysir
                 {
                     ListViewItem item = new ListViewItem();
                     int id = int.Parse(read["senderid"].ToString());
-                    if (read["recieveradminoremployee"].ToString() == "employee")
+                    if (read["senderadminoremployee"].ToString() == "employee")
                     {
-                        String nameQuery = "select * from dbo.employee where id = " + id;
+                        String nameQuery = "select * from dbo.employee where id = " + id.ToString();
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
@@ -346,7 +346,7 @@ namespace attaysir
                     }
                     else
                     {
-                        String nameQuery = "select * from dbo.admin where id = " + id;
+                        String nameQuery = "select * from dbo.admin where id = " + id.ToString();
                         string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
