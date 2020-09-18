@@ -34,7 +34,6 @@ namespace attaysir
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listView1.FullRowSelect = true;
             timer1.Start();
-            this.k();
             getMessages();
         }
 
@@ -45,6 +44,7 @@ namespace attaysir
             if (admin.checkedornot() == true) { this.bo1 = true; }
             else if (admin.checkedornot() == false) { this.bo1 = false; }
         }
+        //هاد اللي بالفنكشن اللي فوق ني واحد لازم اغيرهم هدول ضلهم زي ما همن من لما نقلتهم من واجهة الادمن
 
         bool f1 = true;
         void sabit_mi_degisken_mi1(bool bo)
@@ -56,33 +56,11 @@ namespace attaysir
             }
             if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
         }
-        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this,"employee"); n.Show(); } }
-
-        bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
-                //if it false its mean no lighting and if it true means lighting
-        public void k()
-        {
-            if (admin.checkedornot() == true) { this.bo = true; }
-            else if (admin.checkedornot() == false) { this.bo = false; }
-        }
-
-        bool f = true;
-        void sabit_mi_degisken_mi(bool bo)
-        {
-            if (bo == true)
-            {
-                if (f == true) { button13.ForeColor = Color.Red; panel2.BackColor = Color.Red; f = false; }
-                else if (f == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; f = true; }
-            }
-            if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
-        }
-        private void button13_Click(object sender, EventArgs e) { if (bo == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this,"employee"); n.Show(); } }
-
+        private void button_Click(object sender, EventArgs e) {}
+        
         int n = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            sabit_mi_degisken_mi(this.bo);
-            k();
             sabit_mi_degisken_mi1(this.bo1);
             k1();
             if (n % 7 == 0)
@@ -316,7 +294,7 @@ namespace attaysir
             getMessages1();
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -350,7 +328,7 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -378,6 +356,11 @@ namespace attaysir
                 }
             }
             con.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddProjects k = new AddProjects(this.id,"employee");k.Show();
         }
     }
 }

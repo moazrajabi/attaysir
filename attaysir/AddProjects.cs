@@ -16,10 +16,14 @@ namespace attaysir
     public partial class AddProjects : Form
     {
         Object[] sortedIds;
-        public AddProjects()
+        public AddProjects(int id, string adminoremployee)
         {
             InitializeComponent();
+            this.id = id;
+            this.adminoremployee = adminoremployee;
         }
+        int id;
+        string adminoremployee="";
 
         private void AddProjects_Load(object sender, EventArgs e)
         {

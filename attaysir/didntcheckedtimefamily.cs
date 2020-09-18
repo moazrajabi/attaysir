@@ -13,16 +13,11 @@ namespace attaysir
 {
     public partial class didntcheckedtimefamily : Form
     {
-        //bool f = false;
         private adminmain form = null;
-        private officermain form1 = null;
-        string adminoremployee = "";
-        public didntcheckedtimefamily(Form form,string adminoremployee)
+        public didntcheckedtimefamily(Form form)
         {
             InitializeComponent();
-            this.adminoremployee = adminoremployee;
-            if (adminoremployee == "admin") { this.form = form as adminmain; }
-            if (adminoremployee == "employee") { this.form1 = form as officermain; }
+            this.form = form as adminmain; 
             listView1.Size = new Size(this.Width - 23, this.Height - 75);
             listView1.Location = new Point(4,4);
             button1.Size = new Size(((this.Width - 15) / 2), 25);
@@ -118,8 +113,7 @@ namespace attaysir
 
         private void didntcheckedtimefamily_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (adminoremployee == "admin") { form.k(); }
-            if (adminoremployee == "employee") { form1.k(); }
+            form.k();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

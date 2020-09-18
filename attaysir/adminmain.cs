@@ -72,7 +72,7 @@ namespace attaysir
             if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
         }
 
-        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this,"admin"); n.Show(); } }
+        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show(); } }
 
 
         bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
@@ -94,7 +94,7 @@ namespace attaysir
             if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
         }
 
-        private void button13_Click(object sender, EventArgs e){if (bo == true){didntcheckedtimefamily n = new didntcheckedtimefamily(this,"admin"); n.Show();}}
+        private void button13_Click(object sender, EventArgs e){if (bo == true){didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();}}
         int n = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -392,6 +392,11 @@ namespace attaysir
                 }
             }
             catch { }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddProjects k = new AddProjects(this.id, "admin"); k.Show();
         }
     }
 }
