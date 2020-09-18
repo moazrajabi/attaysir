@@ -53,13 +53,14 @@ namespace attaysir
             { MessageBox.Show("هناك تعارض في تواريخ اإنشاء والإنتهاء"); }
             else
             {
-                dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.Projects(ProjectName,CreatingDate,FaydalananSayisi,Discription,ExpiryDate,listid) VALUES('{0}','{1}','{2}','{3}','{4}','{5}')", textBox1.Text,dateTimePicker1.Text, textBox3.Text, richTextBox1.Text,dateTimePicker2.Text, one[comboBox1.SelectedIndex].ToString()));
+                dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.Projects(ProjectName,CreatingDate,FaydalananSayisi,Discription,ExpiryDate,listid,thelink) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", textBox1.Text,dateTimePicker1.Text, textBox3.Text, richTextBox1.Text,dateTimePicker2.Text, one[comboBox1.SelectedIndex].ToString(),textBox4.Text));
                 //Array.Reverse(sortedIds);
                 //int id = int.Parse((string) sortedIds.GetValue(comboBox1.SelectedIndex));
-                
+
                 //int g = int.Parse(sortedIds[comboBox1.SelectedIndex].ToString());
                 //MessageBox.Show(sortedIds.GetValue(comboBox1.SelectedIndex).ToString());
                 //one[comboBox1.SelectedIndex].ToString()
+                MessageBox.Show("تم انشاء المشروع بنجاح :)");
             }
         }
         int[] one;
@@ -67,7 +68,7 @@ namespace attaysir
         {
             ArrayList array = new ArrayList();
             
-            SqlConnection con1 = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con1 = new SqlConnection(dataAccess.conString);
             con1.Open();
             SqlCommand cmd1 = new SqlCommand("select id from Attaysir1.dbo.thelists", con1);
             SqlDataReader read1 = cmd1.ExecuteReader();

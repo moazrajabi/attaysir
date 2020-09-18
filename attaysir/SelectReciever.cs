@@ -36,7 +36,7 @@ namespace attaysir
         private void getEmployeesLists()
         {
             comboBox1.Items.Add("");
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.employee", con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -73,7 +73,7 @@ namespace attaysir
         private void getManagersLists()
         {
             comboBox2.Items.Add("");
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.admin", con);
             SqlDataReader read = cmd.ExecuteReader();

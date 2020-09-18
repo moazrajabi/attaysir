@@ -178,7 +178,7 @@ namespace attaysir
         int[] SortUniv()
         {
             int count = 0;
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.UnivStud", con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -191,7 +191,7 @@ namespace attaysir
             {
                 for (int l = 8; l >= i; l--)
                 {
-                    SqlConnection con1 = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+                    SqlConnection con1 = new SqlConnection(dataAccess.conString);
                     con1.Open();
                     SqlCommand cmd1 = new SqlCommand("select * from attaysir1.dbo.Groups", con1);
                     SqlDataReader read1 = cmd1.ExecuteReader();

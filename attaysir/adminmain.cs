@@ -285,7 +285,7 @@ namespace attaysir
         {
             listView1.Items.Clear();
             getMessages1();
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -319,7 +319,7 @@ namespace attaysir
 
         public void getMessages1()
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True");
+            SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
             SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "admin"), con);
             SqlDataReader read = cmd.ExecuteReader();
@@ -397,6 +397,11 @@ namespace attaysir
         private void button2_Click(object sender, EventArgs e)
         {
             AddProjects k = new AddProjects(this.id, "admin"); k.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ProjectsList k = new ProjectsList();k.Show();
         }
     }
 }

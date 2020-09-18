@@ -131,6 +131,18 @@
     </Compile>
     <Compile Include="models\dataAccess.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectsDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectsDetails.Designer.cs">
+      <DependentUpon>ProjectsDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectsList.Designer.cs">
+      <DependentUpon>ProjectsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectReciever.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectsDetails.resx">
+      <DependentUpon>ProjectsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectsList.resx">
+      <DependentUpon>ProjectsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
