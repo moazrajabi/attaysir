@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.OpenTheLinkBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -37,20 +37,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ViewTheListBtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // OpenTheLinkBtn
             // 
-            this.button1.Location = new System.Drawing.Point(283, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 54);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "فتح رابط الوثائق";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.OpenTheLinkBtn.Location = new System.Drawing.Point(283, 145);
+            this.OpenTheLinkBtn.Name = "OpenTheLinkBtn";
+            this.OpenTheLinkBtn.Size = new System.Drawing.Size(262, 54);
+            this.OpenTheLinkBtn.TabIndex = 0;
+            this.OpenTheLinkBtn.Text = "فتح رابط الوثائق";
+            this.OpenTheLinkBtn.UseVisualStyleBackColor = true;
+            this.OpenTheLinkBtn.Click += new System.EventHandler(this.OpenTheLinkBtn_Click);
             // 
             // label1
             // 
@@ -128,15 +128,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "تاريخ الانتهاء :-";
             // 
-            // button2
+            // ViewTheListBtn
             // 
-            this.button2.Location = new System.Drawing.Point(15, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(262, 54);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "اظهار قائمة المستفيدين";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ViewTheListBtn.Location = new System.Drawing.Point(15, 145);
+            this.ViewTheListBtn.Name = "ViewTheListBtn";
+            this.ViewTheListBtn.Size = new System.Drawing.Size(262, 54);
+            this.ViewTheListBtn.TabIndex = 9;
+            this.ViewTheListBtn.Text = "اظهار قائمة المستفيدين";
+            this.ViewTheListBtn.UseVisualStyleBackColor = true;
+            this.ViewTheListBtn.Click += new System.EventHandler(this.ViewTheListBtn_Click);
             // 
             // richTextBox1
             // 
@@ -164,7 +164,7 @@
             this.ClientSize = new System.Drawing.Size(557, 208);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ViewTheListBtn);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.OpenTheLinkBtn);
             this.Name = "ProjectsDetails";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -186,7 +186,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OpenTheLinkBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -195,7 +195,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ViewTheListBtn;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
     }

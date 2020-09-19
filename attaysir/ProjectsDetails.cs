@@ -47,15 +47,18 @@ namespace attaysir
             richTextBox1.Text = discription;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OpenTheLinkBtn_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("هل تريد أن تفتح الرابط ؟", " فتح الرابط", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(this.thelink);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ViewTheListBtn_Click(object sender, EventArgs e)
         {
 
         }
     }
-}
+} 
 /* ProjectName,CreatingDate,FaydalananSayisi,Discription,ExpiryDate,ListId,TheLink */
