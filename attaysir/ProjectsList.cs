@@ -58,7 +58,7 @@ namespace attaysir
                 string ExpiryDate = listView1.SelectedItems[0].SubItems[5].Text;
                 string listid = dataAccess.reader(string.Format("select listid from attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate), "ListId");
                 string ProjectId = dataAccess.reader(string.Format("select id from attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}' and listid = '{5}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate, listid), "id");
-                ProjectsDetails k = new ProjectsDetails(int.Parse(ProjectId)); k.Show();
+                ProjectsDetails k = new ProjectsDetails(int.Parse(ProjectId)); k.ShowDialog();
             }
             catch { }
         }

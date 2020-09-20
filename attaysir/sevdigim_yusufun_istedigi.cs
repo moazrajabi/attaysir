@@ -40,38 +40,14 @@ namespace attaysir
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable dttbl = new DataTable();
-            //file:///C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf
-            //@"E:\test.pdf"
             FromListView(dttbl,listView1);
-            ExportDataTableToPdf(dttbl, @"C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf","khara");
-
-            /*
-            //     private StreamReader streamToPrint;
-            StreamReader streamToPrint;
-
-            streamToPrint = new StreamReader
-               ("C:\\My Documents\\MyFile.pdf");
-            PrintDocument PrintDocument = new PrintDocument();
-            PrintDocument.PrintPage += (object ssender, PrintPageEventArgs ee) =>
-            {
-                Font font = new Font("Arial", 12);
-                float offset = ee.MarginBounds.Top;
-                foreach (ListViewItem Item in listView1.Items)
-                {
-                    // The 5.0f is to add a small space between lines
-                    offset += (font.GetHeight() + 5.0f);
-                    PointF location = new System.Drawing.PointF(ee.MarginBounds.Left, offset);
-                    ee.Graphics.DrawString(Item.Text, font, Brushes.Black, location);
-                }
-            };
-
-            PrintDocument.Print();
-            streamToPrint.Close();*/
+            ExportDataTableToPdf(dttbl, "C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf","moaz-rajabi");
+            System.Diagnostics.Process.Start("C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf");
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
         }
 
         private void fillLitView()
         {
-            listView1.Columns.Add("");
             int cs = 0;
             for (int i=0; i<sqlCommands.Count; i++)
             {
@@ -81,8 +57,8 @@ namespace attaysir
                 SqlDataReader read = cmd.ExecuteReader();
                 while (read.Read())
                 {
-                    ListViewItem item = new ListViewItem();
-                    for (int x=0; x<selectedColumns.Count; x++)
+                    ListViewItem item = new ListViewItem(read[(String)columnsNames[(int)selectedColumns[0]]].ToString());
+                    for (int x=1; x<selectedColumns.Count; x++)
                     {
                         if (cs == 0)
                         {
@@ -96,16 +72,25 @@ namespace attaysir
                         }
                         item.SubItems.Add(read[(String)columnsNames[(int)selectedColumns[x]]].ToString());
                     }
-                    
-                    
                     listView1.Items.Add(item);
                 }
                 con.Close();
             }
         }
 
+        int i = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (i == 0)
+            {
+                this.BringToFront();
+                i++;
+            }
+        }
+
         void ExportDataTableToPdf(DataTable dtblTable, String strPdfPath, string strHeader)
         {
+            //StreamWriter(@"C:\\AllValidateReturn.xls", true, System.Text.Encoding.GetEncoding("Arabic"));
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
             document.SetPageSize(iTextSharp.text.PageSize.A4);

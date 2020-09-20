@@ -35,22 +35,22 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            adding n = new adding(id, true); n.Show();
+            adding n = new adding(id, true); n.ShowDialog();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            AddingEmployee n = new AddingEmployee(); n.Show();
+            AddingEmployee n = new AddingEmployee(); n.ShowDialog();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            TheEmployeesList n = new TheEmployeesList(); n.Show();
+            TheEmployeesList n = new TheEmployeesList(); n.ShowDialog();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            TheEmployeeList2 n = new TheEmployeeList2(); n.Show();
+            TheEmployeeList2 n = new TheEmployeeList2(); n.ShowDialog();
         }
 
         bool bo1;//this bool for control the ligting of button13(the if there a files needs togiving time) 
@@ -94,7 +94,7 @@ namespace attaysir
             if (bo == false) { button13.ForeColor = Color.Black; panel2.BackColor = this.BackColor; }
         }
 
-        private void button13_Click(object sender, EventArgs e){if (bo == true){didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show();}}
+        private void button13_Click(object sender, EventArgs e){if (bo == true){didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.ShowDialog();}}
         int n = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -133,12 +133,12 @@ namespace attaysir
             { TheIdsList = MinSalaryFilter(TheIdsList); }
             if (MaxSalarytxtbx.Text != "")
             { TheIdsList = MaxSalaryFilter(TheIdsList); }
-            the_lists k = new the_lists(TheIdsList);k.Show();
+            the_lists k = new the_lists(TheIdsList);k.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            the_lists k = new the_lists(true);k.Show();
+            the_lists k = new the_lists(true);k.ShowDialog();
         }
 
         int[] LivingLocationFilter(int[] TheIdsList)
@@ -270,7 +270,7 @@ namespace attaysir
 
         private void button14_Click(object sender, EventArgs e)
         {
-            AddUnivStud k = new AddUnivStud();k.Show();
+            AddUnivStud k = new AddUnivStud();k.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -396,17 +396,17 @@ namespace attaysir
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddProjects k = new AddProjects(this.id, "admin"); k.Show();
+            AddProjects k = new AddProjects(this.id, "admin"); k.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ProjectsList k = new ProjectsList();k.Show();
+            ProjectsList k = new ProjectsList();k.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            the_lists_viewer k = new the_lists_viewer();k.Show();
+            the_lists_viewer k = new the_lists_viewer();k.ShowDialog();
         }
     }
 }

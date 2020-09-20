@@ -81,112 +81,40 @@ namespace attaysir
         private void button1_Click(object sender, EventArgs e)
         {
             ArrayList selectedColumns = new ArrayList();
-            
-           
-            if (FamilyNumberChBox.Checked)
-            {
-                selectedColumns.Add(0);
-            }
-            if (HusbandFirstNameChBox.Checked)
-            {
-                selectedColumns.Add(1);
-            }
-            if (HusbandLastNameChBox.Checked)
-            {
-                selectedColumns.Add(2);
-            }
-            if (WifeFirstNameChBox.Checked)
-            {
-                selectedColumns.Add(3);
-            }
-            if (WifeLastNameChBox.Checked)
-            {
-                selectedColumns.Add(4);
-            }
-            if (LivingLocationChBox.Checked)
-            {
-                selectedColumns.Add(5);
-            }
-            if (AdressChBox.Checked)
-            {
-                selectedColumns.Add(6);
-            }
-            if (HusbandIdentificationNumberChBox.Checked)
-            {
-                selectedColumns.Add(7);
-            }
-            if (WifeIdentificationNumberChBox.Checked)
-            {
-                selectedColumns.Add(8);
-            }
-            if (HusbandPhoneNumberChBox.Checked)
-            {
-                selectedColumns.Add(9);
-            }
-            if (WifePhoneNumberChBox.Checked)
-            {
-                selectedColumns.Add(10);
-            }
-            if (NumberOfFamilyMembersChBox.Checked)
-            {
-                selectedColumns.Add(11);
-            }
-            if (HusbandSalaryChBox.Checked)
-            {
-                selectedColumns.Add(12);
-            }
-            if (WifeSalaryChBox.Checked)
-            {
-                selectedColumns.Add(13);
-            }
-            if (TotalChildrenInsuranceChBox.Checked)
-            {
-                selectedColumns.Add(14);
-            }
-            if (NumberOfChildrenTackingInsuranceChBox.Checked)
-            {
-                selectedColumns.Add(15);
-            }
-            if (RegisterEmployeesFirstNameChBox.Checked)
-            {
-                selectedColumns.Add(16);
-            }
-            if (RegisterEmployeesLastNameChBox.Checked)
-            {
-                selectedColumns.Add(17);
-            }
-            if (RegisteretionDateTimeChBox.Checked)
-            {
-                selectedColumns.Add(18);
-            }
-            if (MonthlyAverageSalaryOfPersonChBox.Checked)
-            {
-                selectedColumns.Add(19);
-            }
-            if (KindOfFamilyChBox.Checked)
-            {
-                selectedColumns.Add(20);
-            }
-            if (ExpiryDateOfFileChBox.Checked)
-            {
-                selectedColumns.Add(21);
-            }
-            if (HusbandOrWifeChBox.Checked)
-            {
-                selectedColumns.Add(22);
-            }
+            int o = 0;
+            if (FamilyNumberChBox.Checked) { selectedColumns.Add(0);o++; }
+            if (HusbandFirstNameChBox.Checked) { selectedColumns.Add(1); o++; }
+            if (HusbandLastNameChBox.Checked) { selectedColumns.Add(2); o++; }
+            if (WifeFirstNameChBox.Checked) { selectedColumns.Add(3); o++; }
+            if (WifeLastNameChBox.Checked) { selectedColumns.Add(4); o++; }
+            if (LivingLocationChBox.Checked) { selectedColumns.Add(5); o++; }
+            if (AdressChBox.Checked) { selectedColumns.Add(6); o++; }
+            if (HusbandIdentificationNumberChBox.Checked) { selectedColumns.Add(7); o++; }
+            if (WifeIdentificationNumberChBox.Checked) { selectedColumns.Add(8); o++; }
+            if (HusbandPhoneNumberChBox.Checked) { selectedColumns.Add(9); o++; }
+            if (WifePhoneNumberChBox.Checked) { selectedColumns.Add(10); o++; }
+            if (NumberOfFamilyMembersChBox.Checked) { selectedColumns.Add(11); o++; }
+            if (HusbandSalaryChBox.Checked) { selectedColumns.Add(12); o++; }
+            if (WifeSalaryChBox.Checked) { selectedColumns.Add(13); o++; }
+            if (TotalChildrenInsuranceChBox.Checked) { selectedColumns.Add(14); o++; }
+            if (NumberOfChildrenTackingInsuranceChBox.Checked) { selectedColumns.Add(15); o++; }
+            if (RegisterEmployeesFirstNameChBox.Checked) { selectedColumns.Add(16); o++; }
+            if (RegisterEmployeesLastNameChBox.Checked) { selectedColumns.Add(17); o++; }
+            if (RegisteretionDateTimeChBox.Checked) { selectedColumns.Add(18); o++; }
+            if (MonthlyAverageSalaryOfPersonChBox.Checked) { selectedColumns.Add(19); o++; }
+            if (KindOfFamilyChBox.Checked) { selectedColumns.Add(20); o++; }
+            if (ExpiryDateOfFileChBox.Checked) { selectedColumns.Add(21); o++; }
+            if (HusbandOrWifeChBox.Checked) { selectedColumns.Add(22); o++; }
+            if (o==0||o==1) { MessageBox.Show("يجب عليك اختيار مربعين على الاقل"); } else {
+                for (int i = 0; i < ids.Count; i++)
+                {
+                    sqlCommands.Add(createSqlCommand(selectedColumns, (String)ids[i]));
+                }
 
-            // MessageBox.Show(createSqlCommand(selectedColumns, "11"));
-
-           for (int i=0; i<ids.Count; i++)
-            {
-                sqlCommands.Add(createSqlCommand(selectedColumns, (String) ids[i]));
+                sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands, selectedColumns, uniList);
+                s.Show();
+                this.Close();
             }
-
-
-            sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands,selectedColumns,uniList);
-            s.Show();
-            this.Close();
 
         }
     }
