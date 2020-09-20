@@ -31,7 +31,7 @@ namespace attaysir
             {
                 DateTime time = DateTime.Now;
                 string date = time.ToString();
-                dataAccess.Executequery(string.Format("insert into TheLists(Name,CreatingDate,TypeOfList) values('{0}','{1}','{2}')", richTextBox1.Text , date, listType));
+                dataAccess.Executequery(string.Format("insert into TheLists(Name,CreatingDate,TypeOfList,faydalananlarsayisi) values('{0}','{1}','{2}','{3}')", richTextBox1.Text , date, listType, checkedItems.Count.ToString()));
                 addList();
             }  
         }

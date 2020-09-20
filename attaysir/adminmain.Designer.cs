@@ -85,6 +85,8 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -245,9 +247,9 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(636, 281);
+            this.button6.Location = new System.Drawing.Point(622, 281);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 28);
+            this.button6.Size = new System.Drawing.Size(89, 28);
             this.button6.TabIndex = 44;
             this.button6.Text = "بحث";
             this.button6.UseVisualStyleBackColor = true;
@@ -268,7 +270,7 @@
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(766, 530);
+            this.button4.Location = new System.Drawing.Point(765, 530);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 42;
@@ -682,11 +684,36 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button3.Location = new System.Drawing.Point(765, 580);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 28);
+            this.button3.TabIndex = 90;
+            this.button3.Text = "إظهار";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 12F);
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(1018, 578);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 25);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "القوائم المدرجة :-";
+            // 
             // adminmain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 621);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.label4);
@@ -805,5 +832,7 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label5;
     }
 }

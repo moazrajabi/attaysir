@@ -251,8 +251,8 @@ namespace attaysir
             {
                 string name = listView1.SelectedItems[0].SubItems[1].Text;
                 string time = listView1.SelectedItems[0].SubItems[2].Text;
-                string readedornot = ""; if (listView1.SelectedItems[0].SubItems[3].Text == "غير مقروئة") { readedornot = "false"; }
-                if (listView1.SelectedItems[0].SubItems[3].Text == "مقروئة") { readedornot = "true"; }
+                string readedornot = ""; if (listView1.SelectedItems[0].SubItems[3].Text == "غير مقروءة") { readedornot = "false"; }
+                if (listView1.SelectedItems[0].SubItems[3].Text == "مقروءة") { readedornot = "true"; }
                 string idofsender = "";
                 string firstname = "", lastname = ""; name.ToCharArray(); bool firstorlast = false;
                 string senderadminoremloyee = "";
@@ -308,7 +308,7 @@ namespace attaysir
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
-                        item.SubItems.Add("مقروئة");
+                        item.SubItems.Add("مقروءة");
                     }
                     else
                     {
@@ -316,7 +316,7 @@ namespace attaysir
                         string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
-                        item.SubItems.Add("مقروئة");
+                        item.SubItems.Add("مقروءة");
                     }
                     listView1.Items.Add(item);
                 }
@@ -342,7 +342,7 @@ namespace attaysir
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
-                        item.SubItems.Add("غير مقروئة");
+                        item.SubItems.Add("غير مقروءة");
                     }
                     else
                     {
@@ -350,7 +350,7 @@ namespace attaysir
                         string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
-                        item.SubItems.Add("غير مقروئة");
+                        item.SubItems.Add("غير مقروءة");
                     }
                     listView1.Items.Add(item);
                 }

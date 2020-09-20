@@ -30,6 +30,7 @@ namespace attaysir
             getids();
             dateTimePicker1.MinDate = DateTime.Today;
             dateTimePicker2.MinDate = DateTime.Today;
+            textBox3.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -97,6 +98,20 @@ namespace attaysir
             {
                 System.Diagnostics.Process.Start(url);
             }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            int faydalanansayisi = 0;
+
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.IdesOfTheList where IdOfList='{0}'", one[comboBox1.SelectedIndex].ToString()), con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read()) {/*read[""].ToString();*/faydalanansayisi++; }
+            con.Close();
+
+            textBox3.Text = faydalanansayisi.ToString();
         }
     }
 }

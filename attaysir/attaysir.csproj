@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Game Of Thrones\ExportToPdf using iTextSharp-moaz\ExportToPdf using iTextSharp\ExportToPdf\ExportToPdf\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,6 +81,12 @@
     </Compile>
     <Compile Include="adminmain.Designer.cs">
       <DependentUpon>adminmain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="check the datas for the list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="check the datas for the list.Designer.cs">
+      <DependentUpon>check the datas for the list.cs</DependentUpon>
     </Compile>
     <Compile Include="didntcheckedtimefamily.cs">
       <SubType>Form</SubType>
@@ -150,6 +160,18 @@
     <Compile Include="SelectReciever.Designer.cs">
       <DependentUpon>SelectReciever.cs</DependentUpon>
     </Compile>
+    <Compile Include="sevdigim_yusufun_istedigi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sevdigim_yusufun_istedigi.Designer.cs">
+      <DependentUpon>sevdigim_yusufun_istedigi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="the lists viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="the lists viewer.Designer.cs">
+      <DependentUpon>the lists viewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="the lists.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adminmain.resx">
       <DependentUpon>adminmain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="check the datas for the list.resx">
+      <DependentUpon>check the datas for the list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="didntcheckedtimefamily.resx">
       <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>
@@ -231,6 +256,12 @@
     </Compile>
     <EmbeddedResource Include="SelectReciever.resx">
       <DependentUpon>SelectReciever.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sevdigim_yusufun_istedigi.resx">
+      <DependentUpon>sevdigim_yusufun_istedigi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="the lists viewer.resx">
+      <DependentUpon>the lists viewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="the lists.resx">
       <DependentUpon>the lists.cs</DependentUpon>

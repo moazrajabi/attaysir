@@ -48,7 +48,7 @@
             this.OpenTheLinkBtn.Name = "OpenTheLinkBtn";
             this.OpenTheLinkBtn.Size = new System.Drawing.Size(262, 54);
             this.OpenTheLinkBtn.TabIndex = 0;
-            this.OpenTheLinkBtn.Text = "فتح رابط الوثائق";
+            this.OpenTheLinkBtn.Text = "فتح رابط التوثيق";
             this.OpenTheLinkBtn.UseVisualStyleBackColor = true;
             this.OpenTheLinkBtn.Click += new System.EventHandler(this.OpenTheLinkBtn_Click);
             // 
