@@ -40,8 +40,9 @@ namespace attaysir
         string TheDateTime;
         private void the_lists_Load(object sender, EventArgs e)
         {
-            if (IfItUniv == false) { intarr = sort(intarr); }
-            if (IfItUniv == true) { SortUniv(); }
+            if (schoolstud == "schoolstud") {} else {
+                if (IfItUniv == false) { intarr = sort(intarr); }
+                if (IfItUniv == true) { SortUniv(); } }
             textBox1.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             timer1.Start();
             listView1.Location = new Point(10, 35);
@@ -50,8 +51,9 @@ namespace attaysir
             textBox1.Location = new Point(this.Width / 2 + 90, 8);
             button1.Location = new Point(this.Width - 120, this.Height - 65);
             label2.Location = new Point(this.Width / 2+180, 11);
-            if (IfItUniv==false) { big(intarr); }
-            if (IfItUniv == true) { biguniv(SortUniv()); }
+            if (schoolstud == "schoolstud") { bigstud(schoolstudsort()); } else {
+                if (IfItUniv == false) { big(intarr); }
+                if (IfItUniv == true) { biguniv(SortUniv()); } }
             listView1.CheckBoxes = true;
             label2.Text = "max = " + listView1.Items.Count.ToString();
 
@@ -145,6 +147,85 @@ namespace attaysir
                 g += string.Format(" where id = '{0}'", intarr[i].ToString());
                 ViewerForTheLists(listView1, g, k);
             }
+        }
+
+        public void bigstud(int[] intarr)
+        {
+            /*  الاسم الاول -----اسم المدرسة ------رقم الهوية -----السنة الدراسية 
+
+اسم الاب -----اسم الام------اسم العائلة -------رقم هاتف1--------رقم هاتف 2---------معدل الدخل الفردي للاسرة     */
+
+            listView1.Columns.Clear();
+            listView1.Columns.Add("رقم العائلة");
+            listView1.Columns.Add("اسم الطالب");
+            listView1.Columns.Add("اسم الاب");
+            listView1.Columns.Add("اسم الام");
+            listView1.Columns.Add("رقم هوية الطالب");
+            listView1.Columns.Add("اسم المدرسة");
+            listView1.Columns.Add("السنة الدراسية");
+            listView1.Columns.Add("القسط السنوي");
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            for (int i = 0; i < intarr.LongLength; i++)
+            {
+                SqlConnection con = new SqlConnection(dataAccess.conString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.SchoolStud where id ='{0}'", intarr[i].ToString()), con);
+                SqlDataReader read = cmd.ExecuteReader();
+                while (read.Read())
+                {
+                    ListViewItem item = new ListViewItem(read["Familyid"].ToString());
+                    item.SubItems.Add(read["FirstName"].ToString());
+                    item.SubItems.Add(read["FatherName"].ToString());
+                    item.SubItems.Add(read["MotherName"].ToString());
+                    item.SubItems.Add(read["IDNum"].ToString());
+                    item.SubItems.Add(read["SchoolName"].ToString());
+                    item.SubItems.Add(read["WhichClass"].ToString());
+                    item.SubItems.Add(read["YearlyFees"].ToString());
+                    listView1.Items.Add(item);
+                }
+                con.Close();
+            }
+            /*
+            listView1.Columns.Clear();
+            string[] k1 = {"الاسم الاول","اسم الاب", "اسم الام", "اسم العائلة", "رقم الهوية",
+                "اسم الجامعة", "اسم الكلية", "اسم التخصص", "الاقساط السنوية", "السنة الدراسية",
+                "رقم الهاتف", "رقم الهاتف الاحتياطي", "الايميل" };
+            string[] k = { "FirstName", "FatherName", "MotherName", "LastName", "IdentityNu",
+                "UnivName", "KolejName", "DepartmentName", "YearlyFees", "whichyear", "PhoneNu",
+                "SecondPhoneNu", "Email" };
+            listView1.Columns.Add("");
+            for (int i = 0; i < k1.LongLength; i++)
+            {
+                listView1.Columns.Add(k1[i]);
+            }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            /*for (int i = 0; i < intarr.LongLength; i++)
+            {
+                string g = "UnivStud";
+                g += string.Format(" where id = '{0}'", intarr[i].ToString());
+                ViewerForTheLists(listView1, g, k);
+            }*/
+            /*
+             
+        void getlists()
+        {
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.TheLists order by CreatingDate desc", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                ListViewItem item = new ListViewItem();
+                item.SubItems.Add(read["name"].ToString());
+                item.SubItems.Add(read["typeoflist"].ToString());
+                item.SubItems.Add(getfaydalananlarsayisi(int.Parse(read["id"].ToString())).ToString());
+                item.SubItems.Add(read["creatingdate"].ToString());
+                listView1.Items.Add(item);
+            }
+            con.Close();
+        }
+             */
         }
 
         public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
@@ -352,7 +433,7 @@ namespace attaysir
                 nameOfList.ShowDialog();
         }
         
-        void schoolstudsort()
+        int[] schoolstudsort()
         {
             int count = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
@@ -368,7 +449,7 @@ namespace attaysir
             for (int i=0;i< SchoolIntArr.Length;i++)
             {
                 if (i == 0) { query += string.Format(" where familyid = '{0}'", SchoolIntArr[i].ToString()); }
-                else { query += string.Format(" and familyid = '{0}'", SchoolIntArr[i].ToString()); }
+                else { query += string.Format(" or familyid = '{0}'", SchoolIntArr[i].ToString()); }
             }
             
             for (int i = 1; i <= 10; i++)
@@ -481,7 +562,7 @@ namespace attaysir
                     }
                 }
             }
-
+            return schoolides;
         }
     }
 }
