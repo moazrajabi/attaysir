@@ -351,6 +351,138 @@ namespace attaysir
             if (checkedItems.Count>0)
                 nameOfList.ShowDialog();
         }
+        
+        void schoolstudsort()
+        {
+            int count = 0;
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.SchoolStud", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read()) { count++; }
+
+            int[] schoolides = new int[count];
+            int schoolIdesCounter = 0;
+            
+            string query = "select * from attaysir1.dbo.Groups2";
+            for (int i=0;i< SchoolIntArr.Length;i++)
+            {
+                if (i == 0) { query += string.Format(" where familyid = '{0}'", SchoolIntArr[i].ToString()); }
+                else { query += string.Format(" and familyid = '{0}'", SchoolIntArr[i].ToString()); }
+            }
+            
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int l = 10; l >= i; l--)
+                {
+                    SqlConnection con1 = new SqlConnection(dataAccess.conString);
+                    con1.Open();
+                    SqlCommand cmd1 = new SqlCommand(query, con1);
+                    SqlDataReader read1 = cmd1.ExecuteReader();
+                    while (read1.Read())
+                    {
+                        if (l == 10 && read1[string.Format("SchoolStud{0}", l)].ToString() != "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+
+                        if (l == 9 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+
+                        if (l == 8 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 7 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 6 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 5 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 5))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 4 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 6))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 3 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 6))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 7))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 2 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 6))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 7))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 8))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                        if (l == 1 && read1[string.Format("SchoolStud{0}", l)].ToString() != ""
+                            && read1[string.Format("SchoolStud{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 6))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 7))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 8))].ToString() == ""
+                            && read1[string.Format("SchoolStud{0}", (l + 9))].ToString() == "")
+                        {
+                            schoolides[schoolIdesCounter] = int.Parse(read1[string.Format("SchoolStud{0}", i)].ToString());
+                            schoolIdesCounter++;
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }
 

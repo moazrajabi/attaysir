@@ -414,7 +414,7 @@ namespace attaysir
             int[] TheIdsList; int h = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' and OneMoreColumn = 'true' ", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read()) { h++; }
             read.Close();

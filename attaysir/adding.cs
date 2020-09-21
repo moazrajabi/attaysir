@@ -120,6 +120,12 @@ namespace attaysir
             else if (checker(textBox7, textBox8, textBox9, comboBox8) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox7.Focus(); }
             else if (checker(textBox10, textBox11, textBox12, comboBox9) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox10.Focus(); }
             else if (checker(textBox13, textBox14, textBox15, comboBox10) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox13.Focus(); }
+
+            else if (double.Parse(hPohneNumberTxtBx.Text) > 2147483646.0 || double.Parse(wPhoneNumberTxtBx.Text) > 2147483646.0 ||
+                double.Parse(hIdentityNumberTxtBx.Text) > 2147483646.0 || double.Parse(wIdentityNumberTxtBx.Text) > 2147483646.0 ||
+                double.Parse(familyNumberTxtBx.Text) > 2147483646.0 || double.Parse(hSalaryTxtBx.Text) > 2147483646.0 ||
+                double.Parse(wSalaryTxtBx.Text) > 2147483646.0 || double.Parse(totalChildrenInsuranceTxtBx.Text) > 2147483646.0 ||
+                double.Parse(numChildtackInsuranceTxtBx.Text) > 2147483646.0) { richTextBox2.Text = "احد الارقام المدخلة كبيرة للغاية يجب ان تكون اصغر"; }
             else
             {
                 if (textBox22.Text == "") { textBox22.Text = "0"; }
@@ -135,7 +141,7 @@ namespace attaysir
                 if (textBox14.Text == "") { textBox14.Text = "0"; }
 
                 richTextBox2.Text = "";
-                
+
                 string lvngLctnCmbBx = ""; if (comboBox11.SelectedIndex == 1) { lvngLctnCmbBx = "داخل البلدة القديمة"; }
                 if (comboBox11.SelectedIndex == 2) { lvngLctnCmbBx = "خارج البلدة القديمة"; }
 
@@ -179,7 +185,7 @@ namespace attaysir
                     int.Parse(textBox5.Text) + int.Parse(textBox8.Text) + int.Parse(textBox11.Text) + int.Parse(textBox14.Text);
 
                 int MonthlyAverageSalaryOfPerson = ((TotalOfSalaries - TotalOfExpenses) / int.Parse(FamilyNumOfMember));
-                
+
                 try
                 {
                     richTextBox2.Text = "";
@@ -198,9 +204,10 @@ namespace attaysir
                             WifeLastName, WifePhoneNumber, husbandIdentityNumber, WifeIdentityNumber, int.Parse(
                                 FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
                             int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
-                            MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
+                            MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET FamilyNumber = '{0}' WHERE id = '{1}'"
-                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber),Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber), Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
 
                         Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'",
@@ -219,7 +226,7 @@ namespace attaysir
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
                         if (employeesNoteTxtBx.Text != "")
                         {
-                            Employee2.AddEmployeesNote(husbandIdentityNumber,WifeIdentityNumber, employeesNoteTxtBx.Text,
+                            Employee2.AddEmployeesNote(husbandIdentityNumber, WifeIdentityNumber, employeesNoteTxtBx.Text,
                                 firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
                         }
                         if (checker(textBox21, textBox22, textBox40, comboBox1) == false)
@@ -248,26 +255,28 @@ namespace attaysir
                                 k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
                                 k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
                                 k[i].Email);
-                            string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)),"groupid");
-                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu),"id");
-                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'",groupid,id));
-                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu,(i+1).ToString());
+                            string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu), "id");
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, id));
+                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu, (i + 1).ToString());
                         }
                         for (int i = 0; i < this.e; i++)
                         {
-                            Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text,w[i].firstname,hFirstNameTxtBx.Text,wFirstNameTxtBx.Text,w[i].IdentityNu,w[i].SchoolName,w[i].whichyear);
+                            Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, w[i].firstname, hFirstNameTxtBx.Text, wFirstNameTxtBx.Text, w[i].IdentityNu, w[i].SchoolName, w[i].whichyear);
                             string groupid2 = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
                             string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum = '{0}'", w[i].IdentityNu), "id");
-                            MessageBox.Show(groupid2+"---"+id);
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
-                            Employee2.addschoolstudtogroup2(groupid2,id, (i + 1).ToString());
+                            Employee2.addschoolstudtogroup2(groupid2, id, (i + 1).ToString());
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
                         }
                         MessageBox.Show("تمت اضافة الملف بنجاح");
+                        this.Close();
+                        if (AdminOrNot == true) { adding k = new adding(this.id, true); k.Show(); }
+                        if (AdminOrNot == false) { adding k = new adding(this.id); k.Show(); }
                     }
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }
             }
