@@ -194,6 +194,7 @@
             this.RightToLeftLayout = true;
             this.Text = "AddSchoolStud";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddSchoolStud_FormClosed);
+            this.Load += new System.EventHandler(this.AddSchoolStud_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

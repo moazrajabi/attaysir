@@ -1,4 +1,5 @@
-﻿using System;
+﻿using attaysir.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,13 +39,20 @@ namespace attaysir
             else if (whichyearcmbbx.SelectedIndex != 0 && whichyearcmbbx.SelectedIndex != 1 && whichyearcmbbx.SelectedIndex != 2 && whichyearcmbbx.SelectedIndex != 3 && whichyearcmbbx.SelectedIndex != 4 && whichyearcmbbx.SelectedIndex != 5 && whichyearcmbbx.SelectedIndex != 6 && whichyearcmbbx.SelectedIndex != 7 && whichyearcmbbx.SelectedIndex != 8 && whichyearcmbbx.SelectedIndex != 9 && whichyearcmbbx.SelectedIndex != 10 && whichyearcmbbx.SelectedIndex != 11) { richTextBox1.Text = "اختر السنة الدراسية اولا"; }
             else
             {
-                this.d.e += 1;
                 this.d.schoolarrayfilling(FirstNametxtbx.Text, IdentityNotxtbx.Text, SchoolNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString());
+                this.d.e += 1;
                 this.d.Enabled = true;
                 this.d.ControlBox = true;
                 this.Close();
                 MessageBox.Show("تمت اضافة الطالب المدرسي لملف العائلة بنجاح", "تمت الاضافة");
             }
+        }
+
+        private void AddSchoolStud_Load(object sender, EventArgs e)
+        {
+            IdentityNotxtbx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
+            FirstNametxtbx.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
+            SchoolNametxtbx.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
         }
     }
 }

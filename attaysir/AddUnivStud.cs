@@ -69,8 +69,8 @@ namespace attaysir
             {
                 if (yalnizcami == false)
                 {
-                    this.d.f += 1;
                     this.d.arrayfilling(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), YearlyFeestxtbx.Text, PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
+                    this.d.f += 1;
                     this.d.Enabled = true;
                     this.d.ControlBox = true;
                     this.Close();

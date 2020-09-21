@@ -284,11 +284,27 @@ namespace attaysir.models
             return dataAccess.executenonquery(query);
         }
 
+        public static int CreatGroup2(string HusbandIdNu, string WifeIdNu)
+        {
+            string query =
+                string.Format("INSERT INTO Attaysir1.dbo.Groups2(FamilyId) VALUES('{0}')",
+                SelectIdByHusbandIdNumWifeIdNum(HusbandIdNu, WifeIdNu));
+            return dataAccess.executenonquery(query);
+        }
+
         public static int addunivstudtogroup(string HIdNu,string WIdNu, string univstudidnu,string kacinci)
         {
             string query1 = string.Format("select GroupId from attaysir1.dbo.groups where familyid = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
             string query2 = string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'",univstudidnu);
             string query3 = string.Format("UPDATE Attaysir1.dbo.groups SET univstudid{0} = '{1}' WHERE GroupId = '{2}'",kacinci , dataAccess.reader(query2, "id"), dataAccess.reader(query1, "GroupId"));
+            return dataAccess.executenonquery(query3);
+        }
+
+        public static int addschoolstudtogroup2(string groupid2, string schoolstudid, string kacinci)
+        {
+            //string query1 = string.Format("select GroupId from attaysir1.dbo.groups2 where familyid = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
+            //string query2 = string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", univstudidnu);
+            string query3 = string.Format("UPDATE Attaysir1.dbo.groups2 SET SchoolStud{0} = '{1}' WHERE GroupId = '{2}'", kacinci, schoolstudid,groupid2);
             return dataAccess.executenonquery(query3);
         }
     }

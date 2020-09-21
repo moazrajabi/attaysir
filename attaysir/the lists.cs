@@ -21,6 +21,15 @@ namespace attaysir
             this.intarr = intarr;
         }
 
+        string schoolstud;
+        int[] SchoolIntArr;
+        public the_lists(int[] SchoolIntArr, string schoolstud)
+        {
+            InitializeComponent();
+            this.SchoolIntArr = SchoolIntArr;
+            this.schoolstud = schoolstud;
+        }
+
         public the_lists(bool IfItUniv)
         {
             InitializeComponent();

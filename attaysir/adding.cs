@@ -201,11 +201,19 @@ namespace attaysir
                             MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin,this.TheDateTime);
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET FamilyNumber = '{0}' WHERE id = '{1}'"
                             , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber),Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+
                         Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'", dataAccess.reader(string.
-                            Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'"
-                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber))
-                            , "groupid"), Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'",
+                            dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'",
+                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+
+                        Employee2.CreatGroup2(husbandIdentityNumber, WifeIdentityNumber);
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId2 = '{0}' WHERE id = '{1}'",
+                            dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'",
+                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+
                         Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
                         Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
                             , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
@@ -234,7 +242,7 @@ namespace attaysir
                         { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox10.Text, int.Parse(textBox11.Text), comboBox9.Text); }
                         if (checker(textBox13, textBox14, textBox15, comboBox10) == false)
                         { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox13.Text, int.Parse(textBox14.Text), comboBox10.Text); }
-                        for (int i = 1; i <= this.f; i++)
+                        for (int i = 0; i < this.f; i++)
                         {
                             Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
                                 k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
@@ -243,11 +251,16 @@ namespace attaysir
                             string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)),"groupid");
                             string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu),"id");
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'",groupid,id));
-                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu,i.ToString());
+                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu,(i+1).ToString());
                         }
-                        for (int i = 1; i <= this.e; i++)
+                        for (int i = 0; i < this.e; i++)
                         {
                             Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text,w[i].firstname,hFirstNameTxtBx.Text,wFirstNameTxtBx.Text,w[i].IdentityNu,w[i].SchoolName,w[i].whichyear);
+                            string groupid2 = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum = '{0}'", w[i].IdentityNu), "id");
+                            MessageBox.Show(groupid2+"---"+id);
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
+                            Employee2.addschoolstudtogroup2(groupid2,id, (i + 1).ToString());
                         }
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                     }
@@ -392,7 +405,7 @@ namespace attaysir
 
         private void button21_Click(object sender, EventArgs e)
         {
-            if (this.f >= 10) { MessageBox.Show("انت اضفت عشرة طلاب بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }
+            if (this.f >= 8) { MessageBox.Show("انت اضفت ثمانية طلاب بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }
             else
             {
                 this.Enabled = false;

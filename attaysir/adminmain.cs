@@ -116,13 +116,12 @@ namespace attaysir
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
             SqlDataReader read = cmd.ExecuteReader();
-
             while (read.Read()) { h++; }
             read.Close();
-            SqlDataReader read1 = cmd.ExecuteReader();
+
             TheIdsList = new int[h]; int g = 0;
-            while (read1.Read()) { TheIdsList[g] = int.Parse(read1["id"].ToString());
-                g++; }
+            SqlDataReader read1 = cmd.ExecuteReader();
+            while (read1.Read()) { TheIdsList[g] = int.Parse(read1["id"].ToString()); g++; }
             con.Close();
 
             if (LivingLocationCmbbx.SelectedIndex == 0 || LivingLocationCmbbx.SelectedIndex == 1)
@@ -407,6 +406,33 @@ namespace attaysir
         private void button3_Click(object sender, EventArgs e)
         {
             the_lists_viewer k = new the_lists_viewer();k.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+            int[] TheIdsList; int h = 0;
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read()) { h++; }
+            read.Close();
+
+            TheIdsList = new int[h]; int g = 0;
+            SqlDataReader read1 = cmd.ExecuteReader();
+            while (read1.Read()) { TheIdsList[g] = int.Parse(read1["id"].ToString()); g++; }
+            con.Close();
+
+            if (LivingLocationCmbbx.SelectedIndex == 0 || LivingLocationCmbbx.SelectedIndex == 1)
+            { TheIdsList = LivingLocationFilter(TheIdsList); }
+            if (KindOfFamilyCmbbx.SelectedIndex == 0 || KindOfFamilyCmbbx.SelectedIndex == 1)
+            { TheIdsList = kindOfFamilyFilter(TheIdsList); }
+            if (MinSalarytxtbx.Text != "")
+            { TheIdsList = MinSalaryFilter(TheIdsList); }
+            if (MaxSalarytxtbx.Text != "")
+            { TheIdsList = MaxSalaryFilter(TheIdsList); }
+            the_lists k = new the_lists(TheIdsList,"schoolstud"); k.ShowDialog();
         }
     }
 }
