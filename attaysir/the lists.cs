@@ -151,10 +151,6 @@ namespace attaysir
 
         public void bigstud(int[] intarr)
         {
-            /*  الاسم الاول -----اسم المدرسة ------رقم الهوية -----السنة الدراسية 
-
-اسم الاب -----اسم الام------اسم العائلة -------رقم هاتف1--------رقم هاتف 2---------معدل الدخل الفردي للاسرة     */
-
             listView1.Columns.Clear();
             listView1.Columns.Add("رقم العائلة");
             listView1.Columns.Add("اسم الطالب");
@@ -186,46 +182,6 @@ namespace attaysir
                 }
                 con.Close();
             }
-            /*
-            listView1.Columns.Clear();
-            string[] k1 = {"الاسم الاول","اسم الاب", "اسم الام", "اسم العائلة", "رقم الهوية",
-                "اسم الجامعة", "اسم الكلية", "اسم التخصص", "الاقساط السنوية", "السنة الدراسية",
-                "رقم الهاتف", "رقم الهاتف الاحتياطي", "الايميل" };
-            string[] k = { "FirstName", "FatherName", "MotherName", "LastName", "IdentityNu",
-                "UnivName", "KolejName", "DepartmentName", "YearlyFees", "whichyear", "PhoneNu",
-                "SecondPhoneNu", "Email" };
-            listView1.Columns.Add("");
-            for (int i = 0; i < k1.LongLength; i++)
-            {
-                listView1.Columns.Add(k1[i]);
-            }
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            /*for (int i = 0; i < intarr.LongLength; i++)
-            {
-                string g = "UnivStud";
-                g += string.Format(" where id = '{0}'", intarr[i].ToString());
-                ViewerForTheLists(listView1, g, k);
-            }*/
-            /*
-             
-        void getlists()
-        {
-            SqlConnection con = new SqlConnection(dataAccess.conString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.TheLists order by CreatingDate desc", con);
-            SqlDataReader read = cmd.ExecuteReader();
-            while (read.Read())
-            {
-                ListViewItem item = new ListViewItem();
-                item.SubItems.Add(read["name"].ToString());
-                item.SubItems.Add(read["typeoflist"].ToString());
-                item.SubItems.Add(getfaydalananlarsayisi(int.Parse(read["id"].ToString())).ToString());
-                item.SubItems.Add(read["creatingdate"].ToString());
-                listView1.Items.Add(item);
-            }
-            con.Close();
-        }
-             */
         }
 
         public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)

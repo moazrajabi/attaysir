@@ -114,6 +114,7 @@ namespace attaysir
                 sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands, selectedColumns, uniList);
                 s.Show();
                 this.Close();
+                s.BringToFront();
             }
 
         }
@@ -162,3 +163,37 @@ using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf",
      
      
      */
+/*
+SELECT TOP (1000) [Familyid]
+ ,[GroupId]
+ ,[id]
+ ,[FirstName]
+ ,[FatherName]
+ ,[MotherName]
+ ,[LastName]
+ ,[IdentityNu]
+ ,[UnivName]
+ ,[KolejName]
+ ,[DepartmentName]
+ ,[YearlyFees]
+ ,[whichyear]
+ ,[PhoneNu]
+ ,[SecondPhoneNu]
+ ,[Email]
+FROM [Attaysir1].[dbo].[UnivStud] 
+
+*/
+/*
+SELECT TOP(1000) [id]
+      ,[GroupId]
+      ,[Familyid]
+      ,[FirstName]
+      ,[FatherName]
+      ,[MotherName]
+      ,[IDNum]
+      ,[SchoolName]
+      ,[WhichClass]
+      ,[YearlyFees]
+FROM[Attaysir1].[dbo].[SchoolStud]
+
+*  */

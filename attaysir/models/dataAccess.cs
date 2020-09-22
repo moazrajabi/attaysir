@@ -211,17 +211,61 @@ namespace attaysir.models
             SqlCommand cmd = new SqlCommand("SELECT * FROM Attaysir1.dbo.faydalananaile WHERE CheckedOrNot= 'true'", con);
             SqlDataReader read = cmd.ExecuteReader();
             SqlCommand cmd2; string query;
-            DateTime dtNow = DateTime.ParseExact(DateTime.Now.ToString("dd-MM-yyyy"), "dd-MM-yyyy", null);
             while (read.Read())
             {
-                DateTime dtT = DateTime.ParseExact(read["ExpiryDateOfFile"].ToString(), "dd-MM-yyyy", null);
-                if (dtT < dtNow)
+                if (NeedsToUpdateOrNot(read["ExpiryDateOfFile"].ToString()))
                 {
-                    query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot='false' where id='{0}'", read["id"].ToString());
+                    query = string.Format("update Attaysir1.dbo.FaydalananAile set UpdatedOrNot = 'false' where id='{0}'", read["id"].ToString());
                     cmd2 = new SqlCommand(query, con2); con2.Open(); cmd2.ExecuteNonQuery(); con2.Close();
                 }
             }
             con.Close();
+        }
+
+        static bool NeedsToUpdateOrNot(string datetime)
+        {
+            string n = DateTime.ParseExact(DateTime.Now.ToString("dd-MM-yyyy"), "dd-MM-yyyy", null).ToString();n.ToCharArray();
+            string k = datetime.ToString();k.ToCharArray();
+            string datetimeint = "";string now = "";int l = 1;string  dd="", mm="", yyyy="";
+            for (int i = 0; i < 12; i++)
+            {
+                if (k[i] != '0' && k[i] != '1' && k[i] != '2' && k[i] != '3' && k[i] != '4' && k[i] != '5' && k[i] != '6' && k[i] != '7' && k[i] != '8' && k[i] != '9') {
+                    l++;
+                }
+                else
+                {
+                    if (l == 1) { dd += k[i]; }
+                    if (l == 2) { mm += k[i]; }
+                    if (l == 3) {
+                        for (int j = i; j < (i+4); j++) { yyyy += k[j]; }
+                        if (dd.Length == 1) { dd = "0" + dd; }
+                        if (mm.Length == 1) { mm = "0" + mm; }
+                        datetimeint = yyyy + mm + dd; yyyy = "";mm = "";dd = "";l = 1;
+                        break;
+                    }
+                }
+            }
+            for (int i = 0; i < 12; i++)
+            {
+                if (n[i] != '0' && n[i] != '1' && n[i] != '2' && n[i] != '3' && n[i] != '4' && n[i] != '5' && n[i] != '6' && n[i] != '7' && n[i] != '8' && n[i] != '9')
+                {
+                    l++;
+                }
+                else
+                {
+                    if (l == 1) { dd += n[i]; }
+                    if (l == 2) { mm += n[i]; }
+                    if (l == 3)
+                    {
+                        for (int j = i; j < (i + 4); j++) { yyyy += n[j]; }
+                        if (dd.Length == 1) { dd = "0" + dd; }
+                        if (mm.Length == 1) { mm = "0" + mm; }
+                        now = yyyy + mm + dd; yyyy = ""; mm = ""; dd = "";
+                        break;
+                    }
+                }
+            }
+            if ((int.Parse(datetimeint) - int.Parse(now)) <= 100) { return true; } else { return false; }
         }
     }
 }

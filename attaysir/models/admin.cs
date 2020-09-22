@@ -75,5 +75,12 @@ namespace attaysir.models
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
+
+        public static bool checkedornot1()
+        {
+            string query = "SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE UpdatedOrNot = 'false'";
+            DataTable dt = dataAccess.Executequery(query);
+            if (dt.Rows.Count > 0) { return true; } else { return false; }
+        }
     }
 }

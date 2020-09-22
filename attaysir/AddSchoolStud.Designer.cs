@@ -40,6 +40,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.feestxtbx = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label12
@@ -164,19 +166,39 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 14F);
-            this.button1.Location = new System.Drawing.Point(511, 74);
+            this.button1.Location = new System.Drawing.Point(504, 150);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 68);
+            this.button1.Size = new System.Drawing.Size(219, 56);
             this.button1.TabIndex = 39;
             this.button1.Text = "تسجيل";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // feestxtbx
+            // 
+            this.feestxtbx.Font = new System.Drawing.Font("Verdana", 8F);
+            this.feestxtbx.Location = new System.Drawing.Point(600, 74);
+            this.feestxtbx.Name = "feestxtbx";
+            this.feestxtbx.Size = new System.Drawing.Size(123, 24);
+            this.feestxtbx.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 10F);
+            this.label2.Location = new System.Drawing.Point(500, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "القسط السنوي";
+            // 
             // AddSchoolStud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 222);
+            this.ClientSize = new System.Drawing.Size(735, 222);
+            this.Controls.Add(this.feestxtbx);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.whichyearcmbbx);
@@ -189,6 +211,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.IdentityNotxtbx);
             this.Controls.Add(this.FirstNametxtbx);
+            this.MaximumSize = new System.Drawing.Size(753, 269);
+            this.MinimumSize = new System.Drawing.Size(753, 269);
             this.Name = "AddSchoolStud";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -214,5 +238,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox feestxtbx;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -57,8 +57,8 @@ namespace attaysir
                 //if it false its mean no lighting and if it true means lighting
         public void k1()
         {
-            if (admin.checkedornot() == true) { this.bo1 = true; }
-            else if (admin.checkedornot() == false) { this.bo1 = false; }
+            if (admin.checkedornot1() == true) { this.bo1 = true; }
+            else if (admin.checkedornot1() == false) { this.bo1 = false; }
         }
 
         bool f1 = true;
@@ -435,4 +435,8 @@ namespace attaysir
             the_lists k = new the_lists(TheIdsList,"schoolstud"); k.ShowDialog();
         }
     }
-}
+}/*
+
+ 
+ 
+ */

@@ -268,7 +268,11 @@ namespace attaysir
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
                             Employee2.addschoolstudtogroup2(groupid2, id, (i + 1).ToString());
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET YearlyFees = '{0}' WHERE id = '{1}'", w[i].fees.ToString(), id));
                         }
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET UpdatedOrNot = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                         this.Close();
                         if (AdminOrNot == true) { adding k = new adding(this.id, true); k.Show(); }
@@ -462,12 +466,13 @@ namespace attaysir
             public string IdentityNu;
             public string whichyear;
             public string SchoolName;
+            public string fees;
         };
 
         schoolstud[] w = new schoolstud[10]; public int e = 0;
-        public void schoolarrayfilling(string firstname, string IdentityNu, string SchoolName, string whichyear)
+        public void schoolarrayfilling(string firstname, string IdentityNu, string SchoolName, string whichyear,string fees)
         {
-            w[e] = new schoolstud() { firstname = firstname, IdentityNu = IdentityNu, SchoolName=SchoolName, whichyear = whichyear };
+            w[e] = new schoolstud() { firstname = firstname, IdentityNu = IdentityNu, SchoolName=SchoolName, whichyear = whichyear, fees = fees };
         }
     }
 }

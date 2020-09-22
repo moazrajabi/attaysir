@@ -22,9 +22,8 @@ namespace attaysir.models
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Text= dateTimePicker2.Text;
-            string query = string.Format("update attaysir1.dbo.faydalananaile set ExpiryDateOfFile='{0}' , CheckedOrNot = 'true' where id='{1}'",dateTimePicker2.Text, Employee2.SelectIdByHusbandIdNumWifeIdNum(this.form.IdentificetionNumber1,this.form.IdentificetionNumber2));
-            //dataAccess.Executequery(query);
+            button1.Text = dateTimePicker2.Text;
+            string query = string.Format("update attaysir1.dbo.faydalananaile set ExpiryDateOfFile='{0}' , UpdatedOrNot = 'true' where id='{1}'", dateTimePicker2.Text, Employee2.SelectIdByHusbandIdNumWifeIdNum(this.form.IdentificetionNumber1,this.form.IdentificetionNumber2));
             dataAccess.executenonquery(query);
             if (form.bigorsmall == false) { form.small();}
             else if (form.bigorsmall == true) { form.big();}
