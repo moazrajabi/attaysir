@@ -235,6 +235,9 @@
     <EmbeddedResource Include="CheckingForm.resx">
       <DependentUpon>CheckingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckTheDatasForTheListSCHOOL.resx">
+      <DependentUpon>CheckTheDatasForTheListSCHOOL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckTheDatasForTheListUNIV.resx">
       <DependentUpon>CheckTheDatasForTheListUNIV.cs</DependentUpon>
     </EmbeddedResource>

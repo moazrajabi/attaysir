@@ -93,7 +93,8 @@ namespace attaysir
                 }
                 else
                 {
-
+                    string idoflist = dataAccess.reader(string.Format("select id from attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
+                    CheckTheDatasForTheListSCHOOL c = new CheckTheDatasForTheListSCHOOL(int.Parse(idoflist)); c.ShowDialog();
                 }
             /*}
             catch { MessageBox.Show("اختر احد القوائم اولا"); }

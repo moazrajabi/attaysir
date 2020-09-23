@@ -76,8 +76,6 @@ namespace attaysir
                 sqlCommands.Add(createSqlCommand(selectedColumns, (String)ids[i]));
             }
 
-            MessageBox.Show((String) ids[0]);
-
             sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands, selectedColumns, univList);
             s.Show();
             this.Close();

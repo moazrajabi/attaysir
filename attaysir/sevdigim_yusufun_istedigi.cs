@@ -32,9 +32,21 @@ namespace attaysir
             fillLitView();
         }
 
+        ListViewItem[] listViewItems;string[] columns; string itsschool = "";
+        public sevdigim_yusufun_istedigi(ListViewItem[] listViewItems,string[] columns)
+        {
+            InitializeComponent();
+            this.listViewItems = listViewItems;
+            this.columns = columns;
+            this.itsschool = "itsschool";
+        }
+
         private void sevdigim_yusufun_istedigi_Load(object sender, EventArgs e)
         {
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            if (itsschool!="") {
+                fillthelistviewfromschool(listViewItems, columns);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +56,19 @@ namespace attaysir
             ExportDataTableToPdf(dttbl, "C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf","moaz-rajabi");
             System.Diagnostics.Process.Start("C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf");
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+        }
+
+        void fillthelistviewfromschool(ListViewItem[] listViewItems,string[] columns)
+        {
+            for (int i=0;i<columns.Length;i++)
+            {
+                listView1.Columns.Add(columns[i]);
+            }
+            for (int i=0;i< listViewItems.Length;i++)
+            {
+                //MessageBox.Show(listViewItems[i].ToString());
+                listView1.Items.Add(listViewItems[i]);
+            }
         }
 
         private void fillLitView()
@@ -87,6 +112,19 @@ namespace attaysir
                 i++;
             }
         }
+
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
+        /////////////////
 
         void ExportDataTableToPdf(DataTable dtblTable, String strPdfPath, string strHeader)
         {
