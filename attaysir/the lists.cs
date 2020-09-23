@@ -40,7 +40,7 @@ namespace attaysir
         string TheDateTime;
         private void the_lists_Load(object sender, EventArgs e)
         {
-            if (schoolstud == "schoolstud") {} else {
+            if (schoolstud != "schoolstud") {
                 if (IfItUniv == false) { intarr = sort(intarr); }
                 if (IfItUniv == true) { SortUniv(); } }
             textBox1.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
@@ -51,7 +51,7 @@ namespace attaysir
             textBox1.Location = new Point(this.Width / 2 + 90, 8);
             button1.Location = new Point(this.Width - 120, this.Height - 65);
             label2.Location = new Point(this.Width / 2+180, 11);
-            if (schoolstud == "schoolstud") { bigstud(schoolstudsort()); } else {
+            if (schoolstud == "schoolstud") { bigstud(schoolstudsort());  } else {
                 if (IfItUniv == false) { big(intarr); }
                 if (IfItUniv == true) { biguniv(SortUniv()); } }
             listView1.CheckBoxes = true;
@@ -377,16 +377,28 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String listType = "univ";
-            if (IfItUniv == false)
+            if (schoolstud != "schoolstud")
             {
-                listType = "family";
+                String listType = "univ";
+                if (IfItUniv == false)
+                {
+                    listType = "family";
+                }
+
+                ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
+                NameOfList nameOfList = new NameOfList(listType, checkedItems);
+                if (checkedItems.Count > 0)
+                    nameOfList.ShowDialog();
+            }
+            else
+            {
+                ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
+                NameOfList nameOfList = new NameOfList("schoolstud", checkedItems);
+                if (checkedItems.Count > 0)
+                    nameOfList.ShowDialog();
             }
 
-            ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
-            NameOfList nameOfList = new NameOfList(listType, checkedItems);
-            if (checkedItems.Count>0)
-                nameOfList.ShowDialog();
+              
         }
         
         int[] schoolstudsort()

@@ -56,6 +56,7 @@ namespace attaysir
             }
             con.Close();
         }
+
         ArrayList uniList = new ArrayList();
         private String createSqlCommand(ArrayList selectedList, String id)
         {
@@ -105,7 +106,7 @@ namespace attaysir
             if (KindOfFamilyChBox.Checked) { selectedColumns.Add(20); o++; }
             if (ExpiryDateOfFileChBox.Checked) { selectedColumns.Add(21); o++; }
             if (HusbandOrWifeChBox.Checked) { selectedColumns.Add(22); o++; }
-            if (o==0||o==1) { MessageBox.Show("يجب عليك اختيار مربعين على الاقل"); } else {
+            if (o<2) { MessageBox.Show("يجب عليك اختيار مربعين على الاقل"); } else {
                 for (int i = 0; i < ids.Count; i++)
                 {
                     sqlCommands.Add(createSqlCommand(selectedColumns, (String)ids[i]));

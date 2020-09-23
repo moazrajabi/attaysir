@@ -260,7 +260,7 @@ namespace attaysir.models
                         for (int j = i; j < (i + 4); j++) { yyyy += n[j]; }
                         if (dd.Length == 1) { dd = "0" + dd; }
                         if (mm.Length == 1) { mm = "0" + mm; }
-                        now = yyyy + mm + dd; yyyy = ""; mm = ""; dd = "";
+                        now = yyyy +dd+ mm ; yyyy = ""; mm = ""; dd = "";
                         break;
                     }
                 }

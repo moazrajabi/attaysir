@@ -88,6 +88,24 @@
     <Compile Include="check the datas for the list.Designer.cs">
       <DependentUpon>check the datas for the list.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckingForm.Designer.cs">
+      <DependentUpon>CheckingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckTheDatasForTheListSCHOOL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckTheDatasForTheListSCHOOL.Designer.cs">
+      <DependentUpon>CheckTheDatasForTheListSCHOOL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckTheDatasForTheListUNIV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckTheDatasForTheListUNIV.Designer.cs">
+      <DependentUpon>CheckTheDatasForTheListUNIV.cs</DependentUpon>
+    </Compile>
     <Compile Include="didntcheckedtimefamily.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="check the datas for the list.resx">
       <DependentUpon>check the datas for the list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckingForm.resx">
+      <DependentUpon>CheckingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckTheDatasForTheListUNIV.resx">
+      <DependentUpon>CheckTheDatasForTheListUNIV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="didntcheckedtimefamily.resx">
       <DependentUpon>didntcheckedtimefamily.cs</DependentUpon>

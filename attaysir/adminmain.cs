@@ -72,7 +72,7 @@ namespace attaysir
             if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
         }
 
-        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this); n.Show(); } }
+        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this,"schoolstud"); n.Show(); } }
 
 
         bool bo;//this bool for control the ligting of button13(the if there a files needs togiving time) 
@@ -435,8 +435,4 @@ namespace attaysir
             the_lists k = new the_lists(TheIdsList,"schoolstud"); k.ShowDialog();
         }
     }
-}/*
-
- 
- 
- */
+}

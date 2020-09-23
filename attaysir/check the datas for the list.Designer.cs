@@ -57,7 +57,7 @@
             // FamilyNumberChBox
             // 
             this.FamilyNumberChBox.AutoSize = true;
-            this.FamilyNumberChBox.Location = new System.Drawing.Point(666, 12);
+            this.FamilyNumberChBox.Location = new System.Drawing.Point(552, 21);
             this.FamilyNumberChBox.Name = "FamilyNumberChBox";
             this.FamilyNumberChBox.Size = new System.Drawing.Size(75, 21);
             this.FamilyNumberChBox.TabIndex = 0;
@@ -67,7 +67,7 @@
             // HusbandFirstNameChBox
             // 
             this.HusbandFirstNameChBox.AutoSize = true;
-            this.HusbandFirstNameChBox.Location = new System.Drawing.Point(666, 51);
+            this.HusbandFirstNameChBox.Location = new System.Drawing.Point(552, 76);
             this.HusbandFirstNameChBox.Name = "HusbandFirstNameChBox";
             this.HusbandFirstNameChBox.Size = new System.Drawing.Size(77, 21);
             this.HusbandFirstNameChBox.TabIndex = 1;
@@ -77,7 +77,7 @@
             // HusbandLastNameChBox
             // 
             this.HusbandLastNameChBox.AutoSize = true;
-            this.HusbandLastNameChBox.Location = new System.Drawing.Point(666, 90);
+            this.HusbandLastNameChBox.Location = new System.Drawing.Point(552, 131);
             this.HusbandLastNameChBox.Name = "HusbandLastNameChBox";
             this.HusbandLastNameChBox.Size = new System.Drawing.Size(103, 21);
             this.HusbandLastNameChBox.TabIndex = 2;
@@ -87,7 +87,7 @@
             // WifeFirstNameChBox
             // 
             this.WifeFirstNameChBox.AutoSize = true;
-            this.WifeFirstNameChBox.Location = new System.Drawing.Point(666, 129);
+            this.WifeFirstNameChBox.Location = new System.Drawing.Point(552, 186);
             this.WifeFirstNameChBox.Name = "WifeFirstNameChBox";
             this.WifeFirstNameChBox.Size = new System.Drawing.Size(82, 21);
             this.WifeFirstNameChBox.TabIndex = 3;
@@ -97,7 +97,7 @@
             // WifeLastNameChBox
             // 
             this.WifeLastNameChBox.AutoSize = true;
-            this.WifeLastNameChBox.Location = new System.Drawing.Point(666, 168);
+            this.WifeLastNameChBox.Location = new System.Drawing.Point(552, 241);
             this.WifeLastNameChBox.Name = "WifeLastNameChBox";
             this.WifeLastNameChBox.Size = new System.Drawing.Size(108, 21);
             this.WifeLastNameChBox.TabIndex = 4;
@@ -107,7 +107,7 @@
             // AdressChBox
             // 
             this.AdressChBox.AutoSize = true;
-            this.AdressChBox.Location = new System.Drawing.Point(666, 246);
+            this.AdressChBox.Location = new System.Drawing.Point(552, 351);
             this.AdressChBox.Name = "AdressChBox";
             this.AdressChBox.Size = new System.Drawing.Size(98, 21);
             this.AdressChBox.TabIndex = 5;
@@ -117,7 +117,7 @@
             // LivingLocationChBox
             // 
             this.LivingLocationChBox.AutoSize = true;
-            this.LivingLocationChBox.Location = new System.Drawing.Point(666, 207);
+            this.LivingLocationChBox.Location = new System.Drawing.Point(552, 296);
             this.LivingLocationChBox.Name = "LivingLocationChBox";
             this.LivingLocationChBox.Size = new System.Drawing.Size(82, 21);
             this.LivingLocationChBox.TabIndex = 6;
@@ -127,7 +127,7 @@
             // HusbandIdentificationNumberChBox
             // 
             this.HusbandIdentificationNumberChBox.AutoSize = true;
-            this.HusbandIdentificationNumberChBox.Location = new System.Drawing.Point(666, 285);
+            this.HusbandIdentificationNumberChBox.Location = new System.Drawing.Point(552, 406);
             this.HusbandIdentificationNumberChBox.Name = "HusbandIdentificationNumberChBox";
             this.HusbandIdentificationNumberChBox.Size = new System.Drawing.Size(101, 21);
             this.HusbandIdentificationNumberChBox.TabIndex = 7;
@@ -137,7 +137,7 @@
             // WifeIdentificationNumberChBox
             // 
             this.WifeIdentificationNumberChBox.AutoSize = true;
-            this.WifeIdentificationNumberChBox.Location = new System.Drawing.Point(666, 324);
+            this.WifeIdentificationNumberChBox.Location = new System.Drawing.Point(256, 21);
             this.WifeIdentificationNumberChBox.Name = "WifeIdentificationNumberChBox";
             this.WifeIdentificationNumberChBox.Size = new System.Drawing.Size(106, 21);
             this.WifeIdentificationNumberChBox.TabIndex = 8;
@@ -147,7 +147,7 @@
             // HusbandPhoneNumberChBox
             // 
             this.HusbandPhoneNumberChBox.AutoSize = true;
-            this.HusbandPhoneNumberChBox.Location = new System.Drawing.Point(666, 363);
+            this.HusbandPhoneNumberChBox.Location = new System.Drawing.Point(256, 76);
             this.HusbandPhoneNumberChBox.Name = "HusbandPhoneNumberChBox";
             this.HusbandPhoneNumberChBox.Size = new System.Drawing.Size(104, 21);
             this.HusbandPhoneNumberChBox.TabIndex = 9;
@@ -157,7 +157,7 @@
             // WifePhoneNumberChBox
             // 
             this.WifePhoneNumberChBox.AutoSize = true;
-            this.WifePhoneNumberChBox.Location = new System.Drawing.Point(666, 402);
+            this.WifePhoneNumberChBox.Location = new System.Drawing.Point(256, 131);
             this.WifePhoneNumberChBox.Name = "WifePhoneNumberChBox";
             this.WifePhoneNumberChBox.Size = new System.Drawing.Size(109, 21);
             this.WifePhoneNumberChBox.TabIndex = 10;
@@ -167,7 +167,7 @@
             // ExpiryDateOfFileChBox
             // 
             this.ExpiryDateOfFileChBox.AutoSize = true;
-            this.ExpiryDateOfFileChBox.Location = new System.Drawing.Point(362, 402);
+            this.ExpiryDateOfFileChBox.Location = new System.Drawing.Point(27, 296);
             this.ExpiryDateOfFileChBox.Name = "ExpiryDateOfFileChBox";
             this.ExpiryDateOfFileChBox.Size = new System.Drawing.Size(110, 21);
             this.ExpiryDateOfFileChBox.TabIndex = 21;
@@ -177,7 +177,7 @@
             // KindOfFamilyChBox
             // 
             this.KindOfFamilyChBox.AutoSize = true;
-            this.KindOfFamilyChBox.Location = new System.Drawing.Point(362, 363);
+            this.KindOfFamilyChBox.Location = new System.Drawing.Point(27, 241);
             this.KindOfFamilyChBox.Name = "KindOfFamilyChBox";
             this.KindOfFamilyChBox.Size = new System.Drawing.Size(84, 21);
             this.KindOfFamilyChBox.TabIndex = 20;
@@ -187,7 +187,7 @@
             // MonthlyAverageSalaryOfPersonChBox
             // 
             this.MonthlyAverageSalaryOfPersonChBox.AutoSize = true;
-            this.MonthlyAverageSalaryOfPersonChBox.Location = new System.Drawing.Point(362, 324);
+            this.MonthlyAverageSalaryOfPersonChBox.Location = new System.Drawing.Point(27, 186);
             this.MonthlyAverageSalaryOfPersonChBox.Name = "MonthlyAverageSalaryOfPersonChBox";
             this.MonthlyAverageSalaryOfPersonChBox.Size = new System.Drawing.Size(151, 21);
             this.MonthlyAverageSalaryOfPersonChBox.TabIndex = 19;
@@ -197,7 +197,7 @@
             // RegisteretionDateTimeChBox
             // 
             this.RegisteretionDateTimeChBox.AutoSize = true;
-            this.RegisteretionDateTimeChBox.Location = new System.Drawing.Point(362, 285);
+            this.RegisteretionDateTimeChBox.Location = new System.Drawing.Point(27, 131);
             this.RegisteretionDateTimeChBox.Name = "RegisteretionDateTimeChBox";
             this.RegisteretionDateTimeChBox.Size = new System.Drawing.Size(127, 21);
             this.RegisteretionDateTimeChBox.TabIndex = 18;
@@ -207,7 +207,7 @@
             // RegisterEmployeesFirstNameChBox
             // 
             this.RegisterEmployeesFirstNameChBox.AutoSize = true;
-            this.RegisterEmployeesFirstNameChBox.Location = new System.Drawing.Point(362, 207);
+            this.RegisterEmployeesFirstNameChBox.Location = new System.Drawing.Point(27, 21);
             this.RegisterEmployeesFirstNameChBox.Name = "RegisterEmployeesFirstNameChBox";
             this.RegisterEmployeesFirstNameChBox.Size = new System.Drawing.Size(124, 21);
             this.RegisterEmployeesFirstNameChBox.TabIndex = 17;
@@ -217,7 +217,7 @@
             // RegisterEmployeesLastNameChBox
             // 
             this.RegisterEmployeesLastNameChBox.AutoSize = true;
-            this.RegisterEmployeesLastNameChBox.Location = new System.Drawing.Point(362, 246);
+            this.RegisterEmployeesLastNameChBox.Location = new System.Drawing.Point(27, 76);
             this.RegisterEmployeesLastNameChBox.Name = "RegisterEmployeesLastNameChBox";
             this.RegisterEmployeesLastNameChBox.Size = new System.Drawing.Size(150, 21);
             this.RegisterEmployeesLastNameChBox.TabIndex = 16;
@@ -227,7 +227,7 @@
             // NumberOfChildrenTackingInsuranceChBox
             // 
             this.NumberOfChildrenTackingInsuranceChBox.AutoSize = true;
-            this.NumberOfChildrenTackingInsuranceChBox.Location = new System.Drawing.Point(362, 168);
+            this.NumberOfChildrenTackingInsuranceChBox.Location = new System.Drawing.Point(256, 406);
             this.NumberOfChildrenTackingInsuranceChBox.Name = "NumberOfChildrenTackingInsuranceChBox";
             this.NumberOfChildrenTackingInsuranceChBox.Size = new System.Drawing.Size(205, 21);
             this.NumberOfChildrenTackingInsuranceChBox.TabIndex = 15;
@@ -237,7 +237,7 @@
             // TotalChildrenInsuranceChBox
             // 
             this.TotalChildrenInsuranceChBox.AutoSize = true;
-            this.TotalChildrenInsuranceChBox.Location = new System.Drawing.Point(362, 129);
+            this.TotalChildrenInsuranceChBox.Location = new System.Drawing.Point(256, 351);
             this.TotalChildrenInsuranceChBox.Name = "TotalChildrenInsuranceChBox";
             this.TotalChildrenInsuranceChBox.Size = new System.Drawing.Size(150, 21);
             this.TotalChildrenInsuranceChBox.TabIndex = 14;
@@ -247,7 +247,7 @@
             // WifeSalaryChBox
             // 
             this.WifeSalaryChBox.AutoSize = true;
-            this.WifeSalaryChBox.Location = new System.Drawing.Point(362, 90);
+            this.WifeSalaryChBox.Location = new System.Drawing.Point(256, 296);
             this.WifeSalaryChBox.Name = "WifeSalaryChBox";
             this.WifeSalaryChBox.Size = new System.Drawing.Size(91, 21);
             this.WifeSalaryChBox.TabIndex = 13;
@@ -257,7 +257,7 @@
             // HusbandSalaryChBox
             // 
             this.HusbandSalaryChBox.AutoSize = true;
-            this.HusbandSalaryChBox.Location = new System.Drawing.Point(362, 51);
+            this.HusbandSalaryChBox.Location = new System.Drawing.Point(256, 241);
             this.HusbandSalaryChBox.Name = "HusbandSalaryChBox";
             this.HusbandSalaryChBox.Size = new System.Drawing.Size(86, 21);
             this.HusbandSalaryChBox.TabIndex = 12;
@@ -267,7 +267,7 @@
             // NumberOfFamilyMembersChBox
             // 
             this.NumberOfFamilyMembersChBox.AutoSize = true;
-            this.NumberOfFamilyMembersChBox.Location = new System.Drawing.Point(362, 12);
+            this.NumberOfFamilyMembersChBox.Location = new System.Drawing.Point(256, 186);
             this.NumberOfFamilyMembersChBox.Name = "NumberOfFamilyMembersChBox";
             this.NumberOfFamilyMembersChBox.Size = new System.Drawing.Size(103, 21);
             this.NumberOfFamilyMembersChBox.TabIndex = 11;
@@ -277,7 +277,7 @@
             // HusbandOrWifeChBox
             // 
             this.HusbandOrWifeChBox.AutoSize = true;
-            this.HusbandOrWifeChBox.Location = new System.Drawing.Point(161, 12);
+            this.HusbandOrWifeChBox.Location = new System.Drawing.Point(27, 351);
             this.HusbandOrWifeChBox.Name = "HusbandOrWifeChBox";
             this.HusbandOrWifeChBox.Size = new System.Drawing.Size(161, 21);
             this.HusbandOrWifeChBox.TabIndex = 22;
@@ -286,9 +286,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(99, 285);
+            this.button1.Location = new System.Drawing.Point(27, 392);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(127, 35);
             this.button1.TabIndex = 23;
             this.button1.Text = "إنشاء";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(688, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.HusbandOrWifeChBox);
             this.Controls.Add(this.ExpiryDateOfFileChBox);

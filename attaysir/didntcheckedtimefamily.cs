@@ -25,7 +25,7 @@ namespace attaysir
             button1.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
             button2.Location = new Point((this.Width / 2), (int.Parse(this.Height.ToString()) - 67));
         }
-        string ForUpDateing="";
+        public string ForUpDateing="";
         public didntcheckedtimefamily(Form form,string ForUpDateing)
         {
             InitializeComponent();
@@ -46,6 +46,7 @@ namespace attaysir
             {
                 small();
             }
+            if (ForUpDateing == "") { lll(); }
         }
 
         public void big()
@@ -174,29 +175,49 @@ namespace attaysir
         public string IdentificetionNumber2 = "";
         private void button2_Click(object sender, EventArgs e)
         {
-            if (bigorsmall == true)
-            {
-                IdentificetionNumber1 = listView1.SelectedItems[0].SubItems[8].Text;
-                IdentificetionNumber2 = listView1.SelectedItems[0].SubItems[9].Text;
-            }
-            else if (bigorsmall == false)
-            {
-                IdentificetionNumber1 = listView1.SelectedItems[0].SubItems[6].Text;
-                IdentificetionNumber2 = listView1.SelectedItems[0].SubItems[7].Text;
-            }
             if (ForUpDateing != "")
             {
+                if (bigorsmall == true)
+                {
+                    IdentificetionNumber1 = listView1.SelectedItems[0].SubItems[8].Text;
+                    IdentificetionNumber2 = listView1.SelectedItems[0].SubItems[9].Text;
+                }
+                else if (bigorsmall == false)
+                {
+                    IdentificetionNumber1 = listView1.SelectedItems[0].SubItems[6].Text;
+                    IdentificetionNumber2 = listView1.SelectedItems[0].SubItems[7].Text;
+                }
                 GivingExpiryDate n = new GivingExpiryDate(this); n.Show();
             }
             else
             {
-                //////////////////////////////////////////////// هون لازم اعملو لفنكشن كبسة التدقيق 
+                string hid,wid;
+                if (bigorsmall == true)
+                {
+                    hid = listView1.SelectedItems[0].SubItems[8].Text;
+                    wid = listView1.SelectedItems[0].SubItems[9].Text;
+                }
+                else
+                {
+                    hid = listView1.SelectedItems[0].SubItems[6].Text;
+                    wid = listView1.SelectedItems[0].SubItems[7].Text;
+                }
+                CheckingForm k = new CheckingForm(this,hid,wid);k.Show();
+
+
+
+
+
             }
         }
 
         private void didntcheckedtimefamily_FormClosed(object sender, FormClosedEventArgs e)
         {
-            form.k();
+            if (ForUpDateing != "")
+            {
+                form.k();
+            }
+            else { form.k1(); }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -211,6 +232,14 @@ namespace attaysir
                 if (admin.checkedornot() == true) { button2.Enabled = true; }
                 else if (admin.checkedornot() == false) { button2.Enabled = false; }
             }
+        }
+        public void lll()
+        {
+            button2.Text = "معاينة الملف";
+        }
+        public void lll2()
+        {
+            button2.Text = "ضبط تاريخ الانتهاء";
         }
     }
 }
