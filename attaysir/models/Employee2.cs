@@ -145,16 +145,6 @@ namespace attaysir.models
             return dataAccess.executenonquery(query);
         }
         
-        public static int AddOtherExpenses(string HusbandIdentificationNumber, string WifeIdentificationNumber, string OtherExpenses,
-            int AmountOfOtherExpenses, string CycleOfOtherExpenses)
-        {
-            string query = string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses," +
-                    " AmountOfOtherExpenses, CycleOfOtherExpenses,Familyid) " +
-                    "VALUES('{0}','{1}','{2}','{3}')", OtherExpenses, AmountOfOtherExpenses, CycleOfOtherExpenses
-                    , int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdentificationNumber, WifeIdentificationNumber)));
-            return dataAccess.executenonquery(query);
-        }
-
         public static int AddOtherSalaries(string HusbandIdentificationNumber, string WifeIdentificationNumber, string OtherSalary, int AmountOfOtherSalary, string CycleOfOtherSalary)
         {
             string query = string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary," +

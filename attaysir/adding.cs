@@ -237,33 +237,63 @@ namespace attaysir
                             Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
 
                         Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
-                        Employee2.AddExpenses(husbandIdentityNumber, WifeIdentityNumber, AmountOfMonthlyRent
-                            , AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona);
                         if (employeesNoteTxtBx.Text != "")
                         {
                             Employee2.AddEmployeesNote(husbandIdentityNumber, WifeIdentityNumber, employeesNoteTxtBx.Text,
                                 firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
                         }
+                        int thisfamilyid = int.Parse(Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text));
+
                         if (checker(textBox21, textBox22, textBox40, comboBox1) == false)
-                        { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox21.Text, int.Parse(textBox22.Text), comboBox1.Text); }
+                        {
+                            SavingByPath(expensesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                            thisfamilyid,textBox21,textBox22,comboBox1.Text, TheDateTime));
+                        }
                         if (checker(textBox25, textBox24, textBox23, comboBox2) == false)
-                        { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox25.Text, int.Parse(textBox24.Text), comboBox2.Text); }
+                        {
+                            SavingByPath(expensesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox25, textBox24, comboBox2.Text, TheDateTime));
+                        }
                         if (checker(textBox28, textBox27, textBox26, comboBox3) == false)
-                        { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox28.Text, int.Parse(textBox27.Text), comboBox3.Text); }
+                        {
+                            SavingByPath(expensesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox28, textBox27, comboBox3.Text, TheDateTime));
+                        }
                         if (checker(textBox41, textBox30, textBox29, comboBox4) == false)
-                        { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox41.Text, int.Parse(textBox30.Text), comboBox4.Text); }
+                        {
+                            SavingByPath(expensesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox41, textBox30, comboBox4.Text, TheDateTime));
+                        }
                         if (checker(textBox44, textBox43, textBox42, comboBox5) == false)
-                        { Employee2.AddOtherExpenses(husbandIdentityNumber, WifeIdentityNumber, textBox44.Text, int.Parse(textBox43.Text), comboBox5.Text); }
+                        {
+                            SavingByPath(expensesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox44, textBox43, comboBox5.Text, TheDateTime));
+                        }
                         if (checker(textBox1, textBox2, textBox3, comboBox6) == false)
-                        { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox1.Text, int.Parse(textBox2.Text), comboBox6.Text); }
+                        {
+                            SavingByPath(SalariesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox1, textBox2, comboBox6.Text, TheDateTime));
+                        }
                         if (checker(textBox4, textBox5, textBox6, comboBox7) == false)
-                        { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox4.Text, int.Parse(textBox5.Text), comboBox7.Text); }
+                        {
+                            SavingByPath(SalariesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox4, textBox5, comboBox7.Text, TheDateTime));
+                        }
                         if (checker(textBox7, textBox8, textBox9, comboBox8) == false)
-                        { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox7.Text, int.Parse(textBox8.Text), comboBox8.Text); }
+                        {
+                            SavingByPath(SalariesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox7, textBox8, comboBox8.Text, TheDateTime));
+                        }
                         if (checker(textBox10, textBox11, textBox12, comboBox9) == false)
-                        { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox10.Text, int.Parse(textBox11.Text), comboBox9.Text); }
+                        {
+                            SavingByPath(SalariesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox10, textBox11, comboBox9.Text, TheDateTime));
+                        }
                         if (checker(textBox13, textBox14, textBox15, comboBox10) == false)
-                        { Employee2.AddOtherSalaries(husbandIdentityNumber, WifeIdentityNumber, textBox13.Text, int.Parse(textBox14.Text), comboBox10.Text); }
+                        {
+                            SavingByPath(SalariesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                              thisfamilyid, textBox13, textBox14, comboBox10.Text, TheDateTime));
+                        }
                         for (int i = 0; i < this.f; i++)
                         {
                             Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
@@ -287,21 +317,7 @@ namespace attaysir
                         }
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET UpdatedOrNot = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
-
-                        /*
-  SELECT TOP (1000) PDFOfMonthlyRent,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfRent]
-
-  SELECT TOP (1000) PDFOfMonthlyElectricBill,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfElectric]
-
-  SELECT TOP (1000) PDFOfTwoMonthlyWaterBill,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfWater]
-
-  SELECT TOP (1000) PDFOfYearlyArnona,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfArnona]
-
-  SELECT TOP (1000) studentMonthlyTranportaionPDF,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfStudTransporation]
-                         
-                         */
-
-                        int thisfamilyid = int.Parse(Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text));
+                        
                         //int pdfscounter = 0;if (Employee2.ifthefamilythereforPDFfiles(thisfamilyid.ToString())) { pdfscounter++; }
                         if (textBox37.Text != "") {SavingByPath(amountOfMonthlyRentPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfRent(PDFOfMonthlyRent,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')",thisfamilyid, TheDateTime,amountOfMonthlyRentTxtBx.Text)); }
                         if (textBox36.Text != "") {SavingByPath(amountOfMonthlyElectricBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfElectric(PDFOfMonthlyElectricBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfMonthlyElectricBillTxtBx.Text));}
@@ -364,7 +380,8 @@ namespace attaysir
 
         string amountOfMonthlyRentPDF, amountOfMonthlyElectricBillPDF, amountOfTwoMonthlyWaterBillPDF,
             amountOfYearlyArnonaPDF, studentMonthlyTranportaionPDF,
-            expensesPDF1, expensesPDF2, expensesPDF3, expensesPDF4, expensesPDF5;
+            expensesPDF1, expensesPDF2, expensesPDF3, expensesPDF4, expensesPDF5,
+            SalariesPDF1, SalariesPDF2, SalariesPDF3, SalariesPDF4, SalariesPDF5;
 
         string selectFile()
         {
@@ -416,6 +433,67 @@ namespace attaysir
 
 
         int n = 0, m = 58, locationx = 620, locationy = 157, count = 0;
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            SalariesPDF1 = selectFile();
+            textBox1.Text = path;
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            SalariesPDF2 = selectFile();
+            textBox4.Text = path;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            SalariesPDF3 = selectFile();
+            textBox7.Text = path;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            SalariesPDF4 = selectFile();
+            textBox10.Text = path;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            SalariesPDF5 = selectFile();
+            textBox13.Text = path;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            expensesPDF1 = selectFile();
+            textBox40.Text = path;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            expensesPDF2 = selectFile();
+            textBox23.Text = path;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            expensesPDF3 = selectFile();
+            textBox26.Text = path;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            expensesPDF4 = selectFile();
+            textBox29.Text = path;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            expensesPDF5 = selectFile();
+            textBox42.Text = path;
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             locationy = locationy + m;

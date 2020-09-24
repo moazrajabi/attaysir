@@ -709,6 +709,7 @@
             this.button10.TabIndex = 59;
             this.button10.Text = "اختر وثيقة";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // textBox31
             // 
@@ -969,6 +970,7 @@
             this.button11.TabIndex = 105;
             this.button11.Text = "اختر وثيقة";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBox24
             // 
@@ -1031,6 +1033,7 @@
             this.button12.TabIndex = 112;
             this.button12.Text = "اختر وثيقة";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // textBox27
             // 
@@ -1093,6 +1096,7 @@
             this.button13.TabIndex = 119;
             this.button13.Text = "اختر وثيقة";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // textBox30
             // 
@@ -1155,6 +1159,7 @@
             this.button14.TabIndex = 126;
             this.button14.Text = "اختر وثيقة";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // textBox43
             // 
@@ -1217,6 +1222,7 @@
             this.button15.TabIndex = 134;
             this.button15.Text = "اختر وثيقة";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // textBox2
             // 
@@ -1279,6 +1285,7 @@
             this.button16.TabIndex = 141;
             this.button16.Text = "اختر وثيقة";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // textBox5
             // 
@@ -1341,6 +1348,7 @@
             this.button17.TabIndex = 148;
             this.button17.Text = "اختر وثيقة";
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // textBox8
             // 
@@ -1403,6 +1411,7 @@
             this.button18.TabIndex = 155;
             this.button18.Text = "اختر وثيقة";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // textBox11
             // 
@@ -1465,6 +1474,7 @@
             this.button19.TabIndex = 162;
             this.button19.Text = "اختر وثيقة";
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // textBox14
             // 
@@ -1688,7 +1698,7 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(365, 337);
+            this.panel3.Location = new System.Drawing.Point(362, 338);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(420, 88);
             this.panel3.TabIndex = 183;
@@ -1858,6 +1868,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(1541, 616);
+            this.MinimumSize = new System.Drawing.Size(1541, 616);
             this.Name = "adding";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
