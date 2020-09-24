@@ -120,8 +120,23 @@ namespace attaysir
             else if (checker(textBox7, textBox8, textBox9, comboBox8) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox7.Focus(); }
             else if (checker(textBox10, textBox11, textBox12, comboBox9) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox10.Focus(); }
             else if (checker(textBox13, textBox14, textBox15, comboBox10) == true) { richTextBox2.Text = "املا فراغات المدخول الاضافي الاول بشكل صحيح او اختر الدورة الزمنية له"; textBox13.Focus(); }
-
-            else if (double.Parse(hPohneNumberTxtBx.Text) > 2147483646.0 || double.Parse(wPhoneNumberTxtBx.Text) > 2147483646.0 ||
+            else if ((textBox37.Text != "" && amountOfMonthlyRentTxtBx.Text == "")||(textBox37.Text == "" && amountOfMonthlyRentTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات الايجار الشهري اولا"; amountOfMonthlyRentTxtBx.Focus(); }
+            else if ((textBox36.Text != "" && amountOfMonthlyElectricBillTxtBx.Text == "") || (textBox36.Text == "" && amountOfMonthlyElectricBillTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات فاتورة الكهرباء اولا"; amountOfMonthlyElectricBillTxtBx.Focus(); }
+            else if ((textBox35.Text != "" && amountOfTwoMonthlyWaterBillTxtBx.Text == "") || (textBox35.Text == "" && amountOfTwoMonthlyWaterBillTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات فاتورة المياه اولا"; amountOfTwoMonthlyWaterBillTxtBx.Focus(); }
+            else if ((textBox34.Text != "" && amountOfYearlyArnonaTxtBx.Text == "") || (textBox34.Text == "" && amountOfYearlyArnonaTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات فاتورة الارنونة اولا"; amountOfYearlyArnonaTxtBx.Focus(); }
+            else if ((textBox31.Text != "" && studentMonthlyTranportaionTxtBx.Text == "") || (textBox31.Text == "" && studentMonthlyTranportaionTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات تكاليف مواصلات الطلاب اولا"; studentMonthlyTranportaionTxtBx.Focus(); }
+            else if (double.Parse(studentMonthlyTranportaionTxtBx.Text) > 2147483646.0 ||
+                double.Parse(amountOfYearlyArnonaTxtBx.Text) > 2147483646.0 ||
+                double.Parse(amountOfTwoMonthlyWaterBillTxtBx.Text) > 2147483646.0 ||
+                double.Parse(amountOfMonthlyElectricBillTxtBx.Text) > 2147483646.0 ||
+                double.Parse(amountOfMonthlyRentTxtBx.Text) > 2147483646.0 ||
+                double.Parse(textBox43.Text) > 2147483646.0 || double.Parse(textBox30.Text) > 2147483646.0 ||
+                double.Parse(textBox27.Text) > 2147483646.0 || double.Parse(textBox24.Text) > 2147483646.0 ||
+                double.Parse(textBox22.Text) > 2147483646.0 || double.Parse(textBox14.Text) > 2147483646.0 ||
+                double.Parse(textBox11.Text) > 2147483646.0 || double.Parse(textBox8.Text) > 2147483646.0 ||
+                double.Parse(textBox5.Text) > 2147483646.0 || double.Parse(textBox2.Text) > 2147483646.0 ||
+                double.Parse(hPohneNumberTxtBx.Text) > 2147483646.0 ||
+                double.Parse(wPhoneNumberTxtBx.Text) > 2147483646.0 ||
                 double.Parse(hIdentityNumberTxtBx.Text) > 2147483646.0 || double.Parse(wIdentityNumberTxtBx.Text) > 2147483646.0 ||
                 double.Parse(familyNumberTxtBx.Text) > 2147483646.0 || double.Parse(hSalaryTxtBx.Text) > 2147483646.0 ||
                 double.Parse(wSalaryTxtBx.Text) > 2147483646.0 || double.Parse(totalChildrenInsuranceTxtBx.Text) > 2147483646.0 ||
@@ -189,7 +204,7 @@ namespace attaysir
                 try
                 {
                     richTextBox2.Text = "";
-                    if (Employee2.ifthefamilythere1(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
+                    if (Employee2.IfTheFamilyThere(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
                     {
                         MessageBox.Show("هذا الملف مسجل فعلا", "خطأ");
                     }
@@ -273,6 +288,27 @@ namespace attaysir
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET UpdatedOrNot = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
                         dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
 
+                        /*
+  SELECT TOP (1000) PDFOfMonthlyRent,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfRent]
+
+  SELECT TOP (1000) PDFOfMonthlyElectricBill,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfElectric]
+
+  SELECT TOP (1000) PDFOfTwoMonthlyWaterBill,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfWater]
+
+  SELECT TOP (1000) PDFOfYearlyArnona,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfArnona]
+
+  SELECT TOP (1000) studentMonthlyTranportaionPDF,id,Familyid,SavingDateTime,TheAmount FROM [Attaysir1].[dbo].[PdfStudTransporation]
+                         
+                         */
+
+                        int thisfamilyid = int.Parse(Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text));
+                        //int pdfscounter = 0;if (Employee2.ifthefamilythereforPDFfiles(thisfamilyid.ToString())) { pdfscounter++; }
+                        if (textBox37.Text != "") {SavingByPath(amountOfMonthlyRentPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfRent(PDFOfMonthlyRent,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')",thisfamilyid, TheDateTime,amountOfMonthlyRentTxtBx.Text)); }
+                        if (textBox36.Text != "") {SavingByPath(amountOfMonthlyElectricBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfElectric(PDFOfMonthlyElectricBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfMonthlyElectricBillTxtBx.Text));}
+                        if (textBox35.Text != "") {SavingByPath(amountOfTwoMonthlyWaterBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfWater(PDFOfTwoMonthlyWaterBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfTwoMonthlyWaterBillTxtBx.Text)); }
+                        if (textBox34.Text != "") {SavingByPath(amountOfYearlyArnonaPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfArnona(PDFOfYearlyArnona,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfYearlyArnonaTxtBx.Text)); }
+                        if (textBox31.Text != "") {SavingByPath(studentMonthlyTranportaionPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfStudTransporation(studentMonthlyTranportaionPDF,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,studentMonthlyTranportaionTxtBx.Text)); }
+
                         MessageBox.Show("تمت اضافة الملف بنجاح");
                         this.Close();
                         if (AdminOrNot == true) { adding k = new adding(this.id, true); k.Show(); }
@@ -286,6 +322,88 @@ namespace attaysir
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            amountOfMonthlyRentPDF = selectFile();
+            textBox37.Text = path;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            amountOfMonthlyElectricBillPDF = selectFile();
+            textBox36.Text = path;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            amountOfTwoMonthlyWaterBillPDF = selectFile();
+            textBox35.Text = path;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            amountOfYearlyArnonaPDF = selectFile();
+            textBox34.Text = path;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            studentMonthlyTranportaionPDF = selectFile();
+            textBox31.Text = path;
+        }
+
+        string amountOfMonthlyRentPDF, amountOfMonthlyElectricBillPDF, amountOfTwoMonthlyWaterBillPDF,
+            amountOfYearlyArnonaPDF, studentMonthlyTranportaionPDF,
+            expensesPDF1, expensesPDF2, expensesPDF3, expensesPDF4, expensesPDF5;
+
+        string selectFile()
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
+            openFile.ShowDialog();
+            string path = openFile.FileName;
+            this.path = openFile.FileName.Substring(openFile.FileName.LastIndexOf("\\") + 1);
+            return path;
+        }
+
+        void SavingByPath(string filename,string query)
+        {
+            Stream stream = File.OpenRead(filename);
+            byte[] buffer = new byte[stream.Length];
+            stream.Read(buffer, 0, buffer.Length);
+            string extn = new FileInfo(filename).Extension;
+
+            SqlConnection sqlConnection = new SqlConnection(dataAccess.conString);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
+            //sqlCommand.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
+
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        /*
+      ,PDFOfMonthlyRent
+        ,SavingDateOfPDFOfMonthlyRent
+      ,PDFOfMonthlyElectricBill
+        ,SavingDateOfPDFOfMonthlyElectricBill
+      ,PDFOfTwoMonthlyWaterBill
+        ,SavingDateOfPDFOfTwoMonthlyWaterBill
+      ,PDFOfYearlyArnona
+        ,SavingDateOfPDFOfYearlyArnona
+       */
+
         int n2 = 0, m2 = 58, locationx2 = 872, locationy2 = 157, count2 = 0;
         private void button20_Click(object sender, EventArgs e)
         {
@@ -296,11 +414,6 @@ namespace attaysir
             if (count2 != 5) { count2++; }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            amountOfMonthlyElectricBillPDF = selectFile();
-            textBox36.Text = path;
-        }
 
         int n = 0, m = 58, locationx = 620, locationy = 157, count = 0;
         private void button9_Click(object sender, EventArgs e)
@@ -352,70 +465,7 @@ namespace attaysir
         }
         
 
-        byte[] amountOfMonthlyRentPDF, amountOfMonthlyElectricBillPDF, amountOfTwoMonthlyWaterBillPDF,
-            amountOfYearlyArnonaPDF, totalSchoolsFeesPDF, totalUniversitiesFeesPDF, studentMonthlyTranportaionPDF,
-            expensesPDF1, expensesPDF2, expensesPDF3, expensesPDF4, expensesPDF5;
-
-        private byte[] selectFile1()
-        {
-            byte[] variable = null;
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                string path = openFile.FileName;
-                FileStream fStream = File.OpenRead(path);
-                long length = fStream.Length;
-                int length1 = (int)length;
-                variable = new byte[length1];
-                fStream.Read(variable, 0, length1);
-                this.path = path.Substring(path.LastIndexOf("\\") + 1);
-            }
-            return variable;
-        }
-
-        private byte[] selectFile()
-        {
-            byte[] variable = null;
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                string path = openFile.FileName;
-                FileStream fStream = File.OpenRead(path);
-                int length1 = (int)fStream.Length;
-                variable = new byte[length1];
-                fStream.Read(variable, 0, length1);
-                this.path = path.Substring(path.LastIndexOf("\\") + 1);
-            }
-            return variable;
-        }
-
-
-        private byte[] getFileBytes(string path)
-        {
-            byte[] ba1;
-            FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-            long FileSize = fs.Length;
-            BinaryReader br = new BinaryReader(fs);
-            ba1 = br.ReadBytes((Int32)FileSize);
-            br.Close();
-            fs.Close();
-            Console.WriteLine(ba1);
-            return (ba1);
-        }
-
-        protected void btnSavePdf_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "pdf files (*.pdf) |*.pdf;";
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                string path = openFile.FileName;
-                this.path = path.Substring(path.LastIndexOf("\\") + 1);
-            }
-        }
-
+        
         private void button21_Click(object sender, EventArgs e)
         {
             if (this.f >= 8) { MessageBox.Show("انت اضفت ثمانية طلاب بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }
@@ -476,6 +526,3 @@ namespace attaysir
         }
     }
 }
-/*
-FamilyNumber,ExpiryDateOfFile
-*/

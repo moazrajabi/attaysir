@@ -137,6 +137,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F);
             this.richTextBox1.Location = new System.Drawing.Point(574, 12);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(557, 59);
             this.richTextBox1.TabIndex = 55;
             this.richTextBox1.Text = "";

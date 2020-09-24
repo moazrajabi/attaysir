@@ -129,8 +129,8 @@ namespace attaysir.models
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
 
-        public static bool ifthefamilythere1(string HusbandId, string WifeId) {
-            string query = string.Format("select * from Attaysir1.dbo.faydalananaile where HusbandIdentificationNumber ='{0}' and WifeIdentificationNumber ='{1}'", HusbandId, WifeId);
+        public static bool ifthefamilythereforPDFfiles(string familyid) {
+            string query = string.Format("select * from Attaysir1.dbo.PDFFiles where Familyid = '{0}'", familyid);
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }

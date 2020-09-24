@@ -188,6 +188,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -620,6 +621,7 @@
             this.button2.TabIndex = 50;
             this.button2.Text = "اختر وثيقة";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -641,6 +643,7 @@
             this.button4.TabIndex = 52;
             this.button4.Text = "اختر وثيقة";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -651,6 +654,7 @@
             this.button5.TabIndex = 53;
             this.button5.Text = "اختر وثيقة";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -661,6 +665,7 @@
             this.button6.TabIndex = 54;
             this.button6.Text = "اختر وثيقة";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -671,6 +676,7 @@
             this.button7.TabIndex = 55;
             this.button7.Text = "اختر وثيقة";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -681,6 +687,7 @@
             this.button8.TabIndex = 56;
             this.button8.Text = "اختر وثيقة";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -1679,11 +1686,19 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(365, 337);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(420, 88);
+            this.panel3.TabIndex = 183;
+            // 
             // adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1523, 569);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.comboBox11);
@@ -2014,5 +2029,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Panel panel3;
     }
 }
