@@ -340,7 +340,7 @@ namespace attaysir
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && double.Parse(textBox1.Text)< 2147483646.0) {
+            if (textBox1.Text != "" && long.Parse(textBox1.Text)< 2147483646.0) {
 
                 ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
 

@@ -49,7 +49,6 @@ namespace attaysir
             comboBox8.SelectedIndex = 0;
             comboBox9.SelectedIndex = 0;
             comboBox10.SelectedIndex = 0;
-            ///////////////////////////////////////////
             hFirstNameTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
             hLastNameTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
             wFirstNameTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
@@ -67,8 +66,6 @@ namespace attaysir
             amountOfTwoMonthlyWaterBillTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             amountOfYearlyArnonaTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             amountOfMonthlyRentTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
-            totalSchoolsFeesTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
-            totalUniversitiesFeesTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             studentMonthlyTranportaionTxtBx.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             textBox21.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
             textBox25.KeyPress += new KeyPressEventHandler(Employee2.justCharacters);
@@ -125,7 +122,33 @@ namespace attaysir
             else if ((textBox35.Text != "" && amountOfTwoMonthlyWaterBillTxtBx.Text == "") || (textBox35.Text == "" && amountOfTwoMonthlyWaterBillTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات فاتورة المياه اولا"; amountOfTwoMonthlyWaterBillTxtBx.Focus(); }
             else if ((textBox34.Text != "" && amountOfYearlyArnonaTxtBx.Text == "") || (textBox34.Text == "" && amountOfYearlyArnonaTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات فاتورة الارنونة اولا"; amountOfYearlyArnonaTxtBx.Focus(); }
             else if ((textBox31.Text != "" && studentMonthlyTranportaionTxtBx.Text == "") || (textBox31.Text == "" && studentMonthlyTranportaionTxtBx.Text != "")) { richTextBox2.Text = "تفقد معلومات تكاليف مواصلات الطلاب اولا"; studentMonthlyTranportaionTxtBx.Focus(); }
-            else if (double.Parse(studentMonthlyTranportaionTxtBx.Text) > 2147483646.0 ||
+            else
+            {
+                if (studentMonthlyTranportaionTxtBx.Text == "") { studentMonthlyTranportaionTxtBx.Text = "0"; }
+                if (amountOfYearlyArnonaTxtBx.Text == "") { amountOfYearlyArnonaTxtBx.Text = "0"; }
+                if (amountOfTwoMonthlyWaterBillTxtBx.Text == "") { amountOfTwoMonthlyWaterBillTxtBx.Text = "0"; }
+                if (amountOfMonthlyElectricBillTxtBx.Text == "") { amountOfMonthlyElectricBillTxtBx.Text = "0"; }
+                if (amountOfMonthlyRentTxtBx.Text == "") { amountOfMonthlyRentTxtBx.Text = "0"; }
+                if (textBox22.Text == "") { textBox22.Text = "0"; }
+                if (textBox24.Text == "") { textBox24.Text = "0"; }
+                if (textBox27.Text == "") { textBox27.Text = "0"; }
+                if (textBox30.Text == "") { textBox30.Text = "0"; }
+                if (textBox43.Text == "") { textBox43.Text = "0"; }
+                if (textBox2.Text == "") { textBox2.Text = "0"; }
+                if (textBox5.Text == "") { textBox5.Text = "0"; }
+                if (textBox8.Text == "") { textBox8.Text = "0"; }
+                if (textBox11.Text == "") { textBox11.Text = "0"; }
+                if (textBox14.Text == "") { textBox14.Text = "0"; }
+                if (hPohneNumberTxtBx.Text == "") { hPohneNumberTxtBx.Text = "0"; }
+                if (wPhoneNumberTxtBx.Text == "") { wPhoneNumberTxtBx.Text = "0"; }
+                if (hIdentityNumberTxtBx.Text == "") { hIdentityNumberTxtBx.Text = "0"; }
+                if (wIdentityNumberTxtBx.Text == "") { wIdentityNumberTxtBx.Text = "0"; }
+                if (familyNumberTxtBx.Text == "") { familyNumberTxtBx.Text = "0"; }
+                if (hSalaryTxtBx.Text == "") { hSalaryTxtBx.Text = "0"; }
+                if (wSalaryTxtBx.Text == "") { wSalaryTxtBx.Text = "0"; }
+                if (totalChildrenInsuranceTxtBx.Text == "") { totalChildrenInsuranceTxtBx.Text = "0"; }
+                if (numChildtackInsuranceTxtBx.Text == "") { numChildtackInsuranceTxtBx.Text = "0"; }
+                if (double.Parse(studentMonthlyTranportaionTxtBx.Text) > 2147483646.0 ||
                 double.Parse(amountOfYearlyArnonaTxtBx.Text) > 2147483646.0 ||
                 double.Parse(amountOfTwoMonthlyWaterBillTxtBx.Text) > 2147483646.0 ||
                 double.Parse(amountOfMonthlyElectricBillTxtBx.Text) > 2147483646.0 ||
@@ -140,200 +163,191 @@ namespace attaysir
                 double.Parse(hIdentityNumberTxtBx.Text) > 2147483646.0 || double.Parse(wIdentityNumberTxtBx.Text) > 2147483646.0 ||
                 double.Parse(familyNumberTxtBx.Text) > 2147483646.0 || double.Parse(hSalaryTxtBx.Text) > 2147483646.0 ||
                 double.Parse(wSalaryTxtBx.Text) > 2147483646.0 || double.Parse(totalChildrenInsuranceTxtBx.Text) > 2147483646.0 ||
-                double.Parse(numChildtackInsuranceTxtBx.Text) > 2147483646.0) { richTextBox2.Text = "احد الارقام المدخلة كبيرة للغاية يجب ان تكون اصغر"; }
-            else
-            {
-                if (textBox22.Text == "") { textBox22.Text = "0"; }
-                if (textBox24.Text == "") { textBox24.Text = "0"; }
-                if (textBox27.Text == "") { textBox27.Text = "0"; }
-                if (textBox30.Text == "") { textBox30.Text = "0"; }
-                if (textBox43.Text == "") { textBox43.Text = "0"; }
-                /////////////////////////
-                if (textBox2.Text == "") { textBox2.Text = "0"; }
-                if (textBox5.Text == "") { textBox5.Text = "0"; }
-                if (textBox8.Text == "") { textBox8.Text = "0"; }
-                if (textBox11.Text == "") { textBox11.Text = "0"; }
-                if (textBox14.Text == "") { textBox14.Text = "0"; }
-
-                richTextBox2.Text = "";
-
-                string lvngLctnCmbBx = ""; if (comboBox11.SelectedIndex == 1) { lvngLctnCmbBx = "داخل البلدة القديمة"; }
-                if (comboBox11.SelectedIndex == 2) { lvngLctnCmbBx = "خارج البلدة القديمة"; }
-
-                string AmountOfMonthlyRent; if (amountOfMonthlyRentTxtBx.Text == "") { amountOfMonthlyRentTxtBx.Text = "0"; }
-                AmountOfMonthlyRent = amountOfMonthlyRentTxtBx.Text;
-                string AmountOfMonthlyElectricBill; if (amountOfMonthlyElectricBillTxtBx.Text == "") { amountOfMonthlyElectricBillTxtBx.Text = "0"; }
-                AmountOfMonthlyElectricBill = amountOfMonthlyElectricBillTxtBx.Text;
-                string AmountOfTwoMonthlyWaterBill; if (amountOfTwoMonthlyWaterBillTxtBx.Text == "") { amountOfTwoMonthlyWaterBillTxtBx.Text = "0"; }
-                AmountOfTwoMonthlyWaterBill = amountOfTwoMonthlyWaterBillTxtBx.Text;
-                string AmountOfYearlyArnona; if (amountOfYearlyArnonaTxtBx.Text == "") { amountOfYearlyArnonaTxtBx.Text = "0"; }
-                AmountOfYearlyArnona = amountOfYearlyArnonaTxtBx.Text;
-                string TotalSchoolsFees; if (totalSchoolsFeesTxtBx.Text == "") { totalSchoolsFeesTxtBx.Text = "0"; }
-                TotalSchoolsFees = totalSchoolsFeesTxtBx.Text;
-                string TotalUniversitiesFees; if (totalUniversitiesFeesTxtBx.Text == "") { totalUniversitiesFeesTxtBx.Text = "0"; }
-                TotalUniversitiesFees = totalUniversitiesFeesTxtBx.Text;
-                string StudentMonthlyTranportaion; if (studentMonthlyTranportaionTxtBx.Text == "") { studentMonthlyTranportaionTxtBx.Text = "0"; }
-                StudentMonthlyTranportaion = studentMonthlyTranportaionTxtBx.Text;
-
-                string HusbandLastName = hFirstNameTxtBx.Text;
-                string husbandFirstName = hLastNameTxtBx.Text; string WifeFirstName = wLastNameTxtBx.Text;
-                string husbandPhoneNUMber = hPohneNumberTxtBx.Text; string WifePhoneNumber = wPhoneNumberTxtBx.Text;
-                string husbandIdentityNumber = hIdentityNumberTxtBx.Text; string WifeIdentityNumber = wIdentityNumberTxtBx.Text;
-                string FamilyNumOfMember = familyNumberTxtBx.Text; string LivingLocation = lvngLctnCmbBx;
-                string Adress = adressDetailsTxtBx.Text; string husbandSalary = hSalaryTxtBx.Text;
-                string WifeSalary = wSalaryTxtBx.Text; string TotalChildrenInsurance = totalChildrenInsuranceTxtBx.Text;
-                string FamilyKind = ""; string HusbandOrWife = ""; string EmployeesNote = employeesNoteTxtBx.Text;
-                string NumChildtackInsurance = numChildtackInsuranceTxtBx.Text; string WifeLastName = wFirstNameTxtBx.Text;
-
-                if (checkBox1.Checked == true) { FamilyKind = "عائلة ايتام"; }
-                else if (checkBox2.Checked == true) { FamilyKind = "عائلة متعففة"; }
-                if (checkBox4.Checked == true) { HusbandOrWife = "الزوج"; }
-                else if (checkBox3.Checked == true) { HusbandOrWife = "الزوجة"; }
-
-                int numofChildTackInsurance = int.Parse(NumChildtackInsurance);
-                int TotalOfExpenses = int.Parse(AmountOfMonthlyRent) + int.Parse(AmountOfMonthlyElectricBill) +
-                    int.Parse(AmountOfTwoMonthlyWaterBill) + int.Parse(AmountOfYearlyArnona) + int.Parse(TotalSchoolsFees) +
-                    int.Parse(TotalUniversitiesFees) + int.Parse(StudentMonthlyTranportaion) + int.Parse(textBox22.Text) +
-                    int.Parse(textBox24.Text) + int.Parse(textBox27.Text) + int.Parse(textBox30.Text) +
-                    int.Parse(textBox43.Text);
-                int TotalOfSalaries = int.Parse(TotalChildrenInsurance) + int.Parse(WifeSalary) + int.Parse(husbandSalary) + int.Parse(textBox2.Text) +
-                    int.Parse(textBox5.Text) + int.Parse(textBox8.Text) + int.Parse(textBox11.Text) + int.Parse(textBox14.Text);
-
-                int MonthlyAverageSalaryOfPerson = ((TotalOfSalaries - TotalOfExpenses) / int.Parse(FamilyNumOfMember));
-
-                try
+                double.Parse(numChildtackInsuranceTxtBx.Text) > 2147483646.0)
+                {
+                    richTextBox2.Text = "احد الارقام المدخلة كبيرة للغاية يجب ان تكون اصغر";
+                }
+                else
                 {
                     richTextBox2.Text = "";
-                    if (Employee2.IfTheFamilyThere(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
+
+                    string lvngLctnCmbBx = ""; if (comboBox11.SelectedIndex == 1) { lvngLctnCmbBx = "داخل البلدة القديمة"; }
+                    if (comboBox11.SelectedIndex == 2) { lvngLctnCmbBx = "خارج البلدة القديمة"; }
+
+                    string AmountOfMonthlyRent; if (amountOfMonthlyRentTxtBx.Text == "") { amountOfMonthlyRentTxtBx.Text = "0"; }
+                    AmountOfMonthlyRent = amountOfMonthlyRentTxtBx.Text;
+                    string AmountOfMonthlyElectricBill; if (amountOfMonthlyElectricBillTxtBx.Text == "") { amountOfMonthlyElectricBillTxtBx.Text = "0"; }
+                    AmountOfMonthlyElectricBill = amountOfMonthlyElectricBillTxtBx.Text;
+                    string AmountOfTwoMonthlyWaterBill; if (amountOfTwoMonthlyWaterBillTxtBx.Text == "") { amountOfTwoMonthlyWaterBillTxtBx.Text = "0"; }
+                    AmountOfTwoMonthlyWaterBill = amountOfTwoMonthlyWaterBillTxtBx.Text;
+                    string AmountOfYearlyArnona; if (amountOfYearlyArnonaTxtBx.Text == "") { amountOfYearlyArnonaTxtBx.Text = "0"; }
+                    AmountOfYearlyArnona = amountOfYearlyArnonaTxtBx.Text;
+                    string StudentMonthlyTranportaion; if (studentMonthlyTranportaionTxtBx.Text == "") { studentMonthlyTranportaionTxtBx.Text = "0"; }
+                    StudentMonthlyTranportaion = studentMonthlyTranportaionTxtBx.Text;
+
+                    string HusbandLastName = hFirstNameTxtBx.Text;
+                    string husbandFirstName = hLastNameTxtBx.Text; string WifeFirstName = wLastNameTxtBx.Text;
+                    string husbandPhoneNUMber = hPohneNumberTxtBx.Text; string WifePhoneNumber = wPhoneNumberTxtBx.Text;
+                    string husbandIdentityNumber = hIdentityNumberTxtBx.Text; string WifeIdentityNumber = wIdentityNumberTxtBx.Text;
+                    string FamilyNumOfMember = familyNumberTxtBx.Text; string LivingLocation = lvngLctnCmbBx;
+                    string Adress = adressDetailsTxtBx.Text; string husbandSalary = hSalaryTxtBx.Text;
+                    string WifeSalary = wSalaryTxtBx.Text; string TotalChildrenInsurance = totalChildrenInsuranceTxtBx.Text;
+                    string FamilyKind = ""; string HusbandOrWife = ""; string EmployeesNote = employeesNoteTxtBx.Text;
+                    string NumChildtackInsurance = numChildtackInsuranceTxtBx.Text; string WifeLastName = wFirstNameTxtBx.Text;
+
+                    if (checkBox1.Checked == true) { FamilyKind = "عائلة ايتام"; }
+                    else if (checkBox2.Checked == true) { FamilyKind = "عائلة متعففة"; }
+                    if (checkBox4.Checked == true) { HusbandOrWife = "الزوج"; }
+                    else if (checkBox3.Checked == true) { HusbandOrWife = "الزوجة"; }
+
+                    int numofChildTackInsurance = int.Parse(NumChildtackInsurance);
+                    try
                     {
-                        MessageBox.Show("هذا الملف مسجل فعلا", "خطأ");
-                    }
-                    else
-                    {
-                        //////
-                        string firstnameofemploadmin = "", lastnameofemploadmin = "";
-                        if (AdminOrNot == false) { firstnameofemploadmin = Employee2.FirstNameById(id); lastnameofemploadmin = Employee2.LastNameById(id); }
-                        if (AdminOrNot == true) { firstnameofemploadmin = Employee2.FirstNameByIdAdmin(id); lastnameofemploadmin = Employee2.LastNameByIdAdmin(id); }
-                        //////
-                        Employee2.AddFamily(husbandFirstName, WifeFirstName, husbandPhoneNUMber, HusbandLastName,
-                            WifeLastName, WifePhoneNumber, husbandIdentityNumber, WifeIdentityNumber, int.Parse(
-                                FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
-                            int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
-                            MonthlyAverageSalaryOfPerson, firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET FamilyNumber = '{0}' WHERE id = '{1}'"
-                            , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber), Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
-
-                        Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'",
-                            dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'",
-                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
-                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
-
-                        Employee2.CreatGroup2(husbandIdentityNumber, WifeIdentityNumber);
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId2 = '{0}' WHERE id = '{1}'",
-                            dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'",
-                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
-                            Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
-
-                        Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
-                        if (employeesNoteTxtBx.Text != "")
+                        richTextBox2.Text = "";
+                        if (Employee2.IfTheFamilyThere(hIdentityNumberTxtBx.Text.Trim(), wIdentityNumberTxtBx.Text.Trim()) == true)
                         {
-                            Employee2.AddEmployeesNote(husbandIdentityNumber, WifeIdentityNumber, employeesNoteTxtBx.Text,
+                            MessageBox.Show("هذا الملف مسجل فعلا", "خطأ");
+                        }
+                        else
+                        {
+                            string firstnameofemploadmin = "", lastnameofemploadmin = "";
+                            if (AdminOrNot == false) { firstnameofemploadmin = Employee2.FirstNameById(id); lastnameofemploadmin = Employee2.LastNameById(id); }
+                            if (AdminOrNot == true) { firstnameofemploadmin = Employee2.FirstNameByIdAdmin(id); lastnameofemploadmin = Employee2.LastNameByIdAdmin(id); }
+                            
+                            Employee2.AddFamily(husbandFirstName, WifeFirstName, husbandPhoneNUMber, HusbandLastName,
+                                WifeLastName, WifePhoneNumber, husbandIdentityNumber, WifeIdentityNumber, int.Parse(
+                                    FamilyNumOfMember), LivingLocation, Adress, int.Parse(husbandSalary), int.Parse(WifeSalary),
+                                int.Parse(TotalChildrenInsurance), FamilyKind, int.Parse(NumChildtackInsurance), HusbandOrWife,
                                 firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
-                        }
-                        int thisfamilyid = int.Parse(Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text));
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET FamilyNumber = '{0}' WHERE id = '{1}'"
+                                , Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber), Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
 
-                        if (checker(textBox21, textBox22, textBox40, comboBox1) == false)
-                        {
-                            SavingByPath(expensesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                            thisfamilyid,textBox21,textBox22,comboBox1.Text, TheDateTime));
-                        }
-                        if (checker(textBox25, textBox24, textBox23, comboBox2) == false)
-                        {
-                            SavingByPath(expensesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox25, textBox24, comboBox2.Text, TheDateTime));
-                        }
-                        if (checker(textBox28, textBox27, textBox26, comboBox3) == false)
-                        {
-                            SavingByPath(expensesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox28, textBox27, comboBox3.Text, TheDateTime));
-                        }
-                        if (checker(textBox41, textBox30, textBox29, comboBox4) == false)
-                        {
-                            SavingByPath(expensesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox41, textBox30, comboBox4.Text, TheDateTime));
-                        }
-                        if (checker(textBox44, textBox43, textBox42, comboBox5) == false)
-                        {
-                            SavingByPath(expensesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox44, textBox43, comboBox5.Text, TheDateTime));
-                        }
-                        if (checker(textBox1, textBox2, textBox3, comboBox6) == false)
-                        {
-                            SavingByPath(SalariesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox1, textBox2, comboBox6.Text, TheDateTime));
-                        }
-                        if (checker(textBox4, textBox5, textBox6, comboBox7) == false)
-                        {
-                            SavingByPath(SalariesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox4, textBox5, comboBox7.Text, TheDateTime));
-                        }
-                        if (checker(textBox7, textBox8, textBox9, comboBox8) == false)
-                        {
-                            SavingByPath(SalariesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox7, textBox8, comboBox8.Text, TheDateTime));
-                        }
-                        if (checker(textBox10, textBox11, textBox12, comboBox9) == false)
-                        {
-                            SavingByPath(SalariesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox10, textBox11, comboBox9.Text, TheDateTime));
-                        }
-                        if (checker(textBox13, textBox14, textBox15, comboBox10) == false)
-                        {
-                            SavingByPath(SalariesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
-                              thisfamilyid, textBox13, textBox14, comboBox10.Text, TheDateTime));
-                        }
-                        for (int i = 0; i < this.f; i++)
-                        {
-                            Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
-                                k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
-                                k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
-                                k[i].Email);
-                            string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
-                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu), "id");
-                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, id));
-                            Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu, (i + 1).ToString());
-                        }
-                        for (int i = 0; i < this.e; i++)
-                        {
-                            Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, w[i].firstname, hFirstNameTxtBx.Text, wFirstNameTxtBx.Text, w[i].IdentityNu, w[i].SchoolName, w[i].whichyear);
-                            string groupid2 = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
-                            string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum = '{0}'", w[i].IdentityNu), "id");
-                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
-                            Employee2.addschoolstudtogroup2(groupid2, id, (i + 1).ToString());
-                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
-                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET YearlyFees = '{0}' WHERE id = '{1}'", w[i].fees.ToString(), id));
-                        }
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET UpdatedOrNot = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
-                        dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
-                        
-                        //int pdfscounter = 0;if (Employee2.ifthefamilythereforPDFfiles(thisfamilyid.ToString())) { pdfscounter++; }
-                        if (textBox37.Text != "") {SavingByPath(amountOfMonthlyRentPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfRent(PDFOfMonthlyRent,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')",thisfamilyid, TheDateTime,amountOfMonthlyRentTxtBx.Text)); }
-                        if (textBox36.Text != "") {SavingByPath(amountOfMonthlyElectricBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfElectric(PDFOfMonthlyElectricBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfMonthlyElectricBillTxtBx.Text));}
-                        if (textBox35.Text != "") {SavingByPath(amountOfTwoMonthlyWaterBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfWater(PDFOfTwoMonthlyWaterBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfTwoMonthlyWaterBillTxtBx.Text)); }
-                        if (textBox34.Text != "") {SavingByPath(amountOfYearlyArnonaPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfArnona(PDFOfYearlyArnona,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,amountOfYearlyArnonaTxtBx.Text)); }
-                        if (textBox31.Text != "") {SavingByPath(studentMonthlyTranportaionPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfStudTransporation(studentMonthlyTranportaionPDF,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime,studentMonthlyTranportaionTxtBx.Text)); }
+                            Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'",
+                                dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'",
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
 
-                        MessageBox.Show("تمت اضافة الملف بنجاح");
-                        this.Close();
-                        if (AdminOrNot == true) { adding k = new adding(this.id, true); k.Show(); }
-                        if (AdminOrNot == false) { adding k = new adding(this.id); k.Show(); }
+                            Employee2.CreatGroup2(husbandIdentityNumber, WifeIdentityNumber);
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId2 = '{0}' WHERE id = '{1}'",
+                                dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'",
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
+
+                            Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
+                            if (employeesNoteTxtBx.Text != "")
+                            {
+                                Employee2.AddEmployeesNote(husbandIdentityNumber, WifeIdentityNumber, employeesNoteTxtBx.Text,
+                                    firstnameofemploadmin, lastnameofemploadmin, this.TheDateTime);
+                            }
+                            int thisfamilyid = int.Parse(Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text));
+
+                            if (checker1(textBox21, textBox22, textBox40, comboBox1) == false)
+                            {
+                                SavingByPath(expensesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                thisfamilyid, textBox21.Text, textBox22.Text, comboBox1.Text, TheDateTime));
+                            }
+                            if (checker1(textBox25, textBox24, textBox23, comboBox2) == false)
+                            {
+                                SavingByPath(expensesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox25.Text, textBox24.Text, comboBox2.Text, TheDateTime));
+                            }
+                            if (checker1(textBox28, textBox27, textBox26, comboBox3) == false)
+                            {
+                                SavingByPath(expensesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox28.Text, textBox27.Text, comboBox3.Text, TheDateTime));
+                            }
+                            if (checker1(textBox41, textBox30, textBox29, comboBox4) == false)
+                            {
+                                SavingByPath(expensesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox41.Text, textBox30.Text, comboBox4.Text, TheDateTime));
+                            }
+                            if (checker1(textBox44, textBox43, textBox42, comboBox5) == false)
+                            {
+                                SavingByPath(expensesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherExpenses(OtherExpenses,Familyid,name,AmountOfOtherExpenses,CycleOfOtherExpenses,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox44.Text, textBox43.Text, comboBox5.Text, TheDateTime));
+                            }
+                            if (checker1(textBox1, textBox2, textBox3, comboBox6) == false)
+                            {
+                                SavingByPath(SalariesPDF1, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox1.Text, textBox2.Text, comboBox6.Text, TheDateTime));
+                            }
+                            if (checker1(textBox4, textBox5, textBox6, comboBox7) == false)
+                            {
+                                SavingByPath(SalariesPDF2, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox4.Text, textBox5.Text, comboBox7.Text, TheDateTime));
+                            }
+                            if (checker1(textBox7, textBox8, textBox9, comboBox8) == false)
+                            {
+                                SavingByPath(SalariesPDF3, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox7.Text, textBox8.Text, comboBox8.Text, TheDateTime));
+                            }
+                            if (checker1(textBox10, textBox11, textBox12, comboBox9) == false)
+                            {
+                                SavingByPath(SalariesPDF4, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox10.Text, textBox11.Text, comboBox9.Text, TheDateTime));
+                            }
+                            if (checker1(textBox13, textBox14, textBox15, comboBox10) == false)
+                            {
+                                SavingByPath(SalariesPDF5, string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary,Familyid,name,AmountOfOtherSalary,CycleOfOtherSalary,SavingDateTime) VALUES(@data,'{0}','{1}','{2}','{3}','{4}')",
+                                  thisfamilyid, textBox13.Text, textBox14.Text, comboBox10.Text, TheDateTime));
+                            }
+                            int TotalSchoolsFees = 0, TotalUniversitiesFees = 0;
+                            for (int i = 0; i < this.f; i++)
+                            {
+                                Employee2.AddUnivStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].firstname,
+                                    k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
+                                    k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
+                                    k[i].Email);
+                                string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                                string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu), "id");
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, id));
+                                Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu, (i + 1).ToString());
+                                TotalUniversitiesFees += (int.Parse((k[i].yearlifees.ToString())) / 12);
+                            }
+                            for (int i = 0; i < this.e; i++)
+                            {
+                                Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, w[i].firstname, hFirstNameTxtBx.Text, wFirstNameTxtBx.Text, w[i].IdentityNu, w[i].SchoolName, w[i].whichyear);
+                                string groupid2 = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                                string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum = '{0}'", w[i].IdentityNu), "id");
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
+                                Employee2.addschoolstudtogroup2(groupid2, id, (i + 1).ToString());
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET YearlyFees = '{0}' WHERE id = '{1}'", w[i].fees.ToString(), id));
+                                TotalSchoolsFees += (int.Parse((w[i].fees.ToString())) / 12);
+                            }
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET UpdatedOrNot = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET CheckedOrNot = 'false' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
+
+                            //int pdfscounter = 0;if (Employee2.ifthefamilythereforPDFfiles(thisfamilyid.ToString())) { pdfscounter++; }
+                            if (textBox37.Text != "") { SavingByPath(amountOfMonthlyRentPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfRent(PDFOfMonthlyRent,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime, amountOfMonthlyRentTxtBx.Text)); }
+                            if (textBox36.Text != "") { SavingByPath(amountOfMonthlyElectricBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfElectric(PDFOfMonthlyElectricBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime, amountOfMonthlyElectricBillTxtBx.Text)); }
+                            if (textBox35.Text != "") { SavingByPath(amountOfTwoMonthlyWaterBillPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfWater(PDFOfTwoMonthlyWaterBill,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime, amountOfTwoMonthlyWaterBillTxtBx.Text)); }
+                            if (textBox34.Text != "") { SavingByPath(amountOfYearlyArnonaPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfArnona(PDFOfYearlyArnona,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime, amountOfYearlyArnonaTxtBx.Text)); }
+                            if (textBox31.Text != "") { SavingByPath(studentMonthlyTranportaionPDF, string.Format("INSERT INTO Attaysir1.dbo.PdfStudTransporation(studentMonthlyTranportaionPDF,Familyid,SavingDateTime,TheAmount) VALUES(@data,'{0}','{1}','{2}')", thisfamilyid, TheDateTime, studentMonthlyTranportaionTxtBx.Text)); }
+
+                            int TotalOfExpenses = int.Parse(AmountOfMonthlyRent) + int.Parse(AmountOfMonthlyElectricBill) +
+                                int.Parse(AmountOfTwoMonthlyWaterBill) + int.Parse(AmountOfYearlyArnona) + TotalSchoolsFees +
+                                TotalUniversitiesFees + int.Parse(StudentMonthlyTranportaion) + int.Parse(textBox22.Text) +
+                                int.Parse(textBox24.Text) + int.Parse(textBox27.Text) + int.Parse(textBox30.Text) +
+                                int.Parse(textBox43.Text);
+                            int TotalOfSalaries = int.Parse(TotalChildrenInsurance) + int.Parse(WifeSalary) + int.Parse(husbandSalary) + int.Parse(textBox2.Text) +
+                                int.Parse(textBox5.Text) + int.Parse(textBox8.Text) + int.Parse(textBox11.Text) + int.Parse(textBox14.Text);
+
+                            int MonthlyAverageSalaryOfPerson = ((TotalOfSalaries - TotalOfExpenses) / int.Parse(FamilyNumOfMember));
+                            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET MonthlyAverageSalaryOfPerson = '{0}' WHERE id = '{1}'", MonthlyAverageSalaryOfPerson, thisfamilyid));
+
+                            MessageBox.Show("تمت اضافة الملف بنجاح");
+                            this.Close();
+                            if (AdminOrNot == true) { adding k = new adding(this.id, true); k.Show(); }
+                            if (AdminOrNot == false) { adding k = new adding(this.id); k.Show(); }
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }
@@ -409,17 +423,6 @@ namespace attaysir
             sqlCommand.ExecuteNonQuery();
             sqlConnection.Close();
         }
-
-        /*
-      ,PDFOfMonthlyRent
-        ,SavingDateOfPDFOfMonthlyRent
-      ,PDFOfMonthlyElectricBill
-        ,SavingDateOfPDFOfMonthlyElectricBill
-      ,PDFOfTwoMonthlyWaterBill
-        ,SavingDateOfPDFOfTwoMonthlyWaterBill
-      ,PDFOfYearlyArnona
-        ,SavingDateOfPDFOfYearlyArnona
-       */
 
         int n2 = 0, m2 = 58, locationx2 = 872, locationy2 = 157, count2 = 0;
         private void button20_Click(object sender, EventArgs e)
@@ -535,15 +538,28 @@ namespace attaysir
 
         public static bool checker(TextBox textBox1, TextBox textBox2, TextBox textBox3, ComboBox comboBox1)
         {
-            if (textBox1.Text != "" && (textBox2.Text == "" || textBox2.Text == "0" || textBox3.Text == "" || comboBox1.SelectedIndex == 0)) { return true; }
-            else if (textBox2.Text != "" && textBox2.Text != "0" && (textBox1.Text == "" || textBox3.Text == "" || comboBox1.SelectedIndex == 0)) { return true; }
-            else if (textBox3.Text != "" && (textBox2.Text == "" || textBox2.Text == "0" || textBox1.Text == "" || comboBox1.SelectedIndex == 0)) { return true; }
-            else if (comboBox1.SelectedIndex != 0 && (textBox1.Text == "" || textBox2.Text == "" || textBox2.Text == "0" || textBox3.Text == "")) { return true; }
-            else { return false; }
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox2.Text != "0" && textBox3.Text != "" && int.Parse(comboBox1.SelectedIndex.ToString()) != 0 && comboBox1.Text != "")
+            {
+                return false ;
+            }
+            if (textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "" && comboBox1.Text != "")
+            {
+                return false;
+            }
+            else { return true; }
         }
-        
 
-        
+        public static bool checker1(TextBox textBox1, TextBox textBox2, TextBox textBox3, ComboBox comboBox1)
+        {
+            if (textBox1.Text != "" && textBox2.Text != "" && textBox2.Text != "0" && textBox3.Text != "" && int.Parse(comboBox1.SelectedIndex.ToString()) != 0 && comboBox1.Text != "")
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
+
+
         private void button21_Click(object sender, EventArgs e)
         {
             if (this.f >= 8) { MessageBox.Show("انت اضفت ثمانية طلاب بالفعل لا يمكنك اضافة طلاب اكثر من ذلك", "اضافة زائدة"); }

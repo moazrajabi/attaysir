@@ -71,7 +71,7 @@ namespace attaysir.models
             string WifePhoneNumber, string husbandIdentityNumber, string WifeIdentityNumber,
             int FamilyNumOfMember, string LivingLocation, string Adress, int husbandSalary,
             int WifeSalary, int TotalChildrenInsurance, string FamilyKind,
-            int NumChiltackInsurance, string HusbandOrWife, int MonthlyAverageSalaryOfPerson,
+            int NumChiltackInsurance, string HusbandOrWife,
             string firstnameofemploadmin,string lastnameofemploadmin,string thedatetime)
         {
             string query = string.Format("INSERT INTO Attaysir1.dbo.FaydalananAile(LivingLocation, Adress," +
@@ -79,13 +79,13 @@ namespace attaysir.models
                 " HusbandFirstName, WifeFirstName, NumberOfFamilyMembers, HusbandSalary, WifeSalary," +
                 " TotalChildrenInsurance, NumberOfChildrenTackingInsurance,  KindOfFamily," +
                 "RegisterEmployeesFirstName, RegisterEmployeesLastName, HusbandOrWife, HusbandLastName," +
-                " WifeLastName,MonthlyAverageSalaryOfPerson,RegisteretionDateTime) " +
+                " WifeLastName,RegisteretionDateTime) " +
                 "VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}'," +
-                "'{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}')"
+                "'{11}','{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}')"
                 , LivingLocation, Adress, husbandIdentityNumber, WifeIdentityNumber, husbandPhoneNUMber, WifePhoneNumber
                 , HusbandFirstName, WifeFirstName, FamilyNumOfMember, husbandSalary, WifeSalary, TotalChildrenInsurance
                 , NumChiltackInsurance, FamilyKind, firstnameofemploadmin, lastnameofemploadmin
-                , HusbandOrWife, HusbandLastName, WifeLastName, MonthlyAverageSalaryOfPerson,thedatetime);
+                , HusbandOrWife, HusbandLastName, WifeLastName, thedatetime);
             return dataAccess.executenonquery(query);
         }
         
@@ -129,22 +129,6 @@ namespace attaysir.models
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
 
-        public static bool ifthefamilythereforPDFfiles(string familyid) {
-            string query = string.Format("select * from Attaysir1.dbo.PDFFiles where Familyid = '{0}'", familyid);
-            DataTable dt = dataAccess.Executequery(query);
-            if (dt.Rows.Count > 0) { return true; } else { return false; }
-        }
-
-        public static int AddExpenses(string HusbandIdentificationNumber, string WifeIdentificationNumber, string AmountOfMonthlyRent,
-            string AmountOfMonthlyElectricBill, string AmountOfTwoMonthlyWaterBill, string AmountOfYearlyArnona)
-        {
-            string query = string.Format("INSERT INTO Attaysir1.dbo.Expenses(AmountOfMonthlyRent," +
-                " AmountOfMonthlyElectricBill, AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona,Familyid) " +
-                "VALUES('{0}','{1}','{2}','{3}','{4}')", AmountOfMonthlyRent, AmountOfMonthlyElectricBill,
-                AmountOfTwoMonthlyWaterBill, AmountOfYearlyArnona, int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdentificationNumber, WifeIdentificationNumber)));
-            return dataAccess.executenonquery(query);
-        }
-        
         public static int AddOtherSalaries(string HusbandIdentificationNumber, string WifeIdentificationNumber, string OtherSalary, int AmountOfOtherSalary, string CycleOfOtherSalary)
         {
             string query = string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary," +

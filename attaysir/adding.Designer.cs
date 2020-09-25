@@ -60,8 +60,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.wSalaryTxtBx = new System.Windows.Forms.TextBox();
             this.totalChildrenInsuranceTxtBx = new System.Windows.Forms.TextBox();
             this.numChildtackInsuranceTxtBx = new System.Windows.Forms.TextBox();
@@ -69,8 +67,6 @@
             this.amountOfMonthlyElectricBillTxtBx = new System.Windows.Forms.TextBox();
             this.amountOfTwoMonthlyWaterBillTxtBx = new System.Windows.Forms.TextBox();
             this.amountOfYearlyArnonaTxtBx = new System.Windows.Forms.TextBox();
-            this.totalSchoolsFeesTxtBx = new System.Windows.Forms.TextBox();
-            this.totalUniversitiesFeesTxtBx = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.studentMonthlyTranportaionTxtBx = new System.Windows.Forms.TextBox();
             this.employeesNoteTxtBx = new System.Windows.Forms.RichTextBox();
@@ -81,14 +77,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
@@ -188,7 +180,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button21 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -470,24 +461,6 @@
             this.label19.TabIndex = 31;
             this.label19.Text = "فاتورة ارنونا سنوية";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(343, 351);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(99, 17);
-            this.label20.TabIndex = 32;
-            this.label20.Text = "اقساط مدارس سنوية";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(343, 391);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(67, 17);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "اقساط جامعية";
-            // 
             // wSalaryTxtBx
             // 
             this.wSalaryTxtBx.Location = new System.Drawing.Point(201, 430);
@@ -544,26 +517,10 @@
             this.amountOfYearlyArnonaTxtBx.Size = new System.Drawing.Size(100, 22);
             this.amountOfYearlyArnonaTxtBx.TabIndex = 40;
             // 
-            // totalSchoolsFeesTxtBx
-            // 
-            this.totalSchoolsFeesTxtBx.Location = new System.Drawing.Point(495, 348);
-            this.totalSchoolsFeesTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.totalSchoolsFeesTxtBx.Name = "totalSchoolsFeesTxtBx";
-            this.totalSchoolsFeesTxtBx.Size = new System.Drawing.Size(100, 22);
-            this.totalSchoolsFeesTxtBx.TabIndex = 41;
-            // 
-            // totalUniversitiesFeesTxtBx
-            // 
-            this.totalUniversitiesFeesTxtBx.Location = new System.Drawing.Point(495, 389);
-            this.totalUniversitiesFeesTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.totalUniversitiesFeesTxtBx.Name = "totalUniversitiesFeesTxtBx";
-            this.totalUniversitiesFeesTxtBx.Size = new System.Drawing.Size(100, 22);
-            this.totalUniversitiesFeesTxtBx.TabIndex = 42;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(343, 433);
+            this.label22.Location = new System.Drawing.Point(343, 351);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(126, 17);
             this.label22.TabIndex = 43;
@@ -571,7 +528,7 @@
             // 
             // studentMonthlyTranportaionTxtBx
             // 
-            this.studentMonthlyTranportaionTxtBx.Location = new System.Drawing.Point(495, 430);
+            this.studentMonthlyTranportaionTxtBx.Location = new System.Drawing.Point(495, 348);
             this.studentMonthlyTranportaionTxtBx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.studentMonthlyTranportaionTxtBx.Name = "studentMonthlyTranportaionTxtBx";
             this.studentMonthlyTranportaionTxtBx.Size = new System.Drawing.Size(100, 22);
@@ -656,31 +613,9 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(711, 348);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(104, 23);
-            this.button6.TabIndex = 54;
-            this.button6.Text = "اختر وثيقة";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(711, 389);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 23);
-            this.button7.TabIndex = 55;
-            this.button7.Text = "اختر وثيقة";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(711, 430);
+            this.button8.Location = new System.Drawing.Point(711, 348);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(104, 23);
@@ -714,32 +649,12 @@
             // textBox31
             // 
             this.textBox31.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox31.Location = new System.Drawing.Point(602, 430);
+            this.textBox31.Location = new System.Drawing.Point(602, 348);
             this.textBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox31.Name = "textBox31";
             this.textBox31.ReadOnly = true;
             this.textBox31.Size = new System.Drawing.Size(100, 22);
             this.textBox31.TabIndex = 83;
-            // 
-            // textBox32
-            // 
-            this.textBox32.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox32.Location = new System.Drawing.Point(602, 389);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(100, 22);
-            this.textBox32.TabIndex = 82;
-            // 
-            // textBox33
-            // 
-            this.textBox33.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox33.Location = new System.Drawing.Point(602, 348);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(100, 22);
-            this.textBox33.TabIndex = 81;
             // 
             // textBox34
             // 
@@ -793,7 +708,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(343, 474);
+            this.label25.Location = new System.Drawing.Point(343, 392);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(74, 17);
             this.label25.TabIndex = 85;
@@ -802,7 +717,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(593, 473);
+            this.checkBox3.Location = new System.Drawing.Point(593, 391);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(62, 21);
@@ -814,7 +729,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(495, 473);
+            this.checkBox4.Location = new System.Drawing.Point(495, 391);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(57, 21);
@@ -1678,9 +1593,9 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(721, 20);
+            this.button21.Location = new System.Drawing.Point(583, 444);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(104, 61);
+            this.button21.Size = new System.Drawing.Size(232, 61);
             this.button21.TabIndex = 181;
             this.button21.Text = "اضافة طالب جامعي";
             this.button21.UseVisualStyleBackColor = true;
@@ -1688,27 +1603,19 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(721, 87);
+            this.button22.Location = new System.Drawing.Point(346, 444);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(104, 61);
+            this.button22.Size = new System.Drawing.Size(232, 61);
             this.button22.TabIndex = 182;
             this.button22.Text = "اضافة طالب مدرسي";
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(362, 338);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(420, 88);
-            this.panel3.TabIndex = 183;
             // 
             // adding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1523, 569);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.comboBox11);
@@ -1804,8 +1711,6 @@
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.textBox31);
-            this.Controls.Add(this.textBox32);
-            this.Controls.Add(this.textBox33);
             this.Controls.Add(this.textBox34);
             this.Controls.Add(this.textBox35);
             this.Controls.Add(this.textBox36);
@@ -1813,8 +1718,6 @@
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -1825,8 +1728,6 @@
             this.Controls.Add(this.employeesNoteTxtBx);
             this.Controls.Add(this.studentMonthlyTranportaionTxtBx);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.totalUniversitiesFeesTxtBx);
-            this.Controls.Add(this.totalSchoolsFeesTxtBx);
             this.Controls.Add(this.amountOfYearlyArnonaTxtBx);
             this.Controls.Add(this.amountOfTwoMonthlyWaterBillTxtBx);
             this.Controls.Add(this.amountOfMonthlyElectricBillTxtBx);
@@ -1834,8 +1735,6 @@
             this.Controls.Add(this.numChildtackInsuranceTxtBx);
             this.Controls.Add(this.totalChildrenInsuranceTxtBx);
             this.Controls.Add(this.wSalaryTxtBx);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -1913,8 +1812,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox wSalaryTxtBx;
         private System.Windows.Forms.TextBox totalChildrenInsuranceTxtBx;
         private System.Windows.Forms.TextBox numChildtackInsuranceTxtBx;
@@ -1922,8 +1819,6 @@
         private System.Windows.Forms.TextBox amountOfMonthlyElectricBillTxtBx;
         private System.Windows.Forms.TextBox amountOfTwoMonthlyWaterBillTxtBx;
         private System.Windows.Forms.TextBox amountOfYearlyArnonaTxtBx;
-        private System.Windows.Forms.TextBox totalSchoolsFeesTxtBx;
-        private System.Windows.Forms.TextBox totalUniversitiesFeesTxtBx;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox studentMonthlyTranportaionTxtBx;
         private System.Windows.Forms.RichTextBox employeesNoteTxtBx;
@@ -1934,14 +1829,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
@@ -2041,6 +1932,5 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Panel panel3;
     }
 }
