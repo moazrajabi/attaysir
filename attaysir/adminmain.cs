@@ -607,7 +607,7 @@ namespace attaysir
                     {
                         //University
                         String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
-
+                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId));k.ShowDialog();
                     }
 
                 if (comboBox1.Items.Contains("طلاب مدارس"))
@@ -615,7 +615,7 @@ namespace attaysir
                     {
                         //Student
                         String studentId = (String)searchedPersonStudentId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب مدارس") - 1];
-
+                        Checkingformschool k = new Checkingformschool(int.Parse(studentId));k.ShowDialog();
                     }
 
                 if (comboBox1.Items.Contains("طلاب جامعات") && !comboBox1.Items.Contains("طلاب مدارس"))
@@ -623,7 +623,7 @@ namespace attaysir
                     {
                         //University
                         String studentId = (String) searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
-
+                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
                     }
             }
         }

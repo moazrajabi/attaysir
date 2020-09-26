@@ -94,6 +94,18 @@
     <Compile Include="CheckingForm.Designer.cs">
       <DependentUpon>CheckingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Checkingformschool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkingformschool.Designer.cs">
+      <DependentUpon>Checkingformschool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckingformUniv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckingformUniv.Designer.cs">
+      <DependentUpon>CheckingformUniv.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckTheDatasForTheListSCHOOL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CheckingForm.resx">
       <DependentUpon>CheckingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkingformschool.resx">
+      <DependentUpon>Checkingformschool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckingformUniv.resx">
+      <DependentUpon>CheckingformUniv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckTheDatasForTheListSCHOOL.resx">
       <DependentUpon>CheckTheDatasForTheListSCHOOL.cs</DependentUpon>
