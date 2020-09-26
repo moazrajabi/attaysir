@@ -57,7 +57,7 @@ namespace attaysir
 
         private void ViewTheListBtn_Click(object sender, EventArgs e)
         {
-
+            ViewTheListOfProject k = new ViewTheListOfProject(this.theListId); k.ShowDialog();
         }
     }
 } 

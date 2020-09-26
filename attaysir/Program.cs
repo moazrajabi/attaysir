@@ -23,7 +23,7 @@ namespace attaysir
             Application.Run(new adminmain(1));
             //Application.Run(new TheListView());
             //Application.Run(new AreYouSure());
-            Application.Run(new Checkingformschool(17));
+            //Application.Run(new Checkingformschool(17));
             //Application.Run(new AddProjects());
             //Application.Run(new TheEmployeesList());
         }
