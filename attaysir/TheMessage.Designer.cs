@@ -49,6 +49,8 @@
             this.ClientSize = new System.Drawing.Size(659, 379);
             this.Controls.Add(this.richTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(677, 426);
+            this.MinimumSize = new System.Drawing.Size(677, 426);
             this.Name = "TheMessage";
             this.Text = "الرسالة";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TheMessage_FormClosed);

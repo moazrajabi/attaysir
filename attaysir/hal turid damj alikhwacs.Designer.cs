@@ -74,6 +74,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(532, 221);
+            this.MinimumSize = new System.Drawing.Size(532, 221);
             this.Name = "hal_turid_damj_alikhwacs";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

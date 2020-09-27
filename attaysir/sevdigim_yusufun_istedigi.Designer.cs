@@ -71,6 +71,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(818, 505);
+            this.MinimumSize = new System.Drawing.Size(818, 505);
             this.Name = "sevdigim_yusufun_istedigi";
             this.Text = "معلوات القوائم النهائية";
             this.Load += new System.EventHandler(this.sevdigim_yusufun_istedigi_Load);

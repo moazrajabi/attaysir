@@ -396,6 +396,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FirstNametxtbx);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(818, 336);
+            this.MinimumSize = new System.Drawing.Size(818, 336);
             this.Name = "AddUnivStud";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

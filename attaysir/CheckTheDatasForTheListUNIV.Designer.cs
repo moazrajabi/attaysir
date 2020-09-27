@@ -205,6 +205,8 @@
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(364, 470);
+            this.MinimumSize = new System.Drawing.Size(364, 470);
             this.Name = "CheckTheDatasForTheListUNIV";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

@@ -62,6 +62,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(268, 174);
+            this.MinimumSize = new System.Drawing.Size(268, 174);
             this.Name = "GivingExpiryDate";
             this.Text = "ضبط التاريخ";
             this.ResumeLayout(false);

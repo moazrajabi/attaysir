@@ -176,6 +176,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.OpenTheLinkBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(575, 255);
+            this.MinimumSize = new System.Drawing.Size(575, 255);
             this.Name = "ProjectsDetails";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
