@@ -63,7 +63,7 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GivingExpiryDate";
-            this.Text = "GivingExpiryDate";
+            this.Text = "ضبط التاريخ";
             this.ResumeLayout(false);
 
         }

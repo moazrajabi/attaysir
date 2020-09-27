@@ -146,7 +146,7 @@
             this.Name = "login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "Form3";
+            this.Text = "تسجيل الدخول";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

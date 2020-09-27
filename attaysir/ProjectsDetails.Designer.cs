@@ -179,7 +179,7 @@
             this.Name = "ProjectsDetails";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "ProjectsDetails";
+            this.Text = "معلومات المشروع";
             this.Load += new System.EventHandler(this.ProjectsDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

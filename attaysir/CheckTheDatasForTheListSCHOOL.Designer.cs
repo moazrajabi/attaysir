@@ -148,7 +148,7 @@
             this.Name = "CheckTheDatasForTheListSCHOOL";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "CheckTheDatasForTheListSCHOOL";
+            this.Text = "اختيار معلومات للقوائم (طلاب مدارس)";
             this.Load += new System.EventHandler(this.CheckTheDatasForTheListSCHOOL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

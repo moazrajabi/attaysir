@@ -104,7 +104,7 @@
             this.Name = "ViewTheListOfProject";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "ViewTheListOfProject";
+            this.Text = "عرض قائمة المشروع";
             this.Load += new System.EventHandler(this.ViewTheListOfProject_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -362,7 +362,7 @@
             this.Name = "CheckingformUniv";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "CheckingformUniv";
+            this.Text = "تفقد البيانات (طلاب جامعات)";
             this.Load += new System.EventHandler(this.CheckingformUniv_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

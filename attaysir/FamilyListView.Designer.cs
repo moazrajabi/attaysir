@@ -50,7 +50,7 @@
             this.Name = "FamilyListView";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "FamilyListView";
+            this.Text = "قائمة العائلات";
             this.Load += new System.EventHandler(this.FamilyListView_Load);
             this.ResumeLayout(false);
 

@@ -72,7 +72,7 @@
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "sevdigim_yusufun_istedigi";
-            this.Text = "sevdigim_yusufun_istedigi";
+            this.Text = "معلوات القوائم النهائية";
             this.Load += new System.EventHandler(this.sevdigim_yusufun_istedigi_Load);
             this.ResumeLayout(false);
 

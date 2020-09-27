@@ -107,7 +107,7 @@
             this.Name = "the_lists";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "the_lists";
+            this.Text = "تحضير قائمة";
             this.Load += new System.EventHandler(this.the_lists_Load);
             this.Resize += new System.EventHandler(this.the_lists_Resize);
             this.ResumeLayout(false);

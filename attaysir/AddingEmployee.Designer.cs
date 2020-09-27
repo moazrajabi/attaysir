@@ -276,7 +276,7 @@
             this.Name = "AddingEmployee";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "AddingEmployee";
+            this.Text = "اضافة موظف";
             this.Load += new System.EventHandler(this.AddingEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

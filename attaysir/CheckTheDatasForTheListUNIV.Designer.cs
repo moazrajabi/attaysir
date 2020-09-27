@@ -208,7 +208,7 @@
             this.Name = "CheckTheDatasForTheListUNIV";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "CheckTheDatasForTheListUNIV";
+            this.Text = "اختيار معلومات للقوائم (طلاب جامعيين)";
             this.ResumeLayout(false);
             this.PerformLayout();
 

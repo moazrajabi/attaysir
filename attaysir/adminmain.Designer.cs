@@ -764,7 +764,7 @@
             this.MinimumSize = new System.Drawing.Size(1175, 668);
             this.Name = "adminmain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "adminmain";
+            this.Text = "الصفحة الرئيسية(ادمن)";
             this.Load += new System.EventHandler(this.adminmain_Load);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);

@@ -99,7 +99,7 @@
             this.Name = "the_lists_viewer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "the_lists_viewer";
+            this.Text = "قائمة القوائم المدرجة";
             this.Load += new System.EventHandler(this.the_lists_viewer_Load);
             this.ResumeLayout(false);
 

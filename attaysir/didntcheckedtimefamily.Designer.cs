@@ -83,7 +83,7 @@
             this.Name = "didntcheckedtimefamily";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "didntcheckedtimefamily";
+            this.Text = "ملفات تحتاج الى تدقيق تاريخ الانتهاء";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.didntcheckedtimefamily_FormClosed);
             this.Load += new System.EventHandler(this.didntcheckedtimefamily_Load);
             this.Resize += new System.EventHandler(this.didntcheckedtimefamily_Resize);

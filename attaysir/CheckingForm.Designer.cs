@@ -558,7 +558,7 @@
             this.Name = "CheckingForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "CheckingForm";
+            this.Text = "تفقد البيانات (عائلة)";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CheckingForm_FormClosed);
             this.Load += new System.EventHandler(this.CheckingForm_Load);
             this.ResumeLayout(false);

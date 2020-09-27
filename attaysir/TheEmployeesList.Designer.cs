@@ -129,7 +129,7 @@
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TheEmployeesList";
-            this.Text = "TheEmployeesList";
+            this.Text = "قائمة الموظفين 2";
             this.Load += new System.EventHandler(this.TheEmployeesList_Load);
             this.Resize += new System.EventHandler(this.TheEmployeesList_Resize);
             this.ResumeLayout(false);

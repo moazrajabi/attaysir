@@ -50,7 +50,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TheMessage";
-            this.Text = "TheMessage";
+            this.Text = "الرسالة";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TheMessage_FormClosed);
             this.Load += new System.EventHandler(this.TheMessage_Load);
             this.ResumeLayout(false);

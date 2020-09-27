@@ -1774,7 +1774,7 @@
             this.Name = "adding";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "Form2";
+            this.Text = "اضافة ملفات";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

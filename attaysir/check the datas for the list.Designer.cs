@@ -327,7 +327,7 @@
             this.Controls.Add(this.FamilyNumberChBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "check_the_datas_for_the_list";
-            this.Text = "check_the_datas_for_the_list";
+            this.Text = "اختيار معلومات للقوائم(عائلات)";
             this.Load += new System.EventHandler(this.check_the_datas_for_the_list_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

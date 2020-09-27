@@ -76,7 +76,6 @@
             this.MaximumSize = new System.Drawing.Size(240, 203);
             this.MinimumSize = new System.Drawing.Size(240, 203);
             this.Name = "NameOfList";
-            this.Text = "NameOfList";
             this.ResumeLayout(false);
             this.PerformLayout();
 

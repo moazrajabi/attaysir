@@ -1026,6 +1026,30 @@
   <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="columnHeader1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="columnHeader2.Text" xml:space="preserve">
+    <value>المرسل                     </value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>تاريخ الارسال                </value>
+  </data>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>حالة القرائة</value>
+  </data>
+  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="listView1.RightToLeftLayout" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 271</value>
+  </data>
+  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;listView1.Name" xml:space="preserve">
     <value>listView1</value>
   </data>
@@ -1058,42 +1082,6 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="listView1.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>489, 271</value>
-  </data>
-  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
-    <value>listView1</value>
-  </data>
-  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="columnHeader1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="columnHeader2.Text" xml:space="preserve">
-    <value>المرسل                     </value>
-  </data>
-  <data name="columnHeader3.Text" xml:space="preserve">
-    <value>تاريخ الارسال                </value>
-  </data>
-  <data name="columnHeader4.Text" xml:space="preserve">
-    <value>حالة القرائة</value>
   </data>
   <data name="button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5003,7 +4991,7 @@
     <value>True</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
+    <value>الصفحة الرئيسية (موظفين)</value>
   </data>
   <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
     <value>columnHeader1</value>

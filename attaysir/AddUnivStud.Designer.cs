@@ -399,7 +399,7 @@
             this.Name = "AddUnivStud";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "AddUnivStud";
+            this.Text = "اضافة طالب جامعي";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUnivStud_FormClosed);
             this.Load += new System.EventHandler(this.AddUnivStud_Load);
             this.ResumeLayout(false);

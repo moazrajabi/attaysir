@@ -103,7 +103,7 @@
             this.Name = "SelectReciever";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "SelectReciever";
+            this.Text = "اختيار مستقبل للرسالة";
             this.Load += new System.EventHandler(this.SelectReciever_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

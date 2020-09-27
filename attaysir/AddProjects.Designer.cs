@@ -245,7 +245,7 @@
             this.Name = "AddProjects";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "AddProjects";
+            this.Text = "اضافة مشروع";
             this.Load += new System.EventHandler(this.AddProjects_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -218,7 +218,7 @@
             this.Name = "AddSchoolStud";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "AddSchoolStud";
+            this.Text = "اضافة طالب مدرسة";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddSchoolStud_FormClosed);
             this.Load += new System.EventHandler(this.AddSchoolStud_Load);
             this.ResumeLayout(false);

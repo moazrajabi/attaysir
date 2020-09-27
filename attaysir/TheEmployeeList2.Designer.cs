@@ -57,7 +57,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(6, 6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(316, 150);
+            this.listView1.Size = new System.Drawing.Size(591, 175);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.listView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TheEmployeeList2";
-            this.Text = "TheEmployeeList2";
+            this.Text = "قائمة الموظفين";
             this.Load += new System.EventHandler(this.TheEmployeeList2_Load);
             this.Resize += new System.EventHandler(this.TheEmployeeList2_Resize);
             this.ResumeLayout(false);
