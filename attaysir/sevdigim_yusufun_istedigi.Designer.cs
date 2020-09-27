@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sevdigim_yusufun_istedigi));
             this.listView1 = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -69,6 +70,7 @@
             this.ClientSize = new System.Drawing.Size(800, 458);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "sevdigim_yusufun_istedigi";
             this.Text = "sevdigim_yusufun_istedigi";
             this.Load += new System.EventHandler(this.sevdigim_yusufun_istedigi_Load);

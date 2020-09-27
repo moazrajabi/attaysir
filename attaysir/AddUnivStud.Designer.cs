@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUnivStud));
             this.FirstNametxtbx = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.FatherNametxtbx = new System.Windows.Forms.TextBox();
@@ -394,6 +395,7 @@
             this.Controls.Add(this.FatherNametxtbx);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.FirstNametxtbx);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUnivStud";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

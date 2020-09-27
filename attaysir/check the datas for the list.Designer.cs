@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(check_the_datas_for_the_list));
             this.FamilyNumberChBox = new System.Windows.Forms.CheckBox();
             this.HusbandFirstNameChBox = new System.Windows.Forms.CheckBox();
             this.HusbandLastNameChBox = new System.Windows.Forms.CheckBox();
@@ -324,6 +325,7 @@
             this.Controls.Add(this.HusbandLastNameChBox);
             this.Controls.Add(this.HusbandFirstNameChBox);
             this.Controls.Add(this.FamilyNumberChBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "check_the_datas_for_the_list";
             this.Text = "check_the_datas_for_the_list";
             this.Load += new System.EventHandler(this.check_the_datas_for_the_list_Load);
