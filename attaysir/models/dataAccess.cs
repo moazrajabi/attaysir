@@ -267,5 +267,11 @@ namespace attaysir.models
             }
             if ((int.Parse(datetimeint) - int.Parse(now)) <= 100) { return true; } else { return false; }
         }
+
+        public static void addAction(String action, String priority)
+        {
+            String query = String.Format("insert into EmployeesActions(action, date, priority) values('{0}','{1}', '{2}')", action, DateTime.Now.ToString(), priority);
+            executenonquery(query);
+        }
     }
 }

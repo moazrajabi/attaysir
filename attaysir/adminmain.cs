@@ -441,72 +441,6 @@ namespace attaysir
         ArrayList searchedPersonFamilyId = new ArrayList();
         ArrayList searchedPersonUnivId = new ArrayList();
         ArrayList searchedPersonStudentId = new ArrayList();
-        private void button6_Click(object sender, EventArgs e)
-        {
-            comboBox1.Items.Clear();
-            searchedPersonFamily.Clear();
-            searchedPersonFamilyId.Clear();
-            searchedPersonStudent.Clear();
-            searchedPersonStudentId.Clear();
-            searchedPersonUniv.Clear();
-            searchedPersonUnivId.Clear();
-            String person = textBox1.Text;
-            String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
-            String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
-            String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
-            SqlConnection con = new SqlConnection(dataAccess.conString);
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand(queryFamily, con);
-            SqlDataReader read = cmd1.ExecuteReader();
-            while (read.Read()) {
-                searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
-                searchedPersonFamilyId.Add(read["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(queryUniv, con);
-            SqlDataReader read2 = cmd2.ExecuteReader();
-            while (read2.Read())
-            {
-                searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
-                searchedPersonUnivId.Add(read2["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand(queryStudent, con);
-            SqlDataReader read3 = cmd3.ExecuteReader();
-            while (read3.Read())
-            {
-                searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
-                searchedPersonStudentId.Add(read3["id"].ToString());
-            }
-            con.Close();
-
-            if (searchedPersonFamily.Count != 0)
-            {
-                comboBox1.Items.Add("عائلات");
-                for (int i = 0; i<searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonFamily[i]);
-                }
-            }
-            if (searchedPersonUniv.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب جامعات");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonUniv[i]);
-                }
-            }
-            if (searchedPersonStudent.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب مدارس");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonStudent[i]);
-                }
-            }
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -518,68 +452,72 @@ namespace attaysir
             searchedPersonUniv.Clear();
             searchedPersonUnivId.Clear();
             String person = textBox1.Text;
-            String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
-            String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
-            String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
-            SqlConnection con = new SqlConnection(dataAccess.conString);
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand(queryFamily, con);
-            SqlDataReader read = cmd1.ExecuteReader();
-            while (read.Read())
+            if (person != "")
             {
-                searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
-                searchedPersonFamilyId.Add(read["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(queryUniv, con);
-            SqlDataReader read2 = cmd2.ExecuteReader();
-            while (read2.Read())
-            {
-                searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
-                searchedPersonUnivId.Add(read2["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand(queryStudent, con);
-            SqlDataReader read3 = cmd3.ExecuteReader();
-            while (read3.Read())
-            {
-                searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
-                searchedPersonStudentId.Add(read3["id"].ToString());
-            }
-            con.Close();
 
-            if (searchedPersonFamily.Count != 0)
-            {
-                comboBox1.Items.Add("عائلات");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
+                String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
+                String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
+                SqlConnection con = new SqlConnection(dataAccess.conString);
+                con.Open();
+                SqlCommand cmd1 = new SqlCommand(queryFamily, con);
+                SqlDataReader read = cmd1.ExecuteReader();
+                while (read.Read())
                 {
-                    comboBox1.Items.Add((String)searchedPersonFamily[i]);
+                    searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
+                    searchedPersonFamilyId.Add(read["id"].ToString());
                 }
-            }
-            if (searchedPersonUniv.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب جامعات");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                con.Close();
+                con.Open();
+                SqlCommand cmd2 = new SqlCommand(queryUniv, con);
+                SqlDataReader read2 = cmd2.ExecuteReader();
+                while (read2.Read())
                 {
-                    comboBox1.Items.Add((String)searchedPersonUniv[i]);
+                    searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
+                    searchedPersonUnivId.Add(read2["id"].ToString());
                 }
-            }
-            if (searchedPersonStudent.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب مدارس");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                con.Close();
+                con.Open();
+                SqlCommand cmd3 = new SqlCommand(queryStudent, con);
+                SqlDataReader read3 = cmd3.ExecuteReader();
+                while (read3.Read())
                 {
-                    comboBox1.Items.Add((String)searchedPersonStudent[i]);
+                    searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
+                    searchedPersonStudentId.Add(read3["id"].ToString());
                 }
+                con.Close();
+
+                if (searchedPersonFamily.Count != 0)
+                {
+                    comboBox1.Items.Add("عائلات");
+                    for (int i = 0; i < searchedPersonFamily.Count; i++)
+                    {
+                        comboBox1.Items.Add((String)searchedPersonFamily[i]);
+                    }
+                }
+                if (searchedPersonUniv.Count != 0)
+                {
+                    comboBox1.Items.Add("طلاب جامعات");
+                    for (int i = 0; i < searchedPersonFamily.Count; i++)
+                    {
+                        comboBox1.Items.Add((String)searchedPersonUniv[i]);
+                    }
+                }
+                if (searchedPersonStudent.Count != 0)
+                {
+                    comboBox1.Items.Add("طلاب مدارس");
+                    for (int i = 0; i < searchedPersonFamily.Count; i++)
+                    {
+                        comboBox1.Items.Add((String)searchedPersonStudent[i]);
+                    }
+                }
+                comboBox1.DroppedDown = true;
             }
-            comboBox1.DroppedDown = true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() != "عائلات" && comboBox1.SelectedItem.ToString() != "طلاب جامعات" && comboBox1.SelectedItem.ToString() != "طلاب مدارس")
+            if (comboBox1.SelectedItem.ToString() != "عائلات" && comboBox1.SelectedItem.ToString() != "طلاب جامعات" && comboBox1.SelectedItem.ToString() != "طلاب مدارس" && comboBox1.Items.ToString() != "")
             {
                 if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب جامعات"))
                     if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("عائلات") && 

@@ -156,7 +156,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(759, 265);
+            this.label11.Location = new System.Drawing.Point(778, 265);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 17);
             this.label11.TabIndex = 53;

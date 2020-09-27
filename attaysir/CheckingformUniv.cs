@@ -24,6 +24,7 @@ namespace attaysir
         private void CheckingformUniv_Load(object sender, EventArgs e)
         {
             getinformations();
+            button1.Text = "اغلاق";
         }
 
         void getinformations()

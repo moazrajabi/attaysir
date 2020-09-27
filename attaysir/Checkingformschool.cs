@@ -24,6 +24,7 @@ namespace attaysir
         private void Checkingformschool_Load(object sender, EventArgs e)
         {
             getinformations();
+            button1.Text = "اغلاق";
         }
 
         private void button1_Click(object sender, EventArgs e)

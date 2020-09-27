@@ -39,20 +39,27 @@ namespace attaysir
                 fillThetxtboxes();
                 form.lll();
             }
-                
-            if(fuck==false)
+
+            if (fuck == false)
+            {
                 fillFamilyBoxes();
+                button1.Text = "اغلاق";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot = 'true' where HusbandIdentificat"+
-                "ionNumber = '{0}' and WifeIdentificationNumber = '{1}'",hid,wid);
-            dataAccess.Executequery(query);
-            MessageBox.Show("تم تعيين هذا الملف كمرئي");
-            this.Close();
-            if (form.bigorsmall == false) { form.small(); }
-            else if (form.bigorsmall == true) { form.big(); }
+            if (fuck == true)
+            {
+                string query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot = 'true' where HusbandIdentificat" +
+                    "ionNumber = '{0}' and WifeIdentificationNumber = '{1}'", hid, wid);
+                dataAccess.Executequery(query);
+                MessageBox.Show("تم تعيين هذا الملف كمرئي");
+                this.Close();
+                if (form.bigorsmall == false) { form.small(); }
+                else if (form.bigorsmall == true) { form.big(); }
+            }
+            else { this.Close(); }
         }
 
         private void CheckingForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -118,7 +125,7 @@ namespace attaysir
                 textBox14.Text = read["WifeSalary"].ToString();
                 textBox15.Text = read["TotalChildrenInsurance"].ToString();
                 textBox16.Text = read["NumberOfChildrenTackingInsurance"].ToString();
-                textBox17.Text = read["RegisterEmployeesFirstName"].ToString() + read["RegisterEmployeesLastName"].ToString();
+                textBox17.Text = read["RegisterEmployeesFirstName"].ToString() +" "+ read["RegisterEmployeesLastName"].ToString();
                 textBox18.Text = read["RegisteretionDateTime"].ToString();
                 textBox19.Text = read["MonthlyAverageSalaryOfPerson"].ToString();
                 textBox20.Text = read["KindOfFamily"].ToString();

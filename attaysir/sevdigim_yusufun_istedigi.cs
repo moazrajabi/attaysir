@@ -43,12 +43,13 @@ namespace attaysir
 
         private void sevdigim_yusufun_istedigi_Load(object sender, EventArgs e)
         {
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             if (itsschool!="") {
                 fillthelistviewfromschool(listViewItems, columns);
             }
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        //creating the PDF
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable dttbl = new DataTable();
@@ -67,7 +68,8 @@ namespace attaysir
             for (int i=0;i< listViewItems.Length;i++)
             {
                 //MessageBox.Show(listViewItems[i].ToString());
-                listView1.Items.Add(listViewItems[i]);
+                //MessageBox.Show(listViewItems.Length.ToString());
+                listView1.Items.Add(listViewItems[i].Text);
             }
         }
 
@@ -146,6 +148,7 @@ namespace attaysir
             //Author
             Paragraph prgAuthor = new Paragraph();
             BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            BaseFont bf = BaseFont.CreateFont("c:/windows/fonts/arabtype.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 8, 2, iTextSharp.text.Color.GRAY);
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
             prgAuthor.Add(new Chunk("Author : Dotnet Mob", fntAuthor));
@@ -162,13 +165,15 @@ namespace attaysir
             //Write the table
             PdfPTable table = new PdfPTable(dtblTable.Columns.Count);
             //Table header
+            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 20);
             BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fntColumnHeader = new iTextSharp.text.Font(btnColumnHeader, 10, 1, iTextSharp.text.Color.WHITE);
             for (int i = 0; i < dtblTable.Columns.Count; i++)
             {
                 PdfPCell cell = new PdfPCell();
                 cell.BackgroundColor = iTextSharp.text.Color.GRAY;
-                cell.AddElement(new Chunk(dtblTable.Columns[i].ColumnName.ToUpper(), fntColumnHeader));
+                cell.AddElement(new Phrase(dtblTable.Columns[i].ColumnName.ToUpper(), font));
+                cell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
                 table.AddCell(cell);
             }
             //table Data
@@ -176,7 +181,10 @@ namespace attaysir
             {
                 for (int j = 0; j < dtblTable.Columns.Count; j++)
                 {
-                    table.AddCell(dtblTable.Rows[i][j].ToString());
+                    PdfPCell cell = new PdfPCell();
+                    cell.AddElement(new Phrase(dtblTable.Rows[i][j].ToString(), font));
+                    cell.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+                    table.AddCell(cell);
                 }
             }
 

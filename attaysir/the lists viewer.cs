@@ -75,8 +75,8 @@ namespace attaysir
 
         private void button2_Click(object sender, EventArgs e)
         {
-           /* try
-            {*/
+            try
+            {
                 string typeoflist = listView1.SelectedItems[0].SubItems[2].Text;
                 string name = listView1.SelectedItems[0].SubItems[1].Text;
                 string faydalananlarsayisi = listView1.SelectedItems[0].SubItems[3].Text;
@@ -96,9 +96,9 @@ namespace attaysir
                     string idoflist = dataAccess.reader(string.Format("select id from attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
                     CheckTheDatasForTheListSCHOOL c = new CheckTheDatasForTheListSCHOOL(int.Parse(idoflist)); c.ShowDialog();
                 }
-            /*}
+            }
             catch { MessageBox.Show("اختر احد القوائم اولا"); }
-        */}
+        }
     }
 }
 /* id,Name,CreatingDate,TypeOfList,faydalananlarsayisi   --   TheLists */

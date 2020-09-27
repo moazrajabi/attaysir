@@ -54,7 +54,6 @@ namespace attaysir
 
         ListViewItem[] getcolumns()
         {
-            getids();
             int[] ides = getids();
             int attartib = 0;
             string query="select";
@@ -77,7 +76,7 @@ namespace attaysir
             ListViewItem[] itemlist = new ListViewItem[count]; 
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();int k = 0;
-            SqlCommand cmd = new SqlCommand(string.Format(query, listid), con);
+            SqlCommand cmd = new SqlCommand(query/*string.Format(query, listid)*/, con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {

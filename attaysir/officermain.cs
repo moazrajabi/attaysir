@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,10 +26,10 @@ namespace attaysir
         {
             adding n = new adding(id); n.Show();
         }
-        
+        string f;
         private void officermain_Load(object sender, EventArgs e)
         {
-            string f = Employee2.NameById(id);
+            f = Employee2.NameById(id);
             richTextBox1.Text = f;
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -41,8 +42,8 @@ namespace attaysir
                  //if it false its mean no lighting and if it true means lighting
         public void k1()
         {
-            if (admin.checkedornot() == true) { this.bo1 = true; }
-            else if (admin.checkedornot() == false) { this.bo1 = false; }
+            if (admin.checkedornot1() == true) { this.bo1 = true; }
+            else if (admin.checkedornot1() == false) { this.bo1 = false; }
         }
         //هاد اللي بالفنكشن اللي فوق ني واحد لازم اغيرهم هدول ضلهم زي ما همن من لما نقلتهم من واجهة الادمن
 
@@ -56,7 +57,7 @@ namespace attaysir
             }
             if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
         }
-        private void button_Click(object sender, EventArgs e) {}
+        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this, "schoolstud"); n.Show(); } }
         
         int n = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -360,12 +361,178 @@ namespace attaysir
 
         private void button2_Click(object sender, EventArgs e)
         {
+            String action = "قام " + f + "بالضغط علي زر إنشاء مشؤوع جديد";
+            dataAccess.addAction(action,"1");
             AddProjects k = new AddProjects(this.id,"employee");k.Show();
         }
-
+        
         private void button4_Click(object sender, EventArgs e)
         {
             ProjectsList k = new ProjectsList();k.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            the_lists_viewer k = new the_lists_viewer(); k.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int[] TheIdsList; int h = 0;
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' and OneMoreColumn = 'true' ", con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read()) { h++; }
+            read.Close();
+
+            TheIdsList = new int[h]; int g = 0;
+            SqlDataReader read1 = cmd.ExecuteReader();
+            while (read1.Read()) { TheIdsList[g] = int.Parse(read1["id"].ToString()); g++; }
+            con.Close();
+
+            if (LivingLocationCmbbx.SelectedIndex == 0 || LivingLocationCmbbx.SelectedIndex == 1)
+            { TheIdsList = LivingLocationFilter(TheIdsList); }
+            if (KindOfFamilyCmbbx.SelectedIndex == 0 || KindOfFamilyCmbbx.SelectedIndex == 1)
+            { TheIdsList = kindOfFamilyFilter(TheIdsList); }
+            if (MinSalarytxtbx.Text != "")
+            { TheIdsList = MinSalaryFilter(TheIdsList); }
+            if (MaxSalarytxtbx.Text != "")
+            { TheIdsList = MaxSalaryFilter(TheIdsList); }
+            the_lists k = new the_lists(TheIdsList, "schoolstud"); k.ShowDialog();
+        }
+
+
+        ArrayList searchedPersonFamily = new ArrayList();
+        ArrayList searchedPersonUniv = new ArrayList();
+        ArrayList searchedPersonStudent = new ArrayList();
+        ArrayList searchedPersonFamilyId = new ArrayList();
+        ArrayList searchedPersonUnivId = new ArrayList();
+        ArrayList searchedPersonStudentId = new ArrayList();
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+            comboBox1.Items.Clear();
+            searchedPersonFamily.Clear();
+            searchedPersonFamilyId.Clear();
+            searchedPersonStudent.Clear();
+            searchedPersonStudentId.Clear();
+            searchedPersonUniv.Clear();
+            searchedPersonUnivId.Clear();
+            String person = textBox1.Text;
+            String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
+            String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
+            String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand(queryFamily, con);
+            SqlDataReader read = cmd1.ExecuteReader();
+            while (read.Read())
+            {
+                searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
+                searchedPersonFamilyId.Add(read["id"].ToString());
+            }
+            con.Close();
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(queryUniv, con);
+            SqlDataReader read2 = cmd2.ExecuteReader();
+            while (read2.Read())
+            {
+                searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
+                searchedPersonUnivId.Add(read2["id"].ToString());
+            }
+            con.Close();
+            con.Open();
+            SqlCommand cmd3 = new SqlCommand(queryStudent, con);
+            SqlDataReader read3 = cmd3.ExecuteReader();
+            while (read3.Read())
+            {
+                searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
+                searchedPersonStudentId.Add(read3["id"].ToString());
+            }
+            con.Close();
+
+            if (searchedPersonFamily.Count != 0)
+            {
+                comboBox1.Items.Add("عائلات");
+                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                {
+                    comboBox1.Items.Add((String)searchedPersonFamily[i]);
+                }
+            }
+            if (searchedPersonUniv.Count != 0)
+            {
+                comboBox1.Items.Add("طلاب جامعات");
+                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                {
+                    comboBox1.Items.Add((String)searchedPersonUniv[i]);
+                }
+            }
+            if (searchedPersonStudent.Count != 0)
+            {
+                comboBox1.Items.Add("طلاب مدارس");
+                for (int i = 0; i < searchedPersonFamily.Count; i++)
+                {
+                    comboBox1.Items.Add((String)searchedPersonStudent[i]);
+                }
+            }
+            comboBox1.DroppedDown = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (comboBox1.SelectedItem.ToString() != "عائلات" && comboBox1.SelectedItem.ToString() != "طلاب جامعات" && comboBox1.SelectedItem.ToString() != "طلاب مدارس")
+            {
+                if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب جامعات"))
+                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("عائلات") &&
+                        comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب جامعات"))
+                    {
+                        //family
+                        String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
+                        CheckingForm c = new CheckingForm(familyId);
+                        c.ShowDialog();
+                    }
+
+                if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب مدارس")
+                    && !comboBox1.Items.Contains("طلاب جامعات"))
+                    if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس"))
+                    {
+                        //family
+                        String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
+                        CheckingForm c = new CheckingForm(familyId);
+                        c.ShowDialog();
+                    }
+
+                if (comboBox1.Items.Contains("طلاب مدارس") && comboBox1.Items.Contains("طلاب جامعات"))
+                    if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس") &&
+                    comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
+                    {
+                        //University
+                        String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
+                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
+                    }
+
+                if (comboBox1.Items.Contains("طلاب مدارس"))
+                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب مدارس"))
+                    {
+                        //Student
+                        String studentId = (String)searchedPersonStudentId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب مدارس") - 1];
+                        Checkingformschool k = new Checkingformschool(int.Parse(studentId)); k.ShowDialog();
+                    }
+
+                if (comboBox1.Items.Contains("طلاب جامعات") && !comboBox1.Items.Contains("طلاب مدارس"))
+                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
+                    {
+                        //University
+                        String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
+                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
+                    }
+            }
+        }
     }
 }
+
+/*action.Contains(".com");
+"asdsd@as.com"
+if (action.IndexOf("@") < action.IndexOf(".com"))*/

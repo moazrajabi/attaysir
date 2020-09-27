@@ -377,28 +377,31 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (schoolstud != "schoolstud")
+            if (listView1.CheckedItems.Count >= 2)
             {
-                String listType = "univ";
-                if (IfItUniv == false)
+                if (schoolstud != "schoolstud")
                 {
-                    listType = "family";
+                    String listType = "univ";
+                    if (IfItUniv == false)
+                    {
+                        listType = "family";
+                    }
+
+                    ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
+                    NameOfList nameOfList = new NameOfList(listType, checkedItems);
+                    if (checkedItems.Count > 0)
+                        nameOfList.ShowDialog();
+                }
+                else
+                {
+                    ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
+                    NameOfList nameOfList = new NameOfList("schoolstud", checkedItems);
+                    if (checkedItems.Count > 0)
+                        nameOfList.ShowDialog();
                 }
 
-                ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
-                NameOfList nameOfList = new NameOfList(listType, checkedItems);
-                if (checkedItems.Count > 0)
-                    nameOfList.ShowDialog();
             }
-            else
-            {
-                ListView.CheckedListViewItemCollection checkedItems = listView1.CheckedItems;
-                NameOfList nameOfList = new NameOfList("schoolstud", checkedItems);
-                if (checkedItems.Count > 0)
-                    nameOfList.ShowDialog();
-            }
-
-              
+            else { MessageBox.Show("يجب عليك اختيار مستفيدين اثنين على الاقل"); }    
         }
         
         int[] schoolstudsort()
