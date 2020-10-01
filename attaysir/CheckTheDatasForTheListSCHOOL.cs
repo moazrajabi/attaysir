@@ -27,7 +27,7 @@ namespace attaysir
             fillthecolumnssayisi();
             if (columnssayisi > 1)
             {
-                sevdigim_yusufun_istedigi l = new sevdigim_yusufun_istedigi(getcolumns(), ColumnsArr()); l.ShowDialog();
+                sevdigim_yusufun_istedigi l = new sevdigim_yusufun_istedigi(getcolumns(), ColumnsArr(),this.listid); l.ShowDialog();
             }
             else { MessageBox.Show("يجب عليك اختيار اكثر من خيار اولا (اثنان على الاقل ) "); }
         }

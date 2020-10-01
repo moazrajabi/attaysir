@@ -88,7 +88,7 @@ namespace attaysir
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             for (int i = 0; i < intarr.LongLength; i++)
             {
-                string g = "faydalananaile";
+                string g = "FaydalananAile";
                 g += string.Format(" where id = '{0}'", intarr[i].ToString());
                 ViewerForTheLists(listView1, g, k);
             }
@@ -120,7 +120,7 @@ namespace attaysir
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             for (int i = 0; i < intarr.LongLength; i++)
             {
-                string g = "faydalananaile";
+                string g = "FaydalananAile";
                 g += string.Format(" where id = '{0}'", intarr[i].ToString());
                 ViewerForTheLists(listView1, g, k);
             }
@@ -166,7 +166,7 @@ namespace attaysir
             {
                 SqlConnection con = new SqlConnection(dataAccess.conString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.SchoolStud where id ='{0}'", intarr[i].ToString()), con);
+                SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.SchoolStud where id ='{0}'", intarr[i].ToString()), con);
                 SqlDataReader read = cmd.ExecuteReader();
                 while (read.Read())
                 {
@@ -186,7 +186,7 @@ namespace attaysir
 
         public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
         {
-            string g = string.Format("select * from attaysir1.dbo.{0}", TableName);
+            string g = string.Format("select * from Attaysir1.dbo.{0}", TableName);
             ArrayList array = dataAccess.viewer(g, array1);
             for (int i = 0; i < array.Count; i++)
             {
@@ -210,10 +210,10 @@ namespace attaysir
                 for (int j = 0; j < ((one.LongLength - 1) - i); j++)
                 {
                     if (int.Parse(dataAccess.reader(string.Format(
-                        "select MonthlyAverageSalaryOfPerson from attaysir1.dbo.faydalananaile where id = '{0}'",
+                        "select MonthlyAverageSalaryOfPerson from Attaysir1.dbo.FaydalananAile where id = '{0}'",
                         one[j]), "MonthlyAverageSalaryOfPerson")) >
                         int.Parse(dataAccess.reader(string.Format(
-                            "select MonthlyAverageSalaryOfPerson from attaysir1.dbo.faydalananaile where id = '{0}'",
+                            "select MonthlyAverageSalaryOfPerson from Attaysir1.dbo.FaydalananAile where id = '{0}'",
                             one[j + 1]), "MonthlyAverageSalaryOfPerson")))
                     { k = one[j]; one[j] = one[j + 1]; one[j + 1] = k; }
                 }
@@ -226,7 +226,7 @@ namespace attaysir
             int count = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.UnivStud", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.UnivStud", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read()) { count++; }
 
@@ -239,75 +239,75 @@ namespace attaysir
                 {
                     SqlConnection con1 = new SqlConnection(dataAccess.conString);
                     con1.Open();
-                    SqlCommand cmd1 = new SqlCommand("select * from attaysir1.dbo.Groups", con1);
+                    SqlCommand cmd1 = new SqlCommand("select * from Attaysir1.dbo.Groups", con1);
                     SqlDataReader read1 = cmd1.ExecuteReader();
                     while (read1.Read())
                     {
-                        if (l == 8 && read1[string.Format("univstudid{0}", l)].ToString() != "")
-                        {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
-                            UnivIdesCounter++;
-                        }
-                        if (l == 7 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == "")
-                        { univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
-                            UnivIdesCounter++;
-                        }
-                        if (l == 6 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == "")
-                        {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
-                            UnivIdesCounter++;
-                        }
-                        if (l == 5 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 3))].ToString() == "")
+                        if (l == 8 && read1[string.Format("UnivStudId{0}", l)].ToString() != "")
                         {
                             univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
-                        if (l == 4 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 3))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 4))].ToString() == "")
-                        {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
+                        if (l == 7 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == "")
+                        { univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
-                        if (l == 3 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 3))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 4))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 5))].ToString() == "")
+                        if (l == 6 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == "")
                         {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
-                        if (l == 2 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 3))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 4))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 5))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 6))].ToString() == "")
+                        if (l == 5 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 3))].ToString() == "")
                         {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
-                        if (l == 1 && read1[string.Format("univstudid{0}", l)].ToString() != ""
-                            && read1[string.Format("univstudid{0}", (l + 1))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 2))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 3))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 4))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 5))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 6))].ToString() == ""
-                            && read1[string.Format("univstudid{0}", (l + 7))].ToString() == "")
+                        if (l == 4 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 4))].ToString() == "")
                         {
-                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("univstudid{0}", i)].ToString());
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
+                            UnivIdesCounter++;
+                        }
+                        if (l == 3 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 5))].ToString() == "")
+                        {
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
+                            UnivIdesCounter++;
+                        }
+                        if (l == 2 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 6))].ToString() == "")
+                        {
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
+                            UnivIdesCounter++;
+                        }
+                        if (l == 1 && read1[string.Format("UnivStudId{0}", l)].ToString() != ""
+                            && read1[string.Format("UnivStudId{0}", (l + 1))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 2))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 3))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 4))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 5))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 6))].ToString() == ""
+                            && read1[string.Format("UnivStudId{0}", (l + 7))].ToString() == "")
+                        {
+                            univides[UnivIdesCounter] = int.Parse(read1[string.Format("UnivStudId{0}", i)].ToString());
                             UnivIdesCounter++;
                         }
                     }
@@ -409,18 +409,18 @@ namespace attaysir
             int count = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.SchoolStud", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.SchoolStud", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read()) { count++; }
 
             int[] schoolides = new int[count];
             int schoolIdesCounter = 0;
             
-            string query = "select * from attaysir1.dbo.Groups2";
+            string query = "select * from Attaysir1.dbo.Groups2";
             for (int i=0;i< SchoolIntArr.Length;i++)
             {
-                if (i == 0) { query += string.Format(" where familyid = '{0}'", SchoolIntArr[i].ToString()); }
-                else { query += string.Format(" or familyid = '{0}'", SchoolIntArr[i].ToString()); }
+                if (i == 0) { query += string.Format(" where FamilyId = '{0}'", SchoolIntArr[i].ToString()); }
+                else { query += string.Format(" or FamilyId = '{0}'", SchoolIntArr[i].ToString()); }
             }
             
             for (int i = 1; i <= 10; i++)

@@ -124,7 +124,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox2.Location = new System.Drawing.Point(696, 77);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(435, 105);

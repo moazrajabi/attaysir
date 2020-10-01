@@ -31,7 +31,7 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.univstud where id='{0}'",this.id.ToString()), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.UnivStud where id='{0}'", this.id.ToString()), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {

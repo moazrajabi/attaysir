@@ -26,7 +26,7 @@ namespace attaysir
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             listviewfunctions.viewerAdmin(listView1, "select AdminFirstName"+
                 ",AdminLastName,email,password,birthday,image,identityNo,Mobil"+
-                "eNum1,MobileNum2 from Attaysir1.dbo.admin");
+                "eNum1,MobileNum2 from Attaysir1.dbo.Admin");
         }
 
         private void TheEmployeeList2_Resize(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace attaysir
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string ifthereadminornot = dataAccess.reader1("select * from attaysir1.dbo.admin", "id");
+            string ifthereadminornot = dataAccess.reader1("select * from Attaysir1.dbo.Admin", "id");
             if (ifthereadminornot != "")
             {
                 if (ifthereadminornot != null)
@@ -62,7 +62,7 @@ namespace attaysir
                         admin.DeleteAdmin(IdentificetionNumber);
                         listviewfunctions.viewerAdmin(listView1, "select AdminFirstName" +
                             ",AdminLastName,email,password,birthday,image,identityNo,Mobil" +
-                            "eNum1,MobileNum2 from Attaysir1.dbo.admin");
+                            "eNum1,MobileNum2 from Attaysir1.dbo.Admin");
                     }
                 }
             }

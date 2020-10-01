@@ -21,24 +21,26 @@ namespace attaysir
 {
     public partial class sevdigim_yusufun_istedigi : Form
     {
-       
+        int TheIdOfList;
         ArrayList sqlCommands, selectedColumns, columnsNames;
-        public sevdigim_yusufun_istedigi(ArrayList sqlCommands, ArrayList selectedColumns, ArrayList columnsNames)
+        public sevdigim_yusufun_istedigi(ArrayList sqlCommands, ArrayList selectedColumns, ArrayList columnsNames,int TheIdOfList)
         {
             InitializeComponent();
             this.sqlCommands = sqlCommands;
             this.selectedColumns = selectedColumns;
             this.columnsNames = columnsNames;
             fillLitView();
+            this.TheIdOfList = TheIdOfList;
         }
 
         ListViewItem[] listViewItems;string[] columns; string itsschool = "";
-        public sevdigim_yusufun_istedigi(ListViewItem[] listViewItems,string[] columns)
+        public sevdigim_yusufun_istedigi(ListViewItem[] listViewItems,string[] columns,int TheIdOfList)
         {
             InitializeComponent();
             this.listViewItems = listViewItems;
             this.columns = columns;
             this.itsschool = "itsschool";
+            this.TheIdOfList = TheIdOfList;
         }
 
         private void sevdigim_yusufun_istedigi_Load(object sender, EventArgs e)
@@ -52,11 +54,23 @@ namespace attaysir
         //creating the PDF
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable dttbl = new DataTable();
-            FromListView(dttbl,listView1);
-            ExportDataTableToPdf(dttbl, "C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf","moaz-rajabi");
-            System.Diagnostics.Process.Start("C:/Users/Moaz/Desktop/New%20Microsoft%20Word%20Document.pdf");
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            String path="";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.Description = "إختر موقع للملف";
+
+            if (fbd.ShowDialog() == DialogResult.OK)
+            {
+                string NameOfList = dataAccess.reader(string.Format("select Name from Attaysir1.dbo.TheLists where id ='{0}'",this.TheIdOfList), "Name");
+                path = fbd.SelectedPath + "\\"+ NameOfList + ".pdf";
+                DataTable dttbl = new DataTable();
+                FromListView(dttbl, listView1);
+                ExportDataTableToPdf(dttbl, path, NameOfList);
+                System.Diagnostics.Process.Start(path);
+                this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            }
+            
+            
+        
         }
 
         void fillthelistviewfromschool(ListViewItem[] listViewItems,string[] columns)

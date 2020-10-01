@@ -31,7 +31,7 @@ namespace attaysir
             listView1.Items.Clear();
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.Projects order by id desc", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.Projects order by id desc", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -41,7 +41,7 @@ namespace attaysir
                 item.SubItems.Add(read["FaydalananSayisi"].ToString());
                 item.SubItems.Add(read["Discription"].ToString());
                 item.SubItems.Add(read["ExpiryDate"].ToString());
-                item.SubItems.Add(dataAccess.reader(string.Format("select name from attaysir1.dbo.TheLists where id = '{0}'", read["ListId"].ToString()), "name"));
+                item.SubItems.Add(dataAccess.reader(string.Format("select Name from Attaysir1.dbo.TheLists where id = '{0}'", read["ListId"].ToString()), "name"));
                 listView1.Items.Add(item);
             }
             con.Close();
@@ -56,8 +56,8 @@ namespace attaysir
                 string FaydalananSayisi = listView1.SelectedItems[0].SubItems[3].Text;
                 string Discription = listView1.SelectedItems[0].SubItems[4].Text;
                 string ExpiryDate = listView1.SelectedItems[0].SubItems[5].Text;
-                string listid = dataAccess.reader(string.Format("select listid from attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate), "ListId");
-                string ProjectId = dataAccess.reader(string.Format("select id from attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}' and listid = '{5}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate, listid), "id");
+                string listid = dataAccess.reader(string.Format("select ListId from Attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate), "ListId");
+                string ProjectId = dataAccess.reader(string.Format("select id from attaysir1.dbo.Projects where ProjectName = '{0}' and CreatingDate = '{1}' and FaydalananSayisi = '{2}' and Discription = '{3}' and ExpiryDate = '{4}' and ListId = '{5}'", ProjectName, CreatingDate, FaydalananSayisi, Discription, ExpiryDate, listid), "id");
                 ProjectsDetails k = new ProjectsDetails(int.Parse(ProjectId)); k.ShowDialog();
             }
             catch { }

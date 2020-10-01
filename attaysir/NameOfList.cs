@@ -45,12 +45,12 @@ namespace attaysir
             {
                 if (listType == "univ")
                 {
-                    string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu='{0}'", item.SubItems[5].Text), "id");
+                    string id = dataAccess.reader(string.Format("select id from Attaysir1.dbo.UnivStud where IdentityNu='{0}'", item.SubItems[5].Text), "id");
                     dataAccess.Executequery(string.Format("insert into attaysir1.dbo.IdesOfTheList(IdOfList,Faydalananlae_id) values('{0}','{1}')", listId, id));
                 }
                 else if (listType == "family")
                 {
-                    dataAccess.Executequery(string.Format("insert into attaysir1.dbo.IdesOfTheList(IdOfList,Faydalananlae_id) values('{0}','{1}')", listId, item.SubItems[1].Text));
+                    dataAccess.Executequery(string.Format("insert into Attaysir1.dbo.IdesOfTheList(IdOfList,Faydalananlae_id) values('{0}','{1}')", listId, item.SubItems[1].Text));
                 }else
                 {
                     string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum='{0}'", item.SubItems[4].Text), "id");

@@ -54,7 +54,7 @@ namespace attaysir
             { MessageBox.Show("هناك تعارض في تواريخ اإنشاء والإنتهاء"); }
             else
             {
-                dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.Projects(ProjectName,CreatingDate,FaydalananSayisi,Discription,ExpiryDate,listid,thelink) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", textBox1.Text,dateTimePicker1.Text, textBox3.Text, richTextBox1.Text,dateTimePicker2.Text, one[comboBox1.SelectedIndex].ToString(),textBox4.Text));
+                dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.Projects(ProjectName,CreatingDate,FaydalananSayisi,Discription,ExpiryDate,ListId,TheLink) VALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", textBox1.Text,dateTimePicker1.Text, textBox3.Text, richTextBox1.Text,dateTimePicker2.Text, one[comboBox1.SelectedIndex].ToString(),textBox4.Text));
                 //Array.Reverse(sortedIds);
                 //int id = int.Parse((string) sortedIds.GetValue(comboBox1.SelectedIndex));
 
@@ -71,7 +71,7 @@ namespace attaysir
             
             SqlConnection con1 = new SqlConnection(dataAccess.conString);
             con1.Open();
-            SqlCommand cmd1 = new SqlCommand("select id from Attaysir1.dbo.thelists", con1);
+            SqlCommand cmd1 = new SqlCommand("select id from Attaysir1.dbo.TheLists", con1);
             SqlDataReader read1 = cmd1.ExecuteReader();
             while (read1.Read()) { array.Add(read1["id"].ToString());  }
             con1.Close();
@@ -82,7 +82,7 @@ namespace attaysir
             for (int i=(anArray.Length-1); i>=0; i--)
             {
                 int o =  int.Parse((string) anArray[i]);
-                string h = dataAccess.reader( string.Format("select name from attaysir1.dbo.thelists where id='{0}'", o.ToString()),"name");
+                string h = dataAccess.reader( string.Format("select Name from Attaysir1.dbo.TheLists where id='{0}'", o.ToString()),"Name");
                 comboBox1.Items.Add(h);
                 two[i] = o;
             }

@@ -34,15 +34,15 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.TheLists order by CreatingDate desc", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.TheLists order by CreatingDate desc", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
                 ListViewItem item = new ListViewItem();
-                item.SubItems.Add(read["name"].ToString());
-                item.SubItems.Add(read["typeoflist"].ToString());
+                item.SubItems.Add(read["Name"].ToString());
+                item.SubItems.Add(read["TypeOfList"].ToString());
                 item.SubItems.Add(getfaydalananlarsayisi(int.Parse(read["id"].ToString())).ToString());
-                item.SubItems.Add(read["creatingdate"].ToString());
+                item.SubItems.Add(read["CreatingDate"].ToString());
                 listView1.Items.Add(item);
             }
             con.Close();
@@ -53,7 +53,7 @@ namespace attaysir
             int i = 0;
             SqlConnection con1 = new SqlConnection(dataAccess.conString);
             con1.Open();
-            SqlCommand cmd1 = new SqlCommand(string.Format("select * from attaysir1.dbo.IdesOfTheList where IdOfList='{0}'", id.ToString()), con1);
+            SqlCommand cmd1 = new SqlCommand(string.Format("select * from Attaysir1.dbo.IdesOfTheList where IdOfList='{0}'", id.ToString()), con1);
             SqlDataReader read1 = cmd1.ExecuteReader();
             while (read1.Read())
             {
@@ -83,17 +83,17 @@ namespace attaysir
                 string creatingdate = listView1.SelectedItems[0].SubItems[4].Text;
                 if (typeoflist == "family")
                 {
-                    string idoflist = dataAccess.reader(string.Format("select id from attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
+                    string idoflist = dataAccess.reader(string.Format("select id from Attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
                     check_the_datas_for_the_list k = new check_the_datas_for_the_list(int.Parse(idoflist));// k.Show();
                     k.ShowDialog();
                 }else if (typeoflist == "univ")
                 {
-                    string idoflist = dataAccess.reader(string.Format("select id from attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
+                    string idoflist = dataAccess.reader(string.Format("select id from Attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
                     CheckTheDatasForTheListUNIV c = new CheckTheDatasForTheListUNIV(int.Parse(idoflist));c.ShowDialog();
                 }
                 else
                 {
-                    string idoflist = dataAccess.reader(string.Format("select id from attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
+                    string idoflist = dataAccess.reader(string.Format("select id from Attaysir1.dbo.TheLists where Name = '{0}' and CreatingDate = '{1}' and TypeOfList = '{2}' and faydalananlarsayisi = '{3}'", name, creatingdate, typeoflist, faydalananlarsayisi), "id");
                     CheckTheDatasForTheListSCHOOL c = new CheckTheDatasForTheListSCHOOL(int.Parse(idoflist)); c.ShowDialog();
                 }
             }

@@ -12,7 +12,7 @@ namespace attaysir.models
 {
     public class dataAccess
     {
-        public static string conString = "Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True";
+        public static string conString = "Data Source=10.0.0.21;User ID = attaysir; Password=7242";
 
         public static int executenonquery(string query)
         {
@@ -82,7 +82,7 @@ namespace attaysir.models
             while (read.Read()) { f[n] = int.Parse(read["id"].ToString());n++; }
             con.Close();
         }
-
+        
         public static ArrayList viewer(string commend)
         {
             SqlConnection con = new SqlConnection(conString);
@@ -172,8 +172,8 @@ namespace attaysir.models
 
         public static int SavePDFsAndimage(byte[] ByteArray, string TableName, string ColumnName,int id)
         {
-            string query = "update attaysir1.dbo."+TableName+" set "+ColumnName+"=@img where id = "+id+"";
-            SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-9J5CO0P;Initial Catalog=attaysir;Integrated Security=True");
+            string query = "update attaysir1.dbo."+TableName+" set "+ColumnName+"=@img where id = "+id.ToString()+"";
+            SqlConnection sqlConnection = new SqlConnection(conString);
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.Add(new SqlParameter("@img", ByteArray));
@@ -208,7 +208,7 @@ namespace attaysir.models
             con.Open();
             SqlConnection con2 = new SqlConnection(conString);
             
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Attaysir1.dbo.faydalananaile WHERE CheckedOrNot= 'true'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Attaysir1.dbo.FaydalananAile WHERE CheckedOrNot= 'true'", con);
             SqlDataReader read = cmd.ExecuteReader();
             SqlCommand cmd2; string query;
             while (read.Read())

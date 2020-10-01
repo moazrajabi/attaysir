@@ -176,7 +176,7 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Verdana", 8F);
-            this.textBox8.Location = new System.Drawing.Point(161, 276);
+            this.textBox8.Location = new System.Drawing.Point(161, 275);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(145, 24);
             this.textBox8.TabIndex = 15;

@@ -40,7 +40,7 @@ namespace attaysir.models
                 listView1.Items.Add(item);
                 listView1.CheckBoxes = true;
             }
-            string ifthereemployeesornot =dataAccess.reader1("select * from attaysir1.dbo.employee","id");
+            string ifthereemployeesornot =dataAccess.reader1("select * from Attaysir1.dbo.Employee", "id");
             if (ifthereemployeesornot != "")
             {
                 listView1.FullRowSelect = true;
@@ -58,7 +58,7 @@ namespace attaysir.models
                 ListViewItem item = (ListViewItem)array[i];
                 listView1.Items.Add(item);
             }
-            string ifthereadminsornot = dataAccess.reader1("select * from attaysir1.dbo.admin", "id");
+            string ifthereadminsornot = dataAccess.reader1("select * from Attaysir1.dbo.Admin", "id");
             if (ifthereadminsornot != "")
             {
                 listView1.FullRowSelect = true;
@@ -69,7 +69,7 @@ namespace attaysir.models
 
         public static void viewer(ListView listView1, string TableName,string[] array1)
         {
-            string g = string.Format("select * from attaysir1.dbo.{0}",TableName);
+            string g = string.Format("select * from Attaysir1.dbo.{0}",TableName);
             ArrayList array = dataAccess.viewer(g,array1);
             listView1.Items.Clear();
             for (int i = 0; i < array.Count; i++)
@@ -88,7 +88,7 @@ namespace attaysir.models
 
         public static void ViewerForTheLists(ListView listView1, string TableName, string[] array1)
         {
-            string g = string.Format("select * from attaysir1.dbo.{0}", TableName);
+            string g = string.Format("select * from Attaysir1.dbo.{0}", TableName);
             ArrayList array = dataAccess.viewer(g, array1);
             listView1.Items.Clear();//////////////////////////////////////////////////////////////////
             for (int i = 0; i < array.Count; i++)

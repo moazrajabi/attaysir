@@ -13,17 +13,17 @@ namespace attaysir.models
     {
         public static bool login(string email, string password)
         {
-            string query = string.Format("SELECT * FROM Attaysir1.dbo.Employee WHERE Email = '{0}' AND Password='{1}'", email, password);
+            string query = string.Format("SELECT * FROM Attaysir1.dbo.Employee WHERE email = '{0}' AND password='{1}'", email, password);
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
 
         public static string NameById(int id)
         {
-            string query1 = string.Format("SELECT FirstName FROM Attaysir1.dbo.Employee WHERE id = '{0}' ", id);
-            string query2 = string.Format("SELECT LastName FROM Attaysir1.dbo.Employee WHERE id = '{0}' ", id);
-            string FirstName = dataAccess.reader(query1, "FirstName");
-            string LastName = FirstName + " " + dataAccess.reader(query2, "LastName");
+            string query1 = string.Format("SELECT firstName FROM Attaysir1.dbo.Employee WHERE id = '{0}' ", id);
+            string query2 = string.Format("SELECT lastName FROM Attaysir1.dbo.Employee WHERE id = '{0}' ", id);
+            string FirstName = dataAccess.reader(query1, "firstName");
+            string LastName = FirstName + " " + dataAccess.reader(query2, "lastName");
             return LastName;
         }
 
@@ -128,7 +128,7 @@ namespace attaysir.models
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
-
+        /*
         public static int AddOtherSalaries(string HusbandIdentificationNumber, string WifeIdentificationNumber, string OtherSalary, int AmountOfOtherSalary, string CycleOfOtherSalary)
         {
             string query = string.Format("INSERT INTO Attaysir1.dbo.OtherSalaries(OtherSalary," +
@@ -136,7 +136,7 @@ namespace attaysir.models
                 "VALUES('{0}','{1}','{2}','{3}')", OtherSalary, AmountOfOtherSalary, CycleOfOtherSalary
                 , int.Parse(SelectIdByHusbandIdNumWifeIdNum(HusbandIdentificationNumber, WifeIdentificationNumber)));
             return dataAccess.executenonquery(query);
-        }
+        }*/
 
         public static string SelectIdByHusbandIdNumWifeIdNum(string HusbandIdentificationNumber, string WifeIdentificationNumber)
         {
@@ -158,7 +158,7 @@ namespace attaysir.models
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
-
+        /*
         public static int SalariesById(int id)
         {
             if (AreThereASalariesFile(id) == true)
@@ -172,15 +172,15 @@ namespace attaysir.models
                 return othersalary;
             }
             else { return 0; }
-        }
-
+        }*/
+        /*
         public static int ExpensesById(int id)
         {
             string query1 = string.Format("select SUM(OtherExpenses.AmountOfOtherExpenses) as AmountOfOtherExpenses " +
                 "from Attaysir1.dbo.OtherExpenses where Familyid = '{0}' ", id);
             return int.Parse(dataAccess.reader(query1, "AmountOfOtherExpenses"));
-        }
-
+        }*/
+        /*
         public static void viewer(ListView listview)
         {
             int n = dataAccess.NumberOfItems("SELECT * FROM Attaysir1.dbo.FaydalananAile");
@@ -218,7 +218,7 @@ namespace attaysir.models
                 item = new ListViewItem(arr);
                 listview.Items.Add(item);
             }
-        }
+        }*/
 
         public static void justCharacters(Object o, KeyPressEventArgs e)
         {
@@ -268,9 +268,9 @@ namespace attaysir.models
 
         public static int addunivstudtogroup(string HIdNu,string WIdNu, string univstudidnu,string kacinci)
         {
-            string query1 = string.Format("select GroupId from attaysir1.dbo.groups where familyid = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
-            string query2 = string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'",univstudidnu);
-            string query3 = string.Format("UPDATE Attaysir1.dbo.groups SET univstudid{0} = '{1}' WHERE GroupId = '{2}'",kacinci , dataAccess.reader(query2, "id"), dataAccess.reader(query1, "GroupId"));
+            string query1 = string.Format("select GroupId from Attaysir1.dbo.Groups where FamilyId = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
+            string query2 = string.Format("select id from Attaysir1.dbo.UnivStud where IdentityNu = '{0}'", univstudidnu);
+            string query3 = string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId{0} = '{1}' WHERE GroupId = '{2}'", kacinci , dataAccess.reader(query2, "id"), dataAccess.reader(query1, "GroupId"));
             return dataAccess.executenonquery(query3);
         }
 
@@ -278,7 +278,7 @@ namespace attaysir.models
         {
             //string query1 = string.Format("select GroupId from attaysir1.dbo.groups2 where familyid = '{0}'", SelectIdByHusbandIdNumWifeIdNum(HIdNu, WIdNu));
             //string query2 = string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", univstudidnu);
-            string query3 = string.Format("UPDATE Attaysir1.dbo.groups2 SET SchoolStud{0} = '{1}' WHERE GroupId = '{2}'", kacinci, schoolstudid,groupid2);
+            string query3 = string.Format("UPDATE Attaysir1.dbo.Groups2 SET SchoolStud{0} = '{1}' WHERE GroupId = '{2}'", kacinci, schoolstudid,groupid2);
             return dataAccess.executenonquery(query3);
         }
     }

@@ -62,7 +62,7 @@ namespace attaysir
                         try
                         {
                             richTextBox1.Text = "";
-                            string query = string.Format("insert into attaysir1.dbo.employee(firstName,lastName" +
+                            string query = string.Format("insert into Attaysir1.dbo.Employee(firstName,lastName" +
                                 ",email,password,birthday,identityNo,MobileNum1,MobileNum2)values('{0}','{1}'," +
                                 "'{2}','{3}','{4}','{5}','{6}','{7}')", textBox1.Text, textBox2.Text, textBox7.Text,
                                 textBox4.Text, dateTimePicker1.Text, textBox8.Text, textBox5.Text, textBox6.Text);
@@ -72,15 +72,13 @@ namespace attaysir
                             int length1 = (int)fStream.Length;
                             byte[] variable = new byte[length1];
                             fStream.Read(variable, 0, length1);
-                            string id = string.Format("select id from attaysir1.dbo.employee where identityNo='{0}'", textBox5.Text);
-                            dataAccess.SavePDFsAndimage(variable, "employee", "image", int.Parse(dataAccess.reader(id, "id")));
+                            string id = string.Format("select id from Attaysir1.dbo.Employee where identityNo='{0}'", textBox8.Text);
+                            dataAccess.SavePDFsAndimage(variable, "Employee", "image", int.Parse(dataAccess.reader(id, "id")));
                             richTextBox1.Text = "تمت عملية الاضافة بنجاح"; i = false; MessageBox.Show("تمت عملية الاضافة بنجاح", "الاضافة تمت"); this.Close();
                         }
                         catch (Exception ex) { MessageBox.Show(ex.ToString()); }
                     }
                 }
-                if (IfTheEmployeeThere(textBox8.Text) == true) { MessageBox.Show("صاحب رقم الهوية هاذا مضاف فعلا","تنبيه"); }
-                if (IfTheEmployeeThere(textBox8.Text) == true) { MessageBox.Show("صاحب رقم الهوية هذا مضاف كادمن فعلا","تنبيه"); }
             }
         }
         public static bool i = false;
@@ -91,7 +89,7 @@ namespace attaysir
 
         public static bool IfTheEmployeeThere(string identityNo)
         {
-            string query = string.Format("SELECT * FROM Attaysir1.dbo.employee WHERE identityNo ='{0}'", identityNo);
+            string query = string.Format("SELECT * FROM Attaysir1.dbo.Employee WHERE identityNo ='{0}'", identityNo);
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }

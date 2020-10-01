@@ -85,9 +85,9 @@ namespace attaysir
 
         void damj()
         {
-            string fathername = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.univstud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
-            string mothername = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.univstud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
-            string lastname = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.univstud where LastName = '{0}'", LastNametxtbx.Text),"LastName");
+            string fathername = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.UnivStud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
+            string mothername = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.UnivStud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
+            string lastname = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.UnivStud where LastName = '{0}'", LastNametxtbx.Text),"LastName");
 
             if (FatherNametxtbx.Text == fathername)
             {
@@ -107,51 +107,51 @@ namespace attaysir
 
         public void k()
         {
-            string fathername = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.univstud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
-            string mothername = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.univstud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
-            string lastname = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.univstud where LastName = '{0}'", LastNametxtbx.Text), "LastName");
+            string fathername = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.UnivStud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
+            string mothername = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.UnivStud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
+            string lastname = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.UnivStud where LastName = '{0}'", LastNametxtbx.Text), "LastName");
 
-            string groupid = dataAccess.reader(string.Format("Select GroupId from attaysir1.dbo.univstud where fathername='{0}' and mothername='{1}' and lastname ='{2}'", fathername, mothername,lastname), "GroupId");
-            string familyid = dataAccess.reader(string.Format("Select familyid from attaysir1.dbo.univstud where fathername='{0}' and mothername='{1}' and lastname ='{2}'", fathername, mothername, lastname), "familyid");
+            string groupid = dataAccess.reader(string.Format("Select GroupId from Attaysir1.dbo.UnivStud where FatherName='{0}' and MotherName='{1}' and LastName ='{2}'", fathername, mothername,lastname), "GroupId");
+            string familyid = dataAccess.reader(string.Format("Select Familyid from Attaysir1.dbo.UnivStud where FatherName='{0}' and MotherName='{1}' and LastName ='{2}'", fathername, mothername, lastname), "FamilyId");
             Employee2.AddUnivStudWithOutFamily(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), YearlyFeestxtbx.Text, PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
-            string idofnewone = dataAccess.reader(string.Format("select Id from attaysir1.dbo.univstud where IdentityNu = '{0}'", IdentityNotxtbx.Text), "Id");
+            string idofnewone = dataAccess.reader(string.Format("select id from Attaysir1.dbo.UnivStud where IdentityNu = '{0}'", IdentityNotxtbx.Text), "id");
 
-            if (dataAccess.reader(string.Format("select univstudid1 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid1") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId1 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid2 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid2") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId2 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid3 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid3") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId3 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid4 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid4") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId4 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid5 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid5") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId5 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid6 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid6") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId6 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid7 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid7") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId7 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
-            else if (dataAccess.reader(string.Format("select univstudid8 from attaysir1.dbo.groups where GroupId ='{0}'", groupid), "univstudid8") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.groups SET UnivStudId8 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            if (dataAccess.reader(string.Format("select UnivStudId1 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId1") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId1 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId2 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId2") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId2 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId3 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId3") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId3 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId4 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId4") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId4 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId5 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId5") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId5 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId6 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId6") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId6 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId7 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId7") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId7 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
+            else if (dataAccess.reader(string.Format("select UnivStudId8 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid), "UnivStudId8") == "") { dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.Groups SET UnivStudId8 = '{0}' WHERE GroupId = '{1}'", idofnewone, groupid)); }
 
-            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'",groupid,idofnewone));
-            if (familyid != "") {dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET familyid = '{0}' WHERE id = '{1}'", familyid, idofnewone));}
+            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.UnivStud SET GroupId = '{0}' WHERE id = '{1}'", groupid,idofnewone));
+            if (familyid != "") {dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.UnivStud SET FamilyId = '{0}' WHERE id = '{1}'", familyid, idofnewone));}
         }
 
         public void l()
         {
             Employee2.AddUnivStudWithOutFamily(FirstNametxtbx.Text, FatherNametxtbx.Text, MotherNametxtbx.Text, LastNametxtbx.Text, IdentityNotxtbx.Text, UnivNametxtbx.Text, KolejNametxtbx.Text, DepartmentNametxtbx.Text, whichyearcmbbx.SelectedItem.ToString(), YearlyFeestxtbx.Text, PhoneNotxtbx.Text, SecondPhoneNotxtbx.Text, Emailtxtbx.Text);
-            string idofnewone = dataAccess.reader(string.Format("select Id from attaysir1.dbo.univstud where IdentityNu = '{0}'", IdentityNotxtbx.Text), "Id");
-            dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.groups(univstudid1) VALUES('{0}')",idofnewone));
-            string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where univstudid1 = '{0}'",idofnewone),"groupid");
-            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, idofnewone));
+            string idofnewone = dataAccess.reader(string.Format("select id from Attaysir1.dbo.UnivStud where IdentityNu = '{0}'", IdentityNotxtbx.Text), "id");
+            dataAccess.Executequery(string.Format("INSERT INTO Attaysir1.dbo.Groups(UnivStudId1) VALUES('{0}')",idofnewone));
+            string groupid = dataAccess.reader(string.Format("select GroupId from Attaysir1.dbo.Groups where UnivStudId1 = '{0}'",idofnewone),"GroupId");
+            dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.UnivStud SET GroupId = '{0}' WHERE id = '{1}'", groupid, idofnewone));
             MessageBox.Show("تمت اضافة الطالب الجامعي بنجاح", "تمت الاضافة");
             this.Close();
         }
 
         public string j()
         {
-            string fathername0 = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.univstud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
-            string mothername0 = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.univstud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
-            string lastname0 = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.univstud where LastName = '{0}'", LastNametxtbx.Text), "LastName");
-            string groupid0 = dataAccess.reader(string.Format("Select GroupId from attaysir1.dbo.univstud where fathername='{0}' and mothername='{1}' and lastname ='{2}'", fathername0, mothername0, lastname0), "GroupId");
-            string id = dataAccess.reader(string.Format("select univstudid1 from attaysir1.dbo.groups where GroupId ='{0}'", groupid0), "univstudid1");
+            string fathername0 = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.UnivStud where FatherName = '{0}'", FatherNametxtbx.Text), "FatherName");
+            string mothername0 = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.UnivStud where MotherName = '{0}'", MotherNametxtbx.Text), "MotherName");
+            string lastname0 = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.UnivStud where LastName = '{0}'", LastNametxtbx.Text), "LastName");
+            string groupid0 = dataAccess.reader(string.Format("Select GroupId from Attaysir1.dbo.UnivStud where FatherName='{0}' and MotherName='{1}' and LastName ='{2}'", fathername0, mothername0, lastname0), "GroupId");
+            string id = dataAccess.reader(string.Format("select UnivStudId1 from Attaysir1.dbo.Groups where GroupId ='{0}'", groupid0), "UnivStudId1");
 
-            string firstname = dataAccess.reader(string.Format("select firstname from attaysir1.dbo.UnivStud where id = '{0}'", id),"firstname");
-            string fathername = dataAccess.reader(string.Format("select FatherName from attaysir1.dbo.UnivStud where id = '{0}'", id),"fathername");
-            string mothername = dataAccess.reader(string.Format("select MotherName from attaysir1.dbo.UnivStud where id = '{0}'", id),"mothername");
-            string lastname = dataAccess.reader(string.Format("select LastName from attaysir1.dbo.UnivStud where id = '{0}'", id),"lastname");
+            string firstname = dataAccess.reader(string.Format("select FirstName from Attaysir1.dbo.UnivStud where id = '{0}'", id),"FirstName");
+            string fathername = dataAccess.reader(string.Format("select FatherName from Attaysir1.dbo.UnivStud where id = '{0}'", id),"FatherName");
+            string mothername = dataAccess.reader(string.Format("select MotherName from Attaysir1.dbo.UnivStud where id = '{0}'", id),"MotherName");
+            string lastname = dataAccess.reader(string.Format("select LastName from Attaysir1.dbo.UnivStud where id = '{0}'", id),"LastName");
             string themessage1 = "هاذا الشخص يتشابه مع ";
             string themessage2 = string.Format("{0} {1} {2} ",firstname,fathername,lastname);
             string themessage3 = "اسم الام";

@@ -72,7 +72,7 @@ namespace attaysir
                 listView1.Columns.Add(k1[i]);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            listviewfunctions.viewer(listView1, "faydalananaile where CheckedOrNot ='false'", k);
+            listviewfunctions.viewer(listView1, "FaydalananAile where CheckedOrNot ='false'", k);
         }
 
         public void small()
@@ -92,7 +92,7 @@ namespace attaysir
                 listView1.Columns.Add(k1[i]);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            listviewfunctions.viewer(listView1, "faydalananaile where CheckedOrNot ='false'", k);
+            listviewfunctions.viewer(listView1, "FaydalananAile where CheckedOrNot ='false'", k);
         }
 
         public void big1()
@@ -118,7 +118,7 @@ namespace attaysir
                 listView1.Columns.Add(k1[i]);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            listviewfunctions.viewer(listView1, "faydalananaile where UpdatedOrNot ='false' ", k);
+            listviewfunctions.viewer(listView1, "FaydalananAile where UpdatedOrNot ='false' ", k);
         }
 
         public void small1()
@@ -138,7 +138,7 @@ namespace attaysir
                 listView1.Columns.Add(k1[i]);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            listviewfunctions.viewer(listView1, "faydalananaile where UpdatedOrNot ='false'", k);
+            listviewfunctions.viewer(listView1, "FaydalananAile where UpdatedOrNot ='false'", k);
         }
 
         private void didntcheckedtimefamily_Resize(object sender, EventArgs e)

@@ -38,7 +38,7 @@ namespace attaysir
             comboBox1.Items.Add("");
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.employee", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.Employee", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -75,15 +75,15 @@ namespace attaysir
             comboBox2.Items.Add("");
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.admin", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.Admin", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
                 if (gg(read["id"].ToString(),"admin"))
                 {
                     string adminname = "";
-                    adminname = read["adminfirstName"].ToString();
-                    adminname += " " + read["adminlastName"].ToString();
+                    adminname = read["AdminFirstName"].ToString();
+                    adminname += " " + read["AdminLastName"].ToString();
                     comboBox2.Items.Add(adminname);
                 }
             }
@@ -97,8 +97,8 @@ namespace attaysir
             {
                 string recieverAccType = "employee";
                 DateTime date = DateTime.Now;
-                string recieverId = dataAccess.reader(string.Format("select id as id from dbo.Employee where firstname = '{0}' and lastname = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ")+1, reciever.Length - (reciever.IndexOf(" ")+1))),"id");
-                string sendQuery = string.Format("insert into dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message,id,accType,recieverId,recieverAccType,date.ToString(),"false");
+                string recieverId = dataAccess.reader(string.Format("select id as id from Attaysir1.dbo.Employee where firstName = '{0}' and lastName = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ")+1, reciever.Length - (reciever.IndexOf(" ")+1))),"id");
+                string sendQuery = string.Format("insert into Attaysir1.dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message,id,accType,recieverId,recieverAccType,date.ToString(),"false");
                 dataAccess.executenonquery(sendQuery);
                 MessageBox.Show("تم الإرسال بنجاح");
                 this.Close();
@@ -108,8 +108,8 @@ namespace attaysir
             {
                 reciever = comboBox2.Text;
                 string recieverAccType = "admin";
-                string recieverId = dataAccess.reader(string.Format("select id as id from dbo.Admin where adminfirstname = '{0}' and adminlastname = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ")+1, reciever.Length - (reciever.IndexOf(" ")+1))), "id");
-                string sendQuery = string.Format("insert into dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",message, id, accType, recieverId, recieverAccType, DateTime.Now.ToString(), "false");
+                string recieverId = dataAccess.reader(string.Format("select id as id from Attaysir1.dbo.Admin where AdminFirstName = '{0}' and AdminLastName = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ")+1, reciever.Length - (reciever.IndexOf(" ")+1))), "id");
+                string sendQuery = string.Format("insert into Attaysir1.dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message, id, accType, recieverId, recieverAccType, DateTime.Now.ToString(), "false");
                 dataAccess.executenonquery(sendQuery);
                 MessageBox.Show("تم الإرسال بنجاح");
                 this.Close();
@@ -117,14 +117,14 @@ namespace attaysir
             }else if (comboBox2.Text != "" && comboBox1.Text != "")
             {
                 string recieverAccType = "employee";
-                string recieverId = dataAccess.reader(string.Format("select id as id from dbo.Employee where firstname = '{0}' and lastname = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ") + 1, reciever.Length - (reciever.IndexOf(" ") + 1))), "id");
-                string sendQuery = string.Format("insert into dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message, id, accType, recieverId, recieverAccType, DateTime.Now.ToString(), "false");
+                string recieverId = dataAccess.reader(string.Format("select id as id from Attaysir1.dbo.Employee where firstName = '{0}' and lastName = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ") + 1, reciever.Length - (reciever.IndexOf(" ") + 1))), "id");
+                string sendQuery = string.Format("insert into Attaysir1.dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message, id, accType, recieverId, recieverAccType, DateTime.Now.ToString(), "false");
                 dataAccess.executenonquery(sendQuery);
 
                 reciever = comboBox2.Text;
                 string recieverAccType2 = "admin";
-                string recieverId2 = dataAccess.reader(string.Format("select id as id from dbo.Admin where adminfirstname = '{0}' and adminlastname = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ") + 1, reciever.Length - (reciever.IndexOf(" ") + 1))), "id");
-                string sendQuery2 = string.Format("insert into dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message, id, accType, recieverId2, recieverAccType2, DateTime.Now.ToString(), "false");
+                string recieverId2 = dataAccess.reader(string.Format("select id as id from Attaysir1.dbo.Admin where AdminFirstName = '{0}' and AdminLastName = '{1}'", reciever.Substring(0, reciever.IndexOf(" ")), reciever.Substring(reciever.IndexOf(" ") + 1, reciever.Length - (reciever.IndexOf(" ") + 1))), "id");
+                string sendQuery2 = string.Format("insert into Attaysir1.dbo.messages(message,senderid,senderadminoremployee,recieverid,recieveradminoremployee,dateofsendding,seen) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", message, id, accType, recieverId2, recieverAccType2, DateTime.Now.ToString(), "false");
                 dataAccess.executenonquery(sendQuery2);
                 MessageBox.Show("تم الإرسال بنجاح");
                 this.Close();

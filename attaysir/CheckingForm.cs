@@ -51,8 +51,8 @@ namespace attaysir
         {
             if (fuck == true)
             {
-                string query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot = 'true' where HusbandIdentificat" +
-                    "ionNumber = '{0}' and WifeIdentificationNumber = '{1}'", hid, wid);
+                string query = string.Format("update Attaysir1.dbo.FaydalananAile set CheckedOrNot = 'true' where"+
+                    " HusbandIdentificationNumber = '{0}' and WifeIdentificationNumber = '{1}'", hid, wid);
                 dataAccess.Executequery(query);
                 MessageBox.Show("تم تعيين هذا الملف كمرئي");
                 this.Close();
@@ -105,7 +105,7 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.FaydalananAile where  id = '{0}'" , familyId), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.FaydalananAile where  id = '{0}'" , familyId), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {

@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -225,14 +225,14 @@ namespace attaysir
 
                             Employee2.CreatGroup(husbandIdentityNumber, WifeIdentityNumber);
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId = '{0}' WHERE id = '{1}'",
-                                dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'",
-                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                                dataAccess.reader(string.Format("select GroupId from Attaysir1.dbo.Groups where FamilyId ='{0}'",
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "GroupId"),
                                 Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
 
                             Employee2.CreatGroup2(husbandIdentityNumber, WifeIdentityNumber);
                             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET GroupId2 = '{0}' WHERE id = '{1}'",
-                                dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'",
-                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid"),
+                                dataAccess.reader(string.Format("select GroupId from Attaysir1.dbo.Groups2 where FamilyId ='{0}'",
+                                Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "GroupId"),
                                 Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)));
 
                             Employee2.didntchecked(husbandIdentityNumber, WifeIdentityNumber);
@@ -300,18 +300,18 @@ namespace attaysir
                                     k[i].FatherName, k[i].MotherName, k[i].lastname, k[i].IdentityNu, k[i].univname,
                                     k[i].KolejName, k[i].department, k[i].whichyear, k[i].yearlifees, k[i].PhoneNu, k[i].SecondPhoneNu,
                                     k[i].Email);
-                                string groupid = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
-                                string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.univstud where IdentityNu = '{0}'", k[i].IdentityNu), "id");
-                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.univstud SET groupid = '{0}' WHERE id = '{1}'", groupid, id));
+                                string groupid = dataAccess.reader(string.Format("select GroupId from Attaysir1.dbo.Groups where FamilyId ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                                string id = dataAccess.reader(string.Format("select id from Attaysir1.dbo.UnivStud where IdentityNu = '{0}'", k[i].IdentityNu), "id");
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.UnivStud SET GroupId = '{0}' WHERE id = '{1}'", groupid, id));
                                 Employee2.addunivstudtogroup(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, k[i].IdentityNu, (i + 1).ToString());
                                 TotalUniversitiesFees += (int.Parse((k[i].yearlifees.ToString())) / 12);
                             }
                             for (int i = 0; i < this.e; i++)
                             {
                                 Employee2.AddSchoolStud(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text, w[i].firstname, hFirstNameTxtBx.Text, wFirstNameTxtBx.Text, w[i].IdentityNu, w[i].SchoolName, w[i].whichyear);
-                                string groupid2 = dataAccess.reader(string.Format("select groupid from attaysir1.dbo.groups2 where familyid ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
+                                string groupid2 = dataAccess.reader(string.Format("select GroupId from Attaysir1.dbo.Groups2 where FamilyId ='{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(husbandIdentityNumber, WifeIdentityNumber)), "groupid");
                                 string id = dataAccess.reader(string.Format("select id from attaysir1.dbo.SchoolStud where IDNum = '{0}'", w[i].IdentityNu), "id");
-                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET groupid = '{0}' WHERE id = '{1}'", groupid2, id));
+                                dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET GroupId = '{0}' WHERE id = '{1}'", groupid2, id));
                                 Employee2.addschoolstudtogroup2(groupid2, id, (i + 1).ToString());
                                 dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.FaydalananAile SET OneMoreColumn = 'true' WHERE id = '{0}'", Employee2.SelectIdByHusbandIdNumWifeIdNum(hIdentityNumberTxtBx.Text, wIdentityNumberTxtBx.Text)));
                                 dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.SchoolStud SET YearlyFees = '{0}' WHERE id = '{1}'", w[i].fees.ToString(), id));

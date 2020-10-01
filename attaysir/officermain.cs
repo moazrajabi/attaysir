@@ -76,7 +76,7 @@ namespace attaysir
             int[] TheIdsList; int h = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' ", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where CheckedOrNot = 'true' ", con);
             SqlDataReader read = cmd.ExecuteReader();
 
             while (read.Read()) { h++; }
@@ -109,9 +109,9 @@ namespace attaysir
             con.Open(); SqlCommand cmd;
             if (LivingLocationCmbbx.SelectedIndex == 0)
             {
-                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='داخل البلدة القديمة' ", con);
+                cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where LivingLocation='داخل البلدة القديمة' ", con);
             }
-            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where LivingLocation='خارج البلدة القديمة' ", con); }
+            else { cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where LivingLocation='خارج البلدة القديمة' ", con); }
             SqlDataReader read = cmd.ExecuteReader();
             int h = 0;
             while (read.Read()) { h++; }
@@ -144,9 +144,9 @@ namespace attaysir
             con.Open(); SqlCommand cmd;
             if (KindOfFamilyCmbbx.SelectedIndex == 0)
             {
-                cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where KindOfFamily = 'عائلة متعففة' ", con);
+                cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where KindOfFamily = 'عائلة متعففة' ", con);
             }
-            else { cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where KindOfFamily = 'عائلة ايتام' ", con); ; }
+            else { cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where KindOfFamily = 'عائلة ايتام' ", con); ; }
             SqlDataReader read = cmd.ExecuteReader(); int h = 0;
             while (read.Read()) { h++; }
             read.Close(); SqlDataReader read1 = cmd.ExecuteReader(); int[] n = new int[h]; int g = 0;
@@ -265,23 +265,23 @@ namespace attaysir
                 }
 
                 bool resultAdmin;
-                DataTable dt = dataAccess.Executequery(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'", firstname, lastname));
+                DataTable dt = dataAccess.Executequery(string.Format("Select id from Attaysir1.dbo.Admin where AdminFirstName = '{0}' and AdminLastName = '{1}'", firstname, lastname));
                 if (dt.Rows.Count > 0) { resultAdmin = true; } else { resultAdmin = false; }
 
                 bool resultEmployee;
-                DataTable dt1 = dataAccess.Executequery(string.Format("Select id from attaysir1.dbo.employee where firstname = '{0}' and lastname = '{1}'", firstname, lastname));
+                DataTable dt1 = dataAccess.Executequery(string.Format("Select id from Attaysir1.dbo.Employee where firstName = '{0}' and lastName = '{1}'", firstname, lastname));
                 if (dt1.Rows.Count > 0) { resultEmployee = true; } else { resultEmployee = false; }
 
-                if (resultAdmin == true) { senderadminoremloyee = "admin"; idofsender = dataAccess.reader(string.Format("Select id from attaysir1.dbo.admin where adminfirstname = '{0}' and adminlastname = '{1}'", firstname, lastname), "id"); }
-                if (resultEmployee == true) { senderadminoremloyee = "employee"; idofsender = dataAccess.reader(string.Format("Select id from attaysir1.dbo.employee where firstname = '{0}' and lastname = '{1}'", firstname, lastname), "id"); }
+                if (resultAdmin == true) { senderadminoremloyee = "admin"; idofsender = dataAccess.reader(string.Format("Select id from Attaysir1.dbo.Admin where AdminFirstName = '{0}' and AdminLastName = '{1}'", firstname, lastname), "id"); }
+                if (resultEmployee == true) { senderadminoremloyee = "employee"; idofsender = dataAccess.reader(string.Format("Select id from Attaysir1.dbo.Employee where firstName = '{0}' and lastName = '{1}'", firstname, lastname), "id"); }
                 if ((resultAdmin == true && resultEmployee == true) || idofsender == "") { MessageBox.Show("اسم المستخدم المدخل يتشابه مع اسم ادمن و اسم موظف في نفس الوقت او غير موجود"); }
                 else
                 {
-                    string message = dataAccess.reader(string.Format("select message from attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'" +
-                        " and recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "message");
+                    string message = dataAccess.reader(string.Format("select message from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and "+
+                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "message");
 
-                    int messageid = int.Parse(dataAccess.reader(string.Format("select id from attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'" +
-                        " and recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "id"));
+                    int messageid = int.Parse(dataAccess.reader(string.Format("select id from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and "+
+                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "id"));
 
                     TheMessage k = new TheMessage(message, messageid, this); k.Show();
                 }
@@ -295,7 +295,7 @@ namespace attaysir
             getMessages1();
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -305,7 +305,7 @@ namespace attaysir
                     int id = int.Parse(read["senderid"].ToString());
                     if (read["senderadminoremployee"].ToString() == "employee")
                     {
-                        String nameQuery = "select * from dbo.employee where id = " + id;
+                        String nameQuery = "select * from Attaysir1.dbo.Employee where id = " + id;
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
@@ -313,8 +313,8 @@ namespace attaysir
                     }
                     else
                     {
-                        String nameQuery = "select * from dbo.admin where id = " + id;
-                        string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
+                        String nameQuery = "select * from Attaysir1.dbo.Admin where id = " + id;
+                        string name = dataAccess.reader(nameQuery, "AdminFirstName") + " " + dataAccess.reader(nameQuery, "AdminLastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
                         item.SubItems.Add("مقروءة");
@@ -329,7 +329,7 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.messages where recieverid = '{0}' and recieveradminoremployee = '{1}' order by dateofsendding desc", id, "employee"), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -339,7 +339,7 @@ namespace attaysir
                     int id = int.Parse(read["senderid"].ToString());
                     if (read["senderadminoremployee"].ToString() == "employee")
                     {
-                        String nameQuery = "select * from dbo.employee where id = " + id.ToString();
+                        String nameQuery = "select * from Attaysir1.dbo.Employee where id = " + id.ToString();
                         string name = dataAccess.reader(nameQuery, "firstName") + " " + dataAccess.reader(nameQuery, "lastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
@@ -347,8 +347,8 @@ namespace attaysir
                     }
                     else
                     {
-                        String nameQuery = "select * from dbo.admin where id = " + id.ToString();
-                        string name = dataAccess.reader(nameQuery, "adminfirstName") + " " + dataAccess.reader(nameQuery, "adminlastName");
+                        String nameQuery = "select * from Attaysir1.dbo.Admin where id = " + id.ToString();
+                        string name = dataAccess.reader(nameQuery, "AdminFirstName") + " " + dataAccess.reader(nameQuery, "AdminLastName");
                         item.SubItems.Add(name);
                         item.SubItems.Add(read["dateofsendding"].ToString());
                         item.SubItems.Add("غير مقروءة");
@@ -381,7 +381,7 @@ namespace attaysir
             int[] TheIdsList; int h = 0;
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from attaysir1.dbo.faydalananaile where CheckedOrNot = 'true' and OneMoreColumn = 'true' ", con);
+            SqlCommand cmd = new SqlCommand("select * from Attaysir1.dbo.FaydalananAile where CheckedOrNot = 'true' and OneMoreColumn = 'true' ", con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read()) { h++; }
             read.Close();

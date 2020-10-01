@@ -13,7 +13,7 @@ namespace attaysir.models
     {
         public static bool login(string email, string password)
         {
-            string query = string.Format("SELECT * FROM Attaysir1.dbo.Admin WHERE Email = '{0}' AND Password='{1}'", email, password);
+            string query = string.Format("SELECT * FROM Attaysir1.dbo.Admin WHERE email = '{0}' AND password='{1}'", email, password);
             DataTable dt = dataAccess.Executequery(query);
             if (dt.Rows.Count > 0) { return true; } else { return false; }
         }
@@ -29,13 +29,6 @@ namespace attaysir.models
         {
             string query = string.Format("insert into Attaysir1.dbo.Employee(firstName,lastName,email,password,identityNo)" +
                 " values('{0}','{1}','{2}','{3}','{4}')", firstName, lastName, email, password, identityNo);
-            return dataAccess.executenonquery(query);
-        }
-
-        public static int addFaydalanan(string FaydalananFirstName, string FaydalananLastName, string email, string password)
-        {
-            string query = string.Format("INSERT INTO Attaysir1.dbo.Faydalanan(FaydalananFirstName,FaydalananLastName,email,password) " +
-                "VALUES('{0}','{1}','{2}','{3}')", FaydalananFirstName, FaydalananLastName, email, password);
             return dataAccess.executenonquery(query);
         }
 
@@ -56,16 +49,16 @@ namespace attaysir.models
             string query = string.Format("SELECT id FROM Attaysir1.dbo.Admin WHERE email = '{0}' and password = '{1}'", email, password);
             return dataAccess.reader(query, "id");
         }
-
+        
         public static void DeleteEmployee(string id)
         {
-            string query = string.Format("delete from attaysir1.dbo.employee where identityno = '{0}'",id);
+            string query = string.Format("delete from attaysir1.dbo.Employee where identityNo = '{0}'", id);
             dataAccess.executenonquery(query);
         }
 
         public static void DeleteAdmin(string id)
         {
-            string query = string.Format("delete from attaysir1.dbo.Admin where identityno = '{0}'", id);
+            string query = string.Format("delete from attaysir1.dbo.Admin where identityNo = '{0}'", id);
             dataAccess.executenonquery(query);
         }
         

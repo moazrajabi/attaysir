@@ -42,7 +42,7 @@ namespace attaysir
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string ifthereemployeeornot = dataAccess.reader1("select * from attaysir1.dbo.employee","id");
+            string ifthereemployeeornot = dataAccess.reader1("select * from Attaysir1.dbo.Employee", "id");
             if (ifthereemployeeornot != ""){
                 if (ifthereemployeeornot != null)
                 {
@@ -62,7 +62,7 @@ namespace attaysir
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string ifthereemployeeornot = dataAccess.reader1("select * from attaysir1.dbo.employee", "id");
+            string ifthereemployeeornot = dataAccess.reader1("select * from Attaysir1.dbo.Employee", "id");
             if (ifthereemployeeornot != "")
             {
                 if (ifthereemployeeornot != null)

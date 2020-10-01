@@ -44,7 +44,7 @@ namespace attaysir
         {
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();
-            SqlCommand cmd = new SqlCommand(string.Format("select * from attaysir1.dbo.IdesOfTheList where IdOfList = '{0}'", this.idOfList), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select * from Attaysir1.dbo.IdesOfTheList where IdOfList = '{0}'", this.idOfList), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -76,7 +76,7 @@ namespace attaysir
                 sqlCommands.Add(createSqlCommand(selectedColumns, (String)ids[i]));
             }
 
-            sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands, selectedColumns, univList);
+            sevdigim_yusufun_istedigi s = new sevdigim_yusufun_istedigi(sqlCommands, selectedColumns, univList,this.idOfList);
             s.Show();
             this.Close();
             s.BringToFront();
@@ -99,7 +99,7 @@ namespace attaysir
                 }
 
             }
-            String finalCommand = "select " + command + "  from attaysir1.dbo.UnivStud where id =" + id;
+            String finalCommand = "select " + command + "  from Attaysir1.dbo.UnivStud where id =" + id;
 
             return finalCommand;
         }

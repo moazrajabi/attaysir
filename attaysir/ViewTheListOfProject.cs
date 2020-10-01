@@ -45,13 +45,13 @@ namespace attaysir
         void fillthelist()
         {
             label1.Text = "عنوان القائمة:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "name");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "Name");
             label2.Text = "تاريخ انشاء القائمة:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "CreatingDate");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "CreatingDate");
             label3.Text = "نوع القائمة:- "
             + "عائلات";
             label4.Text = "عدد المستفيدين:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "faydalananlarsayisi");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "faydalananlarsayisi");
 
             for (int i=0;i<columns.Length;i++)
             {
@@ -62,7 +62,7 @@ namespace attaysir
             int[] ids = new int[count];
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();int count1 = 0;
-            SqlCommand cmd = new SqlCommand(string.Format("select Faydalananlae_id from attaysir1.dbo.IdesOfTheList where idoflist = '{0}'",this.id.ToString()), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select Faydalananlae_id from attaysir1.dbo.IdesOfTheList where IdOfList = '{0}'", this.id.ToString()), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -70,7 +70,7 @@ namespace attaysir
             }
             con.Close();
 
-            string query = "select * from attaysir1.dbo.FaydalananAile";
+            string query = "select * from Attaysir1.dbo.FaydalananAile";
             for(int i = 0;i<count;i++)
             {
                 if (i==0) { query += string.Format(" where id ='{0}'",ids[i].ToString()); } else { query += string.Format(" or id ='{0}'", ids[i].ToString()); }
@@ -115,13 +115,13 @@ namespace attaysir
         void fillthelistuniv()
         {
             label1.Text = "عنوان القائمة:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "name");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "Name");
             label2.Text = "تاريخ انشاء القائمة:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "CreatingDate");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "CreatingDate");
             label3.Text = "نوع القائمة:- "
             + "طلاب جامعة";
             label4.Text = "عدد المستفيدين:- "
-            + dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "faydalananlarsayisi");
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "faydalananlarsayisi");
 
             for (int i = 0; i < columnsuniv.Length; i++)
             {
@@ -132,7 +132,7 @@ namespace attaysir
             int[] ids = new int[count];
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open(); int count1 = 0;
-            SqlCommand cmd = new SqlCommand(string.Format("select Faydalananlae_id from attaysir1.dbo.IdesOfTheList where idoflist = '{0}'", this.id.ToString()), con);
+            SqlCommand cmd = new SqlCommand(string.Format("select Faydalananlae_id from attaysir1.dbo.IdesOfTheList where IdOfList = '{0}'", this.id.ToString()), con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -140,7 +140,7 @@ namespace attaysir
             }
             con.Close();
 
-            string query = "select * from attaysir1.dbo.UnivStud";
+            string query = "select * from Attaysir1.dbo.UnivStud";
             for (int i = 0; i < count; i++)
             {
                 if (i == 0) { query += string.Format(" where id ='{0}'", ids[i].ToString()); } else { query += string.Format(" or id ='{0}'", ids[i].ToString()); }

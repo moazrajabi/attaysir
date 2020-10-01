@@ -29,13 +29,13 @@ namespace attaysir
 
         void GetDitails()
         {
-            string projectname =  dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "projectname");
-            string CreatingDate = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "creatingdate");
-            string faydalanansayisi = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "faydalanansayisi");
-            string discription = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "discription");
-            string expirydate = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "expirydate");
-            string listid = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "listid");
-            string TheLink = dataAccess.reader(string.Format("select * from attaysir1.dbo.Projects where id = '{0}'", this.id), "TheLink");
+            string projectname =  dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "ProjectName");
+            string CreatingDate = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "CreatingDate");
+            string faydalanansayisi = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "FaydalananSayisi");
+            string discription = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "Discription");
+            string expirydate = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "ExpiryDate");
+            string listid = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "ListId");
+            string TheLink = dataAccess.reader(string.Format("select * from Attaysir1.dbo.Projects where id = '{0}'", this.id), "TheLink");
 
             this.theListId = int.Parse(listid);
             this.thelink = TheLink;
