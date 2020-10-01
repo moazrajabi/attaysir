@@ -89,9 +89,36 @@ namespace attaysir
             textBox14.KeyPress += new KeyPressEventHandler(Employee2.justNumbers);
             comboBox11.SelectedIndex = 0;
         }
-
+        int ifitfirstclick = 0;
         private void button1_Click(object sender, EventArgs e)
         {
+            if (ifitfirstclick>0)
+            {
+                if (studentMonthlyTranportaionTxtBx.Text == "0") { studentMonthlyTranportaionTxtBx.Text = ""; }
+                if (amountOfYearlyArnonaTxtBx.Text == "0") { amountOfYearlyArnonaTxtBx.Text = ""; }
+                if (amountOfTwoMonthlyWaterBillTxtBx.Text == "0") { amountOfTwoMonthlyWaterBillTxtBx.Text = ""; }
+                if (amountOfMonthlyElectricBillTxtBx.Text == "0") { amountOfMonthlyElectricBillTxtBx.Text = ""; }
+                if (amountOfMonthlyRentTxtBx.Text == "0") { amountOfMonthlyRentTxtBx.Text = ""; }
+                if (textBox22.Text == "0") { textBox22.Text = ""; }
+                if (textBox24.Text == "0") { textBox24.Text = ""; }
+                if (textBox27.Text == "0") { textBox27.Text = ""; }
+                if (textBox30.Text == "0") { textBox30.Text = ""; }
+                if (textBox43.Text == "0") { textBox43.Text = ""; }
+                if (textBox2.Text == "0") { textBox2.Text = ""; }
+                if (textBox5.Text == "0") { textBox5.Text = ""; }
+                if (textBox8.Text == "0") { textBox8.Text = ""; }
+                if (textBox11.Text == "0") { textBox11.Text = ""; }
+                if (textBox14.Text == "0") { textBox14.Text = ""; }
+                if (hPohneNumberTxtBx.Text == "0") { hPohneNumberTxtBx.Text = ""; }
+                if (wPhoneNumberTxtBx.Text == "0") { wPhoneNumberTxtBx.Text = ""; }
+                if (hIdentityNumberTxtBx.Text == "0") { hIdentityNumberTxtBx.Text = ""; }
+                if (wIdentityNumberTxtBx.Text == "0") { wIdentityNumberTxtBx.Text = ""; }
+                if (familyNumberTxtBx.Text == "0") { familyNumberTxtBx.Text = ""; }
+                if (hSalaryTxtBx.Text == "0") { hSalaryTxtBx.Text = ""; }
+                if (wSalaryTxtBx.Text == "0") { wSalaryTxtBx.Text = ""; }
+                if (totalChildrenInsuranceTxtBx.Text == "0") { totalChildrenInsuranceTxtBx.Text = ""; }
+                if (numChildtackInsuranceTxtBx.Text == "0") { numChildtackInsuranceTxtBx.Text = ""; }
+            }
             if (hFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوج اولا"; hFirstNameTxtBx.Focus(); }
             else if (hLastNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاخير للزوج اولا"; hLastNameTxtBx.Focus(); }
             else if (wFirstNameTxtBx.Text == "") { richTextBox2.Text = "ادخل الاسم الاول للزوجة اولا"; wFirstNameTxtBx.Focus(); }
@@ -148,6 +175,7 @@ namespace attaysir
                 if (wSalaryTxtBx.Text == "") { wSalaryTxtBx.Text = "0"; }
                 if (totalChildrenInsuranceTxtBx.Text == "") { totalChildrenInsuranceTxtBx.Text = "0"; }
                 if (numChildtackInsuranceTxtBx.Text == "") { numChildtackInsuranceTxtBx.Text = "0"; }
+                ifitfirstclick++;
                 if (double.Parse(studentMonthlyTranportaionTxtBx.Text) > 2147483646.0 ||
                 double.Parse(amountOfYearlyArnonaTxtBx.Text) > 2147483646.0 ||
                 double.Parse(amountOfTwoMonthlyWaterBillTxtBx.Text) > 2147483646.0 ||

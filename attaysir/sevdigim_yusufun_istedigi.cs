@@ -98,6 +98,7 @@ namespace attaysir
             }
             getcolumns();
         }
+
         void getcolumns()
         {
             int[] ides = listViewItems;

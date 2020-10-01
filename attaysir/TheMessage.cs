@@ -14,12 +14,19 @@ namespace attaysir
     public partial class TheMessage : Form
     {
         private adminmain form = null;
-        public TheMessage(string message,int id,Form form)
+        private officermain form1 = null;
+        string adminoremployee;
+        public TheMessage(string message, int id, Form form, string adminoremployee)
         {
             InitializeComponent();
             this.message = message;
             this.id = id;
-            this.form = form as adminmain;
+            if (adminoremployee == "admin") { 
+                this.form = form as adminmain; }
+            if (adminoremployee == "employee")
+            {
+                this.form1 = form1 as officermain;
+            }
         }
         string message ;
         int id;
@@ -32,7 +39,15 @@ namespace attaysir
         private void TheMessage_FormClosed(object sender, FormClosedEventArgs e)
         {
             dataAccess.Executequery(string.Format("UPDATE Attaysir1.dbo.messages SET seen = 'true'WHERE id = '{0}'",id));
-            form.getMessages();
+
+            if (adminoremployee == "admin")
+            {
+                form.getMessages();
+            }
+            if (adminoremployee == "employee")
+            {
+                form1.getMessages();
+            }
         }
     }
 }

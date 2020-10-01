@@ -57,7 +57,7 @@ namespace attaysir
             }
             if (bo == false) { button.ForeColor = Color.Black; panel.BackColor = this.BackColor; }
         }
-        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this, "schoolstud"); n.Show(); } }
+        private void button_Click(object sender, EventArgs e) { if (bo1 == true) { didntcheckedtimefamily n = new didntcheckedtimefamily(this, "schoolstud","employee"); n.Show(); } }
         
         int n = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -277,13 +277,14 @@ namespace attaysir
                 if ((resultAdmin == true && resultEmployee == true) || idofsender == "") { MessageBox.Show("اسم المستخدم المدخل يتشابه مع اسم ادمن و اسم موظف في نفس الوقت او غير موجود"); }
                 else
                 {
-                    string message = dataAccess.reader(string.Format("select message from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and "+
-                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "message");
+                    string message = dataAccess.reader(string.Format("select message from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and " +
+                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "employee", time, readedornot), "message");
 
-                    int messageid = int.Parse(dataAccess.reader(string.Format("select id from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and "+
-                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "admin", time, readedornot), "id"));
+                    int messageid = int.Parse(dataAccess.reader(string.Format("select id from Attaysir1.dbo.messages where senderid = '{0}' and senderadminoremployee = '{1}' and recieverid ='{2}'and " +
+                        "recieveradminoremployee = '{3}' and dateofsendding = '{4}' and seen = '{5}'", idofsender, senderadminoremloyee, this.id, "employee", time, readedornot), "id"));
 
-                    TheMessage k = new TheMessage(message, messageid, this); k.Show();
+                    TheMessage k = new TheMessage(message, messageid, this,"employee"); k.Show();
+
                 }
             }
             catch { }
@@ -411,124 +412,136 @@ namespace attaysir
         ArrayList searchedPersonStudentId = new ArrayList();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                comboBox1.Items.Clear();
+                searchedPersonFamily.Clear();
+                searchedPersonFamilyId.Clear();
+                searchedPersonStudent.Clear();
+                searchedPersonStudentId.Clear();
+                searchedPersonUniv.Clear();
+                searchedPersonUnivId.Clear();
+                String person = textBox1.Text;
+                if (person != "")
+                {
 
-            comboBox1.Items.Clear();
-            searchedPersonFamily.Clear();
-            searchedPersonFamilyId.Clear();
-            searchedPersonStudent.Clear();
-            searchedPersonStudentId.Clear();
-            searchedPersonUniv.Clear();
-            searchedPersonUnivId.Clear();
-            String person = textBox1.Text;
-            String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
-            String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
-            String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
-            SqlConnection con = new SqlConnection(dataAccess.conString);
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand(queryFamily, con);
-            SqlDataReader read = cmd1.ExecuteReader();
-            while (read.Read())
-            {
-                searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
-                searchedPersonFamilyId.Add(read["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(queryUniv, con);
-            SqlDataReader read2 = cmd2.ExecuteReader();
-            while (read2.Read())
-            {
-                searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
-                searchedPersonUnivId.Add(read2["id"].ToString());
-            }
-            con.Close();
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand(queryStudent, con);
-            SqlDataReader read3 = cmd3.ExecuteReader();
-            while (read3.Read())
-            {
-                searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
-                searchedPersonStudentId.Add(read3["id"].ToString());
-            }
-            con.Close();
+                    String queryFamily = "select * from FaydalananAile where HusbandFirstName like '" + person + "%' or HusbandLastName like '" + person + "%' or HusbandIdentificationNumber like '" + person + "%'";
+                    String queryUniv = "select * from UnivStud where FirstName like '" + person + "%' or LastName like '" + person + "%' or IdentityNu like '" + person + "%'";
+                    String queryStudent = "select * from SchoolStud where FirstName like '" + person + "%' or FatherName like '" + person + "%' or IDNum like '" + person + "%'";
+                    SqlConnection con = new SqlConnection(dataAccess.conString);
+                    con.Open();
+                    SqlCommand cmd1 = new SqlCommand(queryFamily, con);
+                    SqlDataReader read = cmd1.ExecuteReader();
+                    while (read.Read())
+                    {
+                        searchedPersonFamily.Add(read["HusbandFirstName"].ToString() + " " + read["HusbandLastName"].ToString());
+                        searchedPersonFamilyId.Add(read["id"].ToString());
+                    }
+                    con.Close();
+                    con.Open();
+                    SqlCommand cmd2 = new SqlCommand(queryUniv, con);
+                    SqlDataReader read2 = cmd2.ExecuteReader();
+                    while (read2.Read())
+                    {
+                        searchedPersonUniv.Add(read2["FirstName"].ToString() + " " + read2["LastName"].ToString());
+                        searchedPersonUnivId.Add(read2["id"].ToString());
+                    }
+                    con.Close();
+                    con.Open();
+                    SqlCommand cmd3 = new SqlCommand(queryStudent, con);
+                    SqlDataReader read3 = cmd3.ExecuteReader();
+                    while (read3.Read())
+                    {
+                        searchedPersonStudent.Add(read3["FirstName"].ToString() + " " + read3["FatherName"].ToString());
+                        searchedPersonStudentId.Add(read3["id"].ToString());
+                    }
+                    con.Close();
 
-            if (searchedPersonFamily.Count != 0)
-            {
-                comboBox1.Items.Add("عائلات");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonFamily[i]);
+                    if (searchedPersonFamily.Count != 0)
+                    {
+                        comboBox1.Items.Add("عائلات");
+                        for (int i = 0; i < searchedPersonFamily.Count; i++)
+                        {
+                            comboBox1.Items.Add((String)searchedPersonFamily[i]);
+                        }
+                    }
+                    if (searchedPersonUniv.Count != 0)
+                    {
+                        comboBox1.Items.Add("طلاب جامعات");
+                        for (int i = 0; i < searchedPersonFamily.Count; i++)
+                        {
+                            comboBox1.Items.Add((String)searchedPersonUniv[i]);
+                        }
+                    }
+                    if (searchedPersonStudent.Count != 0)
+                    {
+                        comboBox1.Items.Add("طلاب مدارس");
+                        for (int i = 0; i < searchedPersonFamily.Count; i++)
+                        {
+                            comboBox1.Items.Add((String)searchedPersonStudent[i]);
+                        }
+                    }
+                    comboBox1.DroppedDown = true;
                 }
             }
-            if (searchedPersonUniv.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب جامعات");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonUniv[i]);
-                }
-            }
-            if (searchedPersonStudent.Count != 0)
-            {
-                comboBox1.Items.Add("طلاب مدارس");
-                for (int i = 0; i < searchedPersonFamily.Count; i++)
-                {
-                    comboBox1.Items.Add((String)searchedPersonStudent[i]);
-                }
-            }
-            comboBox1.DroppedDown = true;
+            catch { }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (comboBox1.SelectedItem.ToString() != "عائلات" && comboBox1.SelectedItem.ToString() != "طلاب جامعات" && comboBox1.SelectedItem.ToString() != "طلاب مدارس")
-            {
-                if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب جامعات"))
-                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("عائلات") &&
-                        comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب جامعات"))
+            try {
+                if (comboBox1.SelectedIndex != -1)
+                {
+                    if (comboBox1.SelectedItem.ToString() != "عائلات" && comboBox1.SelectedItem.ToString() != "طلاب جامعات" && comboBox1.SelectedItem.ToString() != "طلاب مدارس" && comboBox1.Items.ToString() != "")
                     {
-                        //family
-                        String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
-                        CheckingForm c = new CheckingForm(familyId);
-                        c.ShowDialog();
-                    }
+                        if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب جامعات"))
+                            if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("عائلات") &&
+                                comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب جامعات"))
+                            {
+                                //family
+                                String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
+                                CheckingForm c = new CheckingForm(familyId);
+                                c.ShowDialog();
+                            }
 
-                if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب مدارس")
-                    && !comboBox1.Items.Contains("طلاب جامعات"))
-                    if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس"))
-                    {
-                        //family
-                        String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
-                        CheckingForm c = new CheckingForm(familyId);
-                        c.ShowDialog();
-                    }
+                        if (comboBox1.Items.Contains("عائلات") && comboBox1.Items.Contains("طلاب مدارس")
+                            && !comboBox1.Items.Contains("طلاب جامعات"))
+                            if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس"))
+                            {
+                                //family
+                                String familyId = (String)searchedPersonFamilyId[comboBox1.SelectedIndex - 1];
+                                CheckingForm c = new CheckingForm(familyId);
+                                c.ShowDialog();
+                            }
 
-                if (comboBox1.Items.Contains("طلاب مدارس") && comboBox1.Items.Contains("طلاب جامعات"))
-                    if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس") &&
-                    comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
-                    {
-                        //University
-                        String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
-                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
-                    }
+                        if (comboBox1.Items.Contains("طلاب مدارس") && comboBox1.Items.Contains("طلاب جامعات"))
+                            if (comboBox1.SelectedIndex < comboBox1.Items.IndexOf("طلاب مدارس") &&
+                            comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
+                            {
+                                //University
+                                String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
+                                CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
+                            }
 
-                if (comboBox1.Items.Contains("طلاب مدارس"))
-                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب مدارس"))
-                    {
-                        //Student
-                        String studentId = (String)searchedPersonStudentId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب مدارس") - 1];
-                        Checkingformschool k = new Checkingformschool(int.Parse(studentId)); k.ShowDialog();
-                    }
+                        if (comboBox1.Items.Contains("طلاب مدارس"))
+                            if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب مدارس"))
+                            {
+                                //Student
+                                String studentId = (String)searchedPersonStudentId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب مدارس") - 1];
+                                Checkingformschool k = new Checkingformschool(int.Parse(studentId)); k.ShowDialog();
+                            }
 
-                if (comboBox1.Items.Contains("طلاب جامعات") && !comboBox1.Items.Contains("طلاب مدارس"))
-                    if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
-                    {
-                        //University
-                        String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
-                        CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
+                        if (comboBox1.Items.Contains("طلاب جامعات") && !comboBox1.Items.Contains("طلاب مدارس"))
+                            if (comboBox1.SelectedIndex > comboBox1.Items.IndexOf("طلاب جامعات"))
+                            {
+                                //University
+                                String studentId = (String)searchedPersonUnivId[comboBox1.SelectedIndex - comboBox1.Items.IndexOf("طلاب جامعات") - 1];
+                                CheckingformUniv k = new CheckingformUniv(int.Parse(studentId)); k.ShowDialog();
+                            }
                     }
+                }
             }
+            catch { }
         }
     }
 }

@@ -32,7 +32,8 @@ namespace attaysir
                 fillthelistuniv();
             }
             if (kindoflist == "schoolstud")
-            {//school
+            {
+                filltheliststud();
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
@@ -40,7 +41,8 @@ namespace attaysir
         string[] columns ={"رقم العائلة","اسم الزوج","اسم عائلة الزوج","اسم الزوجة","اسم عائلة الزوجة","مكان السكن","العنوان","رقم هوية الزوج",
             "رقم هوية الزوجة","رقم هاتف الزوج","رقم هاتف الزوجة","عدد افراد العائلة","مرتب الزوج","مرتب الزوجة","مخصصات الاولاد",
             "عدد الاولاد الحاصلين على مخصصات","اسم الموظف المسجل","تاريخ و وقت التسجيل","معدل الدخل الشهري للفرد","نوع العائلة",
-            "تاريخ انتهاء صلاحية الملف","التواصل مع الزوج او الزوجة" };
+            "تاريخ انتهاء صلاحية الملف","التواصل مع الزوج او الزوجة"
+        };
 
         void fillthelist()
         {
@@ -173,6 +175,90 @@ namespace attaysir
             }
             con1.Close();
         }
+
+        string[] columnsstud = { "الاسم الاول","اسم الاب","اسم الام","رقم الهوية","اسم المدرسة","السنة الدراسية","القسط السنوي","رقم العائلة" };
+        void filltheliststud()
+        {
+            label1.Text = "عنوان القائمة:- "
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "Name");
+            label2.Text = "تاريخ انشاء القائمة:- "
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "CreatingDate");
+            label3.Text = "نوع القائمة:- "
+            + "طلاب جامعة";
+            label4.Text = "عدد المستفيدين:- "
+            + dataAccess.reader(string.Format("select * from Attaysir1.dbo.TheLists where id ='{0}'", this.id.ToString()), "faydalananlarsayisi");
+
+            for (int i = 0; i < columnsstud.Length; i++)
+            {
+                listView1.Columns.Add(columnsstud[i]);
+            }
+
+            int count = int.Parse(dataAccess.reader(string.Format("select faydalananlarsayisi from Attaysir1.dbo.TheLists where id = '{0}'", this.id.ToString()), "faydalananlarsayisi"));
+            int[] ids = new int[count];
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open(); int count1 = 0;
+            SqlCommand cmd = new SqlCommand(string.Format("select Faydalananlae_id from attaysir1.dbo.IdesOfTheList where IdOfList = '{0}'", this.id.ToString()), con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                ids[count1] = int.Parse(read["Faydalananlae_id"].ToString()); count1++;
+            }
+            con.Close();
+
+            string query = "select * from Attaysir1.dbo.SchoolStud";
+            for (int i = 0; i < count; i++)
+            {
+                if (i == 0) { query += string.Format(" where id ='{0}'", ids[i].ToString()); } else { query += string.Format(" or id ='{0}'", ids[i].ToString()); }
+            }
+
+            SqlConnection con1 = new SqlConnection(dataAccess.conString);
+            con1.Open();
+            SqlCommand cmd1 = new SqlCommand(query, con1);
+            SqlDataReader read1 = cmd1.ExecuteReader();
+            while (read1.Read())
+            {
+                ListViewItem item = new ListViewItem(read1["FirstName"].ToString());
+
+                item.SubItems.Add(read1["FatherName"].ToString());
+                item.SubItems.Add(read1["MotherName"].ToString());
+                item.SubItems.Add(read1["IDNum"].ToString());
+                item.SubItems.Add(read1["SchoolName"].ToString());
+                item.SubItems.Add(read1["WhichClass"].ToString());
+                item.SubItems.Add(read1["YearlyFees"].ToString());
+                item.SubItems.Add(read1["Familyid"].ToString());
+
+                listView1.Items.Add(item);
+            }
+            con1.Close();
+        }
     }
 }
+/*
+SELECT TOP(1000) [id]
+      ,[GroupId]
 
+
+      ,[FirstName]
+
+                item.SubItems.Add(read1["FatherName"].ToString());
+                item.SubItems.Add(read1["MotherName"].ToString());
+                item.SubItems.Add(read1["IDNum"].ToString());
+                item.SubItems.Add(read1["SchoolName"].ToString());
+                item.SubItems.Add(read1["WhichClass"].ToString());
+                item.SubItems.Add(read1["YearlyFees"].ToString());
+                item.SubItems.Add(read1["Familyid"].ToString());
+
+    
+    FROM Attaysir1.dbo.SchoolStud 
+    
+     string[] hhh = {
+     "الاسم الاول"
+     ,"اسم الاب"
+     ,"اسم الام"
+     ,"رقم الهوية"
+     ,"اسم المدرسة"
+     ,"السنة الدراسية"
+     ,"القسط السنوي"
+     ,"رقم العائلة"
+     };
+     */

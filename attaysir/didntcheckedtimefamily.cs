@@ -38,6 +38,25 @@ namespace attaysir
             button2.Location = new Point((this.Width / 2), (int.Parse(this.Height.ToString()) - 67));
             this.ForUpDateing = ForUpDateing;
         }
+        string ifitemployee;
+        officermain form1 = null;
+        public didntcheckedtimefamily(Form form, string ForUpDateing,string ifitemployee)
+        {
+            InitializeComponent();
+            if (ifitemployee == "")
+            {
+                this.form = form as adminmain;
+            }
+            if (ifitemployee != "") { this.form1 = form1 as officermain; }
+            listView1.Size = new Size(this.Width - 23, this.Height - 75);
+            listView1.Location = new Point(4, 4);
+            button1.Size = new Size(((this.Width - 15) / 2), 25);
+            button2.Size = new Size(((this.Width - 15) / 2) - 13, 25);
+            button1.Location = new Point(4, (int.Parse(this.Height.ToString()) - 67));
+            button2.Location = new Point((this.Width / 2), (int.Parse(this.Height.ToString()) - 67));
+            this.ForUpDateing = ForUpDateing;
+            this.ifitemployee = ifitemployee;
+        }
 
         private void didntcheckedtimefamily_Load(object sender, EventArgs e)
         {
@@ -213,11 +232,18 @@ namespace attaysir
 
         private void didntcheckedtimefamily_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (ForUpDateing != "")
+            if (ifitemployee == "")
             {
-                form.k();
+                if (ForUpDateing != "")
+                {
+                    form.k();
+                }
+                else { form.k1(); }
             }
-            else { form.k1(); }
+            if (ifitemployee == "")
+            {
+                form1.k1();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
