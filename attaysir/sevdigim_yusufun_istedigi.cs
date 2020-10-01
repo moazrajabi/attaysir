@@ -21,8 +21,9 @@ namespace attaysir
 {
     public partial class sevdigim_yusufun_istedigi : Form
     {
-        int TheIdOfList;
+        int TheIdOfList,count;
         ArrayList sqlCommands, selectedColumns, columnsNames;
+        bool checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7, checkBox8;
         public sevdigim_yusufun_istedigi(ArrayList sqlCommands, ArrayList selectedColumns, ArrayList columnsNames,int TheIdOfList)
         {
             InitializeComponent();
@@ -33,22 +34,38 @@ namespace attaysir
             this.TheIdOfList = TheIdOfList;
         }
 
-        ListViewItem[] listViewItems;string[] columns; string itsschool = "";
-        public sevdigim_yusufun_istedigi(ListViewItem[] listViewItems,string[] columns,int TheIdOfList)
+        int[] listViewItems;string[] columns; string itsschool = "";int[] secelencolumns;
+        public sevdigim_yusufun_istedigi(int[] listViewItems,string[] columns,int[] secelencolumns,int TheIdOfList)
         {
             InitializeComponent();
             this.listViewItems = listViewItems;
             this.columns = columns;
             this.itsschool = "itsschool";
             this.TheIdOfList = TheIdOfList;
+            this.secelencolumns = secelencolumns;
+            count = int.Parse(dataAccess.reader(string.Format("select * from attaysir1.dbo.TheLists where id='{0}'", TheIdOfList), "faydalananlarsayisi"));
         }
 
         private void sevdigim_yusufun_istedigi_Load(object sender, EventArgs e)
         {
-            if (itsschool!="") {
+            if (itsschool!="")
+            {
+                checkedboxes();
                 fillthelistviewfromschool(listViewItems, columns);
             }
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        void checkedboxes()
+        {
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 1) { checkBox1 = true; break; } else { checkBox1 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 2) { checkBox2 = true; break; } else { checkBox2 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 3) { checkBox3 = true; break; } else { checkBox3 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 4) { checkBox4 = true; break; } else { checkBox4 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 5) { checkBox5 = true; break; } else { checkBox5 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 6) { checkBox6 = true; break; } else { checkBox6 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 7) { checkBox7 = true; break; } else { checkBox7 = false; } }
+            for (int i = 0; i < secelencolumns.Length; i++) { if (secelencolumns[i] == 8) { checkBox8 = true; break; } else { checkBox8 = false; } }
         }
 
         //creating the PDF
@@ -73,18 +90,51 @@ namespace attaysir
         
         }
 
-        void fillthelistviewfromschool(ListViewItem[] listViewItems,string[] columns)
+        void fillthelistviewfromschool(int[] listViewItems,string[] columns)
         {
             for (int i=0;i<columns.Length;i++)
             {
                 listView1.Columns.Add(columns[i]);
             }
-            for (int i=0;i< listViewItems.Length;i++)
+            getcolumns();
+        }
+        void getcolumns()
+        {
+            int[] ides = listViewItems;
+            int attartib = 0;
+            string query = "select";
+            if (checkBox1) { query += " FirstName"; attartib++; }
+            if (checkBox2) { if (attartib > 0) { query += " ,FatherName"; } else { query += " FatherName"; attartib++; } }
+            if (checkBox3) { if (attartib > 0) { query += " ,MotherName"; } else { query += " MotherName"; attartib++; } }
+            if (checkBox4) { if (attartib > 0) { query += " ,IDNum"; } else { query += " IDNum"; attartib++; } }
+            if (checkBox5) { if (attartib > 0) { query += " ,SchoolName"; } else { query += " SchoolName"; attartib++; } }
+            if (checkBox6) { if (attartib > 0) { query += " ,WhichClass"; } else { query += " WhichClass"; attartib++; } }
+            if (checkBox7) { if (attartib > 0) { query += " ,YearlyFees"; } else { query += " YearlyFees"; attartib++; } }
+            if (checkBox8) { if (attartib > 0) { query += " ,Familyid"; } else { query += " Familyid"; attartib++; } }
+            query += string.Format(" from Attaysir1.dbo.SchoolStud where ");
+            for (int i = 0; i < count; i++)
             {
-                //MessageBox.Show(listViewItems[i].ToString());
-                //MessageBox.Show(listViewItems.Length.ToString());
-                listView1.Items.Add(listViewItems[i].Text);
+                if (i == 0) { query += string.Format(" id = '{0}'", ides[i]); } else { query += string.Format(" or id = '{0}'", ides[i]); }
             }
+            SqlConnection con = new SqlConnection(dataAccess.conString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader read = cmd.ExecuteReader();
+            while (read.Read())
+            {
+                int attartib1 = 0;
+                ListViewItem item = null;
+                if (checkBox1) { if (attartib1 > 0) { item.SubItems.Add(read["FirstName"].ToString()); } else { item = new ListViewItem(read["FirstName"].ToString()); attartib1++; } }
+                if (checkBox2) { if (attartib1 > 0) { item.SubItems.Add(read["FatherName"].ToString()); } else { item = new ListViewItem(read["FatherName"].ToString()); attartib1++; } }
+                if (checkBox3) { if (attartib1 > 0) { item.SubItems.Add(read["MotherName"].ToString()); } else { item = new ListViewItem(read["MotherName"].ToString()); attartib1++; } }
+                if (checkBox4) { if (attartib1 > 0) { item.SubItems.Add(read["IDNum"].ToString()); } else { item = new ListViewItem(read["IDNum"].ToString()); attartib1++; } }
+                if (checkBox5) { if (attartib1 > 0) { item.SubItems.Add(read["SchoolName"].ToString()); } else { item = new ListViewItem(read["SchoolName"].ToString()); attartib1++; } }
+                if (checkBox6) { if (attartib1 > 0) { item.SubItems.Add(read["WhichClass"].ToString()); } else { item = new ListViewItem(read["WhichClass"].ToString()); attartib1++; } }
+                if (checkBox7) { if (attartib1 > 0) { item.SubItems.Add(read["YearlyFees"].ToString()); } else { item = new ListViewItem(read["YearlyFees"].ToString()); attartib1++; } }
+                if (checkBox8) { if (attartib1 > 0) { item.SubItems.Add(read["Familyid"].ToString()); } else { item = new ListViewItem(read["Familyid"].ToString()); attartib1++; } }
+                listView1.Items.Add(item);
+            }
+            con.Close();
         }
 
         private void fillLitView()

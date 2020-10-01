@@ -27,7 +27,7 @@ namespace attaysir
             fillthecolumnssayisi();
             if (columnssayisi > 1)
             {
-                sevdigim_yusufun_istedigi l = new sevdigim_yusufun_istedigi(getcolumns(), ColumnsArr(),this.listid); l.ShowDialog();
+                sevdigim_yusufun_istedigi l = new sevdigim_yusufun_istedigi(getids(), ColumnsArr(), this.columns,this.listid);  l.ShowDialog();
             }
             else { MessageBox.Show("يجب عليك اختيار اكثر من خيار اولا (اثنان على الاقل ) "); }
         }
@@ -51,7 +51,7 @@ namespace attaysir
             con1.Close();
             return ids;
         }
-
+        
         ListViewItem[] getcolumns()
         {
             int[] ides = getids();
@@ -76,7 +76,7 @@ namespace attaysir
             ListViewItem[] itemlist = new ListViewItem[count]; 
             SqlConnection con = new SqlConnection(dataAccess.conString);
             con.Open();int k = 0;
-            SqlCommand cmd = new SqlCommand(query/*string.Format(query, listid)*/, con);
+            SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader read = cmd.ExecuteReader();
             while (read.Read())
             {
@@ -106,7 +106,7 @@ namespace attaysir
             if (checkBox6.Checked) { columnssayisi++; }
             if (checkBox7.Checked) { columnssayisi++; }
             if (checkBox8.Checked) { columnssayisi++; }
-        }
+        }int[] columns;
         string[] ColumnsArr()
         {
             int columnssayisi = 0;
@@ -120,14 +120,15 @@ namespace attaysir
             if (checkBox7.Checked) { columnssayisi++; }
             if (checkBox8.Checked) { columnssayisi++; }
             columns = new string[columnssayisi];
-            if (checkBox1.Checked) { columns[count2] = "FirstName";count2++; }
-            if (checkBox2.Checked) { columns[count2] = "FatherName"; count2++; }
-            if (checkBox3.Checked) { columns[count2] = "MotherName"; count2++; }
-            if (checkBox4.Checked) { columns[count2] = "IDNum"; count2++; }
-            if (checkBox5.Checked) { columns[count2] = "SchoolName"; count2++; }
-            if (checkBox6.Checked) { columns[count2] = "WhichClass"; count2++; }
-            if (checkBox7.Checked) { columns[count2] = "YearlyFees"; count2++; }
-            if (checkBox8.Checked) { columns[count2] = "Familyid"; count2++; }
+            this.columns = new int[columnssayisi];
+            if (checkBox1.Checked) { columns[count2] = "FirstName";this.columns[count2] =1; count2++; }
+            if (checkBox2.Checked) { columns[count2] = "FatherName"; this.columns[count2] = 2; count2++; }
+            if (checkBox3.Checked) { columns[count2] = "MotherName"; this.columns[count2] = 3; count2++; }
+            if (checkBox4.Checked) { columns[count2] = "IDNum"; this.columns[count2] = 4; count2++; }
+            if (checkBox5.Checked) { columns[count2] = "SchoolName"; this.columns[count2] = 5; count2++; }
+            if (checkBox6.Checked) { columns[count2] = "WhichClass"; this.columns[count2] = 6; count2++; }
+            if (checkBox7.Checked) { columns[count2] = "YearlyFees"; this.columns[count2] = 7; count2++; }
+            if (checkBox8.Checked) { columns[count2] = "Familyid"; this.columns[count2] = 8; count2++; }
             return columns;
         }
 

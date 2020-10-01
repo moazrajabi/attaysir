@@ -12,7 +12,8 @@ namespace attaysir.models
 {
     public class dataAccess
     {
-        public static string conString = "Data Source=10.0.0.21;User ID = attaysir; Password=7242";
+        //public static string conString = "Data Source=10.0.0.21;User ID = attaysir; Password=7242";
+        public static string conString = "Data Source=DESKTOP-9J5CO0P;Initial Catalog=Attaysir1;Integrated Security=True";
 
         public static int executenonquery(string query)
         {
